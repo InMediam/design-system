@@ -1,30 +1,17 @@
-import { Button } from "../components/ui/button";
-import { Meta, StoryFn } from "@storybook/react";
+import { Button, ButtonProps } from "../components/ui/button";
+import { Meta, StoryObj } from "@storybook/react";
 
-const meta: Meta<typeof Button> = {
-  title: "Form/Button",
+export default {
+  title: 'Form/Button',
   component: Button,
-  argTypes: {},
-  parameters: {
-    backgrounds: {
-      default: 'dark'
-    }
-  },
+
   args: {
-    children: 'Button'
-  }
+    children: 'Confirmar',
+  },
+} as Meta<ButtonProps>
+
+export const Primary: StoryObj<ButtonProps> = {
+  args: {
+    variant: 'success',
+  },
 }
-
-export default meta;
-
-const Template: StoryFn<typeof Button> = (args: any) => <Button {...args} />;
-
-export const Default: StoryFn<typeof Button> = Template.bind({});
-Default.args = {
-
-};
-
-export const Secondary: StoryFn<typeof Button> = Template.bind({});
-Secondary.args = {
-  variant: "secondary"
-};
