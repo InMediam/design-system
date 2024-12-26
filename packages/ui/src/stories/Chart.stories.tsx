@@ -23,11 +23,11 @@ const chartConfig = {
   },
   desktop: {
     label: "Desktop",
-    color: "hsl(var(--chart-1))",
+    color: "hsl(var(--chart-3))",
   },
   mobile: {
     label: "Mobile",
-    color: "hsl(var(--chart-2))",
+    color: "hsl(var(--chart-6))",
   },
 } satisfies ChartConfig
 
@@ -126,7 +126,7 @@ const chartData = [
 ]
 
 export default {
-  title: 'Chart',
+  title: 'Charts/Bar',
 }
 
 export const Primary = {
