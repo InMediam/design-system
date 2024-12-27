@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { Label } from '../components/ui/label'
 import { Textarea, TextareaProps } from '../components/ui/textarea'
+import { InputItemsWrapper } from '../components/ui/inputItemsWrapper'
 
 export default {
   title: 'Form/Textarea',
@@ -13,10 +14,10 @@ export const Primary: StoryObj<TextareaProps> = {
   },
   render: (args) => {
     return (
-      <div className="flex flex-col gap-2 w-fit">
+      <InputItemsWrapper>
         <Label htmlFor="observation">Observação:</Label>
         <Textarea {...args} />
-      </div>
+      </InputItemsWrapper>
     )
   },
 }

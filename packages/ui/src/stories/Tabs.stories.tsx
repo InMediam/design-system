@@ -12,7 +12,8 @@ export default {
 } as Meta<TabsProps>
 
 export const Primary: StoryObj<TabsProps> = {
-  args: {},
+  args: {
+  },
   render: (args) => {
     return (
       <div>

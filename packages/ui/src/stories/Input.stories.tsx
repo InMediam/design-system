@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { Input, InputProps } from "../components/ui/input"
 import { Label } from '../components/ui/label'
+import { InputItemsWrapper } from '../components/ui/inputItemsWrapper'
 
 export default {
   title: 'Form/Input',
@@ -14,10 +15,10 @@ export const Primary: StoryObj<InputProps> = {
   },
   render: (args) => {
     return (
-      <div className="flex flex-col gap-2 w-fit">
+      <InputItemsWrapper>
         <Label htmlFor="name">Nome:</Label>
-        <Input {...args} />
-      </div>
+        <Input  {...args} />
+      </InputItemsWrapper>
     )
   },
 }
