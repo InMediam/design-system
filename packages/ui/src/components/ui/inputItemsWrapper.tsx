@@ -1,14 +1,13 @@
 
 import { cn } from "../../lib/utils"
 
-interface InputItemsWrapperProps {
+interface InputItemsWrapperProps extends React.HTMLAttributes<HTMLDivElement> {
   children: React.ReactNode,
-  className?: string,
 }
 
-export function InputItemsWrapper({ children, className }: InputItemsWrapperProps) {
+export function InputItemsWrapper({ children, ...rest }: InputItemsWrapperProps) {
   return (
-    <div className={cn("flex flex-col gap-2 w-fit", className)}>
+    <div {...rest} className={cn("flex flex-col gap-2 w-fit", rest.className)}>
       {children}
     </div>
   )
