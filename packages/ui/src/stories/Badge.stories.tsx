@@ -25,15 +25,13 @@ export const PrimaryWithDot: StoryObj<BadgeProps> = {
   args: {
     variant: "default",
     children: "Badge",
+    hasDot: true,
   },
   render: (args) => {
     return (
       <div className="w-fit">
-        <Badge {...args}>
-          <Dot variant={args.variant} />
-          {args.children}
-        </Badge>
-      </div>
+        <Badge {...args} />
+      </div >
     )
   },
 }
