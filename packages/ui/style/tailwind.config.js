@@ -105,11 +105,11 @@ module.exports = function (app, options) {
 
           border: "hsl(var(--border))",
           input: "hsl(var(--input))",
-          ring: "hsl(var(--brand-500))",
+          ring: "hsl(var(--ring))",
           background: "hsl(var(--background))",
           foreground: "hsl(var(--foreground))",
           primary: {
-            DEFAULT: "hsl(var(--brand-400))",
+            DEFAULT: "hsl(var(--primary))",
             foreground: "hsl(var(--primary-foreground))",
           },
           secondary: {
@@ -117,7 +117,7 @@ module.exports = function (app, options) {
             foreground: "hsl(var(--secondary-foreground))",
           },
           destructive: {
-            DEFAULT: "hsl(var(--error-600))",
+            DEFAULT: "hsl(var(--destructive))",
             foreground: "hsl(var(--destructive-foreground))",
           },
           muted: {
