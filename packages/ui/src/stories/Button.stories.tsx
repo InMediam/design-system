@@ -10,25 +10,6 @@ export default {
     size: 'default',
     children: 'Button CTA'
   },
-  argTypes: {
-    variant: {
-      options: [
-        'default',
-        'secondary',
-        'success',
-        'warning',
-        'destructive',
-        'outline',
-        'ghost',
-        'link'
-      ],
-      control: { type: 'select' }
-    },
-    size: {
-      options: ['default', 'xs', 'sm', 'lg'],
-      control: { type: 'select' }
-    }
-  }
 } as Meta<ButtonProps>
 
 const Template: StoryFn<typeof Button> = (args: ButtonProps) => <Button {...args} />;
@@ -50,3 +31,22 @@ Playground.args = {
   variant: 'success',
   size: 'default',
 };
+Playground.argTypes = {
+  variant: {
+    options: [
+      'default',
+      'secondary',
+      'success',
+      'warning',
+      'destructive',
+      'outline',
+      'ghost',
+      'link'
+    ],
+    control: { type: 'select' }
+  },
+  size: {
+    options: ['default', 'xs', 'sm', 'lg'],
+    control: { type: 'select' }
+  }
+}

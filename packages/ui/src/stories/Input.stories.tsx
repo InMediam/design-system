@@ -10,12 +10,6 @@ export default {
     type: 'text',
     placeholder: 'Digite o seu nome',
   },
-  argTypes: {
-    type: {
-      options: ['text', 'password', 'email', 'number'],
-      control: { type: 'select' }
-    },
-  }
 } as Meta<InputProps>
 
 export const Primary: StoryObj<InputProps> = {
@@ -33,6 +27,12 @@ export const Playground: StoryObj<InputProps> = {
   args: {
     type: 'text',
     placeholder: 'Digite algo',
+  },
+  argTypes: {
+    type: {
+      options: ['text', 'password', 'email', 'number'],
+      control: { type: 'select' }
+    },
   },
   render: (args) => {
     return (

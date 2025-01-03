@@ -7,6 +7,20 @@ export default {
   args: {
     variant: "default",
     children: "Badge",
+  }
+} as Meta<BadgeProps>
+
+export const Primary: StoryObj<BadgeProps> = {
+  render: (args) => {
+    return (
+      <Badge {...args} />
+    )
+  },
+}
+
+export const Playground: StoryObj<BadgeProps> = {
+  args: {
+    dot: true,
   },
   argTypes: {
     variant: {
@@ -20,28 +34,10 @@ export default {
       ],
       control: { type: 'select' }
     },
-  }
-} as Meta<BadgeProps>
-
-export const Primary: StoryObj<BadgeProps> = {
-  render: (args) => {
-    return (
-      <div className="w-fit">
-        <Badge {...args} />
-      </div>
-    )
-  },
-}
-
-export const Playground: StoryObj<BadgeProps> = {
-  args: {
-    dot: true,
   },
   render: (args) => {
     return (
-      <div className="w-fit">
-        <Badge {...args} />
-      </div >
+      <Badge {...args} />
     )
   },
 }
