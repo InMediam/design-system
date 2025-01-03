@@ -8,12 +8,12 @@ const dotVariants = cva(
   {
     variants: {
       variant: {
-        default: "bg-gray-700",
-        secondary: "bg-brand-700",
-        destructive: "bg-error-700",
-        success: "bg-success-700",
-        warning: "bg-warning-700",
-        outline: "bg-gray-700",
+        default: "bg-brand-500",
+        secondary: "bg-gray-500",
+        destructive: "bg-error-500",
+        success: "bg-success-500",
+        warning: "bg-warning-500",
+        outline: "bg-gray-500",
       },
     },
     defaultVariants: {

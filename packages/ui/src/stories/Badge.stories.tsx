@@ -1,17 +1,29 @@
 import { Meta, StoryObj } from "@storybook/react"
 import { Badge, BadgeProps } from "../components/ui/badge"
-import { Dot } from "../components/ui/dot"
 
 export default {
   title: 'Badge',
   component: Badge,
-} as Meta<BadgeProps>
-
-export const Primary: StoryObj<BadgeProps> = {
   args: {
     variant: "default",
     children: "Badge",
   },
+  argTypes: {
+    variant: {
+      options: [
+        'default',
+        'secondary',
+        'success',
+        'warning',
+        'destructive',
+        'outline',
+      ],
+      control: { type: 'select' }
+    },
+  }
+} as Meta<BadgeProps>
+
+export const Primary: StoryObj<BadgeProps> = {
   render: (args) => {
     return (
       <div className="w-fit">
@@ -21,11 +33,9 @@ export const Primary: StoryObj<BadgeProps> = {
   },
 }
 
-export const PrimaryWithDot: StoryObj<BadgeProps> = {
+export const Playground: StoryObj<BadgeProps> = {
   args: {
-    variant: "default",
-    children: "Badge",
-    hasDot: true,
+    dot: true,
   },
   render: (args) => {
     return (
