@@ -3,51 +3,50 @@ import { Button, ButtonProps } from "../components/ui/button";
 import { Meta, StoryFn, StoryObj } from "@storybook/react";
 
 export default {
-  title: 'Form/Button',
+  title: 'Button',
   component: Button,
   args: {
-    children: 'Confirmar',
+    variant: 'default',
+    size: 'default',
+    children: 'Button CTA'
   },
+  argTypes: {
+    variant: {
+      options: [
+        'default',
+        'secondary',
+        'success',
+        'warning',
+        'destructive',
+        'outline',
+        'ghost',
+        'link'
+      ],
+      control: { type: 'select' }
+    },
+    size: {
+      options: ['default', 'xs', 'sm', 'lg'],
+      control: { type: 'select' }
+    }
+  }
 } as Meta<ButtonProps>
 
 const Template: StoryFn<typeof Button> = (args: ButtonProps) => <Button {...args} />;
 
 export const Primary: StoryObj<ButtonProps> = {
-  args: {
-    variant: 'default',
-    size: 'default',
-  },
   render: (args) => {
     return (
       <div>
         <Button {...args}>
-          <Circle className="w-4" /> Button CTA <Circle className="w-4" />
+          <Circle className="w-4" /> {args.children} <Circle className="w-4" />
         </Button>
       </div>
     )
   }
 }
 
-export const ExtraSmall: StoryFn<typeof Button> = Template.bind({});
-ExtraSmall.args = {
-  variant: 'default',
-  size: 'xs',
-};
-
-export const Small: StoryFn<typeof Button> = Template.bind({});
-Small.args = {
-  variant: 'default',
-  size: 'sm',
-}
-
-export const Medium: StoryFn<typeof Button> = Template.bind({});
-Medium.args = {
-  variant: 'default',
+export const Playground: StoryFn<typeof Button> = Template.bind({});
+Playground.args = {
+  variant: 'success',
   size: 'default',
-};
-
-export const Large: StoryFn<typeof Button> = Template.bind({});
-Large.args = {
-  variant: 'default',
-  size: 'lg',
 };

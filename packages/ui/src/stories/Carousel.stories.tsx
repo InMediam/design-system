@@ -11,6 +11,12 @@ import {
 
 export default {
   title: 'Carousel',
+  argTypes: {
+    orientation: {
+      options: ["horizontal", "vertical"],
+      control: { type: 'select' }
+    },
+  }
 } as Meta<CarouselProps>
 
 export const Primary: StoryObj<CarouselProps> = {
