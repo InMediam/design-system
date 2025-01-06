@@ -12,16 +12,14 @@ export default {
   },
 } as Meta<ButtonProps>
 
-const Template: StoryFn<typeof Button> = (args: ButtonProps) => <Button {...args} />;
+const Template: StoryFn<typeof Button> = (args: ButtonProps) => <Button className="w-fit" {...args} />;
 
 export const Primary: StoryObj<ButtonProps> = {
   render: (args) => {
     return (
-      <div>
-        <Button {...args}>
-          <Circle className="w-4" /> {args.children} <Circle className="w-4" />
-        </Button>
-      </div>
+      <Button className="w-fit" {...args}>
+        <Circle className="w-4" /> {args.children} <Circle className="w-4" />
+      </Button>
     )
   }
 }
