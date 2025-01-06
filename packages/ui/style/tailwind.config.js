@@ -103,6 +103,27 @@ module.exports = function (app, options) {
           "success-900": "hsl(var(--success-900))",
           "success-950": "hsl(var(--success-950))",
 
+          "chart-1": "hsl(var(--chart-1))",
+          "chart-2": "hsl(var(--chart-2))",
+          "chart-3": "hsl(var(--chart-3))",
+          "chart-4": "hsl(var(--chart-4))",
+          "chart-5": "hsl(var(--chart-5))",
+
+          sidebar: {
+            background: "hsl(var(--sidebar-background))",
+            foreground: "hsl(var(--sidebar-foreground))",
+            border: "hsl(var(--sidebar-border))",
+            ring: "hsl(var(--sidebar-ring))",
+            primary: {
+              DEFAULT: "hsl(var(--sidebar-primary))",
+              foreground: "hsl(var(--sidebar-primary-foreground))",
+            },
+            accent: {
+              DEFAULT: "hsl(var(--sidebar-accent))",
+              foreground: "hsl(var(--sidebar-accent-foreground))",
+            },
+          },
+
           border: "hsl(var(--border))",
           input: "hsl(var(--input))",
           ring: "hsl(var(--ring))",
