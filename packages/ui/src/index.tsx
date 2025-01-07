@@ -2,6 +2,7 @@ import "../style/styles.css"
 
 // Component exports
 export * from "./components/ui/accordion";
+export * from "./components/ui/alert-dialog";
 export * from "./components/ui/avatar";
 export * from "./components/ui/badge";
 export * from "./components/ui/breadcrumb";
@@ -12,6 +13,7 @@ export * from "./components/ui/carousel";
 export * from "./components/ui/chart";
 export * from "./components/ui/checkbox";
 export * from "./components/ui/collapsible";
+export * from "./components/ui/command";
 export * from "./components/ui/dialog";
 export * from "./components/ui/dot";
 export * from "./components/ui/drawer";
@@ -35,6 +37,7 @@ export * from "./components/ui/switch";
 export * from "./components/ui/table";
 export * from "./components/ui/tabs";
 export * from "./components/ui/textarea";
+export * from "./components/ui/toggle";
 export * from "./components/ui/tooltip";
 
 // Hook exports
