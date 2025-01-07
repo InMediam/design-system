@@ -30,7 +30,7 @@ export const Playground: StoryObj<InputProps> = {
   },
   argTypes: {
     type: {
-      options: ['text', 'password', 'email', 'number'],
+      options: ['text', 'password', 'email', 'number', 'file'],
       control: { type: 'select' }
     },
   },
