@@ -109,20 +109,15 @@ module.exports = function (app, options) {
           "chart-4": "hsl(var(--chart-4))",
           "chart-5": "hsl(var(--chart-5))",
 
-          sidebar: {
-            background: "hsl(var(--sidebar-background))",
-            foreground: "hsl(var(--sidebar-foreground))",
-            border: "hsl(var(--sidebar-border))",
-            ring: "hsl(var(--sidebar-ring))",
-            primary: {
-              DEFAULT: "hsl(var(--sidebar-primary))",
-              foreground: "hsl(var(--sidebar-primary-foreground))",
-            },
-            accent: {
-              DEFAULT: "hsl(var(--sidebar-accent))",
-              foreground: "hsl(var(--sidebar-accent-foreground))",
-            },
-          },
+          "sidebar": "hsl(var(--sidebar))",
+          "sidebar-background": "hsl(var(--sidebar-background))",
+          "sidebar-foreground": "hsl(var(--sidebar-foreground))",
+          "sidebar-border": "hsl(var(--sidebar-border))",
+          "sidebar-ring": "hsl(var(--sidebar-ring))",
+          "sidebar-primary": "hsl(var(--sidebar-primary))",
+          "sidebar-primary-foreground": "hsl(var(--sidebar-primary-foreground))",
+          "sidebar-accent": "hsl(var(--sidebar-accent))",
+          "sidebar-accent-foreground": "hsl(var(--sidebar-accent-foreground))",
 
           border: "hsl(var(--border))",
           input: "hsl(var(--input))",
