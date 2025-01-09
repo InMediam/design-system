@@ -37,6 +37,9 @@ module.exports = function (app, options) {
         },
       },
       extend: {
+        fontFamily: {
+          sans: ['Inter', 'sans-serif']
+        },
         colors: {
           "gray-25": "hsl(var(--gray-25))",
           "gray-50": "hsl(var(--gray-50))",
