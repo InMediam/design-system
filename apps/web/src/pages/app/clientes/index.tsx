@@ -1,14 +1,9 @@
 import { Helmet } from "react-helmet-async";
 
-
-export function Home() {
-
-
-
-
+export function Clientes() {
   return (
     <>
-      <Helmet title="Início" />
+      <Helmet title="Clientes" />
     </>
   )
 }

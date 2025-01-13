@@ -8,15 +8,17 @@ import {
 } from "ui"
 
 import { NavHeader } from "./nav-header"
+import { NavService } from "./nav-services"
 
-export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
+export function AppSidebar() {
   return (
-    <Sidebar collapsible="icon" {...props}>
+    <Sidebar collapsible="icon">
       <SidebarHeader>
         <NavHeader />
       </SidebarHeader>
       <SidebarContent>
         <NavMain />
+        <NavService />
       </SidebarContent>
       <SidebarFooter>
       </SidebarFooter>
