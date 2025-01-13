@@ -11,16 +11,14 @@ function getAbsolutePath(value) {
 /** @type { import('@storybook/react-vite').StorybookConfig } */
 const config = {
   stories: [
-    {
-      directory: '../../../packages/ui/src/**',
-      titlePrefix: 'UI',
-      files: '*.stories.*'
-    },
+    "../../../packages/ui/src/pages/**/*.stories.mdx",
+    "../../../packages/ui/src/stories/**/*.stories.tsx",
   ],
   addons: [
     getAbsolutePath("@storybook/addon-links"),
     getAbsolutePath("@storybook/addon-essentials"),
     getAbsolutePath("@storybook/addon-onboarding"),
+    getAbsolutePath("@chromatic-com/storybook"),
     getAbsolutePath("@storybook/addon-interactions"),
   ],
   framework: {

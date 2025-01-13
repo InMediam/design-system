@@ -10,9 +10,9 @@ export default {
 export const Primary: StoryObj<SwitchProps> = {
   render(args) {
     return (
-      <div className="flex flex-col gap-2 w-fit">
-        <Label htmlFor="active">Ativo:</Label>
+      <div className="flex gap-2 w-fit justify-center items-center">
         <Switch {...args} />
+        <Label htmlFor="active">Ativo</Label>
       </div>
     )
   },
