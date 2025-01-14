@@ -20,7 +20,7 @@ export function NotificationCard({ className, title, description, image, redirec
         <div className="flex flex-row justify-between">
           <CardTitle className="text-sm font-semibold text-gray-900 dark:text-muted-foreground">{title}</CardTitle>
           <Button className="bg-transparent hover:bg-gray-200 dark:hover:bg-muted h-fit w-fit p-0">
-            <X className="w-5 h-5 dark:text-muted-foreground" />
+            <X className="w-5 h-5 text-gray-500 dark:text-muted-foreground" />
           </Button>
         </div>
         <CardDescription className="p-0 dark:text-gray-500">
