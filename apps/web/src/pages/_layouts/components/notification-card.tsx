@@ -19,7 +19,9 @@ export function NotificationCard({ className, title, description, image, redirec
       <CardHeader className="pt-4 pb-4 w-full px-4">
         <div className="flex flex-row justify-between">
           <CardTitle className="text-sm font-semibold text-gray-900 dark:text-muted-foreground">{title}</CardTitle>
-          <X className="w-5 h-5 dark:text-muted-foreground" />
+          <Button className="bg-transparent hover:bg-gray-200 dark:hover:bg-muted h-fit w-fit p-0">
+            <X className="w-5 h-5 dark:text-muted-foreground" />
+          </Button>
         </div>
         <CardDescription className="p-0 dark:text-gray-500">
           {description}
