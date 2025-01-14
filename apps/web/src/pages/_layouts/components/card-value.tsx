@@ -11,4 +11,4 @@ export function CardValue({ children, className, ...rest }: ComponentProps<typeo
       {children}
     </Card>
   )
-} 
+}   
