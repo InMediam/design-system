@@ -29,7 +29,7 @@ export function NavService() {
 
   return (
     <SidebarGroup>
-      <SidebarGroupLabel className="text-xs px-4">SERVIÇOS</SidebarGroupLabel>
+      <SidebarGroupLabel className="text-xs px-4 pb-1 duration-300">SERVIÇOS</SidebarGroupLabel>
       <SidebarMenu className="data-[open=true]:pl-4 data-[open=true]:pr-4" data-open={open}>
         {navServiceItems.map((main) => {
           const isActive = !!matches.find(match => match.id === main.id);
@@ -49,20 +49,18 @@ export function NavService() {
                     data-open={open}
                   >
                     <Separator
-                      className="m-0 p-0 bg-transparent w-1 h-5 rounded-xl data-[active=true]:bg-brand-500 data-[open=false]:hidden"
+                      className="m-0 p-0 data-[active=false]:hidden w-1 h-5 rounded-xl data-[active=true]:bg-brand-500 data-[open=false]:hidden"
                       orientation="vertical"
                       data-open={open}
                       data-active={isActive}
                     />
-                    <span className="flex gap-3">
-                      <img
-                        className="h-6 w-6 data-[icon=false]:hidden"
-                        src={main.icon}
-                        data-icon={!!main.icon}
-                      />
-                      <span className="font-semibold text-gray-600 text-base data-[open=false]:hidden" data-open={open}>
-                        {main.title}
-                      </span>
+                    <img
+                      className="h-6 w-6 data-[icon=false]:hidden mr-1"
+                      src={main.icon}
+                      data-icon={!!main.icon}
+                    />
+                    <span className="font-semibold text-gray-600 text-base data-[open=false]:hidden" data-open={open}>
+                      {main.title}
                     </span>
                     <ChevronRight
                       className="ml-auto transition-transform duration-200 group-data-[state=open]/collapsible:rotate-90 data-[open=false]:hidden"
