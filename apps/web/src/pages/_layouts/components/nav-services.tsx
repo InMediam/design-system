@@ -107,6 +107,6 @@ export function NavService() {
           )
         })}
       </SidebarMenu>
-    </SidebarGroup >
+    </SidebarGroup>
   )
 }

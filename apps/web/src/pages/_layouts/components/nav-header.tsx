@@ -35,6 +35,6 @@ export function NavHeader() {
           </div>
         </SidebarMenuButton>
       </SidebarMenuItem>
-    </SidebarMenu >
+    </SidebarMenu>
   )
 }

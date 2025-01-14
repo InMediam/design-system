@@ -20,15 +20,17 @@ export function AppSidebar() {
   const { open } = useSidebar()
 
   return (
-    <Sidebar className="h-full" collapsible="icon">
+    <Sidebar collapsible="icon">
       <SidebarHeader>
         <NavHeader />
       </SidebarHeader>
-      <SidebarContent className="h-full">
+      <SidebarContent>
         <NavMain />
         <NavService />
         <SidebarFooter className="px-0 pt-0 pb-4">
-          <div className="flex justify-center data-[open=false]:h-[18.5rem]" data-open={open}>
+          <div className="data-[open=false]:h-[18.5rem] data-[open=true]:hidden" data-open={open} />
+          <NavFooter />
+          <div className="flex justify-center">
             <NotificationCard
               title="Novidades disponíveis"
               description="Confira as novas páginas no painel administrativo"
@@ -36,7 +38,6 @@ export function AppSidebar() {
               redirectPath="/"
             />
           </div>
-          <NavFooter />
         </SidebarFooter>
       </SidebarContent>
       <SidebarRail />
