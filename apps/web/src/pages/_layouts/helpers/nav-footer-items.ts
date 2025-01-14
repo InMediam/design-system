@@ -14,18 +14,18 @@ export const navFooterItems: NavFooter[]  = [
     id: "gerenciar-equipe",
     title: "Gerenciar equipe",
     icon: UsersIcon,
-    url: "/",
+    url: "/gerenciar-equipe",
   },
   {
     id: "central-usuario",
     title: "Central do usuário",
-    url: "/clientes",
+    url: "/central-usuario",
     icon: FlagIcon,
   },
   {
     id: "suporte",
     title: "Suporte",
-    url: "/imoveis",
+    url: "/suporte",
     icon: MessageChatIcon,
   },
 ]

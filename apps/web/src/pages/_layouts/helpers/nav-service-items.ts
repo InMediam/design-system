@@ -25,12 +25,6 @@ export const navServiceItems: NavServiceItems[]  = [
         title: "Visão geral",
         url: "/garantia-locaticia/visao-geral"
       },
-      {
-        id: "garantia-locaticia-notificacoes",
-        title: "Notificações",
-        url: "/garantia-locaticia/notificacoes"
-      }
-  
     ]
   },
   {
