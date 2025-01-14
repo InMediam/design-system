@@ -28,7 +28,7 @@ export function AppSidebar() {
         <NavMain />
         <NavService />
         <SidebarFooter className="px-0 pt-0 pb-4">
-          <div className="flex justify-center h-[18.5rem] data-[open=false]:h-[18.5rem] pb-4" data-open={open}>
+          <div className="flex justify-center data-[open=false]:h-[18.5rem]" data-open={open}>
             <NotificationCard
               title="Novidades disponíveis"
               description="Confira as novas páginas no painel administrativo"
