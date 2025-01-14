@@ -33,6 +33,7 @@ export function AppSidebar() {
               title="Novidades disponíveis"
               description="Confira as novas páginas no painel administrativo"
               image={BuilderImage}
+              redirectPath="/"
             />
           </div>
           <NavFooter />

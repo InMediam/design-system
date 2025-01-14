@@ -1,3 +1,4 @@
+import { useNavigateRoutes } from "@/hooks/useNavigateRoutes";
 import { X } from "lucide-react";
 import { ComponentProps } from "react";
 import { Button, Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle, cn, useSidebar } from "ui";
@@ -6,10 +7,12 @@ interface NotificationCardProps extends ComponentProps<typeof Card> {
   title: string;
   description: string;
   image: string;
+  redirectPath: string;
 }
 
-export function NotificationCard({ className, title, description, image, ...rest }: NotificationCardProps) {
+export function NotificationCard({ className, title, description, image, redirectPath, ...rest }: NotificationCardProps) {
   const { open } = useSidebar()
+  const { navigateByPath } = useNavigateRoutes()
 
   return (
     <Card {...rest} className={cn("bg-gray-100 dark:bg-transparent dark:border-gray-700 data-[open=false]:hidden w-[17.5rem] h-full", className)} data-open={open}>
@@ -27,7 +30,13 @@ export function NotificationCard({ className, title, description, image, ...rest
       </CardContent>
       <CardFooter className="flex justify-start items-start gap-3 pl-4 pr-0 pt-2 pb-2">
         <Button className="text-gray-600 p-0 h-6" variant="link">Descartar</Button>
-        <Button className="text-brand-700 p-0 h-6" variant="link">Conferir</Button>
+        <Button
+          className="text-brand-700 p-0 h-6"
+          variant="link"
+          onClick={() => navigateByPath({ path: redirectPath })}
+        >
+          Conferir
+        </Button>
       </CardFooter>
     </Card>
   )
