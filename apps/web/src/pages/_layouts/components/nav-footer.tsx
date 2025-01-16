@@ -42,7 +42,7 @@ export function NavFooter({ ...rest }: ComponentProps<typeof SidebarGroup>) {
                 />
                 <span className="flex gap-3">
                   <img
-                    className="h-6 w-6 data-[icon=false]:hidden"
+                    className="h-5 w-5 data-[icon=false]:hidden"
                     src={main.icon}
                     data-icon={!!main.icon}
                   />
@@ -50,11 +50,6 @@ export function NavFooter({ ...rest }: ComponentProps<typeof SidebarGroup>) {
                     {main.title}
                   </span>
                 </span>
-                <div className="flex justify-end w-full data-[open=false]:hidden pr-1" data-open={open}>
-                  <CountCard>
-                    10
-                  </CountCard>
-                </div>
               </SidebarMenuButton>
             </SidebarMenuItem>
           )

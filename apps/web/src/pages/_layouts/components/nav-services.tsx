@@ -29,7 +29,7 @@ export function NavService() {
 
   return (
     <SidebarGroup>
-      <SidebarGroupLabel className="text-xs px-4 pb-1 duration-300">SERVIÇOS</SidebarGroupLabel>
+      <SidebarGroupLabel className="text-xs px-4 pb-1 duration-300 text-gray-500">SERVIÇOS</SidebarGroupLabel>
       <SidebarMenu className="data-[open=true]:pl-4 data-[open=true]:pr-4" data-open={open}>
         {navServiceItems.map((main) => {
           const isActive = !!matches.find(match => match.id === main.id);
@@ -55,11 +55,15 @@ export function NavService() {
                       data-active={isActive}
                     />
                     <img
-                      className="h-6 w-6 data-[icon=false]:hidden mr-1"
+                      className="h-5 w-5 data-[icon=false]:hidden mr-1"
                       src={main.icon}
                       data-icon={!!main.icon}
                     />
-                    <span className="font-semibold text-gray-600 text-base data-[open=false]:hidden" data-open={open}>
+                    <span
+                      className="font-medium text-gray-600 text-base data-[open=false]:hidden data-[active=true]:font-semibold data-[active=true]:text-gray-800"
+                      data-open={open}
+                      data-active={isActive}
+                    >
                       {main.title}
                     </span>
                     <ChevronRight
@@ -86,14 +90,12 @@ export function NavService() {
                                   orientation="vertical"
                                   data-active={isItemActive}
                                 />
-                                <span className="text-gray-600 text-base whitespace-nowrap">
+                                <span
+                                  className="font-medium text-gray-600 text-base whitespace-nowrap data-[active=true]:font-semibold data-[active=true]:text-gray-800"
+                                  data-active={isItemActive}
+                                >
                                   {subItem.title}
                                 </span>
-                                <div className="flex justify-end w-full data-[open=false]:hidden pr-1" data-open={open}>
-                                  <CountCard>
-                                    10
-                                  </CountCard>
-                                </div>
                               </NavLink>
                             </SidebarMenuSubButton>
                           </SidebarMenuSubItem>

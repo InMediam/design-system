@@ -10,11 +10,8 @@ import {
 import { NavHeader } from "./nav-header"
 import { NavService } from "./nav-services"
 import { NavFooter } from "./nav-footer"
-import BuilderImage from "../../../assets/builder-image.png"
-import { NotificationCard } from "./notification-card"
 
 import "../styles.css"
-
 
 export function AppSidebar() {
   const { open } = useSidebar()
@@ -27,19 +24,13 @@ export function AppSidebar() {
       <SidebarContent>
         <NavMain />
         <NavService />
-        <SidebarFooter className="px-0 pt-0 pb-4">
-          <div className="data-[open=false]:h-[18.5rem] data-[open=true]:hidden" data-open={open} />
-          <NavFooter />
-          <div className="flex justify-center">
-            <NotificationCard
-              title="Novidades disponíveis"
-              description="Confira as novas páginas no painel administrativo"
-              image={BuilderImage}
-              redirectPath="/"
-            />
-          </div>
-        </SidebarFooter>
       </SidebarContent>
+      <SidebarFooter className="px-0 pt-0 pb-4 flex justify-center items-center">
+        <NavFooter
+          data-open={open}
+          data-show-notification={true}
+        />
+      </SidebarFooter>
       <SidebarRail />
     </Sidebar>
   )

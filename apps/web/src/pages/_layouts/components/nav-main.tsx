@@ -41,19 +41,18 @@ export function NavMain() {
                 />
                 <span className="flex gap-3">
                   <img
-                    className="h-6 w-6 data-[icon=false]:hidden"
+                    className="h-5 w-5 data-[icon=false]:hidden"
                     src={main.icon}
                     data-icon={!!main.icon}
                   />
-                  <span className="font-semibold text-gray-600 text-base data-[open=false]:hidden" data-open={open}>
+                  <span
+                    className="font-medium text-gray-600 text-base data-[open=false]:hidden data-[active=true]:font-semibold data-[active=true]:text-gray-800"
+                    data-open={open}
+                    data-active={isMainActive}
+                  >
                     {main.title}
                   </span>
                 </span>
-                <div className="flex justify-end w-full data-[open=false]:hidden pr-1" data-open={open}>
-                  <CountCard>
-                    10
-                  </CountCard>
-                </div>
               </SidebarMenuButton>
             </SidebarMenuItem>
           )
