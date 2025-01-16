@@ -11,7 +11,6 @@ import {
   SidebarMenuItem,
 } from "ui"
 import { useNavigateRoutes } from "@/hooks/useNavigateRoutes"
-import { CountCard } from "./count-card"
 import { navFooterItems } from "../helpers/nav-footer-items"
 import { ComponentProps } from "react"
 

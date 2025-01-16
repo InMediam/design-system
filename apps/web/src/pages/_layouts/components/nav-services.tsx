@@ -21,7 +21,6 @@ import {
   SidebarMenuSubItem,
 } from "ui"
 import { navServiceItems } from "../helpers/nav-service-items"
-import { CountCard } from "./count-card"
 
 export function NavService() {
   const matches = useMatches()

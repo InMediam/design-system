@@ -12,7 +12,6 @@ import {
 } from "ui"
 import { navMainItems } from "../helpers/nav-main-items"
 import { useNavigateRoutes } from "@/hooks/useNavigateRoutes"
-import { CountCard } from "./count-card"
 
 export function NavMain() {
   const matches = useMatches()
