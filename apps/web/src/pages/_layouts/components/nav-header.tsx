@@ -14,10 +14,10 @@ export function NavHeader() {
   const { navigateToHome } = useNavigateRoutes()
 
   return (
-    <SidebarMenu className="data-[open=true]:pl-6" data-open={open}>
-      <SidebarMenuItem>
+    <SidebarMenu>
+      <SidebarMenuItem className="px-2">
         <SidebarMenuButton
-          className="data-[open=false]:flex data-[open=false]:justify-center"
+          className="data-[open=false]:flex data-[open=false]:justify-center bg-tranparent hover:bg-transparent active:bg-transparent w-full"
           size="lg"
           data-open={open}
           onClick={navigateToHome}
