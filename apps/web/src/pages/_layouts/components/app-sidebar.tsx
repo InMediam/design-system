@@ -1,5 +1,6 @@
 import { NavMain } from "./nav-main"
 import {
+  Separator,
   Sidebar,
   SidebarContent,
   SidebarFooter,
@@ -12,6 +13,7 @@ import { NavService } from "./nav-services"
 import { NavFooter } from "./nav-footer"
 
 import "../styles.css"
+import { SidebarButtonTrigger } from "./sidebar-button-trigger"
 
 export function AppSidebar() {
   const { open } = useSidebar()
@@ -30,6 +32,11 @@ export function AppSidebar() {
           data-open={open}
           data-show-notification={true}
         />
+        <Separator
+          className="w-full bg-gray-neutral-200"
+          orientation="horizontal"
+        />
+        <SidebarButtonTrigger />
       </SidebarFooter>
       <SidebarRail />
     </Sidebar>
