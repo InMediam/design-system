@@ -4,7 +4,7 @@ export function CentralUsuario() {
 
   return (
     <>
-      <Helmet title="Central do Usuário" />
+      <Helmet title="Central do usuário" />
     </>
   )
 }
