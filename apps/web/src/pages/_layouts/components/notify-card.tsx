@@ -3,19 +3,23 @@ import { X } from "lucide-react";
 import { ComponentProps } from "react";
 import { Button, Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle, cn, useSidebar } from "ui";
 
-interface NotificationCardProps extends ComponentProps<typeof Card> {
+interface NotifyCardProps extends ComponentProps<typeof Card> {
   title: string;
   description: string;
   image: string;
   redirectPath: string;
 }
 
-export function NotificationCard({ className, title, description, image, redirectPath, ...rest }: NotificationCardProps) {
+export function NotifyCard({ className, title, description, image, redirectPath, ...rest }: NotifyCardProps) {
   const { open } = useSidebar()
   const { navigateByPath } = useNavigateRoutes()
 
   return (
-    <Card {...rest} className={cn("bg-gray-100 dark:bg-transparent dark:border-gray-700 data-[open=false]:hidden w-[17.5rem] h-full", className)} data-open={open}>
+    <Card
+      {...rest}
+      className={cn("bg-gray-100 dark:bg-transparent dark:border-gray-700 data-[open=false]:hidden w-[16rem] md:w-[17.5rem] h-full", className)}
+      data-open={open}
+    >
       <CardHeader className="pt-4 pb-4 w-full px-4">
         <div className="flex flex-row justify-between">
           <CardTitle className="text-sm font-semibold text-gray-900 dark:text-muted-foreground">{title}</CardTitle>

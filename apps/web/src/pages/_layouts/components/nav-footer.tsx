@@ -11,16 +11,17 @@ import {
   SidebarMenuItem,
 } from "ui"
 import { useNavigateRoutes } from "@/hooks/useNavigateRoutes"
-import { CardValue } from "./card-value"
+import { CountCard } from "./count-card"
 import { navFooterItems } from "../helpers/nav-footer-items"
+import { ComponentProps } from "react"
 
-export function NavFooter() {
+export function NavFooter({ ...rest }: ComponentProps<typeof SidebarGroup>) {
   const matches = useMatches()
   const { open } = useSidebar()
   const { navigateByPath } = useNavigateRoutes()
 
   return (
-    <SidebarGroup>
+    <SidebarGroup {...rest}>
       <SidebarMenu className="data-[open=true]:pl-4 data-[open=true]:pr-4" data-open={open}>
         {navFooterItems.map((main) => {
           const isActive = !!matches.find(match => match.id === main.id);
@@ -50,9 +51,9 @@ export function NavFooter() {
                   </span>
                 </span>
                 <div className="flex justify-end w-full data-[open=false]:hidden pr-1" data-open={open}>
-                  <CardValue>
+                  <CountCard>
                     10
-                  </CardValue>
+                  </CountCard>
                 </div>
               </SidebarMenuButton>
             </SidebarMenuItem>

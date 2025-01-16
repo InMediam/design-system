@@ -21,7 +21,7 @@ import {
   SidebarMenuSubItem,
 } from "ui"
 import { navServiceItems } from "../helpers/nav-service-items"
-import { CardValue } from "./card-value"
+import { CountCard } from "./count-card"
 
 export function NavService() {
   const matches = useMatches()
@@ -77,7 +77,7 @@ export function NavService() {
                           <SidebarMenuSubItem className="h-10 pl-0" key={subItem.id}>
                             <SidebarMenuSubButton
                               asChild
-                              className="h-10 pl-5"
+                              className="h-10 pl-2"
                               isActive={isItemActive}
                             >
                               <NavLink to={subItem.url} className="pl-0">
@@ -90,9 +90,9 @@ export function NavService() {
                                   {subItem.title}
                                 </span>
                                 <div className="flex justify-end w-full data-[open=false]:hidden pr-1" data-open={open}>
-                                  <CardValue>
+                                  <CountCard>
                                     10
-                                  </CardValue>
+                                  </CountCard>
                                 </div>
                               </NavLink>
                             </SidebarMenuSubButton>

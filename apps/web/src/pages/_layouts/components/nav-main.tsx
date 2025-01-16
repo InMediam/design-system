@@ -12,7 +12,7 @@ import {
 } from "ui"
 import { navMainItems } from "../helpers/nav-main-items"
 import { useNavigateRoutes } from "@/hooks/useNavigateRoutes"
-import { CardValue } from "./card-value"
+import { CountCard } from "./count-card"
 
 export function NavMain() {
   const matches = useMatches()
@@ -50,9 +50,9 @@ export function NavMain() {
                   </span>
                 </span>
                 <div className="flex justify-end w-full data-[open=false]:hidden pr-1" data-open={open}>
-                  <CardValue>
+                  <CountCard>
                     10
-                  </CardValue>
+                  </CountCard>
                 </div>
               </SidebarMenuButton>
             </SidebarMenuItem>
