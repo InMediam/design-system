@@ -43,7 +43,7 @@ export function MenuUser() {
         sideOffset={20}
       >
         <DropdownMenuGroup className="flex flex-col justify-center items-center py-6 px-4 bg-gradient-to-b from-brand-25 from-0% to-white to-100%">
-          <Avatar className="h-10 w-10 rounded-full mb-4">
+          <Avatar className="h-14 w-14 rounded-full mb-4">
             <AvatarImage src="https://github.com/shadcn.png" />
             <AvatarFallback className="rounded-lg">DD</AvatarFallback>
           </Avatar>
