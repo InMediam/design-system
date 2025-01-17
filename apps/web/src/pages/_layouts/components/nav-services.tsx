@@ -60,7 +60,7 @@ export function NavService() {
                       data-icon={!!main.icon}
                     />
                     <span
-                      className="font-medium text-gray-600 text-base data-[open=false]:hidden data-[active=true]:font-semibold data-[active=true]:text-gray-800"
+                      className="font-medium text-gray-600 data-[active=true]:dark:text-gray-400 text-base data-[open=false]:hidden data-[active=true]:font-semibold data-[active=true]:text-gray-800"
                       data-open={open}
                       data-active={isActive}
                     >
@@ -96,7 +96,7 @@ export function NavService() {
                                   data-active={isItemActive}
                                 />
                                 <span
-                                  className="font-medium text-gray-600 text-base whitespace-nowrap data-[active=true]:font-semibold data-[active=true]:text-gray-800"
+                                  className="font-medium text-gray-600 text-base whitespace-nowrap data-[active=true]:font-semibold data-[active=true]:text-gray-800 data-[active=true]:dark:text-gray-400"
                                   data-active={isItemActive}
                                 >
                                   {subItem.title}

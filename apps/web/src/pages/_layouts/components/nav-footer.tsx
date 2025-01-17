@@ -46,7 +46,7 @@ export function NavFooter({ ...rest }: ComponentProps<typeof SidebarGroup>) {
                     src={main.icon}
                     data-icon={!!main.icon}
                   />
-                  <span className="font-semibold text-gray-600 text-base data-[open=false]:hidden whitespace-nowrap" data-open={open}>
+                  <span className="font-medium text-gray-600 data-[active=true]:font-semibold data-[active=true]:dark:text-gray-400 text-base data-[open=false]:hidden whitespace-nowrap" data-open={open} data-active={isActive}>
                     {main.title}
                   </span>
                 </span>
