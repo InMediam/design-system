@@ -42,13 +42,13 @@ export function NavService() {
               <SidebarMenuItem>
                 <CollapsibleTrigger asChild>
                   <SidebarMenuButton
-                    className="data-[open=false]:flex data-[open=false]:justify-center h-10"
+                    className="data-[open=false]:flex data-[open=false]:justify-center h-10 data-[open=true]:w-[17.5rem] px-3"
                     tooltip={main.title}
                     isActive={isActive}
                     data-open={open}
                   >
                     <Separator
-                      className="m-0 p-0 data-[active=false]:hidden w-1 h-5 rounded-xl data-[active=true]:bg-brand-500 data-[open=false]:hidden"
+                      className="-ml-3 data-[active=false]:hidden w-1 h-5 rounded-xl data-[active=true]:bg-brand-500 data-[open=false]:hidden"
                       orientation="vertical"
                       data-open={open}
                       data-active={isActive}
@@ -72,20 +72,20 @@ export function NavService() {
                   </SidebarMenuButton>
                 </CollapsibleTrigger>
                 <CollapsibleContent>
-                  <SidebarMenuSub>
+                  <SidebarMenuSub className="border-none px-0 mx-0">
                     {
                       main.items.map((subItem) => {
                         const isItemActive = !!matches.find(match => match.id === subItem?.id)
                         return (
-                          <SidebarMenuSubItem className="h-10 pl-0" key={subItem.id}>
+                          <SidebarMenuSubItem className="h-10 data-[open=true]:w-[17.5rem]" key={subItem.id} data-open={open}>
                             <SidebarMenuSubButton
                               asChild
-                              className="h-10 pl-2"
+                              className="h-10"
                               isActive={isItemActive}
                             >
                               <NavLink to={subItem.url} className="pl-0">
                                 <Separator
-                                  className="m-0 p-0 bg-transparent w-1 h-5 rounded-xl data-[active=true]:bg-brand-500"
+                                  className="m-0 p-0 bg-transparent w-1 h-5 rounded-xl data-[active=true]:bg-brand-500 mr-8"
                                   orientation="vertical"
                                   data-active={isItemActive}
                                 />

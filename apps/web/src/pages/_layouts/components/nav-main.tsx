@@ -26,14 +26,14 @@ export function NavMain() {
           return (
             <SidebarMenuItem key={main.id}>
               <SidebarMenuButton
-                className="data-[open=false]:flex data-[open=false]:justify-center h-10"
+                className="data-[open=false]:flex data-[open=false]:justify-center h-10 data-[open=true]:w-[17.5rem] px-3"
                 tooltip={main.title}
                 isActive={isMainActive}
                 data-open={open}
                 onClick={() => navigateByPath({ path: main.url })}
               >
                 <Separator
-                  className="m-0 p-0 data-[active=false]:hidden w-1 h-5 rounded-xl data-[active=true]:bg-brand-500 data-[open=false]:-mr-1"
+                  className="-ml-3 data-[active=false]:hidden w-1 h-5 rounded-xl data-[active=true]:bg-brand-500"
                   orientation="vertical"
                   data-open={open}
                   data-active={isMainActive}

@@ -23,7 +23,7 @@ export function AppSidebar() {
       <SidebarHeader>
         <NavHeader />
       </SidebarHeader>
-      <SidebarContent>
+      <SidebarContent className="overflow-x-hidden">
         <NavMain />
         <NavService />
       </SidebarContent>
