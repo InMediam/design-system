@@ -14,7 +14,7 @@ import { Label } from '../components/ui/label'
 import { Input } from '../components/ui/input'
 
 export default {
-  title: 'Dialogs/Edit Profile',
+  title: 'Dialogs/Dialog',
 } as Meta<DialogProps>
 
 export const Primary: StoryObj<DialogProps> = {
