@@ -24,7 +24,7 @@ export function MenuUser() {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild className="p-2 w-fit">
-        <Button className="gap-3 bg-brand-25 hover:bg-brand-25/75 dark:bg-sidebar h-14" variant="outline">
+        <Button className="gap-3 bg-brand-25 hover:bg-brand-25/75 dark:bg-sidebar h-14 border border-gray-200 dark:border-gray-700 rounded-xl" variant="outline">
           <Avatar className="h-10 w-10 rounded-full">
             <AvatarImage src="https://github.com/shadcn.png" />
             <AvatarFallback className="rounded-lg">DD</AvatarFallback>
