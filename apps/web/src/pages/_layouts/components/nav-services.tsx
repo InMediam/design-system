@@ -42,7 +42,7 @@ export function NavService() {
               <SidebarMenuItem>
                 <CollapsibleTrigger asChild>
                   <SidebarMenuButton
-                    className="data-[open=false]:flex data-[open=false]:justify-center h-10 data-[open=true]:w-[17.5rem] data-[open-mobile=true]:data-[is-mobile=true]:w-[15.5rem] px-3"
+                    className="data-[open=false]:flex data-[open=false]:justify-center h-10 data-[open=true]:w-[17.5rem] data-[open-mobile=true]:data-[is-mobile=true]:w-[15.5rem] px-3 group-data-[state=open]/collapsible:data-[open=true]:bg-transparent"
                     tooltip={main.title}
                     isActive={isActive}
                     data-open={open}
@@ -50,7 +50,8 @@ export function NavService() {
                     data-is-mobile={isMobile}
                   >
                     <Separator
-                      className="-ml-3 data-[active=false]:hidden w-1 h-5 rounded-xl data-[active=true]:bg-brand-500 data-[open=false]:hidden"
+                      className="-ml-3 data-[active=false]:hidden w-1 h-5 rounded-xl data-[active=true]:bg-brand-500 
+                      group-data-[state=open]/collapsible:data-[open=true]:hidden"
                       orientation="vertical"
                       data-open={open}
                       data-active={isActive}
@@ -61,7 +62,7 @@ export function NavService() {
                       data-icon={!!main.icon}
                     />
                     <span
-                      className="font-medium text-gray-600 data-[active=true]:dark:text-gray-400 text-base data-[open=false]:hidden data-[active=true]:font-semibold data-[active=true]:text-gray-800"
+                      className="font-medium text-gray-600 data-[active=true]:dark:text-gray-400 text-base data-[open=false]:hidden data-[active=true]:group-data-[state=closed]/collapsible:font-semibold data-[active=true]:group-data-[state=closed]/collapsible:text-gray-800"
                       data-open={open}
                       data-active={isActive}
                     >

@@ -43,6 +43,7 @@ export const router = createBrowserRouter([
       },
 
       {
+        id: "garantia-locaticia-service",
         path: "garantia-locaticia",
         children: [
           {
@@ -54,16 +55,19 @@ export const router = createBrowserRouter([
       },
 
       {
+        id: "vistoria-digital-service",
         path: "vistoria-digital",
         children: []
       },
 
       {
+        id: "gestao-de-cobranca-service",
         path: "gestao-de-cobranca",
         children: []
       },
 
       {
+        id: "seguro-incendio-service",
         path: "seguro-incendio",
         children: []
       },
