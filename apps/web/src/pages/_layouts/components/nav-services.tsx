@@ -24,7 +24,7 @@ import { navServiceItems } from "../helpers/nav-service-items"
 
 export function NavService() {
   const matches = useMatches()
-  const { open } = useSidebar()
+  const { open, isMobile } = useSidebar()
 
   return (
     <SidebarGroup>
@@ -42,10 +42,11 @@ export function NavService() {
               <SidebarMenuItem>
                 <CollapsibleTrigger asChild>
                   <SidebarMenuButton
-                    className="data-[open=false]:flex data-[open=false]:justify-center h-10 data-[open=true]:w-[17.5rem] px-3"
+                    className="data-[open=false]:flex data-[open=false]:justify-center h-10 data-[open=true]:w-[17.5rem] data-[open-mobile=true]:w-[15.5rem] px-3"
                     tooltip={main.title}
                     isActive={isActive}
                     data-open={open}
+                    data-open-mobile={isMobile}
                   >
                     <Separator
                       className="-ml-3 data-[active=false]:hidden w-1 h-5 rounded-xl data-[active=true]:bg-brand-500 data-[open=false]:hidden"
@@ -77,7 +78,12 @@ export function NavService() {
                       main.items.map((subItem) => {
                         const isItemActive = !!matches.find(match => match.id === subItem?.id)
                         return (
-                          <SidebarMenuSubItem className="h-10 data-[open=true]:w-[17.5rem]" key={subItem.id} data-open={open}>
+                          <SidebarMenuSubItem
+                            className="h-10 data-[open=true]:w-[17.5rem] data-[open-mobile=true]:w-[15.5rem]"
+                            key={subItem.id}
+                            data-open={open}
+                            data-open-mobile={isMobile}
+                          >
                             <SidebarMenuSubButton
                               asChild
                               className="h-10"
