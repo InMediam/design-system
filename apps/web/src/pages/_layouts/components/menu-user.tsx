@@ -26,18 +26,18 @@ import {
 export function MenuUser() {
 
   return (
-    <SidebarMenu>
+    <SidebarMenu className="w-fit">
       <SidebarMenuItem>
         <DropdownMenu>
-          <DropdownMenuTrigger asChild>
-            <Button variant="ghost">
-              <Avatar className="h-8 w-8 rounded-lg">
+          <DropdownMenuTrigger asChild className="p-2 w-fit">
+            <Button className="gap-3 bg-brand-25 hover:bg-brand-25/75 h-14" variant="outline">
+              <Avatar className="h-10 w-10 rounded-full">
                 <AvatarImage src="https://github.com/shadcn.png" />
                 <AvatarFallback className="rounded-lg">DD</AvatarFallback>
               </Avatar>
               <div className="grid flex-1 text-left text-sm leading-tight">
-                <span className="truncate font-semibold">Douglas Duarte</span>
-                <span className="truncate text-xs">douglasduarte.eng@gmail.com</span>
+                <span className="truncate font-semibold text-gray-700">Douglas Duarte</span>
+                <span className="truncate text-sm font-normal text-gray-600">Corretor(a)</span>
               </div>
               <ChevronsUpDown className="ml-auto w-4 h-4" />
             </Button>
