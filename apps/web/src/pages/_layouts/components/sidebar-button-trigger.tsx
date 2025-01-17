@@ -11,11 +11,12 @@ export function SidebarButtonTrigger() {
 
   return (
     <Button
-      className="gap-3 w-[17.5rem] data-[open-mobile=true]:w-[15.5rem] h-10 data-[open=false]:w-[3.5rem] justify-start hover:bg-transparent active:bg-transparent data-[open=true]:pl-4"
+      className="gap-3 w-[17.5rem] data-[open-mobile=true]:data-[is-mobile=true]:w-[15.5rem] h-10 data-[open=false]:w-[3.5rem] justify-start hover:bg-transparent active:bg-transparent data-[open=true]:pl-4"
       variant="ghost"
       onClick={handleToggleOpenSidebar}
       data-open={open}
       data-open-mobile={openMobile}
+      data-is-mobile={isMobile}
     >
       <ArrowLeftToLine className="w-6 h-6 text-gray-500 data-[open=false]:rotate-180" data-open={open} />
       <span className="font-semibold text-base text-gray-600 data-[open=false]:hidden" data-open={open}>

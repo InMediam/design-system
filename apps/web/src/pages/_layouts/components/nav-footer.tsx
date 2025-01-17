@@ -16,7 +16,7 @@ import { ComponentProps } from "react"
 
 export function NavFooter({ ...rest }: ComponentProps<typeof SidebarGroup>) {
   const matches = useMatches()
-  const { open, openMobile } = useSidebar()
+  const { open, openMobile, isMobile } = useSidebar()
   const { navigateByPath } = useNavigateRoutes()
 
   return (
@@ -27,11 +27,12 @@ export function NavFooter({ ...rest }: ComponentProps<typeof SidebarGroup>) {
           return (
             <SidebarMenuItem key={main.id}>
               <SidebarMenuButton
-                className="data-[open=false]:flex data-[open=false]:justify-center h-10 data-[open=true]:w-[17.5rem] data-[open-mobile=true]:w-[15.5rem] px-3"
+                className="data-[open=false]:flex data-[open=false]:justify-center h-10 data-[open=true]:w-[17.5rem] data-[open-mobile=true]:data-[is-mobile=true]:w-[15.5rem] px-3"
                 tooltip={main.title}
                 isActive={isActive}
                 data-open={open}
                 data-open-mobile={openMobile}
+                data-is-mobile={isMobile}
                 onClick={() => navigateByPath({ path: main.url })}
               >
                 <Separator

@@ -20,7 +20,7 @@ export function AppSidebar() {
 
   return (
     <Sidebar collapsible="icon">
-      <SidebarHeader>
+      <SidebarHeader className="pt-6">
         <NavHeader />
       </SidebarHeader>
       <SidebarContent className="overflow-x-hidden">
