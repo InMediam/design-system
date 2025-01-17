@@ -5,7 +5,7 @@ import { cn } from "../../lib/utils"
 import { Dot } from "./dot"
 
 const badgeVariants = cva(
-  "inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 flex gap-1.5 w-fit",
+  "inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 flex gap-1.5 w-fit",
   {
     variants: {
       variant: {
@@ -17,7 +17,7 @@ const badgeVariants = cva(
           "border-error-200 bg-error-50 text-error-700 hover:bg-error-100",
         success: "border-success-200 bg-success-50 text-success-700 hover:bg-success-100",
         warning: "border-warning-200 bg-warning-50 text-warning-700 hover:bg-warning-100",
-        outline: "text-foreground",
+        outline: "text-gray-700",
       },
     },
     defaultVariants: {
