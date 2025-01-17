@@ -23,7 +23,7 @@ export function AppLayout() {
           </div>
           <div className="ml-auto flex items-center gap-4">
             <ThemeToggle />
-            <Separator orientation="vertical" className="h-14 bg-gray-200" />
+            <Separator orientation="vertical" className="h-14 bg-gray-200 dark:bg-muted" />
             <MenuUser />
           </div>
         </header>
