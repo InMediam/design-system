@@ -33,7 +33,7 @@ export function AppSidebar() {
           data-show-notification={true}
         />
         <Separator
-          className="w-full bg-gray-neutral-200"
+          className="w-full bg-gray-neutral-200 dark:bg-muted"
           orientation="horizontal"
         />
         <SidebarButtonTrigger />
