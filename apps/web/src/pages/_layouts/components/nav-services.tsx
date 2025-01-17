@@ -1,5 +1,5 @@
 import {
-  ChevronRight,
+  ChevronDown,
 } from "lucide-react"
 import { NavLink, useMatches } from "react-router-dom"
 
@@ -65,8 +65,8 @@ export function NavService() {
                     >
                       {main.title}
                     </span>
-                    <ChevronRight
-                      className="ml-auto transition-transform duration-200 group-data-[state=open]/collapsible:rotate-90 data-[open=false]:hidden"
+                    <ChevronDown
+                      className="text-gray-500 ml-auto transition-transform duration-200 group-data-[state=open]/collapsible:rotate-180 data-[open=false]:hidden"
                       data-open={open}
                     />
                   </SidebarMenuButton>
