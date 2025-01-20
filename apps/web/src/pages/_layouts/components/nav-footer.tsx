@@ -21,7 +21,7 @@ export function NavFooter({ ...rest }: ComponentProps<typeof SidebarGroup>) {
 
   return (
     <SidebarGroup {...rest}>
-      <SidebarMenu className="data-[open=true]:pl-4 data-[open=true]:pr-4" data-open={open}>
+      <SidebarMenu className="data-[open=true]:pl-4 data-[open=true]:pr-4 data-[open=false]:px-1" data-open={open}>
         {navFooterItems.map((main) => {
           const isActive = !!matches.find(match => match.id === main.id);
           return (

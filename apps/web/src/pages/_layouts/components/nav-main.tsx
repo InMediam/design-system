@@ -20,7 +20,7 @@ export function NavMain() {
 
   return (
     <SidebarGroup>
-      <SidebarMenu className="data-[open=true]:pl-4 data-[open=true]:pr-4" data-open={open}>
+      <SidebarMenu className="data-[open=true]:pl-4 data-[open=true]:pr-4 data-[open=false]:px-1" data-open={open}>
         {navMainItems.map((main) => {
           const isMainActive = !!matches.find(match => match.id === main.id);
           return (

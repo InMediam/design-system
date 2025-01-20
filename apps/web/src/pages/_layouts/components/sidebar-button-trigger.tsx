@@ -18,8 +18,8 @@ export function SidebarButtonTrigger() {
       data-open-mobile={openMobile}
       data-is-mobile={isMobile}
     >
-      <ArrowLeftToLine className="w-6 h-6 text-gray-500 data-[open=false]:rotate-180" data-open={open} />
-      <span className="font-semibold text-base text-gray-600 data-[open=false]:hidden" data-open={open}>
+      <ArrowLeftToLine className="w-5 h-5 text-gray-500 data-[open=false]:rotate-180" data-open={open} />
+      <span className="font-medium text-base text-gray-600 data-[open=false]:hidden" data-open={open}>
         Recolher menu
       </span>
     </Button>
