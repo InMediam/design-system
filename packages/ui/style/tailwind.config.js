@@ -18,7 +18,7 @@ module.exports = function (app, options) {
       fontSize: {
         'tiny': '.65rem',
         'xs': '.75rem',
-        'sm': '.80rem',
+        'sm': '.875rem',
         'base': '1rem',
         'lg': '1.125rem',
         'xl': '1.25rem',
@@ -53,6 +53,8 @@ module.exports = function (app, options) {
           "gray-800": "hsl(var(--gray-800))",
           "gray-900": "hsl(var(--gray-900))",
           "gray-950": "hsl(var(--gray-950))",
+
+          "gray-neutral-200": "hsl(var(--gray-neutral-200))",
           
           "brand-25": "hsl(var(--brand-25))",
           "brand-50": "hsl(var(--brand-50))",
