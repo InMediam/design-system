@@ -24,8 +24,10 @@ import { UsersIconComponent } from "../icons/users-icon-component"
 import { FlagIconComponent } from "../icons/flag-icon-component"
 import { MessageChatIconComponent } from "../icons/message-chat-icon-component"
 import { FileIconComponent } from "../icons/file-icon-component"
+import { useAuth } from "@/hooks/use-auth"
 
 export function MenuUser() {
+  const { signOut } = useAuth()
 
   return (
     <DropdownMenu>
@@ -101,7 +103,7 @@ export function MenuUser() {
             </span>
           </DropdownMenuItem>
           <DropdownMenuSeparator />
-          <DropdownMenuItem className="flex gap-2 px-4 h-[2.44rem]">
+          <DropdownMenuItem className="flex gap-2 px-4 h-[2.44rem]" onClick={signOut}>
             <LogOut className="w-5 h-5 text-gray-500" />
             <span className="text-gray-700 dark:text-gray-500 text-sm">
               Sair

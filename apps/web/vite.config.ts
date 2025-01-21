@@ -19,7 +19,7 @@ export default defineConfig({
     environment: 'happy-dom',
   },
   server: {
-    port: 5174,
+    port: 5176,
   },
 } as UserConfig & {
   test: InlineConfig
