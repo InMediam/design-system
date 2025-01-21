@@ -127,8 +127,8 @@ export function AppLayout() {
   }, [])
 
   return (
-    <SidebarProvider>
-      <StrictMode>
+    <StrictMode>
+      <SidebarProvider>
         <AppSidebar />
         <SidebarInset className="h-screen w-full pr-8">
           <header className="flex h-[4.5rem] shrink-0 items-center gap-2 transition-[width,height] ease-linear group-has-[[data-collapsible=icon]]/sidebar-wrapper:h-12 border-b border-muted">
@@ -153,7 +153,7 @@ export function AppLayout() {
           </header>
           <Outlet />
         </SidebarInset>
-      </StrictMode>
-    </SidebarProvider>
+      </SidebarProvider>
+    </StrictMode>
   )
 }

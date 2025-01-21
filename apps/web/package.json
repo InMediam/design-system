@@ -1,7 +1,7 @@
 {
   "name": "inmediam",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "scripts": {
     "dev": "vite",
     "tsc": "tsc",
@@ -29,7 +29,7 @@
     "sort-by": "^1.2.0",
     "tailwind-merge": "^2.2.1",
     "tailwindcss-animate": "^1.0.7",
-    "ui": "workspace:*",
+    "ui": "*",
     "zod": "^3.22.4"
   },
   "devDependencies": {
