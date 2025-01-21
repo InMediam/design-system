@@ -21,15 +21,15 @@ export function NavFooter({ ...rest }: ComponentProps<typeof SidebarGroup>) {
   return (
     <SidebarGroup {...rest}>
       <SidebarMenu
-        className="data-[open=false]:px-1 data-[open=true]:pl-4 data-[open=true]:pr-4"
+        className="data-[open=true]:pl-4 data-[open=true]:pr-4"
         data-open={open}
       >
         {navFooterItems.map((main) => {
           const isActive = !!matches.find((match) => match.id === main.id)
           return (
-            <SidebarMenuItem key={main.id}>
+            <SidebarMenuItem key={main.id} className="w-full flex justify-center items-center">
               <SidebarMenuButton
-                className="h-10 px-3 data-[open=false]:flex data-[open-mobile=true]:data-[is-mobile=true]:w-[15.5rem] data-[open=true]:w-[17.5rem] data-[open=false]:justify-center"
+                className="h-10 px-3 data-[open=false]:flex data-[open-mobile=true]:data-[is-mobile=true]:w-[15.5rem] data-[open=true]:w-[17.5rem]"
                 tooltip={main.title}
                 isActive={isActive}
                 data-open={open}
@@ -38,7 +38,7 @@ export function NavFooter({ ...rest }: ComponentProps<typeof SidebarGroup>) {
                 onClick={() => navigateByPath({ path: main.url })}
               >
                 <Separator
-                  className="-ml-3 h-5 w-1 rounded-xl data-[active=false]:hidden data-[active=true]:bg-brand-500"
+                  className="-ml-3 fixed h-5 w-1 rounded-xl data-[active=false]:hidden data-[active=true]:bg-brand-500"
                   orientation="vertical"
                   data-open={open}
                   data-active={isActive}

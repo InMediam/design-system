@@ -29,7 +29,7 @@ export function NavService() {
   return (
     <SidebarGroup>
       <SidebarGroupLabel className="text-xs px-4 pb-1 duration-300 text-gray-500">SERVIÇOS</SidebarGroupLabel>
-      <SidebarMenu className="data-[open=true]:pl-4 data-[open=true]:pr-4 data-[open=false]:px-1" data-open={open}>
+      <SidebarMenu className="data-[open=true]:pl-4 data-[open=true]:pr-4 w-full flex justify-center items-center" data-open={open}>
         {navServiceItems.map((main) => {
           const isActive = !!matches.find(match => match.id === main.id);
           return (
@@ -42,7 +42,7 @@ export function NavService() {
               <SidebarMenuItem>
                 <CollapsibleTrigger asChild>
                   <SidebarMenuButton
-                    className="data-[open=false]:flex data-[open=false]:justify-center h-10 data-[open=true]:w-[17.5rem] data-[open-mobile=true]:data-[is-mobile=true]:w-[15.5rem] px-3 group-data-[state=open]/collapsible:data-[open=true]:bg-transparent"
+                    className="data-[open=false]:flex h-10 data-[open=true]:w-[17.5rem] data-[open-mobile=true]:data-[is-mobile=true]:w-[15.5rem] px-3 group-data-[state=open]/collapsible:data-[open=true]:bg-transparent"
                     tooltip={main.title}
                     isActive={isActive}
                     data-open={open}
@@ -50,7 +50,7 @@ export function NavService() {
                     data-is-mobile={isMobile}
                   >
                     <Separator
-                      className="-ml-3 data-[active=false]:hidden w-1 h-5 rounded-xl data-[active=true]:bg-brand-500 
+                      className="-ml-3 fixed data-[active=false]:hidden w-1 h-5 rounded-xl data-[active=true]:bg-brand-500 
                       group-data-[state=open]/collapsible:data-[open=true]:hidden"
                       orientation="vertical"
                       data-open={open}

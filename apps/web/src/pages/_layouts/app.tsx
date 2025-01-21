@@ -131,7 +131,7 @@ export function AppLayout() {
       <SidebarProvider>
         <AppSidebar />
         <SidebarInset className="h-screen w-full pr-8">
-          <header className="flex h-[4.5rem] shrink-0 items-center gap-2 transition-[width,height] ease-linear group-has-[[data-collapsible=icon]]/sidebar-wrapper:h-12 border-b border-muted">
+          <header className="flex h-[4.5rem] items-center gap-2 border-b border-muted">
             <div className="flex items-center gap-2 pl-2 data-[is-mobile=false]:hidden" data-is-mobile={isMobile}>
               <SidebarTrigger className="-ml-1" />
               <Separator orientation="vertical" className="h-4" />
