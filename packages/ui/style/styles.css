@@ -4,6 +4,7 @@
 
 @layer base {
   :root {
+    
     --background: 0 0% 100%;
     --foreground: 0 0% 3.9%;
     --card: 0 0% 100%;
@@ -35,8 +36,8 @@
     --chart-4: 43 74% 66%;
     --chart-5: 27 87% 67%;
 
-    --sidebar: 0 0% 98%;
-    --sidebar-background: 0 0% 98%;
+    --sidebar: 210 20% 98%;
+    --sidebar-background: 210 20% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
     --sidebar-primary: 240 5.9% 10%;
     --sidebar-primary-foreground: 0 0% 98%;
@@ -58,6 +59,8 @@
     --gray-800: 212 28% 17%;
     --gray-900: 218 39% 11%;
     --gray-950: 220 37% 8%;
+
+    --gray-neutral-200: 218 12% 91%;
 
     --brand-25: 53 92% 97%;
     --brand-50: 53 92% 95%;
