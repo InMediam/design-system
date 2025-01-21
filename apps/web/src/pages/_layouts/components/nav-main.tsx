@@ -20,13 +20,13 @@ export function NavMain() {
 
   return (
     <SidebarGroup>
-      <SidebarMenu className="data-[open=true]:pl-4 data-[open=true]:pr-4" data-open={open}>
+      <SidebarMenu className="data-[open=true]:pl-4 data-[open=true]:pr-4 items-center justify-center" data-open={open}>
         {navMainItems.map((main) => {
           const isMainActive = !!matches.find(match => match.id === main.id);
           return (
-            <SidebarMenuItem key={main.id} className="w-full flex justify-center items-center">
+            <SidebarMenuItem key={main.id}>
               <SidebarMenuButton
-                className="h-10 data-[open=true]:w-[17.5rem] data-[open-mobile=true]:data-[is-mobile=true]:w-[15.5rem]"
+                className="h-10 data-[open=true]:w-[17.5rem] data-[open-mobile=true]:data-[is-mobile=true]:w-[15.5rem] data-[open=false]:justify-center"
                 tooltip={main.title}
                 isActive={isMainActive}
                 data-open={open}
@@ -35,7 +35,7 @@ export function NavMain() {
                 onClick={() => navigateByPath({ path: main.url })}
               >
                 <Separator
-                  className="-ml-3 fixed data-[active=false]:hidden w-1 h-5 rounded-xl data-[active=true]:bg-brand-500"
+                  className="-ml-3 data-[open=false]:-ml-8 fixed data-[active=false]:hidden w-1 h-5 rounded-xl data-[active=true]:bg-brand-500"
                   orientation="vertical"
                   data-open={open}
                   data-active={isMainActive}
