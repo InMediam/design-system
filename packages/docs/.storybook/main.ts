@@ -20,10 +20,17 @@ const config = {
     getAbsolutePath("@storybook/addon-onboarding"),
     getAbsolutePath("@chromatic-com/storybook"),
     getAbsolutePath("@storybook/addon-interactions"),
+    getAbsolutePath("@storybook/addon-a11y")
   ],
   framework: {
     name: "@storybook/react-vite",
     options: {},
+  },
+  core: {
+    "builder": "@storybook/builder-vite"
+  },
+  features: {
+    "storyStoreV7": true
   },
   docs: {
     autodocs: "tag",
