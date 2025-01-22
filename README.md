@@ -18,6 +18,6 @@ This Turborepo includes the following packages/apps:
 Run the following command:
 
 ```sh
-pnpm install
+npm install
 npm run dev
 ```
