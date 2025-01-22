@@ -1,7 +1,7 @@
 import { Minus, Plus } from "lucide-react"
 import { Bar, BarChart, ResponsiveContainer } from "recharts"
 
-import { Button } from 'ui'
+import { Button } from "@inmediam/ui"
 import {
   Drawer,
   DrawerClose,
@@ -11,7 +11,7 @@ import {
   DrawerHeader,
   DrawerTitle,
   DrawerTrigger
-} from 'ui'
+} from "@inmediam/ui"
 import { useState } from 'react'
 
 export default {

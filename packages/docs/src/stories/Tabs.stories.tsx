@@ -5,7 +5,7 @@ import {
   TabsTrigger,
   TabsContent,
   TabsProps,
-} from "ui"
+} from "@inmediam/ui"
 
 export default {
   title: 'Tabs',

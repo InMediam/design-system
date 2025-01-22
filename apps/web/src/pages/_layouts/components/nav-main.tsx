@@ -3,13 +3,13 @@ import { useMatches } from "react-router-dom"
 import {
   Separator,
   useSidebar,
-} from "ui"
+} from "@inmediam/ui"
 import {
   SidebarGroup,
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
-} from "ui"
+} from "@inmediam/ui"
 import { navMainItems } from "../helpers/nav-main-items"
 import { useNavigateRoutes } from "@/hooks/useNavigateRoutes"
 

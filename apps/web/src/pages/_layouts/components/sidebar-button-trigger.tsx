@@ -1,5 +1,5 @@
 import { ArrowLeftToLine } from "lucide-react"
-import { Button, useSidebar } from "ui"
+import { Button, useSidebar } from "@inmediam/ui"
 
 export function SidebarButtonTrigger() {
   const { isMobile, open, openMobile, setOpen, setOpenMobile } = useSidebar()

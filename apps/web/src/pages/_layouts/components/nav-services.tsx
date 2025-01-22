@@ -10,7 +10,7 @@ import {
   Separator,
   SidebarGroupLabel,
   useSidebar,
-} from "ui"
+} from "@inmediam/ui"
 import {
   SidebarGroup,
   SidebarMenu,
@@ -19,7 +19,7 @@ import {
   SidebarMenuSub,
   SidebarMenuSubButton,
   SidebarMenuSubItem,
-} from "ui"
+} from "@inmediam/ui"
 import { navServiceItems } from "../helpers/nav-service-items"
 
 export function NavService() {

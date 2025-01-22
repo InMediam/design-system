@@ -1,5 +1,5 @@
-import { Label } from "ui"
-import { RadioGroup, RadioGroupItem } from "ui"
+import { Label } from "@inmediam/ui"
+import { RadioGroup, RadioGroupItem } from "@inmediam/ui"
 
 export default {
   title: 'Form/Radio Group',

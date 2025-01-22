@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { Switch, SwitchProps } from "ui"
-import { Label } from "ui"
+import { Switch, SwitchProps } from "@inmediam/ui"
+import { Label } from "@inmediam/ui"
 
 export default {
   title: 'Form/Switch',

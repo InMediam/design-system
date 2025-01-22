@@ -1,7 +1,7 @@
 import { useNavigateRoutes } from "@/hooks/useNavigateRoutes";
 import { X } from "lucide-react";
 import { ComponentProps } from "react";
-import { Button, Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle, cn, useSidebar } from "ui";
+import { Button, Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle, cn, useSidebar } from "@inmediam/ui";
 
 interface NotifyCardProps extends ComponentProps<typeof Card> {
   title: string;

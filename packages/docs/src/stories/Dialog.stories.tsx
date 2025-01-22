@@ -8,10 +8,10 @@ import {
   DialogTitle,
   DialogTrigger,
   DialogProps
-} from 'ui'
-import { Button } from 'ui'
-import { Label } from 'ui'
-import { Input } from 'ui'
+} from "@inmediam/ui"
+import { Button } from "@inmediam/ui"
+import { Label } from "@inmediam/ui"
+import { Input } from "@inmediam/ui"
 
 export default {
   title: 'Dialogs/Dialog',

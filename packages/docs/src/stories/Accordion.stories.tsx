@@ -5,7 +5,7 @@ import {
   AccordionItem,
   AccordionTrigger,
   AccordionProps
-} from 'ui'
+} from "@inmediam/ui"
 
 export default {
   title: 'Accordion',

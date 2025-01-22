@@ -1,6 +1,6 @@
 import { Bold } from "lucide-react"
 
-import { Toggle, ToggleProps } from "ui"
+import { Toggle, ToggleProps } from "@inmediam/ui"
 import { Meta, StoryObj } from "@storybook/react"
 
 export default {

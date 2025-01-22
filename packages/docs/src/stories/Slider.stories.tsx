@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from "@storybook/react"
-import { Slider, SliderProps } from "ui"
+import { Slider, SliderProps } from "@inmediam/ui"
 
 export default {
   title: 'Slider',

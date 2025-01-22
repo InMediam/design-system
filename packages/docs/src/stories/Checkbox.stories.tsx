@@ -1,6 +1,6 @@
 import { Meta, StoryObj } from "@storybook/react"
-import { Checkbox, CheckboxProps } from 'ui'
-import { Label } from 'ui'
+import { Checkbox, CheckboxProps } from "@inmediam/ui"
+import { Label } from "@inmediam/ui"
 
 export default {
   title: 'Form/Checkbox',

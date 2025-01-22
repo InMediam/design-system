@@ -5,7 +5,7 @@ import {
   ChartContainer,
   ChartTooltip,
   ChartTooltipContent,
-} from 'ui'
+} from "@inmediam/ui"
 
 import {
   Card,
@@ -13,7 +13,7 @@ import {
   CardDescription,
   CardHeader,
   CardTitle,
-} from 'ui'
+} from "@inmediam/ui"
 
 import { Bar, BarChart, CartesianGrid, XAxis } from "recharts"
 

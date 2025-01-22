@@ -18,7 +18,7 @@ import {
   SidebarInset,
   SidebarProvider,
   SidebarTrigger,
-} from "ui"
+} from "@inmediam/ui"
 
 import {
   Breadcrumb,
@@ -27,9 +27,9 @@ import {
   BreadcrumbList,
   BreadcrumbPage,
   BreadcrumbSeparator,
-} from "ui"
+} from "@inmediam/ui"
 
-import { Separator } from "ui"
+import { Separator } from "@inmediam/ui"
 
 export default {
   title: 'Sidebar',

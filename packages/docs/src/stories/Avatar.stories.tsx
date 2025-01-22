@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from "@storybook/react"
-import { Avatar, AvatarImage, AvatarFallback, AvatarProps } from 'ui'
+import { Avatar, AvatarImage, AvatarFallback, AvatarProps } from "@inmediam/ui"
 
 export default {
   title: 'Avatar',

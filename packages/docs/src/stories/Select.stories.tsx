@@ -6,7 +6,7 @@ import {
   SelectLabel,
   SelectTrigger,
   SelectValue,
-} from "ui"
+} from "@inmediam/ui"
 
 export default {
   title: 'Form/Select',

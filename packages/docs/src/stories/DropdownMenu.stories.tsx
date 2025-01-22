@@ -1,5 +1,5 @@
 
-import { Button } from 'ui'
+import { Button } from "@inmediam/ui"
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -13,7 +13,7 @@ import {
   DropdownMenuSubTrigger,
   DropdownMenuSubContent,
   DropdownMenuPortal
-} from 'ui'
+} from "@inmediam/ui"
 
 import {
   Cloud,

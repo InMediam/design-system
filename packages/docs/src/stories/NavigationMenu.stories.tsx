@@ -1,4 +1,4 @@
-import { cn } from "ui";
+import { cn } from "@inmediam/ui";
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -7,7 +7,7 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
-} from 'ui'
+} from "@inmediam/ui"
 import React from "react";
 
 export default {

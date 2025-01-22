@@ -1,5 +1,5 @@
 {
-  "name": "tsconfig",
+  "name": "@inmediam/tsconfig",
   "author": "Douglas Duarte",
   "version": "1.0.0",
   "private": true,

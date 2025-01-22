@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { Input, InputProps } from 'ui'
-import { Label } from 'ui'
-import { InputItemsWrapper } from 'ui'
+import { Input, InputProps } from "@inmediam/ui"
+import { Label } from "@inmediam/ui"
+import { InputItemsWrapper } from "@inmediam/ui"
 
 export default {
   title: 'Form/Input',

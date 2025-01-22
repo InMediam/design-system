@@ -7,7 +7,7 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
   useSidebar,
-} from 'ui'
+} from "@inmediam/ui"
 
 import { useNavigateRoutes } from '@/hooks/useNavigateRoutes'
 

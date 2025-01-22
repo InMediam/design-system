@@ -5,10 +5,10 @@ import {
   PopoverContent,
   PopoverTrigger,
   PopoverProps
-} from "ui"
-import { Button } from "ui"
-import { Input } from "ui"
-import { Label } from "ui"
+} from "@inmediam/ui"
+import { Button } from "@inmediam/ui"
+import { Input } from "@inmediam/ui"
+import { Label } from "@inmediam/ui"
 
 export default {
   title: 'Popover',

@@ -7,7 +7,7 @@ import {
   SidebarHeader,
   SidebarRail,
   useSidebar,
-} from "ui"
+} from "@inmediam/ui"
 import { NavHeader } from "./nav-header"
 import { NavService } from "./nav-services"
 import { NavFooter } from "./nav-footer"

@@ -10,7 +10,7 @@ import {
   CommandList,
   CommandSeparator,
   CommandShortcut
-} from 'ui'
+} from "@inmediam/ui"
 
 export default {
   title: 'Command',

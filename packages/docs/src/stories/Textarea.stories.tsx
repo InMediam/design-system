@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { Label } from "ui"
-import { Textarea, TextareaProps } from "ui"
-import { InputItemsWrapper } from "ui"
+import { Label } from "@inmediam/ui"
+import { Textarea, TextareaProps } from "@inmediam/ui"
+import { InputItemsWrapper } from "@inmediam/ui"
 
 export default {
   title: 'Form/Textarea',

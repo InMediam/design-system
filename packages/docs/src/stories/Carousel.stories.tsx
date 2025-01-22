@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from "@storybook/react"
-import { Card, CardContent } from 'ui'
+import { Card, CardContent } from "@inmediam/ui"
 import {
   Carousel,
   CarouselContent,
@@ -7,7 +7,7 @@ import {
   CarouselNext,
   CarouselPrevious,
   CarouselProps
-} from 'ui'
+} from "@inmediam/ui"
 
 export default {
   title: 'Carousel',

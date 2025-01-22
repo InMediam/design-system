@@ -3,7 +3,7 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
   useSidebar,
-} from "ui"
+} from "@inmediam/ui"
 
 import LogoMark from "../../../assets/logo-mark.svg"
 import { MediamLogoComponent } from "../icons/mediam-logo-component"

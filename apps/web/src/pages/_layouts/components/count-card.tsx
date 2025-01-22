@@ -1,5 +1,5 @@
 import { ComponentProps } from "react";
-import { Card, CardDescription, cn } from "ui";
+import { Card, CardDescription, cn } from "@inmediam/ui";
 
 
 export function CountCard({ children, className, ...rest }: ComponentProps<typeof Card>) {

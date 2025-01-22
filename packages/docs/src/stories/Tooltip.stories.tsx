@@ -1,5 +1,5 @@
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger, TooltipArrow } from "ui"
-import { Button } from "ui"
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger, TooltipArrow } from "@inmediam/ui"
+import { Button } from "@inmediam/ui"
 
 export default {
   title: 'Tooltip',

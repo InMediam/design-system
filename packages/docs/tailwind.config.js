@@ -1,1 +1,1 @@
-module.exports = require("ui/tailwind")("docs")
+module.exports = require("@inmediam/ui/tailwind")("docs")

@@ -11,7 +11,7 @@ import {
   AvatarImage,
   Badge,
   Button,
-} from "ui"
+} from "@inmediam/ui"
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -19,7 +19,7 @@ import {
   DropdownMenuItem,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from "ui"
+} from "@inmediam/ui"
 import { UsersIconComponent } from "../icons/users-icon-component"
 import { FlagIconComponent } from "../icons/flag-icon-component"
 import { MessageChatIconComponent } from "../icons/message-chat-icon-component"

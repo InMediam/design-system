@@ -7,7 +7,7 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "ui"
+} from "@inmediam/ui"
 
 export default {
   title: 'Table',

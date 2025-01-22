@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from "@storybook/react"
-import { Progress, ProgressProps } from "ui"
+import { Progress, ProgressProps } from "@inmediam/ui"
 import { useEffect, useState } from "react"
 
 export default {

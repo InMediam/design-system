@@ -1,12 +1,12 @@
 import { Outlet } from "react-router-dom"
 import { AppSidebar } from "./components/app-sidebar"
-import { Button, Separator, useIsMobile } from "ui"
+import { Button, Separator, useIsMobile } from "@inmediam/ui"
 import {
   SidebarInset,
   SidebarProvider,
   SidebarTrigger,
   Dot
-} from "ui"
+} from "@inmediam/ui"
 import { ThemeToggle } from "@/components/theme/theme-toggle"
 import { MenuUser } from "./components/menu-user"
 import { Bell, Search } from "lucide-react"

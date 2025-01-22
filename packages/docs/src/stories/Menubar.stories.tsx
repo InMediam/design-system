@@ -13,7 +13,7 @@ import {
   MenubarSubContent,
   MenubarSubTrigger,
   MenubarTrigger,
-} from 'ui'
+} from "@inmediam/ui"
 
 export default {
   title: 'Menu/Menubar',

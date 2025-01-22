@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from "@storybook/react"
-import { Badge, BadgeProps } from 'ui'
+import { Badge, BadgeProps } from "@inmediam/ui"
 
 export default {
   title: 'Badge',

@@ -1,5 +1,5 @@
 import { Circle } from "lucide-react";
-import { Button, ButtonProps } from 'ui';
+import { Button, ButtonProps } from "@inmediam/ui";
 import { Meta, StoryFn, StoryObj } from "@storybook/react";
 
 export default {

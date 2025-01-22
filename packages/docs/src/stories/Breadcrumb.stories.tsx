@@ -6,14 +6,14 @@ import {
   BreadcrumbList,
   BreadcrumbPage,
   BreadcrumbSeparator,
-} from 'ui'
+} from "@inmediam/ui"
 
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger
-} from 'ui'
+} from "@inmediam/ui"
 
 export default {
   title: 'Breadcrumb',

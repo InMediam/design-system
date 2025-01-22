@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from "@storybook/react"
-import { Separator, SeparatorProps } from "ui"
+import { Separator, SeparatorProps } from "@inmediam/ui"
 
 export default {
   title: 'Separator',
