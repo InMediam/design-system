@@ -3,7 +3,7 @@
   "author": "Douglas Duarte",
   "private": true,
   "workspaces": [
-    "apps/*",
+    "apps/web",
     "packages/*"
   ],
   "scripts": {
