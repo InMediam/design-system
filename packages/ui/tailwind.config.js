@@ -16,6 +16,8 @@ module.exports = function (app, options) {
       '../../components/**/*.{ts,tsx}',
       '../../app/**/*.{ts,tsx}',
       '../../src/**/*.{ts,tsx}',
+
+      'node_modules/@inmediam/ui/dist/**/*.js'
     ],
     darkMode: ['class'],
     theme: {

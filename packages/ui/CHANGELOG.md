@@ -1,5 +1,11 @@
 # @inmediam/ui
 
+## 3.12.0
+
+### Minor Changes
+
+- altera build ui
+
 ## 3.11.0
 
 ### Minor Changes
