@@ -1,7 +1,7 @@
 {
   "name": "@inmediam/ui",
   "author": "Douglas Duarte",
-  "version": "3.6.4",
+  "version": "3.6.5",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
@@ -21,6 +21,7 @@
   "devDependencies": {
     "@inmediam/config": "*",
     "@inmediam/tsconfig": "*",
+    "@originjs/vite-plugin-commonjs": "^1.0.3",
     "@types/lodash": "^4.17.14",
     "@types/node": "^20.4.5",
     "@types/react": "^18.2.0",

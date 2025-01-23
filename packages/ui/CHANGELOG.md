@@ -1,5 +1,11 @@
 # @inmediam/ui
 
+## 3.6.5
+
+### Patch Changes
+
+- altera configuração vit
+
 ## 3.6.4
 
 ### Patch Changes
