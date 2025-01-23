@@ -1,5 +1,11 @@
 # @inmediam/ui
 
+## 3.9.0
+
+### Minor Changes
+
+- Atualiza node no CI e altera tsconfig
+
 ## 3.8.0
 
 ### Minor Changes
