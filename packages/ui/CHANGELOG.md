@@ -1,5 +1,11 @@
 # @inmediam/ui
 
+## 3.11.0
+
+### Minor Changes
+
+- Altera build da UI
+
 ## 3.10.0
 
 ### Minor Changes

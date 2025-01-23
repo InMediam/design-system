@@ -1,7 +1,7 @@
 {
   "name": "@inmediam/ui",
   "author": "Douglas Duarte",
-  "version": "3.10.0",
+  "version": "3.11.0",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
@@ -15,7 +15,7 @@
   "scripts": {
     "lint": "eslint src --cache",
     "typecheck": "tsc -b",
-    "build": "tsup src/index.tsx --format esm,cjs --dts --external",
+    "build": "tsup",
     "dev": "tsup src/index.tsx --format esm,cjs --dts --external --watch"
   },
   "devDependencies": {
