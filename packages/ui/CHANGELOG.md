@@ -1,5 +1,11 @@
 # @inmediam/ui
 
+## 3.5.0
+
+### Minor Changes
+
+- teste pacote
+
 ## 3.4.0
 
 ### Minor Changes
