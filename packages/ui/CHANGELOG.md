@@ -1,5 +1,11 @@
 # @inmediam/ui
 
+## 3.4.0
+
+### Minor Changes
+
+- altera configuração ts
+
 ## 3.3.0
 
 ### Minor Changes

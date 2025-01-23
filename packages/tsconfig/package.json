@@ -1,7 +1,7 @@
 {
   "name": "@inmediam/tsconfig",
   "author": "Douglas Duarte",
-  "version": "1.4.0",
+  "version": "1.5.0",
   "private": true,
   "license": "MIT",
   "publishConfig": {
