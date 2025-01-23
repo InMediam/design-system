@@ -1,5 +1,11 @@
 # @inmediam/ui
 
+## 3.6.6
+
+### Patch Changes
+
+- Remove pacote com erro
+
 ## 3.6.5
 
 ### Patch Changes

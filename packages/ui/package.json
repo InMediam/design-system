@@ -1,7 +1,7 @@
 {
   "name": "@inmediam/ui",
   "author": "Douglas Duarte",
-  "version": "3.6.5",
+  "version": "3.6.6",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
@@ -72,7 +72,6 @@
     "next-themes": "^0.4.4",
     "polished": "^4.3.0",
     "react-day-picker": "^8.10.0",
-    "recharts": "^2.13.3",
     "tailwind-merge": "^1.14.0",
     "tailwindcss-animate": "^1.0.6",
     "tokens": "*",
