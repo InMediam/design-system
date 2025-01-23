@@ -1,7 +1,7 @@
 {
   "name": "@inmediam/ui",
   "author": "Douglas Duarte",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "main": "./src/index.tsx",
   "types": "./src/index.tsx",
   "license": "MIT",
@@ -14,7 +14,7 @@
   "scripts": {
     "lint": "eslint src --cache",
     "typecheck": "tsc -b",
-    "build": "tsc"
+    "build": "tsup src/index.tsx --format esm,cjs --dts --external ui"
   },
   "devDependencies": {
     "@types/node": "^20.4.5",
