@@ -14,7 +14,8 @@
   "scripts": {
     "lint": "eslint src --cache",
     "typecheck": "tsc -b",
-    "build": "tsup src/index.tsx --format esm,cjs --dts --external ui"
+    "build": "tsup src/index.tsx --format esm,cjs --dts --external react",
+    "dev": "tsup src/index.tsx --format esm,cjs --dts --external react --watch"
   },
   "devDependencies": {
     "@inmediam/tsconfig": "*",
