@@ -1,5 +1,5 @@
 {
-  "name": "config",
+  "name": "@inmediam/config",
   "author": "Douglas Duarte",
   "version": "1.0.0",
   "exports": {

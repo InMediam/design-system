@@ -19,11 +19,17 @@ module.exports = {
     sourceType: 'module'
   },
   plugins: ['react-refresh'],
+  settings: {
+    react: {
+      version: 'detect',
+    },
+  },
   rules: {
     'react-refresh/only-export-components': [
       'warn',
       { allowConstantExport: true },
     ],
+    'react/react-in-jsx-scope': 'off'
   },
 }
 
