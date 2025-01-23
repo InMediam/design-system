@@ -1,5 +1,11 @@
 # @inmediam/ui
 
+## 3.6.4
+
+### Patch Changes
+
+- Altera versão do react do projeto UI
+
 ## 3.6.3
 
 ### Patch Changes
