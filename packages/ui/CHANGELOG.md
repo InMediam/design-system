@@ -1,5 +1,11 @@
 # @inmediam/ui
 
+## 3.6.3
+
+### Patch Changes
+
+- altera arquivo TS
+
 ## 3.6.2
 
 ### Patch Changes
