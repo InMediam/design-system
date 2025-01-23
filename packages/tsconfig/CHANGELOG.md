@@ -1,5 +1,11 @@
 # @inmediam/tsconfig
 
+## 1.1.0
+
+### Minor Changes
+
+- Altera configuração do TS
+
 ## 1.0.3
 
 ### Patch Changes
