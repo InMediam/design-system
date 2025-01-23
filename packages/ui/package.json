@@ -1,9 +1,10 @@
 {
   "name": "@inmediam/ui",
   "author": "Douglas Duarte",
-  "version": "3.1.0",
-  "main": "./src/index.tsx",
-  "types": "./src/index.tsx",
+  "version": "3.2.0",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
   "license": "MIT",
   "exports": {
     ".": "./src/index.tsx",
