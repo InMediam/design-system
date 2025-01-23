@@ -1,5 +1,11 @@
 # @inmediam/tokens
 
+## 1.2.0
+
+### Minor Changes
+
+- Remover componentes não utilizados e retorna cache da Vercel
+
 ## 1.1.0
 
 ### Minor Changes

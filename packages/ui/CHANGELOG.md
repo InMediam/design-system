@@ -1,5 +1,11 @@
 # @inmediam/ui
 
+## 1.5.0
+
+### Minor Changes
+
+- Remover componentes não utilizados e retorna cache da Vercel
+
 ## 1.4.0
 
 ### Minor Changes
