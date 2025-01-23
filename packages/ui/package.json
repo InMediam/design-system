@@ -1,7 +1,7 @@
 {
   "name": "@inmediam/ui",
   "author": "Douglas Duarte",
-  "version": "1.5.0",
+  "version": "3.0.0",
   "main": "./src/index.tsx",
   "types": "./src/index.tsx",
   "license": "MIT",
