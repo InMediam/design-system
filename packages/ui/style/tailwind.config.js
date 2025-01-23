@@ -1,10 +1,16 @@
+/** @type {import('tailwindcss').Config} */
 module.exports = function (app, options) {
   let config = {
     content: [
       `../../apps/${app}/src/index.html`,
       `../../apps/${app}/src/**/*.{ts,tsx,html,stories.tsx}`,
       '../../packages/*/src/**/*.{ts,tsx,html,stories.tsx}',
-      '../../interface/**/*.{ts,tsx,html,stories.tsx}'
+      '../../interface/**/*.{ts,tsx,html,stories.tsx}',
+
+      './pages/**/*.{ts,tsx}',
+      './components/**/*.{ts,tsx}',
+      './app/**/*.{ts,tsx}',
+      './src/**/*.{ts,tsx}',
     ],
     darkMode: ['class'],
     theme: {

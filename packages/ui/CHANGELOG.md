@@ -1,5 +1,11 @@
 # @inmediam/ui
 
+## 3.8.0
+
+### Minor Changes
+
+- Corrige configuração do tailwind."
+
 ## 3.7.0
 
 ### Minor Changes
