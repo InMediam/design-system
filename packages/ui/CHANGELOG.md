@@ -1,5 +1,11 @@
 # @inmediam/ui
 
+## 3.1.0
+
+### Minor Changes
+
+- f70ba53: Teste alterando comando de build
+
 ## 1.5.0
 
 ### Minor Changes
