@@ -1,5 +1,11 @@
 # @inmediam/tsconfig
 
+## 1.0.3
+
+### Patch Changes
+
+- Teste build
+
 ## 1.0.2
 
 ### Patch Changes

@@ -221,13 +221,3 @@
     --success-950: 156 83% 11%;
   }
 }
-
-
-@layer base {
-  * {
-    @apply border-border;
-  }
-  body {
-    @apply bg-background text-foreground;
-  }
-}

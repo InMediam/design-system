@@ -1,5 +1,11 @@
 # @inmediam/ui
 
+## 1.2.1
+
+### Patch Changes
+
+- Teste build
+
 ## 1.2.0
 
 ### Minor Changes
