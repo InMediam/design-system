@@ -1,5 +1,11 @@
 # @inmediam/ui
 
+## 3.10.0
+
+### Minor Changes
+
+- Altera configuração
+
 ## 3.9.0
 
 ### Minor Changes

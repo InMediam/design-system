@@ -1,4 +1,4 @@
-import "../style/styles.css"
+import "./global.css"
 
 // Component exports
 export * from "./components/ui/accordion";
