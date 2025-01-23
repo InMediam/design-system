@@ -1,5 +1,11 @@
 # @inmediam/ui
 
+## 3.6.1
+
+### Patch Changes
+
+- Atualiza TS config
+
 ## 3.5.0
 
 ### Minor Changes

@@ -3,6 +3,7 @@
     "composite": false,
     "declaration": true,
     "declarationMap": true,
+    "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "inlineSources": false,
