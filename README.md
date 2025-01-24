@@ -1,23 +1,27 @@
-# InMediam Design System
+<p align="center">
 
-## What's inside?
+</p>
+   
+<h1 align="center">InMediam Design System</h1>
 
-This Turborepo includes the following packages/apps:
+<p align="center">A React implementation of Design System</p>
+  
+<p align="center">
+  <a aria-label="npm package" href="https://www.npmjs.com/package/@inmediam/ui">
 
-### Apps and Packages
+  ![npm](https://img.shields.io/npm/v/@inmediam/ui.svg)
 
-- `workshop`: a Storybook app with the `ui` package imported
-- `ui`: a stub React component library with [Tailwind CSS](https://tailwindcss.com/) shared by both `web` and `docs` applications with [shadcn-ui](https://github.com/shadcn/ui) already included. 
-- `ui/eslint-config-custom`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
-- `ui/tailwind-config`: reusable tailwind configuration
-- `ui/tsconfig`: `tsconfig.json`s used throughout the monorepo
-- `tokens`: design tokens including colors, fonts, font sizes, font weights, line heights, radii and spacing values
+  </a>
+</p>
 
-## Install
+## Documentation
 
-Run the following command:
+Our documentation site is currently in development. Access the Storybook at [@inmediam/ui]("https://inmediam.github.io/design-system/?path=/docs/home--docs"). You'll find detailed documentation on getting started, all the components, our theme, our principles, and more.
 
-```sh
-npm install
-npm run dev
+## Installation
+
+Install @inmediam/ui in your project:
+
+```console
+npm install @inmediam/ui
 ```
