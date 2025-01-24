@@ -1,6 +1,9 @@
 name: Deploy docs
 
-permissions: write-all
+permissions:
+  contents: write
+  issues: write
+  pull-requests: write
 
 on: 
   push:
