@@ -1,5 +1,11 @@
 # @inmediam/ui
 
+## 1.2.0
+
+### Minor Changes
+
+- Teste de versão
+
 ## 1.1.0
 
 ### Minor Changes
