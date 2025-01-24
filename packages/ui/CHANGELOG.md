@@ -1,5 +1,11 @@
 # @inmediam/ui
 
+## 4.1.1
+
+### Patch Changes
+
+- Corrige problema com importação de configuração TS
+
 ## 4.1.0
 
 ### Major Changes
