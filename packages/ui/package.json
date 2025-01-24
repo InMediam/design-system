@@ -1,7 +1,7 @@
 {
   "name": "@inmediam/ui",
   "author": "Douglas Duarte",
-  "version": "1.1.0",
+  "version": "4.1.1",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
@@ -20,7 +20,6 @@
   },
   "devDependencies": {
     "@inmediam/config": "*",
-    "@inmediam/tsconfig": "*",
     "@types/node": "^20.4.5",
     "@types/react": "^18.2.0",
     "@types/react-dom": "^18.2.0",

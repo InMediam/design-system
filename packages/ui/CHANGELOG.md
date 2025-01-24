@@ -1,10 +1,16 @@
 # @inmediam/ui
 
-## 1.1.0
+## 4.1.1
 
-### Minor Changes
+### Patch Changes
 
-- Utiliza configuração TS do package nos projetos react
+- Corrige problema com importação de configuração TS
+
+## 4.1.0
+
+### Major Changes
+
+- Release
 
 ## 1.0.0
 

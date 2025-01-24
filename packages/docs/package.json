@@ -18,7 +18,6 @@
   },
   "devDependencies": {
     "@inmediam/config": "*",
-    "@inmediam/tsconfig": "*",
     "@chromatic-com/storybook": "^1.3.1",
     "@storybook/addon-a11y": "^7.6.20",
     "@storybook/addon-essentials": "^7.1.1",
