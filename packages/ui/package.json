@@ -1,7 +1,7 @@
 {
   "name": "@inmediam/ui",
   "author": "Douglas Duarte",
-  "version": "4.1.1",
+  "version": "4.1.2",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
@@ -18,6 +18,18 @@
     "build": "tsup",
     "dev": "tsup src/index.tsx --format esm,cjs --dts --external --watch"
   },
+  "keywords": [
+    "react",
+    "ui",
+    "component",
+    "library",
+    "design",
+    "system",
+    "accessible",
+    "a11y",
+    "radix",
+    "shadcn"
+  ],
   "devDependencies": {
     "@inmediam/config": "*",
     "@types/node": "^20.4.5",
