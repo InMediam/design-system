@@ -1,0 +1,1 @@
+import{j as r}from"./jsx-runtime-CqU-cyDI.js";import{ab as t}from"./toggle-CJJyiZfr.js";function o({children:s,...a}){return r.jsx("div",{...a,className:t("flex flex-col gap-2 w-fit",a.className),children:s})}export{o as I};
