@@ -1,6 +1,5 @@
 import "./global.css"
 
-
 // Component exports
 export * from "./components/ui/accordion";
 export * from "./components/ui/alert-dialog";

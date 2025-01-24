@@ -1,16 +1,10 @@
 # @inmediam/ui
 
-## 1.2.0
+## 1.0.1
 
-### Minor Changes
+### Patch Changes
 
 - Teste de versão
-
-## 1.1.0
-
-### Minor Changes
-
-- Utiliza configuração TS do package nos projetos react
 
 ## 1.0.0
 
