@@ -1,5 +1,11 @@
 # @inmediam/ui
 
+## 4.1.2
+
+### Patch Changes
+
+- Add keywords to NPM
+
 ## 4.1.1
 
 ### Patch Changes
