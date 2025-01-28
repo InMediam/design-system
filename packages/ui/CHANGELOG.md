@@ -1,5 +1,11 @@
 # @inmediam/ui
 
+## 4.1.4
+
+### Patch Changes
+
+- Atualiza style da table
+
 ## 4.1.3
 
 ### Patch Changes
