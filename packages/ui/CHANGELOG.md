@@ -1,5 +1,11 @@
 # @inmediam/ui
 
+## 4.1.3
+
+### Patch Changes
+
+- Corrige script dev
+
 ## 4.1.2
 
 ### Patch Changes
