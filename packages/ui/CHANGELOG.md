@@ -1,5 +1,11 @@
 # @inmediam/ui
 
+## 4.1.5
+
+### Patch Changes
+
+- Atualiza altura header table
+
 ## 4.1.4
 
 ### Patch Changes
