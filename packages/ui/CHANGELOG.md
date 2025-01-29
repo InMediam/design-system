@@ -1,5 +1,11 @@
 # @inmediam/ui
 
+## 4.1.6
+
+### Patch Changes
+
+- Atualiza estilo da tabela e input
+
 ## 4.1.5
 
 ### Patch Changes
