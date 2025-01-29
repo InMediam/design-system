@@ -1,5 +1,11 @@
 # @inmediam/ui
 
+## 4.1.7
+
+### Patch Changes
+
+- Atualiza background do fallback do avatar
+
 ## 4.1.6
 
 ### Patch Changes
