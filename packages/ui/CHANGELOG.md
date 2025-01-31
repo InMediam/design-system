@@ -1,5 +1,11 @@
 # @inmediam/ui
 
+## 4.1.8
+
+### Patch Changes
+
+- Atualiza radius do modal
+
 ## 4.1.7
 
 ### Patch Changes
