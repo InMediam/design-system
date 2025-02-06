@@ -1,5 +1,11 @@
 # @inmediam/ui
 
+## 4.1.11
+
+### Patch Changes
+
+- corrige aplicação de borda na tabela
+
 ## 4.1.10
 
 ### Patch Changes
