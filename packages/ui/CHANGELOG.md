@@ -1,5 +1,11 @@
 # @inmediam/ui
 
+## 4.1.10
+
+### Patch Changes
+
+- Altera border radius dos inputs
+
 ## 4.1.9
 
 ### Patch Changes
