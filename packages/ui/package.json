@@ -1,7 +1,7 @@
 {
   "name": "@inmediam/ui",
   "author": "Douglas Duarte",
-  "version": "4.1.2",
+  "version": "4.1.13",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
@@ -16,7 +16,7 @@
     "lint": "eslint src --cache",
     "typecheck": "tsc -b",
     "build": "tsup",
-    "dev": "tsup src/index.tsx --format esm,cjs --dts --external --watch"
+    "dev": "tsup src/index.tsx --format esm,cjs --dts --external react --watch"
   },
   "keywords": [
     "react",
