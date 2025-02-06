@@ -1,5 +1,11 @@
 # @inmediam/ui
 
+## 4.1.13
+
+### Patch Changes
+
+- Corrige modo dark de componentes
+
 ## 4.1.12
 
 ### Patch Changes
