@@ -1,5 +1,11 @@
 # @inmediam/ui
 
+## 4.1.9
+
+### Patch Changes
+
+- Atualização do ring dos inputs
+
 ## 4.1.8
 
 ### Patch Changes
