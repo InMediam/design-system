@@ -1,5 +1,11 @@
 # @inmediam/ui
 
+## 4.1.14
+
+### Patch Changes
+
+- Atualização de bordas nos inputs e ícone de close no Dialog
+
 ## 4.1.13
 
 ### Patch Changes
