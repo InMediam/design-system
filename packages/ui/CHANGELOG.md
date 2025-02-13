@@ -1,5 +1,11 @@
 # @inmediam/ui
 
+## 4.1.15
+
+### Patch Changes
+
+- Adiciona package toggle group
+
 ## 4.1.14
 
 ### Patch Changes
