@@ -1,5 +1,11 @@
 # @inmediam/ui
 
+## 4.1.17
+
+### Patch Changes
+
+- Corrige espaçamento entre linhas na label
+
 ## 4.1.16
 
 ### Patch Changes
