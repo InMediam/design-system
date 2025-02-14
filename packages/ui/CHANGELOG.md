@@ -1,5 +1,29 @@
 # @inmediam/ui
 
+## 4.1.17
+
+### Patch Changes
+
+- Corrige espaçamento entre linhas na label
+
+## 4.1.16
+
+### Patch Changes
+
+- Adiciona ícone de required na Label
+
+## 4.1.15
+
+### Patch Changes
+
+- Adiciona package toggle group
+
+## 4.1.14
+
+### Patch Changes
+
+- Atualização de bordas nos inputs e ícone de close no Dialog
+
 ## 4.1.13
 
 ### Patch Changes
