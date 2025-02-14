@@ -1,5 +1,11 @@
 # @inmediam/ui
 
+## 4.1.16
+
+### Patch Changes
+
+- Adiciona ícone de required na Label
+
 ## 4.1.15
 
 ### Patch Changes

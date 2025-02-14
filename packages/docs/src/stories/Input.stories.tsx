@@ -16,7 +16,7 @@ export const Primary: StoryObj<InputProps> = {
   render: (args) => {
     return (
       <InputItemsWrapper>
-        <Label htmlFor="name">Nome:</Label>
+        <Label required htmlFor="name">Nome:</Label>
         <Input  {...args} />
       </InputItemsWrapper>
     )
