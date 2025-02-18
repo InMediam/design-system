@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { Input, InputProps } from "@inmediam/ui"
+import { HintText, Input, InputProps } from "@inmediam/ui"
 import { Label } from "@inmediam/ui"
 import { InputItemsWrapper } from "@inmediam/ui"
 
@@ -18,6 +18,9 @@ export const Primary: StoryObj<InputProps> = {
       <InputItemsWrapper>
         <Label required htmlFor="name">Nome:</Label>
         <Input  {...args} />
+        <HintText>
+          This is an error message.
+        </HintText>
       </InputItemsWrapper>
     )
   },

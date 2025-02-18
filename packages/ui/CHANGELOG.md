@@ -1,5 +1,11 @@
 # @inmediam/ui
 
+## 4.1.18
+
+### Patch Changes
+
+- Add hint text component
+
 ## 4.1.17
 
 ### Patch Changes
