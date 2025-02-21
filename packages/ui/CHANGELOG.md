@@ -1,5 +1,11 @@
 # @inmediam/ui
 
+## 4.1.20
+
+### Patch Changes
+
+- fix dialog close
+
 ## 4.1.19
 
 ### Patch Changes
