@@ -1,5 +1,23 @@
 # @inmediam/ui
 
+## 4.1.20
+
+### Patch Changes
+
+- fix dialog close
+
+## 4.1.19
+
+### Patch Changes
+
+- Fix close do modal no modo dark
+
+## 4.1.18
+
+### Patch Changes
+
+- Add hint text component
+
 ## 4.1.17
 
 ### Patch Changes
