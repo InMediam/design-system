@@ -1,5 +1,11 @@
 # @inmediam/ui
 
+## 4.1.19
+
+### Patch Changes
+
+- Fix close do modal no modo dark
+
 ## 4.1.18
 
 ### Patch Changes
