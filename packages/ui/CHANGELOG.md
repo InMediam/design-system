@@ -1,5 +1,11 @@
 # @inmediam/ui
 
+## 4.1.21
+
+### Patch Changes
+
+- Corrige cadaga colocada no componente de dialog no control
+
 ## 4.1.20
 
 ### Patch Changes
