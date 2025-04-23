@@ -1,5 +1,11 @@
 # @inmediam/ui
 
+## 4.1.23
+
+### Patch Changes
+
+- Padronização de estilos do button e tooltip
+
 ## 4.1.22
 
 ### Patch Changes
