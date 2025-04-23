@@ -1,5 +1,11 @@
 # @inmediam/ui
 
+## 4.1.24
+
+### Patch Changes
+
+- Atualiza tamanho do texto no tooltip
+
 ## 4.1.23
 
 ### Patch Changes
