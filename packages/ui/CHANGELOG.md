@@ -1,5 +1,11 @@
 # @inmediam/ui
 
+## 4.1.25
+
+### Patch Changes
+
+- style para disabled da variant default
+
 ## 4.1.24
 
 ### Patch Changes
