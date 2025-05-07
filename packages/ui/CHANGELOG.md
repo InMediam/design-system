@@ -1,5 +1,11 @@
 # @inmediam/ui
 
+## 4.1.26
+
+### Patch Changes
+
+- Altera cor do placeholder de input e select
+
 ## 4.1.25
 
 ### Patch Changes
