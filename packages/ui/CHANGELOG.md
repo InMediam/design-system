@@ -1,5 +1,11 @@
 # @inmediam/ui
 
+## 4.1.27
+
+### Patch Changes
+
+- Corrige focus do dropdown menu
+
 ## 4.1.26
 
 ### Patch Changes
