@@ -1,5 +1,35 @@
 # @inmediam/ui
 
+## 4.1.27
+
+### Patch Changes
+
+- Corrige focus do dropdown menu
+
+## 4.1.26
+
+### Patch Changes
+
+- Altera cor do placeholder de input e select
+
+## 4.1.25
+
+### Patch Changes
+
+- style para disabled da variant default
+
+## 4.1.24
+
+### Patch Changes
+
+- Atualiza tamanho do texto no tooltip
+
+## 4.1.23
+
+### Patch Changes
+
+- Padronização de estilos do button e tooltip
+
 ## 4.1.22
 
 ### Patch Changes
