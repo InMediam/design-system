@@ -1,5 +1,11 @@
 # @inmediam/ui
 
+## 4.1.28
+
+### Patch Changes
+
+- Adiciona validação para não permitir data com anos +4 digitos
+
 ## 4.1.27
 
 ### Patch Changes
