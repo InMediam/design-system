@@ -1,5 +1,11 @@
 # @inmediam/ui
 
+## 4.1.29
+
+### Patch Changes
+
+- Adiciona estilização tertiary para o Button
+
 ## 4.1.28
 
 ### Patch Changes

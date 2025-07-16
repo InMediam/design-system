@@ -1,7 +1,7 @@
 {
   "name": "@inmediam/ui",
   "author": "Douglas Duarte",
-  "version": "4.1.28",
+  "version": "4.1.29",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
