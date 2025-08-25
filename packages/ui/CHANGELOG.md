@@ -1,5 +1,11 @@
 # @inmediam/ui
 
+## 4.2.0
+
+### Minor Changes
+
+- Adiciona CarouselDots e atualiza layouts de Drawer e Popover
+
 ## 4.1.29
 
 ### Patch Changes
