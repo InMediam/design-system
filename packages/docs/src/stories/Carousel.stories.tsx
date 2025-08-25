@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from "@storybook/react"
-import { Card, CardContent } from "@inmediam/ui"
+import { Card, CardContent, CarouselDots } from "@inmediam/ui"
 import {
   Carousel,
   CarouselContent,
@@ -36,6 +36,7 @@ export const Primary: StoryObj<CarouselProps> = {
           </CarouselContent>
           <CarouselPrevious />
           <CarouselNext />
+          <CarouselDots />
         </Carousel>
       </div>
     )
@@ -68,6 +69,7 @@ export const Playground: StoryObj<CarouselProps> = {
           </CarouselContent>
           <CarouselPrevious />
           <CarouselNext />
+          <CarouselDots />
         </Carousel>
       </div>
     )
