@@ -27,6 +27,8 @@ type CarouselContextProps = {
   scrollNext: () => void
   canScrollPrev: boolean
   canScrollNext: boolean
+  selectedIndex: number
+  scrollTo: (index: number) => void
 } & CarouselProps
 
 const CarouselContext = React.createContext<CarouselContextProps | null>(null)
@@ -66,6 +68,7 @@ const Carousel = React.forwardRef<
     )
     const [canScrollPrev, setCanScrollPrev] = React.useState(false)
     const [canScrollNext, setCanScrollNext] = React.useState(false)
+    const [selectedIndex, setSelectedIndex] = React.useState(0)
 
     const onSelect = React.useCallback((api: CarouselApi) => {
       if (!api) {
@@ -74,6 +77,7 @@ const Carousel = React.forwardRef<
 
       setCanScrollPrev(api.canScrollPrev())
       setCanScrollNext(api.canScrollNext())
+      setSelectedIndex(api.selectedScrollSnap())
     }, [])
 
     const scrollPrev = React.useCallback(() => {
@@ -95,6 +99,11 @@ const Carousel = React.forwardRef<
         }
       },
       [scrollPrev, scrollNext]
+    )
+
+    const scrollTo = React.useCallback(
+      (index: number) => api?.scrollTo(index),
+      [api],
     )
 
     React.useEffect(() => {
@@ -131,6 +140,8 @@ const Carousel = React.forwardRef<
           scrollNext,
           canScrollPrev,
           canScrollNext,
+          selectedIndex,
+          scrollTo,
         }}
       >
         <div
@@ -251,6 +262,37 @@ const CarouselNext = React.forwardRef<
 })
 CarouselNext.displayName = "CarouselNext"
 
+const CarouselDots = React.forwardRef<
+  HTMLDivElement,
+  React.HTMLAttributes<HTMLDivElement>
+>(({ className, ...props }) => {
+  const { selectedIndex, scrollTo, api } = useCarousel()
+
+  return (
+    <div
+      className={cn(
+        "absolute flex items-center justify-center gap-4 mt-2 w-full",
+        className,
+      )}
+      {...props}
+    >
+      {api
+        ?.scrollSnapList()
+        .map((_, index) => (
+          <Button
+            key={index}
+            data-state={index === selectedIndex ? "current" : "default"}
+            className="p-0 h-3 w-3 rounded-full bg-gray-300 data-[state=current]:bg-gray-900 hover:bg-gray-300"
+            onClick={() => scrollTo(index)}
+            aria-label={`Navigate to slide ${index + 1}`}
+            aria-current={index === selectedIndex ? "true" : undefined}
+          />
+        ))}
+    </div>
+  )
+})
+CarouselDots.displayName = "CarouselDots"
+
 export {
   type CarouselApi,
   Carousel,
@@ -258,4 +300,5 @@ export {
   CarouselItem,
   CarouselPrevious,
   CarouselNext,
+  CarouselDots
 }
