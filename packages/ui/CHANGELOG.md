@@ -1,5 +1,11 @@
 # @inmediam/ui
 
+## 4.2.1
+
+### Patch Changes
+
+- update mobile details
+
 ## 4.2.0
 
 ### Minor Changes
