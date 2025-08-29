@@ -25,3 +25,26 @@ Install @inmediam/ui in your project:
 ```console
 npm install @inmediam/ui
 ```
+
+## Update new version
+
+1. **Create a changeset**
+Generate a changeset describing your changes:
+
+```console
+npm run changeset
+```
+
+2. **Version the packages**
+Apply the version updates to your packages:
+
+```console
+npm run version-packages
+```
+
+3. **Push changes to Git**
+Push the updated version and changesets to the main branch:
+
+```console
+git push origin main
+```
