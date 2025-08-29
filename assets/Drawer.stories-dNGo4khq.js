@@ -1,0 +1,11 @@
+import{j as e}from"./jsx-runtime-CqU-cyDI.js";import{W as d,aV as m,aW as x,B as r,aX as h,aY as u,aZ as j,a_ as p,a$ as f,b0 as w}from"./index-4HHqu6Oe.js";import{r as v}from"./index-CzSziqNJ.js";import{P as D}from"./plus-CBs8_IjY.js";import"./index-BFjp_sMt.js";import"./_commonjsHelpers-BosuxZz1.js";import"./extends-CF3RwP-h.js";/**
+ * @license lucide-react v0.330.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const y=d("Minus",[["path",{d:"M5 12h14",key:"1ays0h"}]]),_={title:"Drawer"};function C(){const[s,o]=v.useState(350);function n(c){o(Math.max(200,Math.min(400,s+c)))}return e.jsxs(m,{children:[e.jsx(x,{asChild:!0,children:e.jsx(r,{variant:"outline",children:"Open Drawer"})}),e.jsx(h,{children:e.jsxs("div",{className:"mx-auto w-full max-w-sm",children:[e.jsxs(u,{children:[e.jsx(j,{children:"Move Goal"}),e.jsx(p,{children:"Set your daily activity goal."})]}),e.jsxs("div",{className:"p-4 pb-0",children:[e.jsxs("div",{className:"flex items-center justify-center space-x-2",children:[e.jsxs(r,{variant:"outline",size:"icon",className:"h-8 w-8 shrink-0 rounded-full",onClick:()=>n(-10),disabled:s<=200,children:[e.jsx(y,{}),e.jsx("span",{className:"sr-only",children:"Decrease"})]}),e.jsxs("div",{className:"flex-1 text-center",children:[e.jsx("div",{className:"text-7xl font-bold tracking-tighter",children:s}),e.jsx("div",{className:"text-[0.70rem] uppercase text-muted-foreground",children:"Calories/day"})]}),e.jsxs(r,{variant:"outline",size:"icon",className:"h-8 w-8 shrink-0 rounded-full",onClick:()=>n(10),disabled:s>=400,children:[e.jsx(D,{}),e.jsx("span",{className:"sr-only",children:"Increase"})]})]}),e.jsx("div",{className:"mt-3 h-[120px]"})]}),e.jsxs(f,{children:[e.jsx(r,{children:"Submit"}),e.jsx(w,{asChild:!0,children:e.jsx(r,{variant:"outline",children:"Cancel"})})]})]})})]})}const a={args:{},render:()=>e.jsx(C,{})};var i,t,l;a.parameters={...a.parameters,docs:{...(i=a.parameters)==null?void 0:i.docs,source:{originalSource:`{
+  args: {},
+  render: () => {
+    return <RenderComponent />;
+  }
+}`,...(l=(t=a.parameters)==null?void 0:t.docs)==null?void 0:l.source}}};const E=["Primary"];export{a as Primary,E as __namedExportsOrder,_ as default};

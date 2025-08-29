@@ -1,0 +1,7 @@
+import{j as t}from"./jsx-runtime-CqU-cyDI.js";import{B as a,C as o}from"./index-4HHqu6Oe.js";import"./index-CzSziqNJ.js";import"./_commonjsHelpers-BosuxZz1.js";import"./index-BFjp_sMt.js";import"./extends-CF3RwP-h.js";const y={title:"Button",component:a,args:{variant:"default",size:"default",children:"Button CTA"}},d=r=>t.jsx(a,{className:"w-fit",...r}),e={render:r=>t.jsxs(a,{className:"w-fit",...r,children:[t.jsx(o,{className:"w-4"})," ",r.children," ",t.jsx(o,{className:"w-4"})]})},s=d.bind({});s.args={variant:"success",size:"default"};s.argTypes={variant:{options:["default","secondary","success","warning","destructive","outline","ghost","link"],control:{type:"select"}},size:{options:["default","xs","sm","lg"],control:{type:"select"}}};var n,c,i;e.parameters={...e.parameters,docs:{...(n=e.parameters)==null?void 0:n.docs,source:{originalSource:`{
+  render: args => {
+    return <Button className="w-fit" {...args}>
+        <Circle className="w-4" /> {args.children} <Circle className="w-4" />
+      </Button>;
+  }
+}`,...(i=(c=e.parameters)==null?void 0:c.docs)==null?void 0:i.source}}};var l,m,u;s.parameters={...s.parameters,docs:{...(l=s.parameters)==null?void 0:l.docs,source:{originalSource:'(args: ButtonProps) => <Button className="w-fit" {...args} />',...(u=(m=s.parameters)==null?void 0:m.docs)==null?void 0:u.source}}};const N=["Primary","Playground"];export{s as Playground,e as Primary,N as __namedExportsOrder,y as default};
