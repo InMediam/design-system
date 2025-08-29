@@ -23,8 +23,8 @@ module.exports = function (app, options) {
     theme: {
       screens: {
         xs: '475px',
-        sm: '650px',
-        md: '868px',
+        sm: '640px',
+        md: '768px',
         lg: '1024px',
         xl: '1280px',
       },
@@ -52,6 +52,9 @@ module.exports = function (app, options) {
       extend: {
         fontFamily: {
           sans: ['Inter', 'sans-serif']
+        },
+        lineHeight: {
+          '4.5': '18px',
         },
         colors: {
           "gray-25": "hsl(var(--gray-25))",
