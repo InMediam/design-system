@@ -4,12 +4,15 @@ permissions:
   contents: write
   issues: write
   pull-requests: write
+  id-token: write
 
 on:
   push:
     branches:
       - main
+
 concurrency: ${{ github.workflow }}-${{ github.ref }}
+
 jobs:
   release:
     name: Release
@@ -17,13 +20,16 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 20
+          node-version: 22
           cache: 'npm'
           cache-dependency-path: '**/package-lock.json'
+
       - run: npm ci
+
       - name: Publish to NPM
         id: changesets
         uses: changesets/action@v1
@@ -31,4 +37,3 @@ jobs:
           publish: npm run release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
