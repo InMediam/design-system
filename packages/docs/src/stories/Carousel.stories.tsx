@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from "@storybook/react"
-import { Card, CardContent, CarouselDots } from "@inmediam/ui"
+import { Card, CardContent, CarouselDots, CarouselDotsProps } from "@inmediam/ui"
 import {
   Carousel,
   CarouselContent,
@@ -13,11 +13,12 @@ export default {
   title: 'Carousel',
   args: {
     orientation: "horizontal",
+    size: "sm"
   }
 } as Meta<CarouselProps>
 
-export const Primary: StoryObj<CarouselProps> = {
-  render: (args) => {
+export const Primary: StoryObj<CarouselProps & CarouselDotsProps> = {
+  render: ({ size, ...args }) => {
     return (
       <div className="flex items-center justify-center">
         <Carousel {...args} className="w-full max-w-xs">
@@ -36,21 +37,25 @@ export const Primary: StoryObj<CarouselProps> = {
           </CarouselContent>
           <CarouselPrevious />
           <CarouselNext />
-          <CarouselDots />
+          <CarouselDots size={size} />
         </Carousel>
       </div>
     )
   },
 }
 
-export const Playground: StoryObj<CarouselProps> = {
+export const Playground: StoryObj<CarouselProps & CarouselDotsProps> = {
   argTypes: {
     orientation: {
       options: ["horizontal", "vertical"],
       control: { type: 'select' }
     },
+    size: {
+      options: ["sm", "md", "lg", "xl"],
+      control: { type: 'select' }
+    },
   },
-  render: (args) => {
+  render: ({ size, ...args }) => {
     return (
       <div className="flex items-center justify-center">
         <Carousel {...args} className="w-full max-w-xs">
@@ -69,7 +74,7 @@ export const Playground: StoryObj<CarouselProps> = {
           </CarouselContent>
           <CarouselPrevious />
           <CarouselNext />
-          <CarouselDots />
+          <CarouselDots size={size} />
         </Carousel>
       </div>
     )

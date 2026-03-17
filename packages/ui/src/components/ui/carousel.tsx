@@ -7,6 +7,7 @@ import useEmblaCarousel, {
 import { cn } from "../../lib/utils"
 import { Button } from "./button"
 import { ArrowLeftIcon, ArrowRightIcon } from "@radix-ui/react-icons"
+import { cva, VariantProps } from "class-variance-authority"
 
 type CarouselApi = UseEmblaCarouselType[1]
 type UseCarouselParameters = Parameters<typeof useEmblaCarousel>
@@ -262,10 +263,30 @@ const CarouselNext = React.forwardRef<
 })
 CarouselNext.displayName = "CarouselNext"
 
+const dotsVariants = cva(
+  "p-0 rounded-full bg-gray-300 data-[state=current]:bg-gray-900 hover:bg-gray-300",
+  {
+    variants: {
+      size: {
+        sm: 'h-2 w-2',
+        md: 'h-3 w-3',
+        lg: 'h-4 w-4',
+        xl: 'h-5 w-5',
+      },
+    },
+    defaultVariants: {
+      size: 'sm',
+    },
+  },
+)
+
+export interface CarouselDotsProps
+  extends React.ButtonHTMLAttributes<HTMLDivElement>, VariantProps<typeof dotsVariants> { }
+
 const CarouselDots = React.forwardRef<
   HTMLDivElement,
-  React.HTMLAttributes<HTMLDivElement>
->(({ className, ...props }) => {
+  CarouselDotsProps
+>(({ className, size, ...props }) => {
   const { selectedIndex, scrollTo, api } = useCarousel()
 
   return (
@@ -282,7 +303,7 @@ const CarouselDots = React.forwardRef<
           <Button
             key={index}
             data-state={index === selectedIndex ? "current" : "default"}
-            className="p-0 h-3 w-3 rounded-full bg-gray-300 data-[state=current]:bg-gray-900 hover:bg-gray-300"
+            className={cn(dotsVariants({ size }))}
             onClick={() => scrollTo(index)}
             aria-label={`Navigate to slide ${index + 1}`}
             aria-current={index === selectedIndex ? "true" : undefined}
@@ -300,5 +321,5 @@ export {
   CarouselItem,
   CarouselPrevious,
   CarouselNext,
-  CarouselDots
+  CarouselDots,
 }
