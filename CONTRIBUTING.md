@@ -35,7 +35,7 @@ design-system/
 └── package.json
 ```
 
-The source for all components lives in `packages/ui/src/`. The Storybook stories live in `packages/docs/`.
+The source for all components lives in `packages/ui/src/components/ui/`. The Storybook stories live in `packages/docs/`.
 
 ---
 
@@ -99,11 +99,11 @@ Examples: `feat/tooltip-component`, `fix/button-disabled-state`, `docs/update-ge
 
 ## Making Changes
 
-All components live in `packages/ui/src/`. When adding or modifying a component:
+All components live in `packages/ui/src/components/ui/`. When adding or modifying a component:
 
-- **Component file:** `packages/ui/src/components/MyComponent/MyComponent.tsx`
+- **Component file:** `packages/ui/src/components/ui/MyComponent.tsx`
 - **Story file:** `packages/docs/src/stories/MyComponent.stories.tsx`
-- **Exports:** make sure the component is exported from `packages/ui/src/index.ts`
+- **Exports:** make sure the component is exported from `packages/ui/src/index.tsx`
 
 When writing stories, follow the existing patterns in `packages/docs/src/stories/`. Each story should demonstrate the main variants and states of the component.
 
