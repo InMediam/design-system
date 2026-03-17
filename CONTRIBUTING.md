@@ -119,6 +119,12 @@ Run this from the root of the repository:
 npm run changeset
 ```
 
+Apply the version updates to your packages:
+
+```bash
+npm run version-packages
+```
+
 Follow the interactive prompts:
 
 1. **Select the package(s) affected** — typically `@inmediam/ui`
