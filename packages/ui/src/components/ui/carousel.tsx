@@ -7,6 +7,7 @@ import useEmblaCarousel, {
 import { cn } from "../../lib/utils"
 import { Button } from "./button"
 import { ArrowLeftIcon, ArrowRightIcon } from "@radix-ui/react-icons"
+import { cva, VariantProps } from "class-variance-authority"
 
 type CarouselApi = UseEmblaCarouselType[1]
 type UseCarouselParameters = Parameters<typeof useEmblaCarousel>
@@ -262,57 +263,55 @@ const CarouselNext = React.forwardRef<
 })
 CarouselNext.displayName = "CarouselNext"
 
-const DOT_SIZE_CLASSES = {
-  1: "h-1 w-1",
-  2: "h-2 w-2",
-  3: "h-3 w-3",
-  4: "h-4 w-4",
-  5: "h-5 w-5",
-} as const
-
-export type CarouselDotsDotSize = 1 | 2 | 3 | 4 | 5
-
-export type CarouselDotsProps = React.HTMLAttributes<HTMLDivElement> & {
-  dotSize?: CarouselDotsDotSize
-}
-
-const CarouselDots = React.forwardRef<HTMLDivElement, CarouselDotsProps>(
-  ({ className, dotSize = 3, ...props }, ref) => {
-    const { selectedIndex, scrollTo, api } = useCarousel()
-
-    const sizeClass =
-      DOT_SIZE_CLASSES[
-        Math.min(5, Math.max(1, dotSize)) as CarouselDotsDotSize
-      ]
-
-    return (
-      <div
-        ref={ref}
-        className={cn(
-          "absolute flex items-center justify-center gap-4 mt-2 w-full",
-          className,
-        )}
-        {...props}
-      >
-        {api
-          ?.scrollSnapList()
-          .map((_, index) => (
-            <Button
-              key={index}
-              data-state={index === selectedIndex ? "current" : "default"}
-              className={cn(
-                "p-0 rounded-full bg-gray-300 data-[state=current]:bg-gray-900 hover:bg-gray-300",
-                sizeClass,
-              )}
-              onClick={() => scrollTo(index)}
-              aria-label={`Navigate to slide ${index + 1}`}
-              aria-current={index === selectedIndex ? "true" : undefined}
-            />
-          ))}
-      </div>
-    )
-  }
+const dotsVariants = cva(
+  "p-0 rounded-full bg-gray-300 data-[state=current]:bg-gray-900 hover:bg-gray-300",
+  {
+    variants: {
+      size: {
+        sm: 'h-2 w-2',
+        md: 'h-3 w-3',
+        lg: 'h-4 w-4',
+        xl: 'h-5 w-5',
+      },
+    },
+    defaultVariants: {
+      size: 'sm',
+    },
+  },
 )
+
+export interface CarouselDotsProps
+  extends React.ButtonHTMLAttributes<HTMLDivElement>, VariantProps<typeof dotsVariants> { }
+
+const CarouselDots = React.forwardRef<
+  HTMLDivElement,
+  CarouselDotsProps
+>(({ className, size, ...props }) => {
+  const { selectedIndex, scrollTo, api } = useCarousel()
+
+  return (
+    <div
+      className={cn(
+        "absolute flex items-center justify-center gap-4 mt-2 w-full",
+        className,
+      )}
+      {...props}
+    >
+      {api
+        ?.scrollSnapList()
+        .map((_, index) => (
+          <Button
+            key={index}
+            data-state={index === selectedIndex ? "current" : "default"}
+            className={cn(dotsVariants({ size }))}
+            onClick={() => scrollTo(index)}
+            aria-label={`Navigate to slide ${index + 1}`}
+            aria-current={index === selectedIndex ? "true" : undefined}
+          />
+        ))}
+    </div>
+  )
+})
 CarouselDots.displayName = "CarouselDots"
 
 export {
