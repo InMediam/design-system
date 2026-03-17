@@ -1,5 +1,21 @@
 # @inmediam/ui
 
+## 5.0.0
+
+### Major Changes
+
+- 085dd5f: [`054e15e`](https://github.com/InMediam/design-system/commit/054e15e527d68499f5dca96d3ca9258c75cfce5e) [#11](https://github.com/InMediam/design-system/pull/11) Remove TooltipProvider from SidebarProvider — consumers must provide TooltipProvider at app root when using SidebarMenuButton with tooltip
+
+### Minor Changes
+
+- 085dd5f: [`26eed3a`](https://github.com/InMediam/design-system/commit/26eed3aa287312e7e973535e7c3cb1316304b6c6) [#11](https://github.com/InMediam/design-system/pull/11) Improve Dialog responsiveness on mobile (full width, no border radius)
+- 085dd5f: [`d0ec617`](https://github.com/InMediam/design-system/commit/d0ec617641af9baa2f269c4df277ea6bc9b5cac3) [#11](https://github.com/InMediam/design-system/pull/11) Add MobileTabList component
+- 085dd5f: [`dd8ecae`](https://github.com/InMediam/design-system/commit/dd8ecae8afa714070c1d19d0025f5426892e9cd6) [#11](https://github.com/InMediam/design-system/pull/11) Add dotSize prop to CarouselDots (1-5)
+
+### Patch Changes
+
+- 085dd5f: [`a234dfc`](https://github.com/InMediam/design-system/commit/a234dfc82992c7e8a368da2059c6fb34211710e9) [#11](https://github.com/InMediam/design-system/pull/11) Improve repository and NPM package documentation
+
 ## 4.2.1
 
 ### Patch Changes
