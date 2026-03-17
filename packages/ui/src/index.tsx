@@ -23,6 +23,7 @@ export * from "./components/ui/input";
 export * from "./components/ui/inputItemsWrapper";
 export * from "./components/ui/label";
 export * from "./components/ui/menubar";
+export * from "./components/ui/mobile-tab-list";
 export * from "./components/ui/navigation-menu";
 export * from "./components/ui/popover";
 export * from "./components/ui/progress";
