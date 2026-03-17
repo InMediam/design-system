@@ -123,6 +123,7 @@ export const MobileTabList = React.forwardRef<
                       size="sm"
                       onClick={() => setIsSheetOpen(true)}
                       className="ml-5 gap-2 rounded-full border bg-background"
+                      aria-label="Open tab navigation"
                     >
                       <LayoutGrid className="h-5 w-5 text-gray-400" />
                     </Button>
