@@ -6,6 +6,10 @@
     "./*": "./*",
     "./vite": "./vite"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/InMediam/design-system"
+  },
   "scripts": {
     "lint": "eslint . --cache"
   },

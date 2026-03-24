@@ -4,26 +4,33 @@ permissions:
   contents: write
   issues: write
   pull-requests: write
+  id-token: write
 
 on:
   push:
     branches:
       - main
+
 concurrency: ${{ github.workflow }}-${{ github.ref }}
+
 jobs:
   release:
     name: Release
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v6
+
       - name: Setup Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v6
         with:
-          node-version: 20
+          node-version: 24
           cache: 'npm'
           cache-dependency-path: '**/package-lock.json'
-      - run: npm ci
+
+      - name: Install dependencies
+        run: npm ci
+
       - name: Publish to NPM
         id: changesets
         uses: changesets/action@v1
@@ -31,4 +38,4 @@ jobs:
           publish: npm run release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NPM_CONFIG_PROVENANCE: true
