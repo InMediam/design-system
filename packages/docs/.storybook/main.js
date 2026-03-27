@@ -4,6 +4,7 @@ module.exports = {
     "../src/stories/**/*.stories.tsx"
   ],
   "addons": [
+    "@storybook/addon-themes",
     "@storybook/addon-links",
     "@storybook/addon-essentials",
     "@chromatic-com/storybook",
