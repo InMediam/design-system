@@ -1,10 +1,9 @@
 import '@inmediam/ui/styles'
 
 import { withThemeByClassName } from '@storybook/addon-themes'
-import type { Preview } from '@storybook/react'
-import { useEffect } from 'react'
+import React, { useEffect } from 'react'
 
-const preview: Preview = {
+const preview = {
   parameters: {
     controls: {
       matchers: {
@@ -13,7 +12,7 @@ const preview: Preview = {
       },
     },
     backgrounds: {
-      disable: true,
+      disabled: true,
     },
   },
   decorators: [
@@ -24,7 +23,7 @@ const preview: Preview = {
       },
       defaultTheme: 'light',
     }),
-    (Story) => {
+    (Story: React.ComponentType) => {
       useEffect(() => {
         document.body.style.backgroundColor = 'hsl(var(--background))'
       })
