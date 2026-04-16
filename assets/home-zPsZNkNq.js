@@ -1,0 +1,3 @@
+import{n as e}from"./chunk-BneVvdWh.js";import{t}from"./iframe-B2WyFcD1.js";import{a as n,o as r}from"./blocks-CpURkrmF.js";import{r as i,t as a}from"./react-BDyjq9Ke.js";var o=e((()=>{a()}));function s(e){let t={h1:`h1`,p:`p`,...i(),...e.components};return(0,l.jsxs)(l.Fragment,{children:[(0,l.jsx)(n,{title:`Home`}),`
+`,(0,l.jsx)(t.h1,{id:`inmediam`,children:`InMediam`}),`
+`,(0,l.jsx)(t.p,{children:`Design System da InMediam.`})]})}function c(e={}){let{wrapper:t}={...i(),...e.components};return t?(0,l.jsx)(t,{...e,children:(0,l.jsx)(s,{...e})}):s(e)}var l;e((()=>{l=t(),o(),r()}))();export{c as default};
