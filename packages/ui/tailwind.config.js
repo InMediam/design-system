@@ -70,8 +70,6 @@ module.exports = function (app, options) {
           "gray-900": "hsl(var(--gray-900))",
           "gray-950": "hsl(var(--gray-950))",
 
-          "gray-neutral-200": "hsl(var(--gray-neutral-200))",
-          
           "brand-25": "hsl(var(--brand-25))",
           "brand-50": "hsl(var(--brand-50))",
           "brand-100": "hsl(var(--brand-100))",

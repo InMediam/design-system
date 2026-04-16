@@ -1,9 +1,7 @@
 module.exports = {
   root: true,
   // This tells ESLint to load the config from the package `eslint-config-custom`
-  extends: [  
-    'eslint:recommended'
-  ],
+  extends: ["eslint:recommended", "plugin:storybook/recommended"],
   settings: {
     next: {
       rootDir: ["apps/*/"],
