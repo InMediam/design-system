@@ -129,6 +129,7 @@ module.exports = function (app, options) {
           "chart-5": "hsl(var(--chart-5))",
 
           "sidebar": "hsl(var(--sidebar))",
+          "sidebar-background": "hsl(var(--sidebar-background))",
           "sidebar-foreground": "hsl(var(--sidebar-foreground))",
           "sidebar-border": "hsl(var(--sidebar-border))",
           "sidebar-ring": "hsl(var(--sidebar-ring))",
