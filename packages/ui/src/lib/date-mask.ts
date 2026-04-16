@@ -41,6 +41,12 @@ export function applyDateMask(
 ): { masked: string; cursor: number } {
   let digits = rawInput.replace(/\D/g, "").slice(0, 8)
   const prevDigits = prevMasked.replace(/\D/g, "")
+
+  // Quando o usuário apaga um separador "/", também remove o dígito antes dele
+  if (digits.length === prevDigits.length && rawInput.length < prevMasked.length) {
+    digits = digits.slice(0, -1)
+  }
+
   const isDeleting = digits.length < prevDigits.length
 
   // Auto-zero-pad do dia quando o primeiro dígito > 3
@@ -48,9 +54,19 @@ export function applyDateMask(
     digits = "0" + digits
   }
 
+  // Limita o dia a no máximo 31
+  if (!isDeleting && digits.length >= 2 && digits[0] === "3" && Number(digits[1]) > 1) {
+    digits = "31" + digits.slice(2)
+  }
+
   // Auto-zero-pad do mês quando o primeiro dígito > 1
   if (!isDeleting && digits.length === 3 && Number(digits[2]) > 1) {
     digits = digits.slice(0, 2) + "0" + digits[2]
+  }
+
+  // Limita o mês a no máximo 12
+  if (!isDeleting && digits.length >= 4 && digits[2] === "1" && Number(digits[3]) > 2) {
+    digits = digits.slice(0, 2) + "12" + digits.slice(4)
   }
 
   let masked: string
