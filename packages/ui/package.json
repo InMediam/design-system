@@ -10,7 +10,7 @@
     ".": "./src/index.tsx",
     "./tailwind": "./tailwind.config.js",
     "./postcss": "./postcss.config.js",
-    "./style": "./style/styles.css"
+    "./styles": "./src/global.css"
   },
   "repository": {
     "type": "git",
