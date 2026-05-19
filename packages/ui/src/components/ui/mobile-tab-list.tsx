@@ -199,7 +199,7 @@ export const MobileTabList = React.forwardRef<
                       className={cn(
                         "flex h-9 w-9 items-center justify-center rounded-lg transition-colors",
                         isActive
-                          ? "bg-brand-quaterary-on-brand"
+                          ? "bg-brand-quaterary"
                           : "bg-tertiary text-tertiary group-hover:bg-brand-secondary group-hover:text-brand-tertiary"
                       )}
                     >

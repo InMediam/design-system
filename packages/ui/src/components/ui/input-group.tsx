@@ -63,7 +63,7 @@ const inputGroupButtonVariants = cva(
   {
     variants: {
       variant: {
-        default: 'bg-brand-tertiary-on-brand hover:bg-brand-quaterary',
+        default: 'bg-brand-tertiary hover:bg-brand-quaterary',
         ghost: 'hover:bg-secondary-hover',
         outline: 'border border-primary bg-primary hover:bg-secondary-hover',
       },
