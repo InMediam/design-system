@@ -275,24 +275,24 @@ Os tokens abaixo foram exportados da collection **Colors** no Figma — modos `L
   --bg-brand-primary: 54.5 91.7% 95.3%;        /* yellow-50 */
   --bg-brand-primary-alt: 54.5 91.7% 95.3%;
   --bg-brand-secondary: 54.9 96.7% 88%;        /* yellow-100 */
-  --bg-brand-tertiary-solid: 47.9 95.8% 53.1%; /* yellow-400 — fixo */
-  --bg-brand-quaterary-solid: 45.4 93.4% 47.5%;/* yellow-500 — fixo */
-  --bg-brand-solid: 40.6 96.1% 40.4%;          /* yellow-600 — botão primary */
-  --bg-brand-solid-hover: 35.5 91.7% 32.9%;
+  --bg-brand-tertiary: 47.9 95.8% 53.1%; /* yellow-400 — fixo */
+  --bg-brand-quaterary: 45.4 93.4% 47.5%;/* yellow-500 — fixo */
+  --bg-brand: 40.6 96.1% 40.4%;          /* yellow-600 — botão primary */
+  --bg-brand-hover: 35.5 91.7% 32.9%;
   --bg-brand-section: 31.8 81% 28.8%;
   --bg-brand-section-subtle: 35.5 91.7% 32.9%;
 
   /* Status */
   --bg-error-primary: 0 85.7% 97.3%;           /* red-50 */
   --bg-error-secondary: 0 93.3% 94.1%;         /* red-100 */
-  --bg-error-solid: 0 72.2% 50.6%;             /* red-600 — fixo */
-  --bg-error-solid-hover: 0 73.7% 41.8%;
+  --bg-error: 0 72.2% 50.6%;             /* red-600 — fixo */
+  --bg-error-hover: 0 73.7% 41.8%;
   --bg-warning-primary: 33.3 100% 96.5%;       /* orange-50 */
   --bg-warning-secondary: 34.3 100% 91.8%;     /* orange-100 */
-  --bg-warning-solid: 20.5 90.2% 48.2%;        /* orange-600 — fixo */
+  --bg-warning: 20.5 90.2% 48.2%;        /* orange-600 — fixo */
   --bg-success-primary: 138.5 76.5% 96.7%;     /* green-50 */
   --bg-success-secondary: 140.6 84.2% 92.5%;   /* green-100 */
-  --bg-success-solid: 142.1 76.2% 36.3%;       /* green-600 — fixo */
+  --bg-success: 142.1 76.2% 36.3%;       /* green-600 — fixo */
 }
 
 .dark {
@@ -311,23 +311,23 @@ Os tokens abaixo foram exportados da collection **Colors** no Figma — modos `L
   --bg-brand-primary: 45.4 93.4% 47.5%;
   --bg-brand-primary-alt: 0 0% 9%;
   --bg-brand-secondary: 0 0% 14.9%;
-  --bg-brand-tertiary-solid: 47.9 95.8% 53.1%;
-  --bg-brand-quaterary-solid: 45.4 93.4% 47.5%;
-  --bg-brand-solid: 40.6 96.1% 40.4%;
-  --bg-brand-solid-hover: 45.4 93.4% 47.5%;
+  --bg-brand-tertiary: 47.9 95.8% 53.1%;
+  --bg-brand-quaterary: 45.4 93.4% 47.5%;
+  --bg-brand: 40.6 96.1% 40.4%;
+  --bg-brand-hover: 45.4 93.4% 47.5%;
   --bg-brand-section: 0 0% 9%;
   --bg-brand-section-subtle: 0 0% 3.9%;
 
   --bg-error-primary: 0 74.7% 15.5%;
   --bg-error-secondary: 0 72.2% 50.6%;
-  --bg-error-solid: 0 72.2% 50.6%;
-  --bg-error-solid-hover: 0 84.2% 60.2%;
+  --bg-error: 0 72.2% 50.6%;
+  --bg-error-hover: 0 84.2% 60.2%;
   --bg-warning-primary: 0 74.7% 15.5%;
   --bg-warning-secondary: 20.5 90.2% 48.2%;
-  --bg-warning-solid: 20.5 90.2% 48.2%;
+  --bg-warning: 20.5 90.2% 48.2%;
   --bg-success-primary: 144.9 80.4% 10%;
   --bg-success-secondary: 142.1 76.2% 36.3%;
-  --bg-success-solid: 142.1 76.2% 36.3%;
+  --bg-success: 142.1 76.2% 36.3%;
 }
 ```
 
@@ -380,7 +380,7 @@ Para manter compatibilidade com componentes shadcn existentes, criamos aliases q
   --popover-foreground: var(--text-primary);
 
   /* Primary = Brand sólido (yellow-600) */
-  --primary: var(--bg-brand-solid);
+  --primary: var(--bg-brand);
   --primary-foreground: var(--text-primary-on-brand);
 
   /* Secondary = Hierarquia neutra secundária */
@@ -396,7 +396,7 @@ Para manter compatibilidade com componentes shadcn existentes, criamos aliases q
   --accent-foreground: var(--text-primary);
 
   /* Destructive = Error sólido (red-600) */
-  --destructive: var(--bg-error-solid);
+  --destructive: var(--bg-error);
   --destructive-foreground: var(--text-white);
 
   /* Bordas e ring */
@@ -419,7 +419,7 @@ Para manter compatibilidade com componentes shadcn existentes, criamos aliases q
 | `--foreground` | `--text-primary` | gray-900 |
 | `--card` | `--bg-primary` | white |
 | `--popover` | `--bg-primary` | white |
-| `--primary` | `--bg-brand-solid` | yellow-600 |
+| `--primary` | `--bg-brand` | yellow-600 |
 | `--primary-foreground` | `--text-primary-on-brand` | white |
 | `--secondary` | `--bg-secondary` | gray-50 |
 | `--secondary-foreground` | `--text-secondary` | gray-700 |
@@ -427,7 +427,7 @@ Para manter compatibilidade com componentes shadcn existentes, criamos aliases q
 | `--muted-foreground` | `--text-tertiary` | gray-600 |
 | `--accent` | `--bg-secondary-hover` | gray-100 |
 | `--accent-foreground` | `--text-primary` | gray-900 |
-| `--destructive` | `--bg-error-solid` | red-600 |
+| `--destructive` | `--bg-error` | red-600 |
 | `--destructive-foreground` | `--text-white` | white |
 | `--border` | `--border-secondary` | gray-200 |
 | `--input` | `--border-primary` | gray-300 |
@@ -566,11 +566,11 @@ Tabelas de substituição **validadas por HSL** contra a collection `Colors` do 
 | `text-orange-600` (`warning-600`) | text | `text-warning-primary` | Badge warning text, contestacao text |
 | `text-orange-600` (`warning-600`) | icon | `text-fg-warning-primary` | Alert icons, contestacao icons |
 
-> **Gap na palette Figma:** a família `warning` **não tem tokens de borda** (`border-warning-*`). Para bordas warning, use `border-secondary` neutro ou `border-[hsl(var(--bg-warning-solid))]` via arbitrary value.
+> **Gap na palette Figma:** a família `warning` **não tem tokens de borda** (`border-warning-*`). Para bordas warning, use `border-secondary` neutro ou `border-[hsl(var(--bg-warning))]` via arbitrary value.
 
 > **Sem mapeamento direto para `warning-25`, `-200`, `-300`, `-500` (bg) e `-700` (text):** se houver uso, mapear contextualmente:
 > - `warning-25` → `bg-warning-primary` (mesmo token, light variation aceitável)
-> - `border-warning-200` → `border-secondary` (sutil) ou `border-[hsl(var(--bg-warning-solid))]`
+> - `border-warning-200` → `border-secondary` (sutil) ou `border-[hsl(var(--bg-warning))]`
 > - `bg-warning-500` → `bg-warning-solid` (uso similar)
 > - `text-warning-700` → `text-warning-primary` (não há tom mais escuro no Figma)
 
@@ -585,11 +585,11 @@ Tabelas de substituição **validadas por HSL** contra a collection `Colors` do 
 | `text-green-600` (`success-600`) | text | `text-success-primary` | Email success, positive values |
 | `text-green-600` (`success-600`) | icon | `text-fg-success-primary` | Alert icons, check icons |
 
-> **Gap na palette Figma:** a família `success` **não tem tokens de borda** (`border-success-*`). Para bordas success, use `border-secondary` neutro ou `border-[hsl(var(--bg-success-solid))]` via arbitrary value.
+> **Gap na palette Figma:** a família `success` **não tem tokens de borda** (`border-success-*`). Para bordas success, use `border-secondary` neutro ou `border-[hsl(var(--bg-success))]` via arbitrary value.
 
 > **Sem mapeamento direto para `success-25`, `-200`, `-300`, `-700`:** se houver uso, mapear contextualmente:
 > - `success-25` → `bg-success-primary` (mesmo token)
-> - `border-success-200` → `border-secondary` (sutil) ou `border-[hsl(var(--bg-success-solid))]`
+> - `border-success-200` → `border-secondary` (sutil) ou `border-[hsl(var(--bg-success))]`
 > - `text-success-700` → `text-success-primary` (não há tom mais escuro no Figma)
 
 ### 4.5.6 Primitivas diretas no `vistoriador`
@@ -717,12 +717,12 @@ Para cada arquivo:
 
 **Depois (com borda colorida via arbitrary value):**
 ```tsx
-<span className="bg-success-primary text-success-primary border border-[hsl(var(--bg-success-solid))]">
+<span className="bg-success-primary text-success-primary border border-[hsl(var(--bg-success))]">
   Ativo
 </span>
 ```
 
-> ⚠️ **Gap conhecido na palette Figma:** as famílias `success` e `warning` **não definem tokens de borda** (`border-success-*`, `border-warning-*` não existem). Opções: (a) usar `border-secondary` neutro, (b) usar `arbitrary value` reaproveitando o solid `border-[hsl(var(--bg-success-solid))]`, ou (c) solicitar ao time de design a criação de tokens de borda success/warning no Figma.
+> ⚠️ **Gap conhecido na palette Figma:** as famílias `success` e `warning` **não definem tokens de borda** (`border-success-*`, `border-warning-*` não existem). Opções: (a) usar `border-secondary` neutro, (b) usar `arbitrary value` reaproveitando o solid `border-[hsl(var(--bg-success))]`, ou (c) solicitar ao time de design a criação de tokens de borda success/warning no Figma.
 
 ### 5.5 Input com Error
 
@@ -868,22 +868,22 @@ module.exports = {
           "brand-primary": "hsl(var(--bg-brand-primary))",
           "brand-primary-alt": "hsl(var(--bg-brand-primary-alt))",
           "brand-secondary": "hsl(var(--bg-brand-secondary))",
-          "brand-tertiary-solid": "hsl(var(--bg-brand-tertiary-solid))",
-          "brand-quaterary-solid": "hsl(var(--bg-brand-quaterary-solid))",
-          "brand-solid": "hsl(var(--bg-brand-solid))",
-          "brand-solid-hover": "hsl(var(--bg-brand-solid-hover))",
+          "brand-tertiary-solid": "hsl(var(--bg-brand-tertiary))",
+          "brand-quaterary-solid": "hsl(var(--bg-brand-quaterary))",
+          "brand-solid": "hsl(var(--bg-brand))",
+          "brand-solid-hover": "hsl(var(--bg-brand-hover))",
           "brand-section": "hsl(var(--bg-brand-section))",
           "brand-section-subtle": "hsl(var(--bg-brand-section-subtle))",
           "error-primary": "hsl(var(--bg-error-primary))",
           "error-secondary": "hsl(var(--bg-error-secondary))",
-          "error-solid": "hsl(var(--bg-error-solid))",
-          "error-solid-hover": "hsl(var(--bg-error-solid-hover))",
+          "error-solid": "hsl(var(--bg-error))",
+          "error-solid-hover": "hsl(var(--bg-error-hover))",
           "warning-primary": "hsl(var(--bg-warning-primary))",
           "warning-secondary": "hsl(var(--bg-warning-secondary))",
-          "warning-solid": "hsl(var(--bg-warning-solid))",
+          "warning-solid": "hsl(var(--bg-warning))",
           "success-primary": "hsl(var(--bg-success-primary))",
           "success-secondary": "hsl(var(--bg-success-secondary))",
-          "success-solid": "hsl(var(--bg-success-solid))",
+          "success-solid": "hsl(var(--bg-success))",
         },
 
         // ==========================================

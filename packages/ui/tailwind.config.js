@@ -71,22 +71,22 @@ module.exports = function (app, options) {
     "brand-primary": "hsl(var(--bg-brand-primary))",
     "brand-primary-alt": "hsl(var(--bg-brand-primary-alt))",
     "brand-secondary": "hsl(var(--bg-brand-secondary))",
-    "brand-tertiary-solid": "hsl(var(--bg-brand-tertiary-solid))",
-    "brand-quaterary-solid": "hsl(var(--bg-brand-quaterary-solid))",
-    "brand-solid": "hsl(var(--bg-brand-solid))",
-    "brand-solid-hover": "hsl(var(--bg-brand-solid-hover))",
+    "brand-tertiary": "hsl(var(--bg-brand-tertiary))",
+    "brand-quaterary": "hsl(var(--bg-brand-quaterary))",
+    "brand": "hsl(var(--bg-brand))",
+    "brand-hover": "hsl(var(--bg-brand-hover))",
     "brand-section": "hsl(var(--bg-brand-section))",
     "brand-section-subtle": "hsl(var(--bg-brand-section-subtle))",
     "error-primary": "hsl(var(--bg-error-primary))",
     "error-secondary": "hsl(var(--bg-error-secondary))",
-    "error-solid": "hsl(var(--bg-error-solid))",
-    "error-solid-hover": "hsl(var(--bg-error-solid-hover))",
+    "error": "hsl(var(--bg-error))",
+    "error-hover": "hsl(var(--bg-error-hover))",
     "warning-primary": "hsl(var(--bg-warning-primary))",
     "warning-secondary": "hsl(var(--bg-warning-secondary))",
-    "warning-solid": "hsl(var(--bg-warning-solid))",
+    "warning": "hsl(var(--bg-warning))",
     "success-primary": "hsl(var(--bg-success-primary))",
     "success-secondary": "hsl(var(--bg-success-secondary))",
-    "success-solid": "hsl(var(--bg-success-solid))",
+    "success": "hsl(var(--bg-success))",
   }
 
   const borderTokens = {
@@ -98,6 +98,7 @@ module.exports = function (app, options) {
     "brand-alt": "hsl(var(--border-brand-alt))",
     error: "hsl(var(--border-error))",
     "error-subtle": "hsl(var(--border-error-subtle))",
+    warning: "hsl(var(--border-warning))",
   }
 
   // Shadcn alias colors. These still flow through `colors` so legacy
