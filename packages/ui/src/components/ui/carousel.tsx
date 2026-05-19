@@ -264,7 +264,7 @@ const CarouselNext = React.forwardRef<
 CarouselNext.displayName = "CarouselNext"
 
 const dotsVariants = cva(
-  "p-0 rounded-full bg-gray-300 data-[state=current]:bg-gray-900 hover:bg-gray-300",
+  "p-0 rounded-full bg-quaternary data-[state=current]:bg-overlay hover:bg-quaternary",
   {
     variants: {
       size: {

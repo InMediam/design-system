@@ -122,10 +122,10 @@ export const MobileTabList = React.forwardRef<
                       variant="outline"
                       size="sm"
                       onClick={() => setIsSheetOpen(true)}
-                      className="ml-5 gap-2 rounded-full border bg-background"
+                      className="ml-5 gap-2 rounded-full border border-primary bg-primary"
                       aria-label="Open tab navigation"
                     >
-                      <LayoutGrid className="h-5 w-5 text-gray-400" />
+                      <LayoutGrid className="h-5 w-5 text-fg-quaternary" />
                     </Button>
 
                     <Separator orientation="vertical" className="h-full" />
@@ -137,7 +137,7 @@ export const MobileTabList = React.forwardRef<
                     key={tab.id}
                     value={tab.value}
                     className={cn(
-                      "gap-2 rounded-full border bg-background data-[state=active]:border-brand-500 data-[state=active]:bg-brand-50 data-[state=active]:text-brand-900",
+                      "gap-2 rounded-full border border-primary bg-primary data-[state=active]:border-brand data-[state=active]:bg-brand-primary data-[state=active]:text-brand-primary",
                       index === 0 && !showNavigationButton && "ml-1",
                       index === tabs.length - 1 && "mr-1"
                     )}
@@ -166,16 +166,16 @@ export const MobileTabList = React.forwardRef<
           >
             <SheetHeader className="space-y-3 pb-4">
               <div className="flex items-center gap-3">
-                <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-brand-100 dark:bg-brand-900/20">
+                <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-brand-secondary">
                   {sheetIcon ?? (
-                    <Settings className="h-5 w-5 text-brand-600 dark:text-brand-400" />
+                    <Settings className="h-5 w-5 text-fg-brand-primary" />
                   )}
                 </div>
-                <SheetTitle className="text-xl font-semibold text-gray-900 dark:text-gray-100">
+                <SheetTitle className="text-xl font-semibold">
                   {sheetTitle}
                 </SheetTitle>
               </div>
-              <p className="text-sm text-gray-600 dark:text-gray-400">
+              <p className="text-sm text-tertiary">
                 {sheetDescription}
               </p>
             </SheetHeader>
@@ -189,18 +189,18 @@ export const MobileTabList = React.forwardRef<
                     type="button"
                     onClick={() => handleTabSelect(tab.value)}
                     className={cn(
-                      "group flex w-full items-center gap-3 rounded-lg border p-3 text-left transition-all hover:border-brand-300 hover:bg-brand-50 dark:hover:border-brand-700 dark:hover:bg-brand-900/10",
+                      "group flex w-full items-center gap-3 rounded-lg border p-3 text-left transition-all hover:border-brand hover:bg-brand-primary",
                       isActive
-                        ? "border-brand-500 bg-brand-50 dark:border-brand-500 dark:bg-brand-900/20"
-                        : "border-gray-200 bg-white dark:border-gray-700 dark:bg-gray-800"
+                        ? "border-brand bg-brand-primary"
+                        : "border-secondary bg-primary"
                     )}
                   >
                     <div
                       className={cn(
                         "flex h-9 w-9 items-center justify-center rounded-lg transition-colors",
                         isActive
-                          ? "bg-brand-500 text-white"
-                          : "bg-gray-100 text-gray-600 group-hover:bg-brand-100 group-hover:text-brand-600 dark:bg-gray-700 dark:text-gray-400 dark:group-hover:bg-brand-900/30 dark:group-hover:text-brand-400"
+                          ? "bg-brand-quaterary-on-brand"
+                          : "bg-tertiary text-tertiary group-hover:bg-brand-secondary group-hover:text-brand-tertiary"
                       )}
                     >
                       {tab.icon}
@@ -209,14 +209,14 @@ export const MobileTabList = React.forwardRef<
                       className={cn(
                         "flex-1 text-sm font-medium transition-colors",
                         isActive
-                          ? "text-brand-900 dark:text-brand-100"
-                          : "text-gray-700 group-hover:text-brand-900 dark:text-gray-300 dark:group-hover:text-brand-100"
+                          ? "text-brand-primary"
+                          : "text-secondary group-hover:text-brand-primary"
                       )}
                     >
                       {tab.label}
                     </span>
                     {isActive && (
-                      <div className="h-2 w-2 rounded-full bg-brand-500" />
+                      <div className="h-2 w-2 rounded-full bg-brand-quaterary" />
                     )}
                   </button>
                 )
