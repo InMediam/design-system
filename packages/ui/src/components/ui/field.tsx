@@ -21,7 +21,7 @@ function FieldLabel({ className, ...props }: FieldLabelProps) {
   return (
     <Label
       data-slot="field-label"
-      className={cn('text-sm font-medium text-gray-700', className)}
+      className={cn('text-sm font-medium text-secondary', className)}
       {...props}
     />
   )
