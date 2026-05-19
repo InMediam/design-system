@@ -269,6 +269,15 @@
     --sidebar-border: 240 3.7% 15.9%;
     --sidebar-ring: 43 93% 47%;
   }
+body {
+  @apply bg-background text-foreground;
+}
+
+*,
+::before,
+::after {
+  border-color: hsl(var(--border));
+}
 }
 
 @layer utilities {
