@@ -221,14 +221,14 @@ function NavMain({
                         data-active={isActive}
                       />
                       <div
-                        className="mr-1 text-gray-500 data-[icon=false]:hidden data-[active=true]:text-gray-600"
+                        className="mr-1 data-[icon=false]:hidden text-fg-quaternary"
                         data-icon={true}
                         data-active={isActive}
                       >
                         {main.icon}
                       </div>
                       <span
-                        className="text-sm font-medium text-gray-600 data-[open=false]:hidden data-[active=true]:group-data-[state=closed]/collapsible:font-semibold data-[active=true]:group-data-[state=closed]/collapsible:text-gray-800"
+                        className="text-sm font-medium text-secondary data-[open=false]:hidden data-[active=true]:group-data-[state=closed]/collapsible:font-semibold data-[active=true]:group-data-[state=closed]/collapsible:text-secondary-hover"
                         data-open={open}
                         data-active={isActive}
                       >
@@ -270,7 +270,7 @@ function NavMain({
                                 />
                                 <div className="flex w-full items-center justify-between pr-1">
                                   <span
-                                    className="whitespace-nowrap text-sm font-medium text-gray-600 data-[active=true]:font-semibold data-[active=true]:text-gray-800"
+                                    className="whitespace-nowrap text-sm font-medium text-gray-secondary data-[active=true]:font-semibold data-[active=true]:text-gray-secondary-hover"
                                     data-active={isItemActive}
                                   >
                                     {subItem.title}
@@ -311,13 +311,13 @@ function NavMain({
                   }}
                 >
                   <div
-                    className="text-gray-500 data-[active=true]:text-gray-600"
+                    className="text-fg-quaternary"
                     data-active={isActive}
                   >
                     {main.icon}
                   </div>
                   <span
-                    className="text-sm font-medium text-gray-600 data-[open=false]:hidden data-[active=true]:font-semibold data-[active=true]:text-gray-800"
+                    className="text-sm font-medium text-gray-secondary data-[open=false]:hidden data-[active=true]:font-semibold data-[active=true]:text-gray-secondary-hover"
                     data-open={open}
                     data-active={isActive}
                   >
@@ -381,13 +381,13 @@ function NavService({
                     }}
                   >
                     <div
-                      className="text-gray-500 data-[active=true]:text-gray-600"
+                      className="text-fg-quaternary"
                       data-active={isActive}
                     >
                       {main.icon}
                     </div>
                     <span
-                      className="text-sm font-medium text-gray-600 data-[open=false]:hidden data-[active=true]:font-semibold data-[active=true]:text-gray-800"
+                      className="text-sm font-medium text-secondary data-[open=false]:hidden data-[active=true]:font-semibold data-[active=true]:text-secondary-hover"
                       data-open={open}
                       data-active={isActive}
                     >
@@ -426,13 +426,13 @@ function NavService({
                       data-active={isActive}
                     />
                     <div
-                      className="mr-1 text-gray-500 data-[active=true]:text-gray-600"
+                      className="mr-1 text-fg-quaternary"
                       data-active={isActive}
                     >
                       {main.icon}
                     </div>
                     <span
-                      className="text-sm font-medium text-gray-600 data-[open=false]:hidden data-[active=true]:group-data-[state=closed]/collapsible:font-semibold data-[active=true]:group-data-[state=closed]/collapsible:text-gray-800"
+                     className="text-sm font-medium text-secondary data-[open=false]:hidden data-[active=true]:font-semibold data-[active=true]:text-secondary-hover"
                       data-open={open}
                       data-active={isActive}
                     >
@@ -473,7 +473,7 @@ function NavService({
                                 data-active={isItemActive}
                               />
                               <span
-                                className="whitespace-nowrap text-sm font-medium text-gray-600 data-[active=true]:font-semibold data-[active=true]:text-gray-800"
+                                className="whitespace-nowrap text-sm font-medium text-gray-secondary data-[active=true]:font-semibold data-[active=true]:text-gray-secondary-hover"
                                 data-active={isItemActive}
                               >
                                 {subItem.title}
@@ -534,13 +534,13 @@ function NavFooter({
                   }}
                 >
                   <div
-                    className="text-gray-500 data-[active=true]:text-gray-600"
+                    className="text-fg-quaternary"
                     data-active={isActive}
                   >
                     {main.icon}
                   </div>
                   <span
-                    className="whitespace-nowrap text-sm font-medium text-gray-600 data-[open=false]:hidden data-[active=true]:font-semibold"
+                    className="whitespace-nowrap text-sm font-medium text-gray-secondary data-[open=false]:hidden data-[active=true]:font-semibold"
                     data-open={open}
                     data-active={isActive}
                   >
@@ -554,7 +554,7 @@ function NavFooter({
                       data-open={open}
                     >
                       <Dot
-                        className="data-[ativo=true]:bg-success-500"
+                        className="bg-success dark:bg-success"
                         data-ativo={true}
                       />
                       <span className="font-semibold">online</span>
@@ -585,7 +585,7 @@ function SidebarButtonTrigger() {
         data-open={open}
       />
       <span
-        className="text-sm font-medium text-gray-600 data-[open=false]:hidden"
+        className="text-sm font-medium text-gray-secondary data-[open=false]:hidden"
         data-open={open}
       >
         Recolher menu

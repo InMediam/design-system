@@ -10,7 +10,7 @@ interface LabelProps extends React.ComponentPropsWithoutRef<typeof LabelPrimitiv
 }
 
 const labelVariants = cva(
-  'text-sm/5 font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-gray-700 dark:text-gray-400',
+  'text-sm/5 font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-secondary',
 )
 
 const Label = React.forwardRef<
@@ -24,7 +24,7 @@ const Label = React.forwardRef<
     {...props}
   >
     {props.children}
-    <span className="text-brand-600 data-[required=false]:hidden ml-[2px]" data-required={required}>*</span>
+    <span className="text-brand-tertiary data-[required=false]:hidden ml-[2px]" data-required={required}>*</span>
   </LabelPrimitive.Root>
 ))
 Label.displayName = LabelPrimitive.Root.displayName

@@ -1,5 +1,35 @@
 # @inmediam/ui
 
+## 6.0.0
+
+### Major Changes
+
+- Introduces dark mode and a new semantic color token system.
+
+  ### What changed
+
+  - Added a `.dark` theme and full dark-mode coverage across every UI primitive (button, input, dialog, calendar, table, sonner, tooltip, etc.).
+  - Replaced the flat primitive palette (`--gray-*`, `--brand-*`, `--error-*`, `--warning-*`, `--success-*`) with a semantic token system scoped by usage: `--text-*`, `--fg-*`, `--bg-*`, `--border-*`.
+  - Restructured `tailwind.config.js` so each utility family (`text-`, `bg-`, `border-`, `ring-`, `fill-`, `stroke-`) gets its own token map. This means `text-primary` and `bg-primary` can now resolve to **different** variables without colliding.
+  - Shadcn aliases (`--background`, `--foreground`, `--primary`, `--border`, `--ring`, etc.) are preserved and re-point at the new semantic tokens, so existing shadcn-based primitives keep working.
+
+  ### Why
+
+  The previous palette mixed primitive scales (`gray-500`) with semantic aliases (`primary`, `muted`) in a single flat namespace, which made dark mode impossible without rewriting every component. The new system separates intent (text vs. background vs. border) from raw color, allowing a single class like `bg-primary` to mean different things in light and dark themes and unblocking theming across the design system.
+
+  ### How to migrate
+
+  - Wrap your app or any subtree you want themed with `class="dark"` to opt into dark mode.
+  - Replace primitive utility usages with semantic equivalents:
+    - `text-gray-700`, `text-gray-500` → `text-primary` / `text-secondary` / `text-tertiary` / `text-quaternary`
+    - `bg-gray-50`, `bg-gray-100` → `bg-primary` / `bg-secondary` / `bg-tertiary`
+    - `border-gray-200` → `border-secondary` (or `border-primary` / `border-tertiary`)
+    - `text-brand-600`, `bg-brand-500` → `text-brand-primary` / `bg-brand` / `bg-brand-hover`
+    - `bg-error-500`, `text-error-600` → `bg-error` / `text-error-primary`
+    - Equivalent mappings exist for `warning-*` and `success-*`.
+  - For icons and other `currentColor` glyphs, use the `text-fg-*` family (`text-fg-primary`, `text-fg-brand-primary`, etc.) instead of `text-gray-*`.
+  - Shadcn-style classes (`bg-background`, `text-foreground`, `border-border`, `ring-ring`, `bg-card`, `text-muted-foreground`, `bg-destructive`) continue to work unchanged.
+
 ## 5.1.0
 
 ### Minor Changes
