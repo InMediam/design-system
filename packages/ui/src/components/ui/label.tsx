@@ -24,7 +24,7 @@ const Label = React.forwardRef<
     {...props}
   >
     {props.children}
-    <span className="text-brand-tertiary data-[required=false]:hidden ml-[2px]" data-required={required}>*</span>
+    <span className="text-fg-brand-primary data-[required=false]:hidden ml-[2px]" data-required={required}>*</span>
   </LabelPrimitive.Root>
 ))
 Label.displayName = LabelPrimitive.Root.displayName
