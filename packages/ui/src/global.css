@@ -133,7 +133,7 @@
     --destructive-foreground: var(--text-white);
     --border: var(--border-secondary);
     --input: var(--border-primary);
-    --ring: var(--border-brand);
+    --ring: var(--border-primary);
     --radius: 0.5rem;
 
     /* Charts and sidebar keep their existing values for now. */
