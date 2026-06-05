@@ -8,11 +8,11 @@ const dotVariants = cva(
   {
     variants: {
       variant: {
-        default: "bg-brand-quaterary dark:bg-primary-solid",
+        default: "bg-brand-quaterary",
         secondary: "bg-foreground",
         destructive: "bg-error",
         success: "bg-success",
-        warning: "bg-warning dark:bg-primary-solid",
+        warning: "bg-warning",
         outline: "bg-foreground",
       },
     },

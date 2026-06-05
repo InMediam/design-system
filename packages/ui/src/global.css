@@ -80,16 +80,16 @@
     --bg-brand-primary-alt: 54.5 91.7% 95.3%;
     --bg-brand-secondary: 54.9 96.7% 88%;
     --bg-brand-tertiary: 47.9 95.8% 53.1%;
-      --bg-brand-quaterary: 45.4 93.4% 47.5%;
-      --bg-brand: 40.6 96.1% 40.4%;
-      --bg-brand-hover: 35.5 91.7% 32.9%;
+    --bg-brand-quaterary: 45.4 93.4% 47.5%;
+    --bg-brand: 40.6 96.1% 40.4%;
+    --bg-brand-hover: 35.5 91.7% 32.9%;
     --bg-brand-section: 31.8 81% 28.8%;
     --bg-brand-section-subtle: 35.5 91.7% 32.9%;
 
     --bg-error-primary: 0 85.7% 97.3%;
     --bg-error-secondary: 0 93.3% 94.1%;
     --bg-error: 0 72.2% 50.6%;
-      --bg-error-hover: 0 73.7% 41.8%;
+    --bg-error-hover: 0 73.7% 41.8%;
     --bg-warning-primary: 33.3 100% 96.5%;
     --bg-warning-secondary: 34.3 100% 91.8%;
     --bg-warning: 20.5 90.2% 48.2%;
@@ -133,7 +133,7 @@
     --destructive-foreground: var(--text-white);
     --border: var(--border-secondary);
     --input: var(--border-primary);
-    --ring: var(--border-brand);
+    --ring: var(--border-primary);
     --radius: 0.5rem;
 
     /* Charts and sidebar keep their existing values for now. */
@@ -224,21 +224,21 @@
     --bg-brand-primary-alt: 0 0% 9%;
     --bg-brand-secondary: 0 0% 14.9%;
     --bg-brand-tertiary: 47.9 95.8% 53.1%;
-      --bg-brand-quaterary: 45.4 93.4% 47.5%;
-      --bg-brand: 40.6 96.1% 40.4%;
-      --bg-brand-hover: 45.4 93.4% 47.5%;
+    --bg-brand-quaterary: 45.4 93.4% 47.5%;
+    --bg-brand: 40.6 96.1% 40.4%;
+    --bg-brand-hover: 45.4 93.4% 47.5%;
     --bg-brand-section: 0 0% 9%;
     --bg-brand-section-subtle: 0 0% 3.9%;
 
     --bg-error-primary: 0 74.7% 15.5%;
     --bg-error-secondary: 0 72.2% 50.6%;
     --bg-error: 0 72.2% 50.6%;
-      --bg-error-hover: 0 84.2% 60.2%;
+    --bg-error-hover: 0 84.2% 60.2%;
     --bg-warning-primary: 0 74.7% 15.5%;
-    --bg-warning-secondary: 20.5 90.2% 48.2%;
     --bg-warning: 20.5 90.2% 48.2%;
+    --bg-warning-secondary: 20.5 90.2% 8.2%;
     --bg-success-primary: 144.9 80.4% 10%;
-    --bg-success-secondary: 142.1 76.2% 36.3%;
+    --bg-success-secondary: 142.1 76.2% 16.3%;
     --bg-success: 142.1 76.2% 36.3%;
 
     /* BORDER */
@@ -246,11 +246,12 @@
     --border-secondary: 0 0% 14.9%;
     --border-secondary-alt: 0 0% 14.9%;
     --border-tertiary: 0 0% 14.9%;
-    --border-brand: 47.9 95.8% 53.1%;
+    --border-brand: 47.9 95.8% 30.1%;
     --border-brand-alt: 0 0% 25.1%;
     --border-error: 0 90.6% 70.8%;
     --border-error-subtle: 0 84.2% 60.2%;
-    --border-warning: 24.6 95% 53.1%;
+    --border-warning: 24.6 95% 30.1%;
+    --border-success: 142.1 76.2% 36.3%;
 
     /* Shadcn aliases inherit automatically from the tokens above. */
 
@@ -271,15 +272,15 @@
     --sidebar-ring: 43 93% 47%;
   }
 
-                                                                body {
-                                                                  @apply bg-background text-foreground;
-                                                                }
+  body {
+    @apply bg-background text-foreground;
+  }
 
-                                                                *,
-                                                                ::before,
-                                                                ::after {
-                                                                  border-color: hsl(var(--border));
-                                                                }
+  *,
+  ::before,
+  ::after {
+    border-color: hsl(var(--border));
+  }
 }
 
 @layer utilities {

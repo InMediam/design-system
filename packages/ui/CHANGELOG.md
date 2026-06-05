@@ -1,5 +1,17 @@
 # @inmediam/ui
 
+## 6.0.1
+
+### Patch Changes
+
+- Refine dark theme component colors and contrast:
+
+  - Update Badge colors and Dot styling
+  - Improve Table hover state
+  - Fix Tooltip contrast and styling
+  - Improve contrast for Tooltip, AvatarFallback, and required Label
+  - Use a subtler focus ring (`--ring` now derives from `border-primary` instead of `border-brand`)
+
 ## 6.0.0
 
 ### Major Changes
@@ -8,27 +20,38 @@
 
   ### What changed
 
-  - Added a `.dark` theme and full dark-mode coverage across every UI primitive (button, input, dialog, calendar, table, sonner, tooltip, etc.).
-  - Replaced the flat primitive palette (`--gray-*`, `--brand-*`, `--error-*`, `--warning-*`, `--success-*`) with a semantic token system scoped by usage: `--text-*`, `--fg-*`, `--bg-*`, `--border-*`.
-  - Restructured `tailwind.config.js` so each utility family (`text-`, `bg-`, `border-`, `ring-`, `fill-`, `stroke-`) gets its own token map. This means `text-primary` and `bg-primary` can now resolve to **different** variables without colliding.
-  - Shadcn aliases (`--background`, `--foreground`, `--primary`, `--border`, `--ring`, etc.) are preserved and re-point at the new semantic tokens, so existing shadcn-based primitives keep working.
+  - Added a `.dark` theme and full dark-mode coverage across every UI primitive (button, input, dialog,
+    calendar, table, sonner, tooltip, etc.).
+  - Replaced the flat primitive palette (`--gray-*`, `--brand-*`, `--error-*`, `--warning-*`, `--success-*`)
+    with a semantic token system scoped by usage: `--text-*`, `--fg-*`, `--bg-*`, `--border-*`.
+  - Restructured `tailwind.config.js` so each utility family (`text-`, `bg-`, `border-`, `ring-`, `fill-`,
+    `stroke-`) gets its own token map. This means `text-primary` and `bg-primary` can now resolve to
+    **different** variables without colliding.
+  - Shadcn aliases (`--background`, `--foreground`, `--primary`, `--border`, `--ring`, etc.) are preserved and
+    re-point at the new semantic tokens, so existing shadcn-based primitives keep working.
 
   ### Why
 
-  The previous palette mixed primitive scales (`gray-500`) with semantic aliases (`primary`, `muted`) in a single flat namespace, which made dark mode impossible without rewriting every component. The new system separates intent (text vs. background vs. border) from raw color, allowing a single class like `bg-primary` to mean different things in light and dark themes and unblocking theming across the design system.
+  The previous palette mixed primitive scales (`gray-500`) with semantic aliases (`primary`, `muted`) in a
+  single flat namespace, which made dark mode impossible without rewriting every component. The new system
+  separates intent (text vs. background vs. border) from raw color, allowing a single class like `bg-primary`
+  to mean different things in light and dark themes and unblocking theming across the design system.
 
   ### How to migrate
 
   - Wrap your app or any subtree you want themed with `class="dark"` to opt into dark mode.
   - Replace primitive utility usages with semantic equivalents:
-    - `text-gray-700`, `text-gray-500` → `text-primary` / `text-secondary` / `text-tertiary` / `text-quaternary`
+    - `text-gray-700`, `text-gray-500` → `text-primary` / `text-secondary` / `text-tertiary` /
+      `text-quaternary`
     - `bg-gray-50`, `bg-gray-100` → `bg-primary` / `bg-secondary` / `bg-tertiary`
     - `border-gray-200` → `border-secondary` (or `border-primary` / `border-tertiary`)
     - `text-brand-600`, `bg-brand-500` → `text-brand-primary` / `bg-brand` / `bg-brand-hover`
     - `bg-error-500`, `text-error-600` → `bg-error` / `text-error-primary`
     - Equivalent mappings exist for `warning-*` and `success-*`.
-  - For icons and other `currentColor` glyphs, use the `text-fg-*` family (`text-fg-primary`, `text-fg-brand-primary`, etc.) instead of `text-gray-*`.
-  - Shadcn-style classes (`bg-background`, `text-foreground`, `border-border`, `ring-ring`, `bg-card`, `text-muted-foreground`, `bg-destructive`) continue to work unchanged.
+  - For icons and other `currentColor` glyphs, use the `text-fg-*` family (`text-fg-primary`,
+    `text-fg-brand-primary`, etc.) instead of `text-gray-*`.
+  - Shadcn-style classes (`bg-background`, `text-foreground`, `border-border`, `ring-ring`, `bg-card`,
+    `text-muted-foreground`, `bg-destructive`) continue to work unchanged.
 
 ## 5.1.0
 
@@ -39,26 +62,42 @@
 
   - Add `ScrollArea` and `ScrollBar` components via `@radix-ui/react-scroll-area`
   - Add `Toaster` component (sonner) with next-themes dark/light mode integration
-  - Add `DatePickerInput` component with Brazilian date format (dd/MM/yyyy), smart input mask with auto-advance cursor and auto-zero-pad — day first digit 4–9 pads to `0x` and jumps to month; month first digit 2–9 pads to `0x` and jumps to year
+  - Add `DatePickerInput` component with Brazilian date format (dd/MM/yyyy), smart input mask with
+    auto-advance cursor and auto-zero-pad — day first digit 4–9 pads to `0x` and jumps to month; month first
+    digit 2–9 pads to `0x` and jumps to year
   - Add `Field` and `FieldLabel` layout wrapper components
-  - Add `InputGroup`, `InputGroupInput`, `InputGroupAddon`, and `InputGroupButton` composition components for inputs with inline addons
-  - Add `applyDateMask`, `formatMaskedDate`, and `parseMaskedDate` utility helpers in `lib/date-mask`, exported from package root
+  - Add `InputGroup`, `InputGroupInput`, `InputGroupAddon`, and `InputGroupButton` composition components for
+    inputs with inline addons
+  - Add `applyDateMask`, `formatMaskedDate`, and `parseMaskedDate` utility helpers in `lib/date-mask`,
+    exported from package root
 
 ## 5.0.0
 
 ### Major Changes
 
-- 085dd5f: [`054e15e`](https://github.com/InMediam/design-system/commit/054e15e527d68499f5dca96d3ca9258c75cfce5e) [#11](https://github.com/InMediam/design-system/pull/11) Remove TooltipProvider from SidebarProvider — consumers must provide TooltipProvider at app root when using SidebarMenuButton with tooltip
+- 085dd5f:
+  [`054e15e`](https://github.com/InMediam/design-system/commit/054e15e527d68499f5dca96d3ca9258c75cfce5e)
+  [#11](https://github.com/InMediam/design-system/pull/11) Remove TooltipProvider from SidebarProvider —
+  consumers must provide TooltipProvider at app root when using SidebarMenuButton with tooltip
 
 ### Minor Changes
 
-- 085dd5f: [`26eed3a`](https://github.com/InMediam/design-system/commit/26eed3aa287312e7e973535e7c3cb1316304b6c6) [#11](https://github.com/InMediam/design-system/pull/11) Improve Dialog responsiveness on mobile (full width, no border radius)
-- 085dd5f: [`d0ec617`](https://github.com/InMediam/design-system/commit/d0ec617641af9baa2f269c4df277ea6bc9b5cac3) [#11](https://github.com/InMediam/design-system/pull/11) Add MobileTabList component
-- 085dd5f: [`dd8ecae`](https://github.com/InMediam/design-system/commit/dd8ecae8afa714070c1d19d0025f5426892e9cd6) [#11](https://github.com/InMediam/design-system/pull/11) Add dotSize prop to CarouselDots (1-5)
+- 085dd5f:
+  [`26eed3a`](https://github.com/InMediam/design-system/commit/26eed3aa287312e7e973535e7c3cb1316304b6c6)
+  [#11](https://github.com/InMediam/design-system/pull/11) Improve Dialog responsiveness on mobile (full
+  width, no border radius)
+- 085dd5f:
+  [`d0ec617`](https://github.com/InMediam/design-system/commit/d0ec617641af9baa2f269c4df277ea6bc9b5cac3)
+  [#11](https://github.com/InMediam/design-system/pull/11) Add MobileTabList component
+- 085dd5f:
+  [`dd8ecae`](https://github.com/InMediam/design-system/commit/dd8ecae8afa714070c1d19d0025f5426892e9cd6)
+  [#11](https://github.com/InMediam/design-system/pull/11) Add dotSize prop to CarouselDots (1-5)
 
 ### Patch Changes
 
-- 085dd5f: [`a234dfc`](https://github.com/InMediam/design-system/commit/a234dfc82992c7e8a368da2059c6fb34211710e9) [#11](https://github.com/InMediam/design-system/pull/11) Improve repository and NPM package documentation
+- 085dd5f:
+  [`a234dfc`](https://github.com/InMediam/design-system/commit/a234dfc82992c7e8a368da2059c6fb34211710e9)
+  [#11](https://github.com/InMediam/design-system/pull/11) Improve repository and NPM package documentation
 
 ## 4.2.1
 
