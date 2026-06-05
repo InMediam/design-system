@@ -1,4 +1,6 @@
 import {
+  Badge,
+  Dot,
   Table,
   TableBody,
   TableCaption,
@@ -78,7 +80,11 @@ export const Primary = {
               <TableRow key={invoice.invoice}>
                 <TableCell className="font-medium">{invoice.invoice}</TableCell>
                 <TableCell>{invoice.paymentStatus}</TableCell>
-                <TableCell>{invoice.paymentMethod}</TableCell>
+                <TableCell>
+                  <Badge className="rounded-[0.375rem]" variant="outline">
+                    {invoice.paymentMethod}
+                  </Badge>
+                </TableCell>
                 <TableCell className="text-right">{invoice.totalAmount}</TableCell>
               </TableRow>
             ))}
