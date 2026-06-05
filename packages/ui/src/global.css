@@ -235,10 +235,10 @@
     --bg-error: 0 72.2% 50.6%;
     --bg-error-hover: 0 84.2% 60.2%;
     --bg-warning-primary: 0 74.7% 15.5%;
-    --bg-warning-secondary: 20.5 90.2% 48.2%;
     --bg-warning: 20.5 90.2% 48.2%;
+    --bg-warning-secondary: 20.5 90.2% 8.2%;
     --bg-success-primary: 144.9 80.4% 10%;
-    --bg-success-secondary: 142.1 76.2% 36.3%;
+    --bg-success-secondary: 142.1 76.2% 16.3%;
     --bg-success: 142.1 76.2% 36.3%;
 
     /* BORDER */
@@ -246,11 +246,12 @@
     --border-secondary: 0 0% 14.9%;
     --border-secondary-alt: 0 0% 14.9%;
     --border-tertiary: 0 0% 14.9%;
-    --border-brand: 47.9 95.8% 53.1%;
+    --border-brand: 47.9 95.8% 30.1%;
     --border-brand-alt: 0 0% 25.1%;
     --border-error: 0 90.6% 70.8%;
     --border-error-subtle: 0 84.2% 60.2%;
-    --border-warning: 24.6 95% 53.1%;
+    --border-warning: 24.6 95% 30.1%;
+    --border-success: 142.1 76.2% 36.3%;
 
     /* Shadcn aliases inherit automatically from the tokens above. */
 
