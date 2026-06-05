@@ -5,32 +5,138 @@
 
 @layer base {
   :root {
-    
-    --background: 0 0% 100%;
-    --foreground: 0 0% 3.9%;
-    --card: 0 0% 100%;
-    --card-foreground: 0 0% 3.9%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 3.9%;
-    --primary:  46 96% 53%;
-    --primary-foreground: 218 39% 11%; 
-    --secondary: 0 0% 96.1%;
-    --secondary-foreground: 0 0% 9%;
-    --tertiary: 33 92% 33%;
-    --tertiary-foreground: 222.2 47.4% 11.2%;
-    --success: 162 95% 32%;
-    --success-foreground: 162 95% 15%;
-    --muted: 0 0% 96.1%;
-    --muted-foreground: 0 0% 45.1%;
-    --accent: 0 0% 96.1%;
-    --accent-foreground: 0 0% 9%;
-    --destructive: 4 74% 49%;
-    --destructive-foreground:210 40% 98%;
-    --border: 0 0% 89.8%;
-    --input: 0 0% 89.8%;
-    --ring: 43 93% 47%;
+    /* ============================================================
+       TEXT — Hierarchy for typographic content
+       ============================================================ */
+    --text-primary: 0 0% 9%;
+    --text-primary-on-brand: 0 0% 100%;
+    --text-primary-solid: 0 0% 9%;
+    --text-secondary: 0 0% 25.1%;
+    --text-secondary-hover: 0 0% 14.9%;
+    --text-secondary-on-brand: 52.8 98.3% 76.9%;
+    --text-tertiary: 0 0% 32.2%;
+    --text-tertiary-hover: 0 0% 25.1%;
+    --text-tertiary-on-brand: 52.8 98.3% 76.9%;
+    --text-quaternary: 0 0% 45.1%;
+    --text-quaternary-on-brand: 50.4 97.8% 63.5%;
+    --text-quinary: 0 0% 63.9%;
+    --text-placeholder: 0 0% 45.1%;
+    --text-white: 0 0% 100%;
+
+    --text-brand-primary: 28.4 72.5% 25.7%;
+    --text-brand-secondary: 35.5 91.7% 32.9%;
+    --text-brand-secondary-hover: 31.8 81% 28.8%;
+    --text-brand-tertiary: 40.6 96.1% 40.4%;
+    --text-brand-tertiary-alt: 40.6 96.1% 40.4%;
+
+    --text-error-primary: 0 72.2% 50.6%;
+    --text-error-primary-hover: 0 73.7% 41.8%;
+    --text-warning-primary: 20.5 90.2% 48.2%;
+    --text-success-primary: 142.1 76.2% 36.3%;
+
+    /* ============================================================
+       FOREGROUND — Icons, controls, glyphs
+       ============================================================ */
+    --fg-primary: 0 0% 9%;
+    --fg-primary-solid: 0 0% 9%;
+    --fg-secondary: 0 0% 25.1%;
+    --fg-secondary-hover: 0 0% 14.9%;
+    --fg-secondary-solid: 0 0% 25.1%;
+    --fg-tertiary: 0 0% 32.2%;
+    --fg-tertiary-hover: 0 0% 25.1%;
+    --fg-quaternary: 0 0% 63.9%;
+    --fg-quaternary-hover: 0 0% 45.1%;
+    --fg-white: 0 0% 100%;
+
+    --fg-brand-primary: 40.6 96.1% 40.4%;
+    --fg-brand-primary-alt: 40.6 96.1% 40.4%;
+    --fg-brand-secondary: 45.4 93.4% 47.5%;
+    --fg-brand-secondary-alt: 45.4 93.4% 47.5%;
+    --fg-brand-secondary-hover: 40.6 96.1% 40.4%;
+
+    --fg-error-primary: 0 72.2% 50.6%;
+    --fg-error-secondary: 0 84.2% 60.2%;
+    --fg-warning-primary: 20.5 90.2% 48.2%;
+    --fg-warning-secondary: 24.6 95% 53.1%;
+    --fg-success-primary: 142.1 76.2% 36.3%;
+    --fg-success-secondary: 142.1 70.6% 45.3%;
+
+    /* ============================================================
+       BACKGROUND — Container fills
+       ============================================================ */
+    --bg-primary: 0 0% 100%;
+    --bg-primary-alt: 0 0% 100%;
+    --bg-primary-hover: 0 0% 98%;
+    --bg-primary-solid: 0 0% 3.9%;
+    --bg-secondary: 0 0% 98%;
+    --bg-secondary-alt: 0 0% 98%;
+    --bg-secondary-hover: 0 0% 96.1%;
+    --bg-secondary-solid: 0 0% 32.2%;
+    --bg-tertiary: 0 0% 96.1%;
+    --bg-quaternary: 0 0% 89.8%;
+    --bg-overlay: 0 0% 3.9%;
+
+    --bg-brand-primary: 54.5 91.7% 95.3%;
+    --bg-brand-primary-alt: 54.5 91.7% 95.3%;
+    --bg-brand-secondary: 54.9 96.7% 88%;
+    --bg-brand-tertiary: 47.9 95.8% 53.1%;
+      --bg-brand-quaterary: 45.4 93.4% 47.5%;
+      --bg-brand: 40.6 96.1% 40.4%;
+      --bg-brand-hover: 35.5 91.7% 32.9%;
+    --bg-brand-section: 31.8 81% 28.8%;
+    --bg-brand-section-subtle: 35.5 91.7% 32.9%;
+
+    --bg-error-primary: 0 85.7% 97.3%;
+    --bg-error-secondary: 0 93.3% 94.1%;
+    --bg-error: 0 72.2% 50.6%;
+      --bg-error-hover: 0 73.7% 41.8%;
+    --bg-warning-primary: 33.3 100% 96.5%;
+    --bg-warning-secondary: 34.3 100% 91.8%;
+    --bg-warning: 20.5 90.2% 48.2%;
+    --bg-success-primary: 138.5 76.5% 96.7%;
+    --bg-success-secondary: 140.6 84.2% 92.5%;
+    --bg-success: 142.1 76.2% 36.3%;
+
+    /* ============================================================
+       BORDER — Strokes / outlines
+       ============================================================ */
+    --border-primary: 0 0% 83.1%;
+    --border-secondary: 0 0% 89.8%;
+    --border-secondary-alt: 0 0% 0%;
+    --border-tertiary: 0 0% 96.1%;
+    --border-brand: 45.4 93.4% 47.5%;
+    --border-brand-alt: 40.6 96.1% 40.4%;
+    --border-error: 0 84.2% 60.2%;
+    --border-error-subtle: 0 93.5% 81.8%;
+
+    /* ============================================================
+       SHADCN ALIASES — point at the semantic tokens above so any
+       remaining shadcn primitives keep working. Tailwind classes
+       like `bg-primary`/`text-primary` are wired to the new
+       semantic tokens (via per-utility theme keys), not these.
+       ============================================================ */
+    --background: var(--bg-primary);
+    --foreground: var(--text-primary);
+    --card: var(--bg-primary);
+    --card-foreground: var(--text-primary);
+    --popover: var(--bg-primary);
+    --popover-foreground: var(--text-primary);
+    --primary: var(--bg-brand);
+    --primary-foreground: var(--text-primary-on-brand);
+    --secondary: var(--bg-secondary);
+    --secondary-foreground: var(--text-secondary);
+    --muted: var(--bg-tertiary);
+    --muted-foreground: var(--text-tertiary);
+    --accent: var(--bg-secondary-hover);
+    --accent-foreground: var(--text-primary);
+    --destructive: var(--bg-error);
+    --destructive-foreground: var(--text-white);
+    --border: var(--border-secondary);
+    --input: var(--border-primary);
+    --ring: var(--border-brand);
     --radius: 0.5rem;
 
+    /* Charts and sidebar keep their existing values for now. */
     --chart-1: 12 76% 61%;
     --chart-2: 173 58% 39%;
     --chart-3: 197 37% 24%;
@@ -46,97 +152,107 @@
     --sidebar-accent-foreground: 240 5.9% 10%;
     --sidebar-border: 220 13% 91%;
     --sidebar-ring: 43 93% 47%;
-
-    /* Primitive Colors */
-    --gray-25: 210 20% 99%;
-    --gray-50: 210 20% 98%;
-    --gray-100: 220 14% 96%;
-    --gray-200: 220 13% 91%;
-    --gray-300: 213 11% 84%;
-    --gray-400: 215 9% 65%;
-    --gray-500: 218 8% 46%;
-    --gray-600: 210 11% 34%;
-    --gray-700: 215 18% 27%;
-    --gray-800: 212 28% 17%;
-    --gray-900: 218 39% 11%;
-    --gray-950: 220 37% 8%;
-
-    --gray-neutral-200: 218 12% 91%;
-
-    --brand-25: 53 92% 97%;
-    --brand-50: 53 92% 95%;
-    --brand-100: 53 97% 88%;
-    --brand-200: 51 98% 79%;
-    --brand-300: 48 97% 72%;
-    --brand-400: 46 96% 53%;
-    --brand-500: 43 93% 47%;
-    --brand-600: 39 96% 40%;
-    --brand-700: 33 92% 33%;
-    --brand-800: 30 81% 29%;
-    --brand-900: 26 73% 26%;
-    --brand-950: 26 83% 14%;
-
-    --error-25: 4 88% 99%;
-    --error-50: 4 88% 97%;
-    --error-100: 4 95% 94%;
-    --error-200: 4 98% 89%;
-    --error-300: 4 96% 80%;
-    --error-400: 4 93% 69%;
-    --error-500: 4 86% 58%;
-    --error-600: 4 74% 49%;
-    --error-700: 4 76% 40%;
-    --error-800: 4 72% 33%;
-    --error-900: 8 65% 29%;
-    --error-950: 8 75% 19%;
-
-    --warning-25: 44 100% 98%;
-    --warning-50: 44 100% 96%;
-    --warning-100: 44 98% 89%;
-    --warning-200: 44 99% 77%;
-    --warning-300: 42 99% 65%;
-    --warning-400: 39 98% 56%;
-    --warning-500: 34 94% 50%;
-    --warning-600: 28 97% 44%;
-    --warning-700: 22 92% 37%;
-    --warning-800: 19 84% 31%;
-    --warning-900: 18 80% 26%;
-    --warning-950: 18 80% 17%;
-
-    --success-25: 144 78% 98%;
-    --success-50: 144 78% 96%;
-    --success-100: 141 74% 92%;
-    --success-200: 144 69% 80%;
-    --success-300: 148 63% 67%;
-    --success-400: 150 57% 54%;
-    --success-500: 152 77% 39%;
-    --success-600: 153 91% 30%;
-    --success-700: 155 91% 24%;
-    --success-800: 155 85% 20%;
-    --success-900: 156 83% 16%;
-    --success-950: 156 83% 11%;
   }
 
   .dark {
-    --background: 0 0% 3.9%;
-    --foreground: 0 0% 98%;
-    --card: 0 0% 3.9%;
-    --card-foreground: 0 0% 98%;
-    --popover: 0 0% 3.9%;
-    --popover-foreground: 0 0% 98%;
-    --primary: 0 0% 98%;
-    --primary-foreground: 0 0% 9%;
-    --secondary: 0 0% 14.9%;
-    --secondary-foreground: 0 0% 98%;
-    --muted: 0 0% 14.9%;
-    --muted-foreground: 0 0% 63.9%;
-    --accent: 0 0% 14.9%;
-    --accent-foreground: 0 0% 98%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 85.7% 97.3%;
-    --border: 0 0% 14.9%;
-    --radius: 0.5rem;
-    --input: 0 0% 14.9%;
-    --ring: 43 93% 47%;
+    /* TEXT */
+    --text-primary: 0 0% 98%;
+    --text-primary-on-brand: 0 0% 98%;
+    --text-primary-solid: 0 0% 9%;
+    --text-secondary: 0 0% 83.1%;
+    --text-secondary-hover: 0 0% 89.8%;
+    --text-secondary-on-brand: 0 0% 83.1%;
+    --text-tertiary: 0 0% 63.9%;
+    --text-tertiary-hover: 0 0% 83.1%;
+    --text-tertiary-on-brand: 0 0% 63.9%;
+    --text-quaternary: 0 0% 63.9%;
+    --text-quaternary-on-brand: 0 0% 63.9%;
+    --text-quinary: 0 0% 63.9%;
+    --text-placeholder: 0 0% 45.1%;
+    --text-white: 0 0% 100%;
+
+    --text-brand-primary: 0 0% 98%;
+    --text-brand-secondary: 0 0% 83.1%;
+    --text-brand-secondary-hover: 0 0% 89.8%;
+    --text-brand-tertiary: 0 0% 63.9%;
+    --text-brand-tertiary-alt: 0 0% 98%;
+
+    --text-error-primary: 0 90.6% 70.8%;
+    --text-error-primary-hover: 0 93.5% 81.8%;
+    --text-warning-primary: 27 96% 61%;
+    --text-success-primary: 141.9 69.2% 58%;
+
+    /* FOREGROUND */
+    --fg-primary: 0 0% 100%;
+    --fg-primary-solid: 0 0% 9%;
+    --fg-secondary: 0 0% 83.1%;
+    --fg-secondary-hover: 0 0% 89.8%;
+    --fg-secondary-solid: 0 0% 25.1%;
+    --fg-tertiary: 0 0% 63.9%;
+    --fg-tertiary-hover: 0 0% 83.1%;
+    --fg-quaternary: 0 0% 45.1%;
+    --fg-quaternary-hover: 0 0% 63.9%;
+    --fg-white: 0 0% 100%;
+
+    --fg-brand-primary: 45.4 93.4% 47.5%;
+    --fg-brand-primary-alt: 0 0% 83.1%;
+    --fg-brand-secondary: 45.4 93.4% 47.5%;
+    --fg-brand-secondary-alt: 0 0% 32.2%;
+    --fg-brand-secondary-hover: 0 0% 45.1%;
+
+    --fg-error-primary: 0 84.2% 60.2%;
+    --fg-error-secondary: 0 90.6% 70.8%;
+    --fg-warning-primary: 24.6 95% 53.1%;
+    --fg-warning-secondary: 27 96% 61%;
+    --fg-success-primary: 142.1 70.6% 45.3%;
+    --fg-success-secondary: 141.9 69.2% 58%;
+
+    /* BACKGROUND */
+    --bg-primary: 0 0% 3.9%;
+    --bg-primary-alt: 0 0% 9%;
+    --bg-primary-hover: 0 0% 9%;
+    --bg-primary-solid: 0 0% 14.9%;
+    --bg-secondary: 0 0% 9%;
+    --bg-secondary-alt: 0 0% 3.9%;
+    --bg-secondary-hover: 0 0% 14.9%;
+    --bg-secondary-solid: 0 0% 32.2%;
+    --bg-tertiary: 0 0% 14.9%;
+    --bg-quaternary: 0 0% 25.1%;
+    --bg-overlay: 0 0% 14.9%;
+
+    --bg-brand-primary: 45.4 93.4% 47.5%;
+    --bg-brand-primary-alt: 0 0% 9%;
+    --bg-brand-secondary: 0 0% 14.9%;
+    --bg-brand-tertiary: 47.9 95.8% 53.1%;
+      --bg-brand-quaterary: 45.4 93.4% 47.5%;
+      --bg-brand: 40.6 96.1% 40.4%;
+      --bg-brand-hover: 45.4 93.4% 47.5%;
+    --bg-brand-section: 0 0% 9%;
+    --bg-brand-section-subtle: 0 0% 3.9%;
+
+    --bg-error-primary: 0 74.7% 15.5%;
+    --bg-error-secondary: 0 72.2% 50.6%;
+    --bg-error: 0 72.2% 50.6%;
+      --bg-error-hover: 0 84.2% 60.2%;
+    --bg-warning-primary: 0 74.7% 15.5%;
+    --bg-warning-secondary: 20.5 90.2% 48.2%;
+    --bg-warning: 20.5 90.2% 48.2%;
+    --bg-success-primary: 144.9 80.4% 10%;
+    --bg-success-secondary: 142.1 76.2% 36.3%;
+    --bg-success: 142.1 76.2% 36.3%;
+
+    /* BORDER */
+    --border-primary: 0 0% 25.1%;
+    --border-secondary: 0 0% 14.9%;
+    --border-secondary-alt: 0 0% 14.9%;
+    --border-tertiary: 0 0% 14.9%;
+    --border-brand: 47.9 95.8% 53.1%;
+    --border-brand-alt: 0 0% 25.1%;
+    --border-error: 0 90.6% 70.8%;
+    --border-error-subtle: 0 84.2% 60.2%;
+    --border-warning: 24.6 95% 53.1%;
+
+    /* Shadcn aliases inherit automatically from the tokens above. */
 
     --chart-1: 220 70% 50%;
     --chart-2: 160 60% 45%;
@@ -152,75 +268,18 @@
     --sidebar-accent: 240 3.7% 15.9%;
     --sidebar-accent-foreground: 240 4.8% 95.9%;
     --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 43 93% 47%; 
-
-    /* Primitive Colors */
-    --gray-25: 0 0 98%;
-    --gray-50: 240 5 96%;
-    --gray-100: 180 3 94%;
-    --gray-200: 240 3 93%;
-    --gray-300: 225 4 82%;
-    --gray-400: 225 4 60%;
-    --gray-500: 220 4 54%;
-    --gray-600: 224 5 40%;
-    --gray-700: 223 12 23%;
-    --gray-800: 221 21 15%;
-    --gray-900: 221 27 12%;
-    --gray-950: 222 41 8%;
-
-    /* TODO cores do light mode para serem alteradas */
-    --brand-25: 53 92% 97%;
-    --brand-50: 53 92% 95%;
-    --brand-100: 53 97% 88%;
-    --brand-200: 51 98% 79%;
-    --brand-300: 48 97% 72%;
-    --brand-400: 46 96% 53%;
-    --brand-500: 43 93% 47%;
-    --brand-600: 39 96% 40%;
-    --brand-700: 33 92% 33%;
-    --brand-800: 30 81% 29%;
-    --brand-900: 26 73% 26%;
-    --brand-950: 26 83% 14%;
-
-    --error-25: 4 88% 99%;
-    --error-50: 4 88% 97%;
-    --error-100: 4 95% 94%;
-    --error-200: 4 98% 89%;
-    --error-300: 4 96% 80%;
-    --error-400: 4 93% 69%;
-    --error-500: 4 86% 58%;
-    --error-600: 4 74% 49%;
-    --error-700: 4 76% 40%;
-    --error-800: 4 72% 33%;
-    --error-900: 8 65% 29%;
-    --error-950: 8 75% 19%;
-
-    --warning-25: 44 100% 98%;
-    --warning-50: 44 100% 96%;
-    --warning-100: 44 98% 89%;
-    --warning-200: 44 99% 77%;
-    --warning-300: 42 99% 65%;
-    --warning-400: 39 98% 56%;
-    --warning-500: 34 94% 50%;
-    --warning-600: 28 97% 44%;
-    --warning-700: 22 92% 37%;
-    --warning-800: 19 84% 31%;
-    --warning-900: 18 80% 26%;
-    --warning-950: 18 80% 17%;
-
-    --success-25: 144 78% 98%;
-    --success-50: 144 78% 96%;
-    --success-100: 141 74% 92%;
-    --success-200: 144 69% 80%;
-    --success-300: 148 63% 67%;
-    --success-400: 150 57% 54%;
-    --success-500: 152 77% 39%;
-    --success-600: 153 91% 30%;
-    --success-700: 155 91% 24%;
-    --success-800: 155 85% 20%;
-    --success-900: 156 83% 16%;
-    --success-950: 156 83% 11%;
+    --sidebar-ring: 43 93% 47%;
   }
+
+                                                                body {
+                                                                  @apply bg-background text-foreground;
+                                                                }
+
+                                                                *,
+                                                                ::before,
+                                                                ::after {
+                                                                  border-color: hsl(var(--border));
+                                                                }
 }
 
 @layer utilities {
@@ -228,6 +287,7 @@
     -ms-overflow-style: none;
     scrollbar-width: none;
   }
+
   .scrollbar-hide::-webkit-scrollbar {
     display: none;
   }

@@ -24,12 +24,11 @@ const InputGroupInput = React.forwardRef<
     ref={ref}
     data-slot="input-group-input"
     className={cn(
-      'flex h-10 w-full rounded-lg border border-input bg-background px-3 py-2 pr-10 text-sm ring-offset-background',
-      'placeholder:text-gray-500',
-      'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gray-200 focus-visible:ring-offset-0 focus-visible:border-gray-400',
-      'dark:focus-visible:ring-gray-800 dark:focus-visible:border-gray-600 dark:text-gray-200',
+      'flex h-10 w-full rounded-lg border border-primary bg-primary px-3 py-2 pr-10 text-sm ring-offset-background',
+      'placeholder:text-placeholder',
+      'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-0 focus-visible:border-primary',
       'disabled:cursor-not-allowed disabled:opacity-50',
-      'hover:border-gray-300',
+      'hover:border-primary',
       className,
     )}
     {...props}
@@ -64,9 +63,9 @@ const inputGroupButtonVariants = cva(
   {
     variants: {
       variant: {
-        default: 'bg-brand-400 text-primary-foreground hover:bg-brand-500',
-        ghost: 'hover:bg-accent text-accent-foreground',
-        outline: 'border border-input bg-background hover:bg-accent text-accent-foreground',
+        default: 'bg-brand-tertiary hover:bg-brand-quaterary',
+        ghost: 'hover:bg-secondary-hover',
+        outline: 'border border-primary bg-primary hover:bg-secondary-hover',
       },
       size: {
         default: 'h-10 px-3.5',
