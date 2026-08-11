@@ -14,7 +14,7 @@ const badgeVariants = cva(
         secondary:
           "border-secondary bg-secondary text-secondary hover:bg-secondary-hover",
         destructive:
-          "border-error-subtle bg-error-primary text-error-primary-hover hover:bg-error-secondary",
+          "border-error bg-error-primary text-error-primary-hover hover:bg-error-secondary",
         success: "bg-success-primary text-success-primary hover:bg-success-secondary",
         warning: "border-warning bg-warning-secondary text-warning-primary",
         outline: "text-secondary",

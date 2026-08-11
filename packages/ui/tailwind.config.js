@@ -97,7 +97,7 @@ module.exports = function (app, options) {
     brand: "hsl(var(--border-brand))",
     "brand-alt": "hsl(var(--border-brand-alt))",
     error: "hsl(var(--border-error))",
-    "error-subtle": "hsl(var(--border-error-subtle))",
+    success: "hsl(var(--border-success))",
     warning: "hsl(var(--border-warning))",
   }
 
