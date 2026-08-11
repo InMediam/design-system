@@ -4,17 +4,20 @@ Thank you for your interest in contributing! This document explains everything y
 
 ## Table of Contents
 
-- [Repository Overview](#repository-overview)
-- [Setting Up Locally](#setting-up-locally)
-- [Branching Strategy](#branching-strategy)
-- [Making Changes](#making-changes)
-- [Writing a Changeset](#writing-a-changeset)
-- [Opening a Pull Request](#opening-a-pull-request)
-- [PR Review Process](#pr-review-process)
-- [Release Process](#release-process)
-- [Commit Conventions](#commit-conventions)
-- [Reporting Bugs](#reporting-bugs)
-- [Suggesting Features](#suggesting-features)
+- [Contributing to InMediam Design System](#contributing-to-inmediam-design-system)
+  - [Table of Contents](#table-of-contents)
+  - [Repository Overview](#repository-overview)
+  - [Setting Up Locally](#setting-up-locally)
+  - [Branching Strategy](#branching-strategy)
+  - [Making Changes](#making-changes)
+  - [Writing a Changeset](#writing-a-changeset)
+  - [Opening a Pull Request](#opening-a-pull-request)
+  - [Versioning](#versioning)
+  - [PR Review Process](#pr-review-process)
+  - [Release Process](#release-process)
+  - [Commit Conventions](#commit-conventions)
+  - [Reporting Bugs](#reporting-bugs)
+  - [Suggesting Features](#suggesting-features)
 
 ---
 
@@ -30,7 +33,8 @@ design-system/
 ├── .changeset/      # Pending changeset files (created by contributors, consumed by CI)
 ├── .github/
 │   └── workflows/
-│       ├── release.yml       # Versions packages and publishes to npm on merge to main
+│       ├── version.yml       # Applies pending changesets and commits the bump to the PR branch
+│       ├── release.yml       # Publishes @inmediam/ui to npm on merge to main
 │       └── deploy-docs.yml   # Deploys Storybook to GitHub Pages on merge to main
 └── package.json
 ```
@@ -111,18 +115,12 @@ When writing stories, follow the existing patterns in `packages/docs/src/stories
 
 ## Writing a Changeset
 
-Every PR that modifies a package must include a changeset. A changeset is a short file that describes what changed and what kind of version bump it requires. It is what drives the automated release process.
+Every PR that modifies a package must include a changeset. A changeset is a short file that describes what changed and what kind of version bump it requires. It is what drives the automated versioning and release process.
 
 Run this from the root of the repository:
 
 ```bash
 npm run changeset
-```
-
-Apply the version updates to your packages:
-
-```bash
-npm run version-packages
 ```
 
 Follow the interactive prompts:
@@ -150,6 +148,8 @@ update
 
 Commit the generated file in `.changeset/` together with your code changes.
 
+> **Do not run `npm run version-packages` yourself.** Applying the changeset is CI's job — see [Versioning](#versioning). Running it locally consumes the changeset file before it ever reaches the PR, which hides the bump from review.
+
 > PRs without a changeset will not trigger a package release. This is fine for `docs/` or `chore/` changes, but required for any change that affects the published `@inmediam/ui` package.
 
 ---
@@ -169,7 +169,29 @@ git push origin feat/my-feature
    - A **screenshot or recording** if the change is visual
    - Any relevant **issue number** (e.g. `Closes #42`)
 
-4. Make sure the changeset file is included in the PR diff (the `.changeset/*.md` file).
+4. Make sure your changeset (`.changeset/*.md`) is part of the diff. CI consumes it and replaces it with the version bump and changelog entry — see [Versioning](#versioning).
+
+---
+
+## Versioning
+
+Versions are bumped **on the PR branch**, not after merge. Every time a PR targeting `main` is opened, reopened, or updated, the **Version** workflow (`.github/workflows/version.yml`) runs:
+
+1. Runs `changeset version`, which consumes the files in `.changeset/`, bumps the affected `package.json` versions, and writes the `CHANGELOG.md` entries
+2. Syncs `package-lock.json` so the lockfile doesn't drift
+3. Pushes a `chore: version packages` commit back to your branch
+
+If there are no pending changesets, the workflow is a no-op and nothing is committed.
+
+**This means CI writes to your branch.** After the workflow runs, pull before pushing again — otherwise your next push is rejected:
+
+```bash
+git pull --rebase origin feat/my-feature
+```
+
+The bump lands inside the PR, so the resulting version number and changelog entry show up in the diff and get reviewed like any other change. Add another changeset later and the workflow simply applies it on top.
+
+> **Fork PRs are skipped.** GitHub gives pull requests from forks a read-only token, so the workflow cannot commit back to them. Contributing from a fork? Just include the changeset — a maintainer applies the version bump.
 
 ---
 
@@ -177,8 +199,9 @@ git push origin feat/my-feature
 
 - A maintainer will review your PR and may request changes.
 - CI will run automatically and must pass before merging.
+- Expect a `chore: version packages` commit pushed to your branch by CI — that's the [versioning](#versioning) step, not something to revert.
 - Once approved, a maintainer will merge the PR into `main`.
-- The release process runs automatically after merge (see below).
+- The publish step runs automatically after merge (see below).
 
 **Please be patient.** We review PRs as quickly as we can. If a review is taking longer than expected, feel free to leave a comment on the PR.
 
@@ -186,14 +209,12 @@ git push origin feat/my-feature
 
 ## Release Process
 
-Releases are fully automated. After a PR is merged into `main`:
+By the time a PR is merged, the version bump and the changelog entry are already committed on the branch (see [Versioning](#versioning)). Merging into `main` then triggers two workflows:
 
-1. The **Release GitHub Action** detects changeset files in `.changeset/`
-2. It runs `changeset version`, which bumps `package.json` versions and generates `CHANGELOG.md` entries
-3. It commits those changes back to `main`
-4. It builds and publishes `@inmediam/ui` to npm
+- **Release** (`release.yml`) — builds the packages and publishes `@inmediam/ui` to npm with provenance
+- **Deploy docs** (`deploy-docs.yml`) — builds Storybook and deploys it to GitHub Pages
 
-You do not need to manually bump versions, edit changelogs, or trigger any publish step.
+You never need to manually bump versions, edit changelogs, or trigger a publish step.
 
 ---
 
