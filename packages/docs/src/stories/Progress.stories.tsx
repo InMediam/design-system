@@ -1,4 +1,4 @@
-import { Meta, StoryObj } from "@storybook/react"
+import { Meta, StoryObj } from "@storybook/react-vite"
 import { Progress, ProgressProps } from "@inmediam/ui"
 import { useEffect, useState } from "react"
 

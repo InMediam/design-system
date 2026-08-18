@@ -1,6 +1,5 @@
 import {
   Badge,
-  Dot,
   Table,
   TableBody,
   TableCaption,

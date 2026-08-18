@@ -9,30 +9,26 @@
        TEXT — Hierarchy for typographic content
        ============================================================ */
     --text-primary: 0 0% 9%;
-    --text-primary-on-brand: 0 0% 100%;
+    --text-primary-on-brand: 0 0% 98%;
     --text-primary-solid: 0 0% 9%;
     --text-secondary: 0 0% 25.1%;
     --text-secondary-hover: 0 0% 14.9%;
-    --text-secondary-on-brand: 52.8 98.3% 76.9%;
     --text-tertiary: 0 0% 32.2%;
-    --text-tertiary-hover: 0 0% 25.1%;
-    --text-tertiary-on-brand: 52.8 98.3% 76.9%;
     --text-quaternary: 0 0% 45.1%;
-    --text-quaternary-on-brand: 50.4 97.8% 63.5%;
     --text-quinary: 0 0% 63.9%;
     --text-placeholder: 0 0% 45.1%;
     --text-white: 0 0% 100%;
 
     --text-brand-primary: 28.4 72.5% 25.7%;
     --text-brand-secondary: 35.5 91.7% 32.9%;
-    --text-brand-secondary-hover: 31.8 81% 28.8%;
     --text-brand-tertiary: 40.6 96.1% 40.4%;
-    --text-brand-tertiary-alt: 40.6 96.1% 40.4%;
 
     --text-error-primary: 0 72.2% 50.6%;
-    --text-error-primary-hover: 0 73.7% 41.8%;
+    --text-error-secondary: 0 84.2% 60.2%;
     --text-warning-primary: 20.5 90.2% 48.2%;
+    --text-warning-secondary: 24.6 95% 53.1%;
     --text-success-primary: 142.1 76.2% 36.3%;
+    --text-success-secondary: 142.1 76.2% 36.3%;
 
     /* ============================================================
        FOREGROUND — Icons, controls, glyphs
@@ -65,35 +61,26 @@
        BACKGROUND — Container fills
        ============================================================ */
     --bg-primary: 0 0% 100%;
-    --bg-primary-alt: 0 0% 100%;
-    --bg-primary-hover: 0 0% 98%;
     --bg-primary-solid: 0 0% 3.9%;
     --bg-secondary: 0 0% 98%;
-    --bg-secondary-alt: 0 0% 98%;
     --bg-secondary-hover: 0 0% 96.1%;
-    --bg-secondary-solid: 0 0% 32.2%;
     --bg-tertiary: 0 0% 96.1%;
     --bg-quaternary: 0 0% 89.8%;
+    --bg-quinary: 0 0% 62.2%;
     --bg-overlay: 0 0% 3.9%;
 
     --bg-brand-primary: 54.5 91.7% 95.3%;
-    --bg-brand-primary-alt: 54.5 91.7% 95.3%;
     --bg-brand-secondary: 54.9 96.7% 88%;
     --bg-brand-tertiary: 47.9 95.8% 53.1%;
     --bg-brand-quaterary: 45.4 93.4% 47.5%;
-    --bg-brand: 40.6 96.1% 40.4%;
-    --bg-brand-hover: 35.5 91.7% 32.9%;
-    --bg-brand-section: 31.8 81% 28.8%;
-    --bg-brand-section-subtle: 35.5 91.7% 32.9%;
+    --bg-brand-quinary: 40.6 96.1% 40.4%;
 
-    --bg-error-primary: 0 85.7% 97.3%;
     --bg-error-secondary: 0 93.3% 94.1%;
     --bg-error: 0 72.2% 50.6%;
-    --bg-error-hover: 0 73.7% 41.8%;
-    --bg-warning-primary: 33.3 100% 96.5%;
+
     --bg-warning-secondary: 34.3 100% 91.8%;
     --bg-warning: 20.5 90.2% 48.2%;
-    --bg-success-primary: 138.5 76.5% 96.7%;
+
     --bg-success-secondary: 140.6 84.2% 92.5%;
     --bg-success: 142.1 76.2% 36.3%;
 
@@ -102,12 +89,12 @@
        ============================================================ */
     --border-primary: 0 0% 83.1%;
     --border-secondary: 0 0% 89.8%;
-    --border-secondary-alt: 0 0% 0%;
     --border-tertiary: 0 0% 96.1%;
     --border-brand: 45.4 93.4% 47.5%;
-    --border-brand-alt: 40.6 96.1% 40.4%;
+    --border-brand-solid: var(--border-brand);
     --border-error: 0 84.2% 60.2%;
-    --border-error-subtle: 0 93.5% 81.8%;
+    --border-warning: 24.6 95% 53.1%;
+    --border-success: 142.1 76.2% 36.3%;
 
     /* ============================================================
        SHADCN ALIASES — point at the semantic tokens above so any
@@ -121,7 +108,7 @@
     --card-foreground: var(--text-primary);
     --popover: var(--bg-primary);
     --popover-foreground: var(--text-primary);
-    --primary: var(--bg-brand);
+    --primary: var(--bg-brand-quinary);
     --primary-foreground: var(--text-primary-on-brand);
     --secondary: var(--bg-secondary);
     --secondary-foreground: var(--text-secondary);
@@ -161,26 +148,22 @@
     --text-primary-solid: 0 0% 9%;
     --text-secondary: 0 0% 83.1%;
     --text-secondary-hover: 0 0% 89.8%;
-    --text-secondary-on-brand: 0 0% 83.1%;
     --text-tertiary: 0 0% 63.9%;
-    --text-tertiary-hover: 0 0% 83.1%;
-    --text-tertiary-on-brand: 0 0% 63.9%;
     --text-quaternary: 0 0% 63.9%;
-    --text-quaternary-on-brand: 0 0% 63.9%;
     --text-quinary: 0 0% 63.9%;
     --text-placeholder: 0 0% 45.1%;
     --text-white: 0 0% 100%;
 
     --text-brand-primary: 0 0% 98%;
-    --text-brand-secondary: 0 0% 83.1%;
-    --text-brand-secondary-hover: 0 0% 89.8%;
+    --text-brand-secondary: 43 78% 54%;
     --text-brand-tertiary: 0 0% 63.9%;
-    --text-brand-tertiary-alt: 0 0% 98%;
 
-    --text-error-primary: 0 90.6% 70.8%;
-    --text-error-primary-hover: 0 93.5% 81.8%;
+    --text-error-primary: 4 82% 58%;
+    --text-error-secondary: 0 90.6% 70.8%;
     --text-warning-primary: 27 96% 61%;
+    --text-warning-secondary: 24.6 95% 53.1%;
     --text-success-primary: 141.9 69.2% 58%;
+    --text-success-secondary: 142.1 76.2% 36.3%;
 
     /* FOREGROUND */
     --fg-primary: 0 0% 100%;
@@ -200,56 +183,45 @@
     --fg-brand-secondary-alt: 0 0% 32.2%;
     --fg-brand-secondary-hover: 0 0% 45.1%;
 
-    --fg-error-primary: 0 84.2% 60.2%;
-    --fg-error-secondary: 0 90.6% 70.8%;
-    --fg-warning-primary: 24.6 95% 53.1%;
-    --fg-warning-secondary: 27 96% 61%;
-    --fg-success-primary: 142.1 70.6% 45.3%;
-    --fg-success-secondary: 141.9 69.2% 58%;
+    --fg-error-primary: 0 90.6% 70.8%;
+    --fg-error-secondary: 0 93.5% 81.8%;
+    --fg-warning-primary: 27 96% 61%;
+    --fg-warning-secondary: 30.7 97.2% 72.4%;
+    --fg-success-primary: 141.9 69.2% 58%;
+    --fg-success-secondary: 141.7 76.6% 73.1%;
 
     /* BACKGROUND */
     --bg-primary: 0 0% 3.9%;
-    --bg-primary-alt: 0 0% 9%;
-    --bg-primary-hover: 0 0% 9%;
-    --bg-primary-solid: 0 0% 14.9%;
+    --bg-primary-solid: 0 0% 3.9%;
     --bg-secondary: 0 0% 9%;
-    --bg-secondary-alt: 0 0% 3.9%;
     --bg-secondary-hover: 0 0% 14.9%;
-    --bg-secondary-solid: 0 0% 32.2%;
-    --bg-tertiary: 0 0% 14.9%;
+    --bg-tertiary: 0 0% 10%;
     --bg-quaternary: 0 0% 25.1%;
+    --bg-quinary: 0 0% 32.2%;
     --bg-overlay: 0 0% 14.9%;
 
-    --bg-brand-primary: 45.4 93.4% 47.5%;
-    --bg-brand-primary-alt: 0 0% 9%;
+    --bg-brand-primary: 45 8% 8%;
     --bg-brand-secondary: 0 0% 14.9%;
     --bg-brand-tertiary: 47.9 95.8% 53.1%;
     --bg-brand-quaterary: 45.4 93.4% 47.5%;
-    --bg-brand: 40.6 96.1% 40.4%;
-    --bg-brand-hover: 45.4 93.4% 47.5%;
-    --bg-brand-section: 0 0% 9%;
-    --bg-brand-section-subtle: 0 0% 3.9%;
+    --bg-brand-quinary: 40.6 96.1% 40.4%;
 
-    --bg-error-primary: 0 74.7% 15.5%;
-    --bg-error-secondary: 0 72.2% 50.6%;
+    --bg-error-secondary: 0 70% 10%;
     --bg-error: 0 72.2% 50.6%;
-    --bg-error-hover: 0 84.2% 60.2%;
-    --bg-warning-primary: 0 74.7% 15.5%;
+
+    --bg-warning-secondary: 20.5 90.2% 16%;
     --bg-warning: 20.5 90.2% 48.2%;
-    --bg-warning-secondary: 20.5 90.2% 8.2%;
-    --bg-success-primary: 144.9 80.4% 10%;
+
     --bg-success-secondary: 142.1 76.2% 16.3%;
     --bg-success: 142.1 76.2% 36.3%;
 
     /* BORDER */
     --border-primary: 0 0% 25.1%;
     --border-secondary: 0 0% 14.9%;
-    --border-secondary-alt: 0 0% 14.9%;
     --border-tertiary: 0 0% 14.9%;
-    --border-brand: 47.9 95.8% 30.1%;
-    --border-brand-alt: 0 0% 25.1%;
+    --border-brand: 45.4 93.4% 20.5%;
+    --border-brand-solid: 45.4 93.4% 47.5%;
     --border-error: 0 90.6% 70.8%;
-    --border-error-subtle: 0 84.2% 60.2%;
     --border-warning: 24.6 95% 30.1%;
     --border-success: 142.1 76.2% 36.3%;
 

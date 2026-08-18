@@ -1,4 +1,4 @@
-import { Meta, StoryObj } from "@storybook/react"
+import { Meta, StoryObj } from "@storybook/react-vite"
 import { Avatar, AvatarImage, AvatarFallback, AvatarProps } from "@inmediam/ui"
 
 export default {

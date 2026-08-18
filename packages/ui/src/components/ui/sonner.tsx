@@ -18,7 +18,7 @@ const Toaster = ({ ...props }: ToasterProps) => {
             'group toast group-[.toaster]:bg-primary group-[.toaster]:text-primary group-[.toaster]:border-secondary group-[.toaster]:shadow-lg',
           description: 'group-[.toast]:text-tertiary',
           actionButton:
-            'group-[.toast]:bg-brand group-[.toast]:text-primary-on-brand',
+            'group-[.toast]:bg-brand-quinary group-[.toast]:text-primary-on-brand',
           cancelButton:
             'group-[.toast]:bg-tertiary group-[.toast]:text-tertiary',
         },
