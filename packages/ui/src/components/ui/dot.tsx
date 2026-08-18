@@ -13,7 +13,7 @@ const dotVariants = cva(
         destructive: "bg-error",
         success: "bg-success",
         warning: "bg-warning",
-        outline: "bg-background border-2 border-primary",
+        outline: "bg-quinary",
       },
     },
     defaultVariants: {

@@ -26,27 +26,27 @@ Os tokens foram **importados diretamente da collection "Colors" do Figma (InMedi
 
 ### 1.1 Estatísticas por Projeto
 
-| Projeto | gray-* | brand-* | error-* | warning-* | success-* | Primitivas diretas |
-|---------|--------|---------|---------|-----------|-----------|-------------------|
-| design-system | 28 | 22 | 4 | 3 | 3 | 0 |
-| inmediam_front | ~2659 | ~199 | ~49 | ~18 | ~47 | 14 (red, orange) |
-| inmediam_clientes | 844 | 33 | 10 | 3 | 24 | 6 (red, orange) |
-| vistoriador | ~975 | ~100 | 0 | 0 | 0 | 62 (red, yellow, green, blue, amber, indigo) |
-| **TOTAL** | ~4506 | ~354 | ~63 | ~24 | ~74 | 82 |
+| Projeto           | gray-* | brand-* | error-* | warning-* | success-* | Primitivas diretas                           |
+| ----------------- | ------ | ------- | ------- | --------- | --------- | -------------------------------------------- |
+| design-system     | 28     | 22      | 4       | 3         | 3         | 0                                            |
+| inmediam_front    | ~2659  | ~199    | ~49     | ~18       | ~47       | 14 (red, orange)                             |
+| inmediam_clientes | 844    | 33      | 10      | 3         | 24        | 6 (red, orange)                              |
+| vistoriador       | ~975   | ~100    | 0       | 0         | 0         | 62 (red, yellow, green, blue, amber, indigo) |
+| **TOTAL**         | ~4506  | ~354    | ~63     | ~24       | ~74       | 82                                           |
 
 ### 1.2 Prefixos `dark:` a Remover
 
-| Padrão | Ocorrências Estimadas |
-|--------|----------------------|
-| `dark:text-gray-*` | ~1300 |
-| `dark:bg-gray-*` | ~180 |
-| `dark:border-gray-*` | ~310 |
-| `dark:hover:*-gray-*` | ~25 |
-| `dark:*-brand-*` | ~50 |
-| `dark:*-error/red-*` | ~20 |
-| `dark:*-warning/orange-*` | ~5 |
-| `dark:*-success/green-*` | ~10 |
-| **TOTAL** | **~1960** |
+| Padrão                    | Ocorrências Estimadas |
+| ------------------------- | --------------------- |
+| `dark:text-gray-*`        | ~1300                 |
+| `dark:bg-gray-*`          | ~180                  |
+| `dark:border-gray-*`      | ~310                  |
+| `dark:hover:*-gray-*`     | ~25                   |
+| `dark:*-brand-*`          | ~50                   |
+| `dark:*-error/red-*`      | ~20                   |
+| `dark:*-warning/orange-*` | ~5                    |
+| `dark:*-success/green-*`  | ~10                   |
+| **TOTAL**                 | **~1960**             |
 
 ---
 
@@ -54,72 +54,72 @@ Os tokens foram **importados diretamente da collection "Colors" do Figma (InMedi
 
 ### 2.1 Gray - Análise de Uso
 
-| Tonalidade | Uso Background | Uso Border | Uso Text/Icon |
-|------------|----------------|------------|---------------|
-| **gray-25** | Ultra-sutil (brand-adjacent) | - | - |
-| **gray-50** | Page backgrounds, table headers, disabled states, badge hover | - | - |
-| **gray-100** | Hover states, icon backgrounds, avatar backgrounds, inactive states | Timeline borders | Dark mode carousel text |
-| **gray-200** | Separators, progress tracks, skeleton | Table/card borders, input hover, badge borders, dividers | Dark mode input text |
-| **gray-300** | Carousel dots inactive, stepper inactive | Checkbox/radio borders, hover borders, dashed borders | Tooltip muted text, dark mode labels |
-| **gray-400** | Dot indicators secondary | Focus borders | Icons, disabled text, action icons |
-| **gray-500** | Dot neutral, disabled radio checked | Dark mode toggle borders | Placeholder text, menu icons, muted labels, metadata |
-| **gray-600** | Carousel hover | Dark mode focus/tab borders | Table headers, body text, descriptions, menu text |
-| **gray-700** | Dark mode cards, summary bars | Dark mode primary borders (muito comum) | Label text, button tertiary, badge text |
-| **gray-800** | Dark mode cards, dark mode icons | Dark mode layout borders, dark mode focus rings | - |
-| **gray-900** | Carousel active dots, chart labels, avatar fallback | - | Primary headings, names, titles, form values |
-| **gray-950** | Tooltip backgrounds (inverted) | - | Emphasized user names |
+| Tonalidade   | Uso Background                                                      | Uso Border                                               | Uso Text/Icon                                        |
+| ------------ | ------------------------------------------------------------------- | -------------------------------------------------------- | ---------------------------------------------------- |
+| **gray-25**  | Ultra-sutil (brand-adjacent)                                        | -                                                        | -                                                    |
+| **gray-50**  | Page backgrounds, table headers, disabled states, badge hover       | -                                                        | -                                                    |
+| **gray-100** | Hover states, icon backgrounds, avatar backgrounds, inactive states | Timeline borders                                         | Dark mode carousel text                              |
+| **gray-200** | Separators, progress tracks, skeleton                               | Table/card borders, input hover, badge borders, dividers | Dark mode input text                                 |
+| **gray-300** | Carousel dots inactive, stepper inactive                            | Checkbox/radio borders, hover borders, dashed borders    | Tooltip muted text, dark mode labels                 |
+| **gray-400** | Dot indicators secondary                                            | Focus borders                                            | Icons, disabled text, action icons                   |
+| **gray-500** | Dot neutral, disabled radio checked                                 | Dark mode toggle borders                                 | Placeholder text, menu icons, muted labels, metadata |
+| **gray-600** | Carousel hover                                                      | Dark mode focus/tab borders                              | Table headers, body text, descriptions, menu text    |
+| **gray-700** | Dark mode cards, summary bars                                       | Dark mode primary borders (muito comum)                  | Label text, button tertiary, badge text              |
+| **gray-800** | Dark mode cards, dark mode icons                                    | Dark mode layout borders, dark mode focus rings          | -                                                    |
+| **gray-900** | Carousel active dots, chart labels, avatar fallback                 | -                                                        | Primary headings, names, titles, form values         |
+| **gray-950** | Tooltip backgrounds (inverted)                                      | -                                                        | Emphasized user names                                |
 
 ### 2.2 Brand (Yellow) - Análise de Uso
 
-| Tonalidade | Uso Background | Uso Border | Uso Text/Icon |
-|------------|----------------|------------|---------------|
-| **brand-25** | Selected row, menu hover, gradient start, list selected | - | - |
-| **brand-50** | Badge default, tertiary button, checkbox card selected, radio selected, icon wrappers | Selected state borders | - |
-| **brand-100** | Badge hover, icon containers, radio selected, confirmation dialogs | Selector checked borders | - |
-| **brand-200** | - | Badge borders, hover borders | - |
-| **brand-400** | **Primary button default**, avatar fallback, day selector | - | Icon hover (stars) |
-| **brand-500** | Navigation indicators, progress bars, stepper, status dots | Tertiary button, checkbox selected, toggle selected, chart strokes | Loader spinners |
-| **brand-600** | Checkbox/radio/switch checked, progress, slider, notification badges | Slider thumb, chart strokes | Required asterisk, detail icons, helper icons |
-| **brand-700** | - | - | Badge text, tertiary buttons, encargo info, card titles |
-| **brand-800** | - | - | Logo buttons, hover links, info headers |
-| **brand-900** | - | - | Selected item labels, radio selected text, toggle selected text |
+| Tonalidade    | Uso Background                                                                        | Uso Border                                                         | Uso Text/Icon                                                   |
+| ------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------ | --------------------------------------------------------------- |
+| **brand-25**  | Selected row, menu hover, gradient start, list selected                               | -                                                                  | -                                                               |
+| **brand-50**  | Badge default, tertiary button, checkbox card selected, radio selected, icon wrappers | Selected state borders                                             | -                                                               |
+| **brand-100** | Badge hover, icon containers, radio selected, confirmation dialogs                    | Selector checked borders                                           | -                                                               |
+| **brand-200** | -                                                                                     | Badge borders, hover borders                                       | -                                                               |
+| **brand-400** | **Primary button default**, avatar fallback, day selector                             | -                                                                  | Icon hover (stars)                                              |
+| **brand-500** | Navigation indicators, progress bars, stepper, status dots                            | Tertiary button, checkbox selected, toggle selected, chart strokes | Loader spinners                                                 |
+| **brand-600** | Checkbox/radio/switch checked, progress, slider, notification badges                  | Slider thumb, chart strokes                                        | Required asterisk, detail icons, helper icons                   |
+| **brand-700** | -                                                                                     | -                                                                  | Badge text, tertiary buttons, encargo info, card titles         |
+| **brand-800** | -                                                                                     | -                                                                  | Logo buttons, hover links, info headers                         |
+| **brand-900** | -                                                                                     | -                                                                  | Selected item labels, radio selected text, toggle selected text |
 
 ### 2.3 Error (Red) - Análise de Uso
 
-| Tonalidade | Uso Background | Uso Border | Uso Text/Icon |
-|------------|----------------|------------|---------------|
-| **error-50** | Badge destructive, hover delete actions | - | - |
-| **error-100** | Confirmation dialog icons, destructive dialog wrappers | - | - |
-| **error-200** | - | Badge destructive borders | - |
-| **error-500** | Inactive status dots, badge dot destructive, auth failed | Form input error, ring focus error | Wifi off icon |
-| **error-600** | Discount/encargo bars | - | Hint text (form errors), destructive button, dialog icons, discount values |
-| **error-700** | - | - | Badge destructive text, dropdown delete, cancel actions, discount labels |
+| Tonalidade    | Uso Background                                           | Uso Border                         | Uso Text/Icon                                                              |
+| ------------- | -------------------------------------------------------- | ---------------------------------- | -------------------------------------------------------------------------- |
+| **error-50**  | Badge destructive, hover delete actions                  | -                                  | -                                                                          |
+| **error-100** | Confirmation dialog icons, destructive dialog wrappers   | -                                  | -                                                                          |
+| **error-200** | -                                                        | Badge destructive borders          | -                                                                          |
+| **error-500** | Inactive status dots, badge dot destructive, auth failed | Form input error, ring focus error | Wifi off icon                                                              |
+| **error-600** | Discount/encargo bars                                    | -                                  | Hint text (form errors), destructive button, dialog icons, discount values |
+| **error-700** | -                                                        | -                                  | Badge destructive text, dropdown delete, cancel actions, discount labels   |
 
 ### 2.4 Warning (Orange) - Análise de Uso
 
-| Tonalidade | Uso Background | Uso Border | Uso Text/Icon |
-|------------|----------------|------------|---------------|
-| **warning-25** | Alert card backgrounds, contestacao cards | - | - |
-| **warning-50** | Badge warning, alert icon inner, button hover | Contestacao icon wrapper | - |
-| **warning-100** | Badge hover, confirmation dialog icons | - | - |
-| **warning-200** | - | Badge warning, alert outer, contestacao card | - |
-| **warning-300** | - | Alert icon inner, contestacao button | - |
-| **warning-500** | Badge dot warning, status indicators, cancellation requested | Button warning default | - |
-| **warning-600** | Status step pending | Button warning hover | Alert icons, contestacao icons |
-| **warning-700** | - | - | Badge warning text, contestacao button text |
+| Tonalidade      | Uso Background                                               | Uso Border                                   | Uso Text/Icon                               |
+| --------------- | ------------------------------------------------------------ | -------------------------------------------- | ------------------------------------------- |
+| **warning-25**  | Alert card backgrounds, contestacao cards                    | -                                            | -                                           |
+| **warning-50**  | Badge warning, alert icon inner, button hover                | Contestacao icon wrapper                     | -                                           |
+| **warning-100** | Badge hover, confirmation dialog icons                       | -                                            | -                                           |
+| **warning-200** | -                                                            | Badge warning, alert outer, contestacao card | -                                           |
+| **warning-300** | -                                                            | Alert icon inner, contestacao button         | -                                           |
+| **warning-500** | Badge dot warning, status indicators, cancellation requested | Button warning default                       | -                                           |
+| **warning-600** | Status step pending                                          | Button warning hover                         | Alert icons, contestacao icons              |
+| **warning-700** | -                                                            | -                                            | Badge warning text, contestacao button text |
 
 ### 2.5 Success (Emerald) - Análise de Uso
 
-| Tonalidade | Uso Background | Uso Border | Uso Text/Icon |
-|------------|----------------|------------|---------------|
-| **success-25** | Alert card success | - | - |
-| **success-50** | Badge success | - | - |
-| **success-100** | Badge hover | - | - |
-| **success-200** | - | Badge success, alert outer | - |
-| **success-300** | - | Alert icon inner | - |
-| **success-500** | Badge dot success, active status, auth success, button success | - | - |
-| **success-600** | Completed steps, progress, check icons, seguradora active | Step borders, timeline | Alert icons, email success, positive values, check icons |
-| **success-700** | - | - | Badge success text, expense labels, encargo values, discount text |
+| Tonalidade      | Uso Background                                                 | Uso Border                 | Uso Text/Icon                                                     |
+| --------------- | -------------------------------------------------------------- | -------------------------- | ----------------------------------------------------------------- |
+| **success-25**  | Alert card success                                             | -                          | -                                                                 |
+| **success-50**  | Badge success                                                  | -                          | -                                                                 |
+| **success-100** | Badge hover                                                    | -                          | -                                                                 |
+| **success-200** | -                                                              | Badge success, alert outer | -                                                                 |
+| **success-300** | -                                                              | Alert icon inner           | -                                                                 |
+| **success-500** | Badge dot success, active status, auth success, button success | -                          | -                                                                 |
+| **success-600** | Completed steps, progress, check icons, seguradora active      | Step borders, timeline     | Alert icons, email success, positive values, check icons          |
+| **success-700** | -                                                              | -                          | Badge success text, expense labels, encargo values, discount text |
 
 ---
 
@@ -142,12 +142,8 @@ Os tokens abaixo foram exportados da collection **Colors** no Figma — modos `L
   --text-primary-solid: 0 0% 9%;               /* fixo (não inverte) */
   --text-secondary: 0 0% 25.1%;                /* gray-700 */
   --text-secondary-hover: 0 0% 14.9%;          /* gray-800 */
-  --text-secondary-on-brand: 52.8 98.3% 76.9%; /* yellow-200 */
   --text-tertiary: 0 0% 32.2%;                 /* gray-600 */
-  --text-tertiary-hover: 0 0% 25.1%;           /* gray-700 */
-  --text-tertiary-on-brand: 52.8 98.3% 76.9%;
   --text-quaternary: 0 0% 45.1%;               /* gray-500 */
-  --text-quaternary-on-brand: 50.4 97.8% 63.5%;
   --text-quinary: 0 0% 63.9%;                  /* gray-400 — fixo */
   --text-placeholder: 0 0% 45.1%;
   --text-white: 0 0% 100%;
@@ -155,13 +151,11 @@ Os tokens abaixo foram exportados da collection **Colors** no Figma — modos `L
   /* Brand */
   --text-brand-primary: 28.4 72.5% 25.7%;      /* yellow-900 */
   --text-brand-secondary: 35.5 91.7% 32.9%;    /* yellow-700 */
-  --text-brand-secondary-hover: 31.8 81% 28.8%;
   --text-brand-tertiary: 40.6 96.1% 40.4%;     /* yellow-600 */
   --text-brand-tertiary-alt: 40.6 96.1% 40.4%;
 
   /* Status */
   --text-error-primary: 0 72.2% 50.6%;         /* red-600 */
-  --text-error-primary-hover: 0 73.7% 41.8%;   /* red-700 */
   --text-warning-primary: 20.5 90.2% 48.2%;    /* orange-600 */
   --text-success-primary: 142.1 76.2% 36.3%;   /* green-600 */
 }
@@ -172,24 +166,17 @@ Os tokens abaixo foram exportados da collection **Colors** no Figma — modos `L
   --text-primary-solid: 0 0% 9%;               /* mantém: alguns contextos exigem texto escuro mesmo no dark */
   --text-secondary: 0 0% 83.1%;
   --text-secondary-hover: 0 0% 89.8%;
-  --text-secondary-on-brand: 0 0% 83.1%;
   --text-tertiary: 0 0% 63.9%;
-  --text-tertiary-hover: 0 0% 83.1%;
-  --text-tertiary-on-brand: 0 0% 63.9%;
   --text-quaternary: 0 0% 63.9%;
-  --text-quaternary-on-brand: 0 0% 63.9%;
   --text-quinary: 0 0% 63.9%;
   --text-placeholder: 0 0% 45.1%;
   --text-white: 0 0% 100%;
 
   --text-brand-primary: 0 0% 98%;
   --text-brand-secondary: 0 0% 83.1%;
-  --text-brand-secondary-hover: 0 0% 89.8%;
   --text-brand-tertiary: 0 0% 63.9%;
-  --text-brand-tertiary-alt: 0 0% 98%;
 
   --text-error-primary: 0 90.6% 70.8%;
-  --text-error-primary-hover: 0 93.5% 81.8%;
   --text-warning-primary: 27 96% 61%;
   --text-success-primary: 141.9 69.2% 58%;
 }
@@ -260,13 +247,9 @@ Os tokens abaixo foram exportados da collection **Colors** no Figma — modos `L
 :root {
   /* Hierarquia neutra */
   --bg-primary: 0 0% 100%;                     /* white */
-  --bg-primary-alt: 0 0% 100%;
-  --bg-primary-hover: 0 0% 98%;                /* gray-50 */
   --bg-primary-solid: 0 0% 3.9%;               /* gray-950 — usado em tooltips/overlays invertidos */
   --bg-secondary: 0 0% 98%;
-  --bg-secondary-alt: 0 0% 98%;
   --bg-secondary-hover: 0 0% 96.1%;            /* gray-100 */
-  --bg-secondary-solid: 0 0% 32.2%;            /* gray-600 — fixo */
   --bg-tertiary: 0 0% 96.1%;                   /* gray-100 */
   --bg-quaternary: 0 0% 89.8%;                 /* gray-200 */
   --bg-overlay: 0 0% 3.9%;                     /* gray-950 */
@@ -277,33 +260,23 @@ Os tokens abaixo foram exportados da collection **Colors** no Figma — modos `L
   --bg-brand-secondary: 54.9 96.7% 88%;        /* yellow-100 */
   --bg-brand-tertiary: 47.9 95.8% 53.1%; /* yellow-400 — fixo */
   --bg-brand-quaterary: 45.4 93.4% 47.5%;/* yellow-500 — fixo */
-  --bg-brand: 40.6 96.1% 40.4%;          /* yellow-600 — botão primary */
-  --bg-brand-hover: 35.5 91.7% 32.9%;
-  --bg-brand-section: 31.8 81% 28.8%;
-  --bg-brand-section-subtle: 35.5 91.7% 32.9%;
+  --bg-brand-quinary: 40.6 96.1% 40.4%;          /* yellow-600 — botão primary */
 
   /* Status */
-  --bg-error-primary: 0 85.7% 97.3%;           /* red-50 */
+  --bg-error-secondary: 0 85.7% 97.3%;           /* red-50 */
   --bg-error-secondary: 0 93.3% 94.1%;         /* red-100 */
   --bg-error: 0 72.2% 50.6%;             /* red-600 — fixo */
-  --bg-error-hover: 0 73.7% 41.8%;
-  --bg-warning-primary: 33.3 100% 96.5%;       /* orange-50 */
   --bg-warning-secondary: 34.3 100% 91.8%;     /* orange-100 */
   --bg-warning: 20.5 90.2% 48.2%;        /* orange-600 — fixo */
-  --bg-success-primary: 138.5 76.5% 96.7%;     /* green-50 */
   --bg-success-secondary: 140.6 84.2% 92.5%;   /* green-100 */
   --bg-success: 142.1 76.2% 36.3%;       /* green-600 — fixo */
 }
 
 .dark {
   --bg-primary: 0 0% 3.9%;
-  --bg-primary-alt: 0 0% 9%;
-  --bg-primary-hover: 0 0% 9%;
   --bg-primary-solid: 0 0% 14.9%;
   --bg-secondary: 0 0% 9%;
-  --bg-secondary-alt: 0 0% 3.9%;
   --bg-secondary-hover: 0 0% 14.9%;
-  --bg-secondary-solid: 0 0% 32.2%;
   --bg-tertiary: 0 0% 14.9%;
   --bg-quaternary: 0 0% 25.1%;
   --bg-overlay: 0 0% 14.9%;
@@ -313,19 +286,13 @@ Os tokens abaixo foram exportados da collection **Colors** no Figma — modos `L
   --bg-brand-secondary: 0 0% 14.9%;
   --bg-brand-tertiary: 47.9 95.8% 53.1%;
   --bg-brand-quaterary: 45.4 93.4% 47.5%;
-  --bg-brand: 40.6 96.1% 40.4%;
-  --bg-brand-hover: 45.4 93.4% 47.5%;
-  --bg-brand-section: 0 0% 9%;
-  --bg-brand-section-subtle: 0 0% 3.9%;
+  --bg-brand-quinary: 40.6 96.1% 40.4%;
 
-  --bg-error-primary: 0 74.7% 15.5%;
+  --bg-error-secondary: 0 74.7% 15.5%;
   --bg-error-secondary: 0 72.2% 50.6%;
   --bg-error: 0 72.2% 50.6%;
-  --bg-error-hover: 0 84.2% 60.2%;
-  --bg-warning-primary: 0 74.7% 15.5%;
   --bg-warning-secondary: 20.5 90.2% 48.2%;
   --bg-warning: 20.5 90.2% 48.2%;
-  --bg-success-primary: 144.9 80.4% 10%;
   --bg-success-secondary: 142.1 76.2% 36.3%;
   --bg-success: 142.1 76.2% 36.3%;
 }
@@ -337,7 +304,6 @@ Os tokens abaixo foram exportados da collection **Colors** no Figma — modos `L
 :root {
   --border-primary: 0 0% 83.1%;                /* gray-300 */
   --border-secondary: 0 0% 89.8%;              /* gray-200 */
-  --border-secondary-alt: 0 0% 0% / 0.1;       /* black @ 10% — usar com hsl(var(--border-secondary-alt)) */
   --border-tertiary: 0 0% 96.1%;               /* gray-100 */
 
   --border-brand: 45.4 93.4% 47.5%;            /* yellow-500 */
@@ -350,7 +316,6 @@ Os tokens abaixo foram exportados da collection **Colors** no Figma — modos `L
 .dark {
   --border-primary: 0 0% 25.1%;
   --border-secondary: 0 0% 14.9%;
-  --border-secondary-alt: 0 0% 14.9%;
   --border-tertiary: 0 0% 14.9%;
 
   --border-brand: 47.9 95.8% 53.1%;
@@ -380,7 +345,7 @@ Para manter compatibilidade com componentes shadcn existentes, criamos aliases q
   --popover-foreground: var(--text-primary);
 
   /* Primary = Brand sólido (yellow-600) */
-  --primary: var(--bg-brand);
+  --primary: var(--bg-brand-quinary);
   --primary-foreground: var(--text-primary-on-brand);
 
   /* Secondary = Hierarquia neutra secundária */
@@ -413,25 +378,25 @@ Para manter compatibilidade com componentes shadcn existentes, criamos aliases q
 
 **Mapeamento:**
 
-| Alias shadcn | Token Figma | Cor base (light) |
-|--------------|-------------|------------------|
-| `--background` | `--bg-primary` | white |
-| `--foreground` | `--text-primary` | gray-900 |
-| `--card` | `--bg-primary` | white |
-| `--popover` | `--bg-primary` | white |
-| `--primary` | `--bg-brand` | yellow-600 |
-| `--primary-foreground` | `--text-primary-on-brand` | white |
-| `--secondary` | `--bg-secondary` | gray-50 |
-| `--secondary-foreground` | `--text-secondary` | gray-700 |
-| `--muted` | `--bg-tertiary` | gray-100 |
-| `--muted-foreground` | `--text-tertiary` | gray-600 |
-| `--accent` | `--bg-secondary-hover` | gray-100 |
-| `--accent-foreground` | `--text-primary` | gray-900 |
-| `--destructive` | `--bg-error` | red-600 |
-| `--destructive-foreground` | `--text-white` | white |
-| `--border` | `--border-secondary` | gray-200 |
-| `--input` | `--border-primary` | gray-300 |
-| `--ring` | `--border-brand` | yellow-500 |
+| Alias shadcn               | Token Figma               | Cor base (light) |
+| -------------------------- | ------------------------- | ---------------- |
+| `--background`             | `--bg-primary`            | white            |
+| `--foreground`             | `--text-primary`          | gray-900         |
+| `--card`                   | `--bg-primary`            | white            |
+| `--popover`                | `--bg-primary`            | white            |
+| `--primary`                | `--bg-brand-quinary`      | yellow-600       |
+| `--primary-foreground`     | `--text-primary-on-brand` | white            |
+| `--secondary`              | `--bg-secondary`          | gray-50          |
+| `--secondary-foreground`   | `--text-secondary`        | gray-700         |
+| `--muted`                  | `--bg-tertiary`           | gray-100         |
+| `--muted-foreground`       | `--text-tertiary`         | gray-600         |
+| `--accent`                 | `--bg-secondary-hover`    | gray-100         |
+| `--accent-foreground`      | `--text-primary`          | gray-900         |
+| `--destructive`            | `--bg-error`              | red-600          |
+| `--destructive-foreground` | `--text-white`            | white            |
+| `--border`                 | `--border-secondary`      | gray-200         |
+| `--input`                  | `--border-primary`        | gray-300         |
+| `--ring`                   | `--border-brand`          | yellow-500       |
 
 ---
 
@@ -487,108 +452,97 @@ Tabelas de substituição **validadas por HSL** contra a collection `Colors` do 
 
 ### 4.5.1 Gray (neutros)
 
-| Primitiva | Contexto | → Semântico | Quando usar |
-|-----------|----------|-------------|-------------|
-| `text-gray-400` | text | `text-quinary` | Texto desativado, ícones decorativos |
-| `text-gray-400` | icon (svg/glyph) | `text-fg-quaternary` | Ícones em estado padrão |
-| `text-gray-500` | text | `text-quaternary` | Labels muted, metadata |
-| `text-gray-500` | placeholder | `text-placeholder` | Placeholder de inputs |
-| `text-gray-500` | icon | `text-fg-quaternary-hover` | Ícones em hover |
-| `text-gray-600` | text | `text-tertiary` | Body text, descrições, table headers |
-| `text-gray-600` | icon | `text-fg-tertiary` | Ícones secundários |
-| `text-gray-700` | text | `text-secondary` | Labels, button tertiary, badge text |
-| `text-gray-700` | text hover | `text-tertiary-hover` | Hover de texto tertiary |
-| `text-gray-700` | icon | `text-fg-secondary` ou `text-fg-secondary-solid` | Ícones primários (use `-solid` para nunca inverter) |
-| `text-gray-700` | icon hover | `text-fg-tertiary-hover` | Hover de ícone tertiary |
-| `text-gray-800` | text | `text-secondary-hover` | Hover de texto secondary |
-| `text-gray-800` | icon | `text-fg-secondary-hover` | Hover de ícone secondary |
-| `text-gray-900` | text | `text-primary` | Headings, names, titles, form values |
-| `text-gray-900` | text fixo (não inverte) | `text-primary-solid` | Texto que deve permanecer escuro mesmo no dark |
-| `text-gray-900` | icon | `text-fg-primary` ou `text-fg-primary-solid` | Ícones de destaque |
-| `bg-gray-50` | bg | `bg-secondary` ou `bg-primary-hover` | Page bg, table headers, hover de bg-primary |
-| `bg-gray-100` | bg | `bg-tertiary` ou `bg-secondary-hover` | Hover de itens, icon bg, avatar bg |
-| `bg-gray-200` | bg | `bg-quaternary` | Skeleton, progress tracks, separators |
-| `bg-gray-200` | border | `border-secondary` | Bordas de cards/tables/inputs |
-| `bg-gray-300` | border | `border-primary` | Bordas de checkbox/radio/inputs |
-| `bg-gray-600` | bg fixo | `bg-secondary-solid` | Fundos que não invertem |
-| `bg-gray-950` | bg invertido | `bg-overlay` ou `bg-primary-solid` | Tooltips, overlays |
-| `border-gray-100` | border | `border-tertiary` | Bordas mais suaves |
-| `border-gray-200` | border | `border-secondary` | Bordas padrão |
-| `border-gray-300` | border | `border-primary` | Bordas de inputs em foco |
+| Primitiva         | Contexto                | → Semântico                                      | Quando usar                                         |
+| ----------------- | ----------------------- | ------------------------------------------------ | --------------------------------------------------- |
+| `text-gray-400`   | text                    | `text-quinary`                                   | Texto desativado, ícones decorativos                |
+| `text-gray-400`   | icon (svg/glyph)        | `text-fg-quaternary`                             | Ícones em estado padrão                             |
+| `text-gray-500`   | text                    | `text-quaternary`                                | Labels muted, metadata                              |
+| `text-gray-500`   | placeholder             | `text-placeholder`                               | Placeholder de inputs                               |
+| `text-gray-500`   | icon                    | `text-fg-quaternary-hover`                       | Ícones em hover                                     |
+| `text-gray-600`   | text                    | `text-tertiary`                                  | Body text, descrições, table headers                |
+| `text-gray-600`   | icon                    | `text-fg-tertiary`                               | Ícones secundários                                  |
+| `text-gray-700`   | text                    | `text-secondary`                                 | Labels, button tertiary, badge text                 |
+| `text-gray-700`   | icon                    | `text-fg-secondary` ou `text-fg-secondary-solid` | Ícones primários (use `-solid` para nunca inverter) |
+| `text-gray-700`   | icon hover              | `text-fg-tertiary-hover`                         | Hover de ícone tertiary                             |
+| `text-gray-800`   | text                    | `text-secondary-hover`                           | Hover de texto secondary                            |
+| `text-gray-800`   | icon                    | `text-fg-secondary-hover`                        | Hover de ícone secondary                            |
+| `text-gray-900`   | text                    | `text-primary`                                   | Headings, names, titles, form values                |
+| `text-gray-900`   | text fixo (não inverte) | `text-primary-solid`                             | Texto que deve permanecer escuro mesmo no dark      |
+| `text-gray-900`   | icon                    | `text-fg-primary` ou `text-fg-primary-solid`     | Ícones de destaque                                  |
+| `bg-gray-100`     | bg                      | `bg-tertiary` ou `bg-secondary-hover`            | Hover de itens, icon bg, avatar bg                  |
+| `bg-gray-200`     | bg                      | `bg-quaternary`                                  | Skeleton, progress tracks, separators               |
+| `bg-gray-200`     | border                  | `border-secondary`                               | Bordas de cards/tables/inputs                       |
+| `bg-gray-300`     | border                  | `border-primary`                                 | Bordas de checkbox/radio/inputs                     |
+| `bg-gray-950`     | bg invertido            | `bg-overlay` ou `bg-primary-solid`               | Tooltips, overlays                                  |
+| `border-gray-100` | border                  | `border-tertiary`                                | Bordas mais suaves                                  |
+| `border-gray-200` | border                  | `border-secondary`                               | Bordas padrão                                       |
+| `border-gray-300` | border                  | `border-primary`                                 | Bordas de inputs em foco                            |
 
 > **Atenção `dark:` no original:** todas as utilidades `dark:*-gray-*` devem ser **removidas**. Os tokens semânticos já fazem a inversão automaticamente. Exemplo: `text-gray-900 dark:text-gray-100` → apenas `text-primary`.
 
 ### 4.5.2 Brand (yellow)
 
-| Primitiva | Contexto | → Semântico | Quando usar |
-|-----------|----------|-------------|-------------|
-| `bg-yellow-50` (`brand-50`) | bg | `bg-brand-primary` ou `bg-brand-primary-alt` | Badge default, icon wrappers, selected rows |
-| `bg-yellow-100` (`brand-100`) | bg | `bg-brand-secondary` | Badge hover, icon containers |
-| `text-yellow-200` (`brand-200`) | text on brand | `text-secondary-on-brand` ou `text-tertiary-on-brand` | Texto sobre fundos brand-solid |
-| `text-yellow-300` (`brand-300`) | text on brand | `text-quaternary-on-brand` | Texto muted sobre fundos brand |
-| `bg-yellow-400` (`brand-400`) | bg fixo | `bg-brand-tertiary-solid` | Botão primary default (não inverte) |
-| `bg-yellow-500` (`brand-500`) | bg fixo | `bg-brand-quaterary-solid` | Status dots, progress bars |
-| `text-yellow-500` (`brand-500`) | icon | `text-fg-brand-secondary` ou `text-fg-brand-secondary-alt` | Loaders, ícones brand secundários |
-| `border-yellow-500` | border | `border-brand` | Tertiary button, checkbox selected |
-| `bg-yellow-600` (`brand-600`) | bg | `bg-brand-solid` | Checkbox/radio/switch checked, slider |
-| `text-yellow-600` (`brand-600`) | text | `text-brand-tertiary` ou `text-brand-tertiary-alt` | Required asterisk, helper icons |
-| `text-yellow-600` (`brand-600`) | icon | `text-fg-brand-primary` ou `text-fg-brand-primary-alt` | Ícones brand primários |
-| `border-yellow-600` | border | `border-brand-alt` | Slider thumb, chart strokes |
-| `bg-yellow-700` (`brand-700`) | bg | `bg-brand-solid-hover` ou `bg-brand-section-subtle` | Hover do botão primary |
-| `text-yellow-700` (`brand-700`) | text | `text-brand-secondary` | Badge text, tertiary buttons, card titles |
-| `bg-yellow-800` (`brand-800`) | bg | `bg-brand-section` | Seções de destaque brand |
-| `text-yellow-800` (`brand-800`) | text | `text-brand-secondary-hover` | Hover de links, info headers |
-| `text-yellow-900` (`brand-900`) | text | `text-brand-primary` | Selected item labels, radio selected text |
+| Primitiva                       | Contexto | → Semântico                                                | Quando usar                                 |
+| ------------------------------- | -------- | ---------------------------------------------------------- | ------------------------------------------- |
+| `bg-yellow-50` (`brand-50`)     | bg       | `bg-brand-primary` ou `bg-brand-primary-alt`               | Badge default, icon wrappers, selected rows |
+| `bg-yellow-100` (`brand-100`)   | bg       | `bg-brand-secondary`                                       | Badge hover, icon containers                |
+| `bg-yellow-400` (`brand-400`)   | bg fixo  | `bg-brand-tertiary-solid`                                  | Botão primary default (não inverte)         |
+| `bg-yellow-500` (`brand-500`)   | bg fixo  | `bg-brand-quaterary-solid`                                 | Status dots, progress bars                  |
+| `text-yellow-500` (`brand-500`) | icon     | `text-fg-brand-secondary` ou `text-fg-brand-secondary-alt` | Loaders, ícones brand secundários           |
+| `border-yellow-500`             | border   | `border-brand`                                             | Tertiary button, checkbox selected          |
+| `bg-yellow-600` (`brand-600`)   | bg       | `bg-brand-solid`                                           | Checkbox/radio/switch checked, slider       |
+| `text-yellow-600` (`brand-600`) | text     | `text-brand-tertiary` ou `text-brand-tertiary-alt`         | Required asterisk, helper icons             |
+| `text-yellow-600` (`brand-600`) | icon     | `text-fg-brand-primary` ou `text-fg-brand-primary-alt`     | Ícones brand primários                      |
+| `border-yellow-600`             | border   | `border-brand-alt`                                         | Slider thumb, chart strokes                 |
+| `bg-yellow-700` (`brand-700`)   | bg       | `bg-brand-solid-hover`                                     | Hover do botão primary                      |
+| `text-yellow-700` (`brand-700`) | text     | `text-brand-secondary`                                     | Badge text, tertiary buttons, card titles   |
+| `text-yellow-800` (`brand-800`) | text     | `text-brand-secondary-hover`                               | Hover de links, info headers                |
+| `text-yellow-900` (`brand-900`) | text     | `text-brand-primary`                                       | Selected item labels, radio selected text   |
 
 ### 4.5.3 Error (red)
 
-| Primitiva | Contexto | → Semântico | Quando usar |
-|-----------|----------|-------------|-------------|
-| `bg-red-50` (`error-50`) | bg | `bg-error-primary` | Badge destructive, hover de delete |
-| `bg-red-100` (`error-100`) | bg | `bg-error-secondary` | Confirmation dialogs, destructive wrappers |
-| `border-red-300` | border | `border-error-subtle` | Bordas suaves de error |
-| `text-red-500` (`error-500`) | icon | `text-fg-error-secondary` | Ícones error secundários |
-| `border-red-500` | border | `border-error` | Form input error, ring focus error |
-| `bg-red-600` (`error-600`) | bg | `bg-error-solid` | Botão destructive |
-| `text-red-600` (`error-600`) | text | `text-error-primary` | Hint text de erro, dialog icons |
-| `text-red-600` (`error-600`) | icon | `text-fg-error-primary` | Ícones destructive |
-| `bg-red-700` (`error-700`) | bg | `bg-error-solid-hover` | Hover do botão destructive |
-| `text-red-700` (`error-700`) | text | `text-error-primary-hover` | Badge destructive text, dropdown delete |
+| Primitiva                    | Contexto | → Semântico               | Quando usar                                |
+| ---------------------------- | -------- | ------------------------- | ------------------------------------------ |
+| `bg-red-50` (`error-50`)     | bg       | `bg-error-secondary`      | Badge destructive, hover de delete         |
+| `bg-red-100` (`error-100`)   | bg       | `bg-error-secondary`      | Confirmation dialogs, destructive wrappers |
+| `border-red-300`             | border   | `border-error-subtle`     | Bordas suaves de error                     |
+| `text-red-500` (`error-500`) | icon     | `text-fg-error-secondary` | Ícones error secundários                   |
+| `border-red-500`             | border   | `border-error`            | Form input error, ring focus error         |
+| `bg-red-600` (`error-600`)   | bg       | `bg-error-solid`          | Botão destructive                          |
+| `text-red-600` (`error-600`) | text     | `text-error-primary`      | Hint text de erro, dialog icons            |
+| `text-red-600` (`error-600`) | icon     | `text-fg-error-primary`   | Ícones destructive                         |
+| `bg-red-700` (`error-700`)   | bg       | `bg-error-solid-hover`    | Hover do botão destructive                 |
 
 ### 4.5.4 Warning (orange)
 
-| Primitiva | Contexto | → Semântico | Quando usar |
-|-----------|----------|-------------|-------------|
-| `bg-orange-50` (`warning-50`) | bg | `bg-warning-primary` | Badge warning, alert icon inner, button hover |
-| `bg-orange-100` (`warning-100`) | bg | `bg-warning-secondary` | Badge hover, confirmation dialog icons |
-| `text-orange-500` (`warning-500`) | icon | `text-fg-warning-secondary` | Ícones warning secundários |
-| `bg-orange-600` (`warning-600`) | bg | `bg-warning-solid` | Botão warning hover, status step pending |
-| `text-orange-600` (`warning-600`) | text | `text-warning-primary` | Badge warning text, contestacao text |
-| `text-orange-600` (`warning-600`) | icon | `text-fg-warning-primary` | Alert icons, contestacao icons |
+| Primitiva                         | Contexto | → Semântico                 | Quando usar                              |
+| --------------------------------- | -------- | --------------------------- | ---------------------------------------- |
+| `bg-orange-100` (`warning-100`)   | bg       | `bg-warning-secondary`      | Badge hover, confirmation dialog icons   |
+| `text-orange-500` (`warning-500`) | icon     | `text-fg-warning-secondary` | Ícones warning secundários               |
+| `bg-orange-600` (`warning-600`)   | bg       | `bg-warning-solid`          | Botão warning hover, status step pending |
+| `text-orange-600` (`warning-600`) | text     | `text-warning-primary`      | Badge warning text, contestacao text     |
+| `text-orange-600` (`warning-600`) | icon     | `text-fg-warning-primary`   | Alert icons, contestacao icons           |
 
 > **Gap na palette Figma:** a família `warning` **não tem tokens de borda** (`border-warning-*`). Para bordas warning, use `border-secondary` neutro ou `border-[hsl(var(--bg-warning))]` via arbitrary value.
 
 > **Sem mapeamento direto para `warning-25`, `-200`, `-300`, `-500` (bg) e `-700` (text):** se houver uso, mapear contextualmente:
-> - `warning-25` → `bg-warning-primary` (mesmo token, light variation aceitável)
 > - `border-warning-200` → `border-secondary` (sutil) ou `border-[hsl(var(--bg-warning))]`
 > - `bg-warning-500` → `bg-warning-solid` (uso similar)
 > - `text-warning-700` → `text-warning-primary` (não há tom mais escuro no Figma)
 
 ### 4.5.5 Success (emerald/green)
 
-| Primitiva | Contexto | → Semântico | Quando usar |
-|-----------|----------|-------------|-------------|
-| `bg-green-50` (`success-50`) | bg | `bg-success-primary` | Badge success, alert card success |
-| `bg-green-100` (`success-100`) | bg | `bg-success-secondary` | Badge hover |
-| `text-green-500` (`success-500`) | icon | `text-fg-success-secondary` | Status dots, button success |
-| `bg-green-600` (`success-600`) | bg | `bg-success-solid` | Completed steps, progress, check icons |
-| `text-green-600` (`success-600`) | text | `text-success-primary` | Email success, positive values |
-| `text-green-600` (`success-600`) | icon | `text-fg-success-primary` | Alert icons, check icons |
+| Primitiva                        | Contexto | → Semântico                 | Quando usar                            |
+| -------------------------------- | -------- | --------------------------- | -------------------------------------- |
+| `bg-green-100` (`success-100`)   | bg       | `bg-success-secondary`      | Badge hover                            |
+| `text-green-500` (`success-500`) | icon     | `text-fg-success-secondary` | Status dots, button success            |
+| `bg-green-600` (`success-600`)   | bg       | `bg-success-solid`          | Completed steps, progress, check icons |
+| `text-green-600` (`success-600`) | text     | `text-success-primary`      | Email success, positive values         |
+| `text-green-600` (`success-600`) | icon     | `text-fg-success-primary`   | Alert icons, check icons               |
 
 > **Gap na palette Figma:** a família `success` **não tem tokens de borda** (`border-success-*`). Para bordas success, use `border-secondary` neutro ou `border-[hsl(var(--bg-success))]` via arbitrary value.
 
 > **Sem mapeamento direto para `success-25`, `-200`, `-300`, `-700`:** se houver uso, mapear contextualmente:
-> - `success-25` → `bg-success-primary` (mesmo token)
 > - `border-success-200` → `border-secondary` (sutil) ou `border-[hsl(var(--bg-success))]`
 > - `text-success-700` → `text-success-primary` (não há tom mais escuro no Figma)
 
@@ -596,13 +550,13 @@ Tabelas de substituição **validadas por HSL** contra a collection `Colors` do 
 
 O projeto `vistoriador` usa primitivas Tailwind diretas (`red-*`, `yellow-*`, `green-*`, `blue-*`, `amber-*`, `indigo-*`). Aplicar as mesmas regras das tabelas acima:
 
-| Primitiva direta | Mapeamento |
-|------------------|------------|
-| `red-*` | Usar tabela 4.5.3 |
-| `orange-*` / `amber-*` | Usar tabela 4.5.4 |
-| `yellow-*` | Usar tabela 4.5.2 (brand) |
-| `green-*` / `emerald-*` | Usar tabela 4.5.5 |
-| `blue-*` / `indigo-*` | **Sem token correspondente no Figma.** Decidir caso a caso: status info pode reusar `text-tertiary` (neutro) ou exigir extensão da palette. |
+| Primitiva direta        | Mapeamento                                                                                                                                  |
+| ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------------- |
+| `red-*`                 | Usar tabela 4.5.3                                                                                                                           |
+| `orange-*` / `amber-*`  | Usar tabela 4.5.4                                                                                                                           |
+| `yellow-*`              | Usar tabela 4.5.2 (brand)                                                                                                                   |
+| `green-*` / `emerald-*` | Usar tabela 4.5.5                                                                                                                           |
+| `blue-*` / `indigo-*`   | **Sem token correspondente no Figma.** Decidir caso a caso: status info pode reusar `text-tertiary` (neutro) ou exigir extensão da palette. |
 
 ### 4.5.7 Diretrizes de escolha entre `text-*`, `fg-*`, `bg-*`, `border-*`
 
@@ -622,7 +576,6 @@ Usados em casos onde o valor light deve persistir mesmo no dark mode:
 - `text-primary-solid`, `fg-primary-solid` → texto/ícone que precisa ser sempre escuro (ex: rótulo sobre fundo branco fixo)
 - `fg-secondary-solid` → ícone secundário fixo
 - `bg-primary-solid` → fundo invertido fixo (tooltip claro com texto escuro)
-- `bg-secondary-solid` → fundo cinza médio fixo
 - `bg-brand-tertiary-solid`, `bg-brand-quaterary-solid` → primary button que mantém amarelo no dark
 - `bg-brand-solid`, `bg-error-solid`, `bg-warning-solid`, `bg-success-solid` → status colors que mantêm intensidade no dark
 
@@ -631,9 +584,6 @@ Usados em casos onde o valor light deve persistir mesmo no dark mode:
 Usar quando o texto/ícone está sobre um fundo `bg-brand-*`:
 
 - `text-primary-on-brand` → texto principal sobre brand-solid (geralmente branco)
-- `text-secondary-on-brand` → texto secundário sobre brand
-- `text-tertiary-on-brand` → texto terciário sobre brand
-- `text-quaternary-on-brand` → texto muted sobre brand
 
 ### 4.5.10 Workflow recomendado de migração
 
@@ -710,14 +660,14 @@ Para cada arquivo:
 
 **Depois (sem borda colorida — recomendado):**
 ```tsx
-<span className="bg-success-primary text-success-primary border border-secondary">
+<span className="bg-success-secondary text-success-primary border border-secondary">
   Ativo
 </span>
 ```
 
 **Depois (com borda colorida via arbitrary value):**
 ```tsx
-<span className="bg-success-primary text-success-primary border border-[hsl(var(--bg-success))]">
+<span className="bg-success-secondary text-success-primary border border-[hsl(var(--bg-success))]">
   Ativo
 </span>
 ```
@@ -803,12 +753,8 @@ module.exports = {
           "primary-solid": "hsl(var(--text-primary-solid))",
           secondary: "hsl(var(--text-secondary))",
           "secondary-hover": "hsl(var(--text-secondary-hover))",
-          "secondary-on-brand": "hsl(var(--text-secondary-on-brand))",
           tertiary: "hsl(var(--text-tertiary))",
-          "tertiary-hover": "hsl(var(--text-tertiary-hover))",
-          "tertiary-on-brand": "hsl(var(--text-tertiary-on-brand))",
           quaternary: "hsl(var(--text-quaternary))",
-          "quaternary-on-brand": "hsl(var(--text-quaternary-on-brand))",
           quinary: "hsl(var(--text-quinary))",
           placeholder: "hsl(var(--text-placeholder))",
           white: "hsl(var(--text-white))",
@@ -818,7 +764,6 @@ module.exports = {
           "brand-tertiary": "hsl(var(--text-brand-tertiary))",
           "brand-tertiary-alt": "hsl(var(--text-brand-tertiary-alt))",
           "error-primary": "hsl(var(--text-error-primary))",
-          "error-primary-hover": "hsl(var(--text-error-primary-hover))",
           "warning-primary": "hsl(var(--text-warning-primary))",
           "success-primary": "hsl(var(--text-success-primary))",
         },
@@ -855,13 +800,9 @@ module.exports = {
         // ==========================================
         bg: {
           primary: "hsl(var(--bg-primary))",
-          "primary-alt": "hsl(var(--bg-primary-alt))",
-          "primary-hover": "hsl(var(--bg-primary-hover))",
           "primary-solid": "hsl(var(--bg-primary-solid))",
           secondary: "hsl(var(--bg-secondary))",
-          "secondary-alt": "hsl(var(--bg-secondary-alt))",
           "secondary-hover": "hsl(var(--bg-secondary-hover))",
-          "secondary-solid": "hsl(var(--bg-secondary-solid))",
           tertiary: "hsl(var(--bg-tertiary))",
           quaternary: "hsl(var(--bg-quaternary))",
           overlay: "hsl(var(--bg-overlay))",
@@ -870,18 +811,12 @@ module.exports = {
           "brand-secondary": "hsl(var(--bg-brand-secondary))",
           "brand-tertiary-solid": "hsl(var(--bg-brand-tertiary))",
           "brand-quaterary-solid": "hsl(var(--bg-brand-quaterary))",
-          "brand-solid": "hsl(var(--bg-brand))",
-          "brand-solid-hover": "hsl(var(--bg-brand-hover))",
-          "brand-section": "hsl(var(--bg-brand-section))",
-          "brand-section-subtle": "hsl(var(--bg-brand-section-subtle))",
-          "error-primary": "hsl(var(--bg-error-primary))",
+          "brand-solid": "hsl(var(--bg-brand-quinary))",
+          "error-primary": "hsl(var(--bg-error-secondary))",
           "error-secondary": "hsl(var(--bg-error-secondary))",
           "error-solid": "hsl(var(--bg-error))",
-          "error-solid-hover": "hsl(var(--bg-error-hover))",
-          "warning-primary": "hsl(var(--bg-warning-primary))",
           "warning-secondary": "hsl(var(--bg-warning-secondary))",
           "warning-solid": "hsl(var(--bg-warning))",
-          "success-primary": "hsl(var(--bg-success-primary))",
           "success-secondary": "hsl(var(--bg-success-secondary))",
           "success-solid": "hsl(var(--bg-success))",
         },
@@ -892,7 +827,6 @@ module.exports = {
         border: {
           primary: "hsl(var(--border-primary))",
           secondary: "hsl(var(--border-secondary))",
-          "secondary-alt": "hsl(var(--border-secondary-alt))",
           tertiary: "hsl(var(--border-tertiary))",
           brand: "hsl(var(--border-brand))",
           "brand-alt": "hsl(var(--border-brand-alt))",
@@ -991,10 +925,10 @@ rg "(text|bg|border)-(red|orange|yellow|amber|green|emerald|blue|indigo)-\d+" --
 
 ### 9.1 Design System (`@design-system/packages/ui/`)
 
-| Arquivo | Mudanças |
-|---------|----------|
-| `src/global.css` | Adicionar todos os tokens semânticos (seções 3.1 a 3.5) |
-| `tailwind.config.js` | Atualizar mapeamentos de cores (seção 6.1) |
+| Arquivo              | Mudanças                                                |
+| -------------------- | ------------------------------------------------------- |
+| `src/global.css`     | Adicionar todos os tokens semânticos (seções 3.1 a 3.5) |
+| `tailwind.config.js` | Atualizar mapeamentos de cores (seção 6.1)              |
 
 #### Componentes a migrar:
 - `button.tsx`, `badge.tsx`, `table.tsx`, `tooltip.tsx`, `dialog.tsx`
@@ -1005,8 +939,8 @@ rg "(text|bg|border)-(red|orange|yellow|amber|green|emerald|blue|indigo)-\d+" --
 
 ### 9.2 Projetos Consumidores
 
-| Projeto | Estimativa de Substituições |
-|---------|----------------------------|
-| inmediam_front | ~3000 |
-| inmediam_clientes | ~900 |
-| vistoriador | ~1100 |
+| Projeto           | Estimativa de Substituições |
+| ----------------- | --------------------------- |
+| inmediam_front    | ~3000                       |
+| inmediam_clientes | ~900                        |
+| vistoriador       | ~1100                       |

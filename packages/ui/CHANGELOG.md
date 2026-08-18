@@ -45,7 +45,7 @@
       `text-quaternary`
     - `bg-gray-50`, `bg-gray-100` → `bg-primary` / `bg-secondary` / `bg-tertiary`
     - `border-gray-200` → `border-secondary` (or `border-primary` / `border-tertiary`)
-    - `text-brand-600`, `bg-brand-500` → `text-brand-primary` / `bg-brand` / `bg-brand-hover`
+    - `text-brand-600`, `bg-brand-500` → `text-brand-primary` / `bg-brand-quinary`
     - `bg-error-500`, `text-error-600` → `bg-error` / `text-error-primary`
     - Equivalent mappings exist for `warning-*` and `success-*`.
   - For icons and other `currentColor` glyphs, use the `text-fg-*` family (`text-fg-primary`,

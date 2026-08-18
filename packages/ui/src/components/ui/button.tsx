@@ -11,7 +11,7 @@ const buttonVariants = cva(
       variant: {
         default: 'bg-brand-tertiary text-primary-solid hover:bg-brand-quaterary disabled:opacity-100 disabled:border disabled:border-secondary disabled:bg-secondary disabled:text-quinary disabled:opacity-100',
         destructive:
-          'bg-error text-white hover:bg-error-hover',
+          'bg-error text-white',
         success:
           'bg-success text-white hover:bg-success',
         warning:
