@@ -23,6 +23,9 @@ module.exports = function (app, options) {
     "error-primary": "hsl(var(--text-error-primary))",
     "warning-primary": "hsl(var(--text-warning-primary))",
     "success-primary": "hsl(var(--text-success-primary))",
+    "error-secondary": "hsl(var(--text-error-secondary))",
+    "warning-secondary": "hsl(var(--text-warning-secondary))",
+    "success-secondary": "hsl(var(--text-success-secondary))",
 
     // Foreground tokens are exposed through `text-fg-*` so icons keep
     // the natural `text-{color}` Tailwind utility for `currentColor`.
