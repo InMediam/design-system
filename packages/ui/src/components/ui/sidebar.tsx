@@ -50,6 +50,7 @@ const SidebarProvider = React.forwardRef<
   React.ComponentProps<"div"> & {
     defaultOpen?: boolean
     open?: boolean
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars -- nome do parâmetro documenta a assinatura do tipo
     onOpenChange?: (open: boolean) => void
   }
 >(

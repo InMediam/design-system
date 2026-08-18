@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react'
+import type { Meta, StoryObj } from '@storybook/react-vite'
 import { HintText, Input, InputProps } from "@inmediam/ui"
 import { Label } from "@inmediam/ui"
 import { InputItemsWrapper } from "@inmediam/ui"

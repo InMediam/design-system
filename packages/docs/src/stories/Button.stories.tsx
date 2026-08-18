@@ -1,6 +1,6 @@
 import { Circle } from "lucide-react";
 import { Button, ButtonProps } from "@inmediam/ui";
-import { Meta, StoryFn, StoryObj } from "@storybook/react";
+import { Meta, StoryFn, StoryObj } from "@storybook/react-vite";
 
 export default {
   title: 'Button',

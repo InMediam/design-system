@@ -1,4 +1,4 @@
-import { Meta, StoryObj } from "@storybook/react"
+import { Meta, StoryObj } from "@storybook/react-vite"
 import { Home, Settings, User } from "lucide-react"
 import {
   MobileTabList,
@@ -31,26 +31,48 @@ const defaultTabs: MobileTabItem[] = [
   },
 ]
 
+const PrimaryExample = (args: MobileTabListProps) => {
+  const [value, setValue] = useState("account")
+
+  return (
+    <div className="w-full max-w-md px-2">
+      <MobileTabList
+        {...args}
+        value={value}
+        onValueChange={setValue}
+      />
+      <div className="mt-4 rounded-lg p-4 border text-sm text-muted-foreground">
+        Active tab: <strong>{value}</strong>
+      </div>
+    </div>
+  )
+}
+
 export const Primary: StoryObj<MobileTabListProps> = {
   args: {
     tabs: defaultTabs,
     showNavigationButton: false,
   },
-  render: (args) => {
-    const [value, setValue] = useState("account")
-    return (
-      <div className="w-full max-w-md px-2">
-        <MobileTabList
-          {...args}
-          value={value}
-          onValueChange={setValue}
-        />
-        <div className="mt-4 rounded-lg p-4 border text-sm text-muted-foreground">
-          Active tab: <strong>{value}</strong>
-        </div>
+  render: (args) => <PrimaryExample {...args} />,
+}
+
+const WithNavigationButtonExample = (args: MobileTabListProps) => {
+  const [value, setValue] = useState("account")
+
+  return (
+    <div className="w-full max-w-md">
+      <MobileTabList
+        {...args}
+        value={value}
+        onValueChange={setValue}
+        sheetTitle="Menu"
+        sheetDescription="Navigate between sections"
+      />
+      <div className="mt-4 rounded-lg border p-4 text-sm text-muted-foreground">
+        Active tab: <strong>{value}</strong>
       </div>
-    )
-  },
+    </div>
+  )
 }
 
 export const WithNavigationButton: StoryObj<MobileTabListProps> = {
@@ -58,21 +80,5 @@ export const WithNavigationButton: StoryObj<MobileTabListProps> = {
     tabs: defaultTabs,
     showNavigationButton: true,
   },
-  render: (args) => {
-    const [value, setValue] = useState("account")
-    return (
-      <div className="w-full max-w-md">
-        <MobileTabList
-          {...args}
-          value={value}
-          onValueChange={setValue}
-          sheetTitle="Menu"
-          sheetDescription="Navigate between sections"
-        />
-        <div className="mt-4 rounded-lg border p-4 text-sm text-muted-foreground">
-          Active tab: <strong>{value}</strong>
-        </div>
-      </div>
-    )
-  },
+  render: (args) => <WithNavigationButtonExample {...args} />,
 }
