@@ -1,0 +1,1 @@
+import{n as e}from"./rolldown-runtime-DkW27tQK.js";import{Jr as t,qr as n}from"./src-D4mIL-UR.js";var r;function i(){return(i=e((()=>{t(),r=n(`Plus`,[[`path`,{d:`M5 12h14`,key:`1ays0h`}],[`path`,{d:`M12 5v14`,key:`s699le`}]])})))()}export{i as n,r as t};

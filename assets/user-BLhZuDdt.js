@@ -1,0 +1,1 @@
+import{n as e}from"./rolldown-runtime-DkW27tQK.js";import{Jr as t,qr as n}from"./src-D4mIL-UR.js";var r;function i(){return(i=e((()=>{t(),r=n(`User`,[[`path`,{d:`M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2`,key:`975kel`}],[`circle`,{cx:`12`,cy:`7`,r:`4`,key:`17ys0d`}]])})))()}export{i as n,r as t};

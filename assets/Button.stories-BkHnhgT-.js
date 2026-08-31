@@ -1,0 +1,7 @@
+import{n as e}from"./rolldown-runtime-DkW27tQK.js";import{t}from"./jsx-runtime-ATHzeHXA.js";import{Ar as n,Hr as r,Vr as i,t as a}from"./src-D4mIL-UR.js";var o,s,c,l,u,d;function f(){return(f=e((()=>{r(),a(),o=t(),s={title:`Button`,component:n,args:{variant:`default`,size:`default`,children:`Button CTA`}},c=e=>(0,o.jsx)(n,{className:`w-fit`,...e}),l={render:e=>(0,o.jsxs)(n,{className:`w-fit`,...e,children:[(0,o.jsx)(i,{className:`w-4`}),` `,e.children,` `,(0,o.jsx)(i,{className:`w-4`})]})},u=c.bind({}),u.args={variant:`success`,size:`default`},u.argTypes={variant:{options:[`default`,`secondary`,`success`,`warning`,`destructive`,`outline`,`ghost`,`link`],control:{type:`select`}},size:{options:[`default`,`xs`,`sm`,`lg`],control:{type:`select`}}},l.parameters={...l.parameters,docs:{...l.parameters?.docs,source:{originalSource:`{
+  render: args => {
+    return <Button className="w-fit" {...args}>
+        <Circle className="w-4" /> {args.children} <Circle className="w-4" />
+      </Button>;
+  }
+}`,...l.parameters?.docs?.source}}},u.parameters={...u.parameters,docs:{...u.parameters?.docs,source:{originalSource:`(args: ButtonProps) => <Button className="w-fit" {...args} />`,...u.parameters?.docs?.source}}},d=[`Primary`,`Playground`]})))()}f();export{u as Playground,l as Primary,d as __namedExportsOrder,s as default};
