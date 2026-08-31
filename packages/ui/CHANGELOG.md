@@ -1,5 +1,11 @@
 # @inmediam/ui
 
+## 7.0.1
+
+### Patch Changes
+
+- dc1b15f: Fix the CarouselDots components adding the ref parameter to work with React.forwardRef
+
 ## 7.0.0
 
 ### Major Changes
