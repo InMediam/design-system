@@ -286,11 +286,12 @@ export interface CarouselDotsProps
 const CarouselDots = React.forwardRef<
   HTMLDivElement,
   CarouselDotsProps
->(({ className, size, ...props }) => {
+>(({ className, size, ...props }, ref) => {
   const { selectedIndex, scrollTo, api } = useCarousel()
 
   return (
     <div
+      ref={ref}
       className={cn(
         "absolute flex items-center justify-center gap-4 mt-2 w-full",
         className,
