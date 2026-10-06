@@ -1,15 +1,73 @@
-import { ChevronLeft, ChevronRight } from 'lucide-react'
+import {
+  ChevronDown,
+  ChevronLeft,
+  ChevronRight,
+  ChevronUp,
+} from 'lucide-react'
 import * as React from 'react'
-import { DayPicker } from 'react-day-picker'
+import { type ChevronProps, DayButton, DayPicker } from 'react-day-picker'
 
+import { cn } from '../../lib/utils'
 import { buttonVariants } from './button'
-import { cn } from "../../lib/utils"
 
 export type CalendarProps = React.ComponentProps<typeof DayPicker>
+
+const chevronIcons = {
+  left: ChevronLeft,
+  right: ChevronRight,
+  up: ChevronUp,
+  down: ChevronDown,
+}
+
+function CalendarChevron({ orientation = 'left', className }: ChevronProps) {
+  const Icon = chevronIcons[orientation]
+  return <Icon className={cn('h-4 w-4', className)} />
+}
+
+// A v9+ aplica os modificadores (selected, today...) na célula; os estilos
+// abaixo ficam no botão, como era na v8.
+function CalendarDayButton({
+  className,
+  // `day` não deve ir para o DOM.
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  day: _day,
+  modifiers,
+  ...props
+}: React.ComponentProps<typeof DayButton>) {
+  const ref = React.useRef<HTMLButtonElement>(null)
+
+  React.useEffect(() => {
+    if (modifiers.focused) ref.current?.focus()
+  }, [modifiers.focused])
+
+  return (
+    <button
+      ref={ref}
+      className={cn(
+        className,
+        modifiers.today && 'bg-secondary-hover',
+        modifiers.selected &&
+          [
+            'bg-brand-quinary opacity-100 hover:text-primary-on-brand',
+            'focus:bg-brand-quinary focus:text-primary-on-brand',
+          ],
+        modifiers.range_middle && 'bg-secondary-hover text-primary',
+        modifiers.outside && 'text-tertiary opacity-50',
+        modifiers.outside &&
+          modifiers.selected &&
+          'bg-secondary-hover/50 text-tertiary opacity-100',
+        modifiers.disabled && 'text-tertiary opacity-50',
+      )}
+      {...props}
+    />
+  )
+}
+CalendarDayButton.displayName = 'CalendarDayButton'
 
 function Calendar({
   className,
   classNames,
+  components,
   showOutsideDays = true,
   ...props
 }: CalendarProps) {
@@ -18,44 +76,46 @@ function Calendar({
       showOutsideDays={showOutsideDays}
       className={cn('p-3', className)}
       classNames={{
-        months: 'flex flex-col sm:flex-row space-y-4 sm:space-x-4 sm:space-y-0',
+        months: 'relative flex flex-col gap-4 sm:flex-row',
         month: 'space-y-4',
-        caption: 'flex justify-center pt-1 relative items-center',
+        month_caption: 'flex justify-center pt-1 items-center',
         caption_label: 'text-sm font-medium',
-        nav: 'space-x-1 flex items-center',
-        nav_button: cn(
+        nav: 'absolute inset-x-1 top-0 flex items-center justify-between',
+        button_previous: cn(
           buttonVariants({ variant: 'outline' }),
           'h-7 w-7 bg-transparent p-0 opacity-50 hover:opacity-100',
+          'aria-disabled:cursor-not-allowed',
         ),
-        nav_button_previous: 'absolute left-1',
-        nav_button_next: 'absolute right-1',
-        table: 'w-full border-collapse space-y-1',
-        head_row: 'flex',
-        head_cell:
-          'text-tertiary rounded-md w-9 font-normal text-[0.8rem]',
-        row: 'flex w-full mt-2',
-        cell: 'h-9 w-9 text-center text-sm p-0 relative [&:has([aria-selected].day-range-end)]:rounded-r-md [&:has([aria-selected].day-outside)]:bg-secondary-hover/50 [&:has([aria-selected])]:bg-secondary-hover first:[&:has([aria-selected])]:rounded-l-md last:[&:has([aria-selected])]:rounded-r-md focus-within:relative focus-within:z-20',
+        button_next: cn(
+          buttonVariants({ variant: 'outline' }),
+          'h-7 w-7 bg-transparent p-0 opacity-50 hover:opacity-100',
+          'aria-disabled:cursor-not-allowed',
+        ),
+        month_grid: 'w-full border-collapse space-y-1',
+        weekdays: 'flex',
+        weekday: 'text-tertiary rounded-md w-9 font-normal text-[0.8rem]',
+        week: 'flex w-full mt-2',
         day: cn(
-          buttonVariants({ variant: 'ghost' }),
-          'h-9 w-9 p-0 font-normal aria-selected:opacity-100',
+          'h-9 w-9 text-center text-sm p-0 relative',
+          'aria-selected:bg-secondary-hover first:aria-selected:rounded-l-md',
+          'last:aria-selected:rounded-r-md',
+          '[&.day-range-end]:aria-selected:rounded-r-md',
+          '[&.day-outside]:aria-selected:bg-secondary-hover/50',
+          'focus-within:relative focus-within:z-20',
         ),
-        day_range_end: 'day-range-end',
-        day_selected:
-          'bg-brand-quinary hover:text-primary-on-brand focus:bg-brand-quinary focus:text-primary-on-brand',
-        day_today: 'bg-secondary-hover',
-        day_outside:
-          'day-outside text-tertiary opacity-50 aria-selected:bg-secondary-hover/50 aria-selected:text-tertiary aria-selected:opacity-30',
-        day_disabled: 'text-tertiary opacity-50',
-        day_range_middle:
-          'aria-selected:bg-secondary-hover aria-selected:text-primary',
-        day_hidden: 'invisible',
+        day_button: cn(
+          buttonVariants({ variant: 'ghost' }),
+          'h-9 w-9 p-0 font-normal',
+        ),
+        range_end: 'day-range-end',
+        outside: 'day-outside',
+        hidden: 'invisible',
         ...classNames,
       }}
       components={{
-        // IconLeft: ({ ...props }) => <ChevronLeft className="h-4 w-4" />,  // eslint-disable-line
-        IconLeft: () => <ChevronLeft className="h-4 w-4" />,  // eslint-disable-line 
-        // IconRight: ({ ...props }) => <ChevronRight className="h-4 w-4" />,  // eslint-disable-line
-        IconRight: () => <ChevronRight className="h-4 w-4" />,  // eslint-disable-line
+        Chevron: CalendarChevron,
+        DayButton: CalendarDayButton,
+        ...components,
       }}
       {...props}
     />

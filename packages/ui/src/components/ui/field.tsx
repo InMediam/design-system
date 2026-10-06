@@ -1,4 +1,5 @@
 import * as React from 'react'
+
 import { cn } from '../../lib/utils'
 import { Label } from './label'
 
@@ -15,7 +16,7 @@ function Field({
   )
 }
 
-interface FieldLabelProps extends React.ComponentPropsWithoutRef<typeof Label> {}
+type FieldLabelProps = React.ComponentProps<typeof Label>
 
 function FieldLabel({ className, ...props }: FieldLabelProps) {
   return (
