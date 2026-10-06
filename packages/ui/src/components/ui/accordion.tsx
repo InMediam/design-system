@@ -34,9 +34,7 @@ const AccordionTrigger = ({
       {...props}
     >
       {children}
-      <ChevronDown
-        className="h-4 w-4 shrink-0 transition-transform duration-200"
-      />
+      <ChevronDown className="h-4 w-4 shrink-0 transition-transform duration-200" />
     </AccordionPrimitive.Trigger>
   </AccordionPrimitive.Header>
 )
@@ -59,8 +57,9 @@ const AccordionContent = ({
   </AccordionPrimitive.Content>
 )
 
-export type AccordionProps =
-  React.ComponentProps<typeof AccordionPrimitive.Root>
+export type AccordionProps = React.ComponentProps<
+  typeof AccordionPrimitive.Root
+>
 
 AccordionContent.displayName = AccordionPrimitive.Content.displayName
 

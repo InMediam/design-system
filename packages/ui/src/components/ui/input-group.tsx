@@ -91,8 +91,9 @@ const inputGroupButtonVariants = cva(
 )
 
 interface InputGroupButtonProps
-  extends React.ComponentProps<'button'>,
-  VariantProps<typeof inputGroupButtonVariants> {
+  extends
+    React.ComponentProps<'button'>,
+    VariantProps<typeof inputGroupButtonVariants> {
   asChild?: boolean
 }
 

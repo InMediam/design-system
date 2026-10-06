@@ -176,10 +176,7 @@ const CarouselContent = ({
 }
 CarouselContent.displayName = 'CarouselContent'
 
-const CarouselItem = ({
-  className,
-  ...props
-}: React.ComponentProps<'div'>) => {
+const CarouselItem = ({ className, ...props }: React.ComponentProps<'div'>) => {
   const { orientation } = useCarousel()
 
   return (
@@ -278,8 +275,9 @@ const dotsVariants = cva(
 )
 
 export interface CarouselDotsProps
-  extends React.ButtonHTMLAttributes<HTMLDivElement>,
-  VariantProps<typeof dotsVariants> {
+  extends
+    React.ButtonHTMLAttributes<HTMLDivElement>,
+    VariantProps<typeof dotsVariants> {
   ref?: React.Ref<HTMLDivElement>
 }
 
@@ -294,18 +292,16 @@ const CarouselDots = ({ className, size, ...props }: CarouselDotsProps) => {
       )}
       {...props}
     >
-      {api
-        ?.scrollSnapList()
-        .map((_, index) => (
-          <Button
-            key={index}
-            data-state={index === selectedIndex ? 'current' : 'default'}
-            className={cn(dotsVariants({ size }))}
-            onClick={() => scrollTo(index)}
-            aria-label={`Navigate to slide ${index + 1}`}
-            aria-current={index === selectedIndex ? 'true' : undefined}
-          />
-        ))}
+      {api?.scrollSnapList().map((_, index) => (
+        <Button
+          key={index}
+          data-state={index === selectedIndex ? 'current' : 'default'}
+          className={cn(dotsVariants({ size }))}
+          onClick={() => scrollTo(index)}
+          aria-label={`Navigate to slide ${index + 1}`}
+          aria-current={index === selectedIndex ? 'true' : undefined}
+        />
+      ))}
     </div>
   )
 }

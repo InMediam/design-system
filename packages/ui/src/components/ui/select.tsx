@@ -86,8 +86,7 @@ const SelectContent = ({
         'data-[side=left]:slide-in-from-right-2',
         'data-[side=right]:slide-in-from-left-2',
         'data-[side=top]:slide-in-from-bottom-2',
-        position === 'popper' &&
-        [
+        position === 'popper' && [
           'data-[side=bottom]:translate-y-1 data-[side=left]:-translate-x-1',
           'data-[side=right]:translate-x-1 data-[side=top]:-translate-y-1',
         ],
@@ -100,8 +99,7 @@ const SelectContent = ({
       <SelectPrimitive.Viewport
         className={cn(
           'p-1',
-          position === 'popper' &&
-          [
+          position === 'popper' && [
             'h-[var(--radix-select-trigger-height)] w-full',
             'min-w-[var(--radix-select-trigger-width)]',
           ],
@@ -141,9 +139,7 @@ const SelectItem = ({
     )}
     {...props}
   >
-    <span
-      className="absolute left-2 flex h-3.5 w-3.5 items-center justify-center"
-    >
+    <span className="absolute left-2 flex h-3.5 w-3.5 items-center justify-center">
       <SelectPrimitive.ItemIndicator>
         <Check className="h-4 w-4" />
       </SelectPrimitive.ItemIndicator>

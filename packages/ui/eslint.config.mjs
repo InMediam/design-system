@@ -1,3 +1,4 @@
+import prettier from '@inmediam/lint/prettier'
 import config from '@inmediam/lint/react'
 
 export default [
@@ -11,4 +12,5 @@ export default [
       }],
     },
   },
+  ...prettier(),
 ]

@@ -12,11 +12,7 @@ import { Input } from './input'
 import { Separator } from './separator'
 import { Sheet, SheetContent } from './sheet'
 import { Skeleton } from './skeleton'
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipTrigger,
-} from './tooltip'
+import { Tooltip, TooltipContent, TooltipTrigger } from './tooltip'
 
 const SIDEBAR_COOKIE_NAME = 'sidebar:state'
 const SIDEBAR_COOKIE_MAX_AGE = 60 * 60 * 24 * 7
@@ -85,9 +81,7 @@ const SidebarProvider = ({
 
   // Helper to toggle the sidebar.
   const toggleSidebar = React.useCallback(() => {
-    return isMobile
-      ? setOpenMobile((open) => !open)
-      : setOpen((open) => !open)
+    return isMobile ? setOpenMobile((open) => !open) : setOpen((open) => !open)
   }, [isMobile, setOpen, setOpenMobile])
 
   // Adds a keyboard shortcut to toggle the sidebar.
@@ -127,12 +121,12 @@ const SidebarProvider = ({
     <SidebarContext.Provider value={contextValue}>
       <div
         style={
-            {
-              '--sidebar-width': SIDEBAR_WIDTH,
-              '--sidebar-width-icon': SIDEBAR_WIDTH_ICON,
-              ...style,
-            } as React.CSSProperties
-          }
+          {
+            '--sidebar-width': SIDEBAR_WIDTH,
+            '--sidebar-width-icon': SIDEBAR_WIDTH_ICON,
+            ...style,
+          } as React.CSSProperties
+        }
         className={cn(
           'group/sidebar-wrapper flex min-h-svh w-full',
           'has-[[data-variant=inset]]:bg-sidebar',
@@ -218,7 +212,6 @@ const Sidebar = ({
           'group-data-[collapsible=offcanvas]:w-0',
           'group-data-[side=right]:rotate-180',
           variant === 'floating' || variant === 'inset'
-            // eslint-disable-next-line @stylistic/max-len
             ? 'group-data-[collapsible=icon]:w-[calc(var(--sidebar-width-icon)_+_theme(spacing.4))]'
             : 'group-data-[collapsible=icon]:w-[--sidebar-width-icon]',
         )}
@@ -231,19 +224,19 @@ const Sidebar = ({
           side === 'left'
             ? [
                 'left-0',
-                // eslint-disable-next-line @stylistic/max-len
+
                 'group-data-[collapsible=offcanvas]:left-[calc(var(--sidebar-width)*-1)]',
               ]
             : [
                 'right-0',
-                // eslint-disable-next-line @stylistic/max-len
+
                 'group-data-[collapsible=offcanvas]:right-[calc(var(--sidebar-width)*-1)]',
               ],
           // Adjust the padding for floating and inset variants.
           variant === 'floating' || variant === 'inset'
             ? [
                 'p-2',
-                // eslint-disable-next-line @stylistic/max-len
+
                 'group-data-[collapsible=icon]:w-[calc(var(--sidebar-width-icon)_+_theme(spacing.4)_+2px)]',
               ]
             : [
@@ -435,10 +428,7 @@ const SidebarContent = ({
 }
 SidebarContent.displayName = 'SidebarContent'
 
-const SidebarGroup = ({
-  className,
-  ...props
-}: React.ComponentProps<'div'>) => {
+const SidebarGroup = ({ className, ...props }: React.ComponentProps<'div'>) => {
   return (
     <div
       data-sidebar="group"
@@ -516,10 +506,7 @@ const SidebarGroupContent = ({
 )
 SidebarGroupContent.displayName = 'SidebarGroupContent'
 
-const SidebarMenu = ({
-  className,
-  ...props
-}: React.ComponentProps<'ul'>) => (
+const SidebarMenu = ({ className, ...props }: React.ComponentProps<'ul'>) => (
   <ul
     data-sidebar="menu"
     className={cn('flex w-full min-w-0 flex-col gap-1', className)}
@@ -562,12 +549,11 @@ const sidebarMenuButtonVariants = cva(
     variants: {
       variant: {
         default: 'hover:bg-sidebar-accent hover:text-sidebar-accent-foreground',
-        outline:
-          [
-            'bg-background shadow-[0_0_0_1px_hsl(var(--sidebar-border))]',
-            'hover:bg-sidebar-accent hover:text-sidebar-accent-foreground',
-            'hover:shadow-[0_0_0_1px_hsl(var(--sidebar-accent))]',
-          ],
+        outline: [
+          'bg-background shadow-[0_0_0_1px_hsl(var(--sidebar-border))]',
+          'hover:bg-sidebar-accent hover:text-sidebar-accent-foreground',
+          'hover:shadow-[0_0_0_1px_hsl(var(--sidebar-accent))]',
+        ],
       },
       size: {
         default: 'h-8 text-sm',
@@ -659,8 +645,7 @@ const SidebarMenuAction = ({
         'peer-data-[size=default]/menu-button:top-1.5',
         'peer-data-[size=lg]/menu-button:top-2.5',
         'group-data-[collapsible=icon]:hidden',
-        showOnHover &&
-        [
+        showOnHover && [
           'group-focus-within/menu-item:opacity-100',
           'group-hover/menu-item:opacity-100 data-[state=open]:opacity-100',
           'peer-data-[active=true]/menu-button:text-sidebar-accent-foreground',

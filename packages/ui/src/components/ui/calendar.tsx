@@ -1,9 +1,4 @@
-import {
-  ChevronDown,
-  ChevronLeft,
-  ChevronRight,
-  ChevronUp,
-} from 'lucide-react'
+import { ChevronDown, ChevronLeft, ChevronRight, ChevronUp } from 'lucide-react'
 import * as React from 'react'
 import { type ChevronProps, DayButton, DayPicker } from 'react-day-picker'
 
@@ -46,11 +41,10 @@ function CalendarDayButton({
       className={cn(
         className,
         modifiers.today && 'bg-secondary-hover',
-        modifiers.selected &&
-          [
-            'bg-brand-quinary opacity-100 hover:text-primary-on-brand',
-            'focus:bg-brand-quinary focus:text-primary-on-brand',
-          ],
+        modifiers.selected && [
+          'bg-brand-quinary opacity-100 hover:text-primary-on-brand',
+          'focus:bg-brand-quinary focus:text-primary-on-brand',
+        ],
         modifiers.range_middle && 'bg-secondary-hover text-primary',
         modifiers.outside && 'text-tertiary opacity-50',
         modifiers.outside &&

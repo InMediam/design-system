@@ -25,14 +25,10 @@ const buttonVariants = cva(
           'disabled:opacity-100 disabled:border disabled:border-secondary',
           'disabled:bg-secondary disabled:text-quinary disabled:opacity-100',
         ],
-        destructive:
-          'bg-error text-white',
-        success:
-          'bg-success text-white hover:bg-success',
-        warning:
-          'bg-warning text-white hover:bg-warning',
-        outline:
-          'border border-primary bg-primary hover:bg-secondary-hover',
+        destructive: 'bg-error text-white',
+        success: 'bg-success text-white hover:bg-success',
+        warning: 'bg-warning text-white hover:bg-warning',
+        outline: 'border border-primary bg-primary hover:bg-secondary-hover',
         secondary: 'bg-secondary text-secondary hover:bg-secondary-hover',
         tertiary: [
           'border border-brand bg-brand-primary text-secondary',
@@ -57,7 +53,8 @@ const buttonVariants = cva(
 )
 
 export interface ButtonProps
-  extends React.ComponentProps<'button'>,
+  extends
+    React.ComponentProps<'button'>,
   // eslint-disable-line 
   VariantProps<typeof buttonVariants> {
   asChild?: boolean

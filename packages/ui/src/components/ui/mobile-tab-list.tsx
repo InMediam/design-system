@@ -155,33 +155,33 @@ export const MobileTabList = ({
         </div>
 
         {!isFirstTabSelected && (
-          <div className={cn(
-            'pointer-events-none absolute left-0 top-0 h-full w-6',
-            'bg-gradient-to-r from-background to-transparent',
-          )}
+          <div
+            className={cn(
+              'pointer-events-none absolute left-0 top-0 h-full w-6',
+              'bg-gradient-to-r from-background to-transparent',
+            )}
           />
         )}
 
         {!isLastTabSelected && (
-          <div className={cn(
-            'pointer-events-none absolute right-0 top-0 h-full w-6',
-            'bg-gradient-to-l from-background to-transparent',
-          )}
+          <div
+            className={cn(
+              'pointer-events-none absolute right-0 top-0 h-full w-6',
+              'bg-gradient-to-l from-background to-transparent',
+            )}
           />
         )}
       </div>
 
       <Sheet open={isSheetOpen} onOpenChange={setIsSheetOpen}>
-        <SheetContent
-          side="left"
-          className="w-[280px] rounded-lg sm:w-[320px]"
-        >
+        <SheetContent side="left" className="w-[280px] rounded-lg sm:w-[320px]">
           <SheetHeader className="space-y-3 pb-4">
             <div className="flex items-center gap-3">
-              <div className={cn(
-                'flex h-10 w-10 items-center justify-center rounded-lg',
-                'bg-brand-secondary',
-              )}
+              <div
+                className={cn(
+                  'flex h-10 w-10 items-center justify-center rounded-lg',
+                  'bg-brand-secondary',
+                )}
               >
                 {sheetIcon ?? (
                   <Settings className="h-5 w-5 text-fg-brand-primary" />
@@ -191,9 +191,7 @@ export const MobileTabList = ({
                 {sheetTitle}
               </SheetTitle>
             </div>
-            <p className="text-sm text-tertiary">
-              {sheetDescription}
-            </p>
+            <p className="text-sm text-tertiary">{sheetDescription}</p>
           </SheetHeader>
           <Separator className="mb-4" />
           <div className="flex flex-col gap-2 py-1">

@@ -3,10 +3,11 @@ import * as React from 'react'
 import { cn } from '../../lib/utils'
 
 const Table = ({ className, ...props }: React.ComponentProps<'table'>) => (
-  <div className={cn(
-    'relative w-full overflow-auto border rounded-t-xl rounded-b-xl',
-    'border-secondary',
-  )}
+  <div
+    className={cn(
+      'relative w-full overflow-auto border rounded-t-xl rounded-b-xl',
+      'border-secondary',
+    )}
   >
     <table
       className={cn('w-full caption-bottom text-sm', className)}
@@ -28,10 +29,7 @@ const TableHeader = ({
 TableHeader.displayName = 'TableHeader'
 
 const TableBody = ({ className, ...props }: React.ComponentProps<'tbody'>) => (
-  <tbody
-    className={cn('[&_tr:last-child]:border-0', className)}
-    {...props}
-  />
+  <tbody className={cn('[&_tr:last-child]:border-0', className)} {...props} />
 )
 TableBody.displayName = 'TableBody'
 
@@ -40,10 +38,7 @@ const TableFooter = ({
   ...props
 }: React.ComponentProps<'tfoot'>) => (
   <tfoot
-    className={cn(
-      'border-t font-medium [&>tr]:last:border-b-0 ',
-      className,
-    )}
+    className={cn('border-t font-medium [&>tr]:last:border-b-0 ', className)}
     {...props}
   />
 )
@@ -90,10 +85,7 @@ const TableCaption = ({
   className,
   ...props
 }: React.ComponentProps<'caption'>) => (
-  <caption
-    className={cn('mt-4 text-sm text-tertiary', className)}
-    {...props}
-  />
+  <caption className={cn('mt-4 text-sm text-tertiary', className)} {...props} />
 )
 TableCaption.displayName = 'TableCaption'
 

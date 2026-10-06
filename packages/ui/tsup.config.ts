@@ -8,7 +8,9 @@ export default defineConfig({
   minify: true,
   bundle: false,
   clean: true,
-  dts: true,
+  // O tsup injeta `baseUrl: "."` no build de tipos (dist/rollup.js), opção
+  // deprecada no TS 6. O tsconfig do projeto não usa `baseUrl`.
+  dts: { compilerOptions: { ignoreDeprecations: "6.0" } },
   esbuildPlugins: [
     {
       name: "use-client",

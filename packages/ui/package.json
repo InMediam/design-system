@@ -18,6 +18,7 @@
   },
   "scripts": {
     "lint": "eslint src --cache",
+    "format": "eslint src --fix",
     "typecheck": "tsc -b",
     "build": "tsup",
     "dev": "tsup src/index.tsx --format esm,cjs --dts --external react --watch"

@@ -24,12 +24,13 @@ const Slider = ({
     >
       <SliderPrimitive.Range className="absolute h-full bg-brand-quinary" />
     </SliderPrimitive.Track>
-    <SliderPrimitive.Thumb className={cn(
-      'block h-4 w-4 rounded-full border border-brand bg-primary shadow',
-      'transition-colors focus-visible:outline-none dark:ring-1',
-      'dark:ring-ring focus-visible:ring-1 focus-visible:ring-ring',
-      'disabled:pointer-events-none disabled:opacity-50',
-    )}
+    <SliderPrimitive.Thumb
+      className={cn(
+        'block h-4 w-4 rounded-full border border-brand bg-primary shadow',
+        'transition-colors focus-visible:outline-none dark:ring-1',
+        'dark:ring-ring focus-visible:ring-1 focus-visible:ring-ring',
+        'disabled:pointer-events-none disabled:opacity-50',
+      )}
     />
   </SliderPrimitive.Root>
 )

@@ -164,9 +164,7 @@ const MenubarCheckboxItem = ({
     checked={checked}
     {...props}
   >
-    <span
-      className="absolute left-2 flex h-3.5 w-3.5 items-center justify-center"
-    >
+    <span className="absolute left-2 flex h-3.5 w-3.5 items-center justify-center">
       <MenubarPrimitive.ItemIndicator>
         <CheckIcon className="h-4 w-4" />
       </MenubarPrimitive.ItemIndicator>
@@ -191,9 +189,7 @@ const MenubarRadioItem = ({
     )}
     {...props}
   >
-    <span
-      className="absolute left-2 flex h-3.5 w-3.5 items-center justify-center"
-    >
+    <span className="absolute left-2 flex h-3.5 w-3.5 items-center justify-center">
       <MenubarPrimitive.ItemIndicator>
         <DotFilledIcon className="h-4 w-4 fill-current" />
       </MenubarPrimitive.ItemIndicator>

@@ -8,24 +8,17 @@ interface LabelProps extends React.ComponentProps<typeof LabelPrimitive.Root> {
   required?: boolean
 }
 
-const labelVariants = cva(
-  [
-    'text-sm/5 font-medium peer-disabled:cursor-not-allowed',
-    'peer-disabled:opacity-70 text-secondary',
-  ],
-)
+const labelVariants = cva([
+  'text-sm/5 font-medium peer-disabled:cursor-not-allowed',
+  'peer-disabled:opacity-70 text-secondary',
+])
 
 const Label = ({
   className,
   required = false,
   ...props
-}: LabelProps &
-  VariantProps<typeof labelVariants> // eslint-disable-line
-) => (
-  <LabelPrimitive.Root
-    className={cn(labelVariants(), className)}
-    {...props}
-  >
+}: LabelProps & VariantProps<typeof labelVariants>) => (
+  <LabelPrimitive.Root className={cn(labelVariants(), className)} {...props}>
     {props.children}
     <span
       className="text-fg-brand-primary data-[required=false]:hidden ml-[2px]"

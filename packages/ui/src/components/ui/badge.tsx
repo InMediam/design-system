@@ -13,21 +13,18 @@ const badgeVariants = cva(
   {
     variants: {
       variant: {
-        default:
-          [
-            'border-brand bg-brand-primary text-brand-secondary',
-            'hover:bg-brand-secondary',
-          ],
-        secondary:
-          [
-            'border-secondary bg-secondary text-secondary',
-            'hover:bg-secondary-hover',
-          ],
-        destructive:
-          [
-            'border-error bg-error-secondary text-error-primary',
-            'hover:bg-error-secondary',
-          ],
+        default: [
+          'border-brand bg-brand-primary text-brand-secondary',
+          'hover:bg-brand-secondary',
+        ],
+        secondary: [
+          'border-secondary bg-secondary text-secondary',
+          'hover:bg-secondary-hover',
+        ],
+        destructive: [
+          'border-error bg-error-secondary text-error-primary',
+          'hover:bg-error-secondary',
+        ],
         success: [
           'bg-success-secondary text-success-primary',
           'hover:bg-success-secondary',
@@ -43,8 +40,9 @@ const badgeVariants = cva(
 )
 
 export interface BadgeProps
-  extends React.HTMLAttributes<HTMLDivElement>,
-  VariantProps<typeof badgeVariants> {
+  extends
+    React.HTMLAttributes<HTMLDivElement>,
+    VariantProps<typeof badgeVariants> {
   dot?: boolean
 }
 

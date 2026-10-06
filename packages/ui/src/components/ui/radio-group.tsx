@@ -35,9 +35,7 @@ const RadioGroupItem = ({
       )}
       {...props}
     >
-      <RadioGroupPrimitive.Indicator
-        className="flex items-center justify-center"
-      >
+      <RadioGroupPrimitive.Indicator className="flex items-center justify-center">
         <DotFilledIcon className="h-3.5 w-3.5 fill-primary-on-brand" />
       </RadioGroupPrimitive.Indicator>
     </RadioGroupPrimitive.Item>
