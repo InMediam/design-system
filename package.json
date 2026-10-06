@@ -16,15 +16,11 @@
     "version-packages": "changeset version",
     "release": "turbo run build --filter=!@inmediam/docs && changeset publish",
     "lint": "turbo run lint",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\""
+    "format": "turbo run format"
   },
   "devDependencies": {
-    "@changesets/cli": "^2.27.11",
-    "@turbo/gen": "^1.9.7",
-    "eslint": "^8.57.1",
-    "prettier": "^2.5.1",
-    "turbo": "^2.10.10",
-    "vite": "^8.0.3"
+    "@changesets/cli": "^3.0.3",
+    "turbo": "^2.11.7"
   },
   "packageManager": "npm@10.9.2"
 }

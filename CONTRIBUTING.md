@@ -112,6 +112,8 @@ All components live in `packages/ui/src/components/ui/`. When adding or modifyin
 
 When writing stories, follow the existing patterns in `packages/docs/src/stories/`. Each story should demonstrate the main variants and states of the component.
 
+Before pushing, run `npm run format` (ESLint with the `@inmediam/lint` style and Prettier, applied with `--fix`) and `npm run lint` from the root. Both run in `ui` and `docs` through Turborepo.
+
 ---
 
 ## Writing a Changeset

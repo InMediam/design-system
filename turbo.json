@@ -13,6 +13,9 @@
         "^build"
       ]
     },
-    "lint": {}
+    "lint": {},
+    "format": {
+      "cache": false
+    }
   }
 }
