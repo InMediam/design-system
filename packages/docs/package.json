@@ -17,8 +17,8 @@
   },
   "dependencies": {
     "@inmediam/ui": "*",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0"
   },
   "devDependencies": {
     "@chromatic-com/storybook": "^5.3.0",
@@ -29,8 +29,8 @@
     "@storybook/addon-themes": "^10.5.9",
     "@storybook/react-vite": "^10.5.9",
     "@storybook/storybook-deployer": "^2.8.16",
-    "@types/react": "^18.2.15",
-    "@types/react-dom": "^18.2.7",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
     "@typescript-eslint/eslint-plugin": "^6.0.0",
     "@typescript-eslint/parser": "^6.0.0",
     "@vitejs/plugin-react": "^6.0.1",
