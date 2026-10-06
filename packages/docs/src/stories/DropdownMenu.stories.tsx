@@ -1,20 +1,18 @@
-
-import { Button } from "@inmediam/ui"
+import { Button } from '@inmediam/ui'
 import {
   DropdownMenu,
   DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
   DropdownMenuGroup,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuPortal,
+  DropdownMenuSeparator,
   DropdownMenuShortcut,
   DropdownMenuSub,
-  DropdownMenuSubTrigger,
   DropdownMenuSubContent,
-  DropdownMenuPortal
-} from "@inmediam/ui"
-
+  DropdownMenuSubTrigger,
+  DropdownMenuTrigger,
+} from '@inmediam/ui'
 import {
   Cloud,
   CreditCard,
@@ -30,7 +28,7 @@ import {
   User,
   UserPlus,
   Users,
-} from "lucide-react"
+} from 'lucide-react'
 
 export default {
   title: 'Menu/Dropdown',

@@ -1,5 +1,11 @@
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger, TooltipArrow } from "@inmediam/ui"
-import { Button } from "@inmediam/ui"
+import {
+  Tooltip,
+  TooltipArrow,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from '@inmediam/ui'
+import { Button } from '@inmediam/ui'
 
 export default {
   title: 'Tooltip',
@@ -9,7 +15,7 @@ export const Primary = {
   args: {},
   render: () => {
     return (
-      <div className='ml-20 mt-10'>
+      <div className="ml-20 mt-10">
         <TooltipProvider>
           <Tooltip delayDuration={0}>
             <TooltipTrigger asChild>
@@ -17,7 +23,7 @@ export const Primary = {
             </TooltipTrigger>
             <TooltipContent>
               <p>Add to library</p>
-              <TooltipArrow fill='white' />
+              <TooltipArrow fill="white" />
             </TooltipContent>
           </Tooltip>
         </TooltipProvider>

@@ -1,14 +1,13 @@
-import { Meta, StoryObj } from "@storybook/react-vite"
-
 import {
   Popover,
   PopoverContent,
+  PopoverProps,
   PopoverTrigger,
-  PopoverProps
-} from "@inmediam/ui"
-import { Button } from "@inmediam/ui"
-import { Input } from "@inmediam/ui"
-import { Label } from "@inmediam/ui"
+} from '@inmediam/ui'
+import { Button } from '@inmediam/ui'
+import { Input } from '@inmediam/ui'
+import { Label } from '@inmediam/ui'
+import { Meta, StoryObj } from '@storybook/react-vite'
 
 export default {
   title: 'Popover',

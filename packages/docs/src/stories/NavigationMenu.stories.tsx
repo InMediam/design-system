@@ -1,4 +1,4 @@
-import { cn } from "@inmediam/ui";
+import { cn } from '@inmediam/ui'
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -7,8 +7,8 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
-} from "@inmediam/ui"
-import React from "react";
+} from '@inmediam/ui'
+import React from 'react'
 
 export default {
   title: 'Menu/Navigation',
@@ -16,39 +16,39 @@ export default {
 
 const components: { title: string; href: string; description: string }[] = [
   {
-    title: "Alert Dialog",
-    href: "/docs/primitives/alert-dialog",
+    title: 'Alert Dialog',
+    href: '/docs/primitives/alert-dialog',
     description:
-      "A modal dialog that interrupts the user with important content and expects a response.",
+      'A modal dialog that interrupts the user with important content and expects a response.',
   },
   {
-    title: "Hover Card",
-    href: "/docs/primitives/hover-card",
+    title: 'Hover Card',
+    href: '/docs/primitives/hover-card',
     description:
-      "For sighted users to preview content available behind a link.",
+      'For sighted users to preview content available behind a link.',
   },
   {
-    title: "Progress",
-    href: "/docs/primitives/progress",
+    title: 'Progress',
+    href: '/docs/primitives/progress',
     description:
-      "Displays an indicator showing the completion progress of a task, typically displayed as a progress bar.",
+      'Displays an indicator showing the completion progress of a task, typically displayed as a progress bar.',
   },
   {
-    title: "Scroll-area",
-    href: "/docs/primitives/scroll-area",
-    description: "Visually or semantically separates content.",
+    title: 'Scroll-area',
+    href: '/docs/primitives/scroll-area',
+    description: 'Visually or semantically separates content.',
   },
   {
-    title: "Tabs",
-    href: "/docs/primitives/tabs",
+    title: 'Tabs',
+    href: '/docs/primitives/tabs',
     description:
-      "A set of layered sections of content—known as tab panels—that are displayed one at a time.",
+      'A set of layered sections of content—known as tab panels—that are displayed one at a time.',
   },
   {
-    title: "Tooltip",
-    href: "/docs/primitives/tooltip",
+    title: 'Tooltip',
+    href: '/docs/primitives/tooltip',
     description:
-      "A popup that displays information related to an element when the element receives keyboard focus or the mouse hovers over it.",
+      'A popup that displays information related to an element when the element receives keyboard focus or the mouse hovers over it.',
   },
 ]
 
@@ -57,14 +57,14 @@ const ListItem = ({
   title,
   children,
   ...props
-}: React.ComponentProps<"a">) => {
+}: React.ComponentProps<'a'>) => {
   return (
     <li>
       <NavigationMenuLink asChild>
         <a
           className={cn(
-            "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
-            className
+            'block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground',
+            className,
           )}
           {...props}
         >
@@ -77,7 +77,7 @@ const ListItem = ({
     </li>
   )
 }
-ListItem.displayName = "ListItem"
+ListItem.displayName = 'ListItem'
 
 export const Primary = {
   args: {},
@@ -113,7 +113,10 @@ export const Primary = {
                   <ListItem href="/docs/installation" title="Installation">
                     How to install dependencies and structure your app.
                   </ListItem>
-                  <ListItem href="/docs/primitives/typography" title="Typography">
+                  <ListItem
+                    href="/docs/primitives/typography"
+                    title="Typography"
+                  >
                     Styles for headings, paragraphs, lists...etc
                   </ListItem>
                 </ul>

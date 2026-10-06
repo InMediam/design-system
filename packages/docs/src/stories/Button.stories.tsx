@@ -1,6 +1,6 @@
-import { Circle } from "lucide-react";
-import { Button, ButtonProps } from "@inmediam/ui";
-import { Meta, StoryFn, StoryObj } from "@storybook/react-vite";
+import { Button, ButtonProps } from '@inmediam/ui'
+import { Meta, StoryFn, StoryObj } from '@storybook/react-vite'
+import { Circle } from 'lucide-react'
 
 export default {
   title: 'Button',
@@ -8,11 +8,13 @@ export default {
   args: {
     variant: 'default',
     size: 'default',
-    children: 'Button CTA'
+    children: 'Button CTA',
   },
 } as Meta<ButtonProps>
 
-const Template: StoryFn<typeof Button> = (args: ButtonProps) => <Button className="w-fit" {...args} />;
+const Template: StoryFn<typeof Button> = (args: ButtonProps) => (
+  <Button className="w-fit" {...args} />
+)
 
 export const Primary: StoryObj<ButtonProps> = {
   render: (args) => {
@@ -21,14 +23,14 @@ export const Primary: StoryObj<ButtonProps> = {
         <Circle className="w-4" /> {args.children} <Circle className="w-4" />
       </Button>
     )
-  }
+  },
 }
 
-export const Playground: StoryFn<typeof Button> = Template.bind({});
+export const Playground: StoryFn<typeof Button> = Template.bind({})
 Playground.args = {
   variant: 'success',
   size: 'default',
-};
+}
 Playground.argTypes = {
   variant: {
     options: [
@@ -39,12 +41,12 @@ Playground.argTypes = {
       'destructive',
       'outline',
       'ghost',
-      'link'
+      'link',
     ],
-    control: { type: 'select' }
+    control: { type: 'select' },
   },
   size: {
     options: ['default', 'xs', 'sm', 'lg'],
-    control: { type: 'select' }
-  }
+    control: { type: 'select' },
+  },
 }

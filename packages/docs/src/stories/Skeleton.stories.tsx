@@ -1,4 +1,4 @@
-import { Skeleton } from "@inmediam/ui"
+import { Skeleton } from '@inmediam/ui'
 
 export default {
   title: 'Skeleton',

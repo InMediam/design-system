@@ -1,17 +1,16 @@
-import { Meta, StoryFn, StoryObj } from "@storybook/react-vite"
-import { toast } from "sonner"
+import { Button, Toaster } from '@inmediam/ui'
+import { Meta, StoryFn, StoryObj } from '@storybook/react-vite'
+import { toast } from 'sonner'
 
-import { Button, Toaster } from "@inmediam/ui"
-
-type ToastVariant = "default" | "success" | "error" | "warning" | "info"
+type ToastVariant = 'default' | 'success' | 'error' | 'warning' | 'info'
 
 type Position =
-  | "top-left"
-  | "top-center"
-  | "top-right"
-  | "bottom-left"
-  | "bottom-center"
-  | "bottom-right"
+  | 'top-left'
+  | 'top-center'
+  | 'top-right'
+  | 'bottom-left'
+  | 'bottom-center'
+  | 'bottom-right'
 
 interface SonnerArgs {
   variant: ToastVariant
@@ -24,14 +23,14 @@ interface SonnerArgs {
 }
 
 export default {
-  title: "Sonner",
+  title: 'Sonner',
   component: Toaster,
   args: {
-    variant: "default",
-    message: "Evento registrado com sucesso.",
-    description: "",
+    variant: 'default',
+    message: 'Evento registrado com sucesso.',
+    description: '',
     withAction: false,
-    position: "bottom-right",
+    position: 'bottom-right',
     richColors: false,
     expand: false,
   },
@@ -43,13 +42,13 @@ const Template: StoryFn<SonnerArgs> = (args) => {
       description: args.description || undefined,
       action: args.withAction
         ? {
-            label: "Desfazer",
-            onClick: () => toast.success("Ação desfeita."),
+            label: 'Desfazer',
+            onClick: () => toast.success('Ação desfeita.'),
           }
         : undefined,
     }
 
-    if (args.variant === "default") {
+    if (args.variant === 'default') {
       toast(args.message, options)
     } else {
       toast[args.variant](args.message, options)
@@ -75,7 +74,7 @@ export const Default: StoryObj<SonnerArgs> = {
     <>
       <Button
         className="w-fit"
-        onClick={() => toast("Evento registrado com sucesso.")}
+        onClick={() => toast('Evento registrado com sucesso.')}
       >
         Mostrar toast
       </Button>
@@ -87,23 +86,23 @@ export const Default: StoryObj<SonnerArgs> = {
 export const Playground: StoryFn<SonnerArgs> = Template.bind({})
 Playground.argTypes = {
   variant: {
-    options: ["default", "success", "error", "warning", "info"],
-    control: { type: "select" },
+    options: ['default', 'success', 'error', 'warning', 'info'],
+    control: { type: 'select' },
   },
   position: {
     options: [
-      "top-left",
-      "top-center",
-      "top-right",
-      "bottom-left",
-      "bottom-center",
-      "bottom-right",
+      'top-left',
+      'top-center',
+      'top-right',
+      'bottom-left',
+      'bottom-center',
+      'bottom-right',
     ],
-    control: { type: "select" },
+    control: { type: 'select' },
   },
-  message: { control: { type: "text" } },
-  description: { control: { type: "text" } },
-  withAction: { control: { type: "boolean" } },
-  richColors: { control: { type: "boolean" } },
-  expand: { control: { type: "boolean" } },
+  message: { control: { type: 'text' } },
+  description: { control: { type: 'text' } },
+  withAction: { control: { type: 'boolean' } },
+  richColors: { control: { type: 'boolean' } },
+  expand: { control: { type: 'boolean' } },
 }

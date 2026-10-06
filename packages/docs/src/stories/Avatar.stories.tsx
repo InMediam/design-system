@@ -1,5 +1,5 @@
-import { Meta, StoryObj } from "@storybook/react-vite"
-import { Avatar, AvatarImage, AvatarFallback, AvatarProps } from "@inmediam/ui"
+import { Avatar, AvatarFallback, AvatarImage, AvatarProps } from '@inmediam/ui'
+import { Meta, StoryObj } from '@storybook/react-vite'
 
 export default {
   title: 'Avatar',
@@ -28,6 +28,7 @@ export const Fallback: StoryObj<AvatarProps> = {
         <Avatar {...args}>
           <AvatarFallback>CN</AvatarFallback>
         </Avatar>
-      </div>)
-  }
+      </div>
+    )
+  },
 }

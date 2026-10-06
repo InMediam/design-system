@@ -1,17 +1,17 @@
-import { Meta, StoryObj } from '@storybook/react-vite'
 import {
   Dialog,
   DialogContent,
   DialogDescription,
   DialogFooter,
   DialogHeader,
+  DialogProps,
   DialogTitle,
   DialogTrigger,
-  DialogProps
-} from "@inmediam/ui"
-import { Button } from "@inmediam/ui"
-import { Label } from "@inmediam/ui"
-import { Input } from "@inmediam/ui"
+} from '@inmediam/ui'
+import { Button } from '@inmediam/ui'
+import { Label } from '@inmediam/ui'
+import { Input } from '@inmediam/ui'
+import { Meta, StoryObj } from '@storybook/react-vite'
 
 export default {
   title: 'Dialogs/Dialog',
@@ -29,7 +29,8 @@ export const Primary: StoryObj<DialogProps> = {
           <DialogHeader>
             <DialogTitle>Edit profile</DialogTitle>
             <DialogDescription>
-              Make changes to your profile here. Click save when you&apos;re done.
+              Make changes to your profile here. Click save when you&apos;re
+              done.
             </DialogDescription>
           </DialogHeader>
           <div className="grid gap-4 py-4">

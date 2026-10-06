@@ -1,11 +1,11 @@
-import { Meta, StoryObj } from '@storybook/react-vite'
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
+  AccordionProps,
   AccordionTrigger,
-  AccordionProps
-} from "@inmediam/ui"
+} from '@inmediam/ui'
+import { Meta, StoryObj } from '@storybook/react-vite'
 
 export default {
   title: 'Accordion',

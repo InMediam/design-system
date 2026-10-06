@@ -1,5 +1,5 @@
-import { Meta, StoryObj } from "@storybook/react-vite"
-import { Slider, SliderProps } from "@inmediam/ui"
+import { Slider, SliderProps } from '@inmediam/ui'
+import { Meta, StoryObj } from '@storybook/react-vite'
 
 export default {
   title: 'Slider',

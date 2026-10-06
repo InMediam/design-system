@@ -1,1 +1,1 @@
-module.exports = require("@inmediam/ui/postcss")
+module.exports = require('@inmediam/ui/postcss')

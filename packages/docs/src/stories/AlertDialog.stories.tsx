@@ -1,4 +1,3 @@
-
 import {
   AlertDialog,
   AlertDialogAction,
@@ -9,9 +8,8 @@ import {
   AlertDialogHeader,
   AlertDialogTitle,
   AlertDialogTrigger,
-} from "@inmediam/ui"
-
-import { Button } from "@inmediam/ui"
+} from '@inmediam/ui'
+import { Button } from '@inmediam/ui'
 
 export default {
   title: 'Dialogs/Alert Dialog',

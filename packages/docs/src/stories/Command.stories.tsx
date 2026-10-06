@@ -1,6 +1,3 @@
-
-import { Calendar, Calculator, CreditCard, Settings, Smile, User } from 'lucide-react'
-
 import {
   Command,
   CommandEmpty,
@@ -9,8 +6,16 @@ import {
   CommandItem,
   CommandList,
   CommandSeparator,
-  CommandShortcut
-} from "@inmediam/ui"
+  CommandShortcut,
+} from '@inmediam/ui'
+import {
+  Calculator,
+  Calendar,
+  CreditCard,
+  Settings,
+  Smile,
+  User,
+} from 'lucide-react'
 
 export default {
   title: 'Command',

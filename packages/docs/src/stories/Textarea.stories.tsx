@@ -1,7 +1,7 @@
+import { Label } from '@inmediam/ui'
+import { Textarea, TextareaProps } from '@inmediam/ui'
+import { InputItemsWrapper } from '@inmediam/ui'
 import type { Meta, StoryObj } from '@storybook/react-vite'
-import { Label } from "@inmediam/ui"
-import { Textarea, TextareaProps } from "@inmediam/ui"
-import { InputItemsWrapper } from "@inmediam/ui"
 
 export default {
   title: 'Form/Textarea',

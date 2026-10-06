@@ -1,19 +1,15 @@
-import { Meta, StoryObj } from "@storybook/react-vite"
-import { Home, Settings, User } from "lucide-react"
-import {
-  MobileTabList,
-  MobileTabItem,
-  MobileTabListProps,
-} from "@inmediam/ui"
-import { useState } from "react"
+import { MobileTabItem, MobileTabList, MobileTabListProps } from '@inmediam/ui'
+import { Meta, StoryObj } from '@storybook/react-vite'
+import { Home, Settings, User } from 'lucide-react'
+import { useState } from 'react'
 
 const meta = {
-  title: "MobileTabList",
+  title: 'MobileTabList',
   component: MobileTabList,
   parameters: {
-    layout: "fullscreen",
+    layout: 'fullscreen',
     viewport: {
-      defaultViewport: "mobile1",
+      defaultViewport: 'mobile1',
     },
   },
 } satisfies Meta<typeof MobileTabList>
@@ -21,26 +17,27 @@ const meta = {
 export default meta
 
 const defaultTabs: MobileTabItem[] = [
-  { id: 1, label: "Account", value: "account", icon: <User className="h-4 w-4" /> },
-  { id: 2, label: "Home", value: "home", icon: <Home className="h-4 w-4" /> },
+  {
+    id: 1,
+    label: 'Account',
+    value: 'account',
+    icon: <User className="h-4 w-4" />,
+  },
+  { id: 2, label: 'Home', value: 'home', icon: <Home className="h-4 w-4" /> },
   {
     id: 3,
-    label: "Settings",
-    value: "settings",
+    label: 'Settings',
+    value: 'settings',
     icon: <Settings className="h-4 w-4" />,
   },
 ]
 
 const PrimaryExample = (args: MobileTabListProps) => {
-  const [value, setValue] = useState("account")
+  const [value, setValue] = useState('account')
 
   return (
     <div className="w-full max-w-md px-2">
-      <MobileTabList
-        {...args}
-        value={value}
-        onValueChange={setValue}
-      />
+      <MobileTabList {...args} value={value} onValueChange={setValue} />
       <div className="mt-4 rounded-lg p-4 border text-sm text-muted-foreground">
         Active tab: <strong>{value}</strong>
       </div>
@@ -57,7 +54,7 @@ export const Primary: StoryObj<MobileTabListProps> = {
 }
 
 const WithNavigationButtonExample = (args: MobileTabListProps) => {
-  const [value, setValue] = useState("account")
+  const [value, setValue] = useState('account')
 
   return (
     <div className="w-full max-w-md">

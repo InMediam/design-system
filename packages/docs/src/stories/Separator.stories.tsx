@@ -1,5 +1,5 @@
-import { Meta, StoryObj } from "@storybook/react-vite"
-import { Separator, SeparatorProps } from "@inmediam/ui"
+import { Separator, SeparatorProps } from '@inmediam/ui'
+import { Meta, StoryObj } from '@storybook/react-vite'
 
 export default {
   title: 'Separator',

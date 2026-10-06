@@ -1,7 +1,7 @@
+import { HintText, Input, InputProps } from '@inmediam/ui'
+import { Label } from '@inmediam/ui'
+import { InputItemsWrapper } from '@inmediam/ui'
 import type { Meta, StoryObj } from '@storybook/react-vite'
-import { HintText, Input, InputProps } from "@inmediam/ui"
-import { Label } from "@inmediam/ui"
-import { InputItemsWrapper } from "@inmediam/ui"
 
 export default {
   title: 'Form/Input',
@@ -16,11 +16,11 @@ export const Primary: StoryObj<InputProps> = {
   render: (args) => {
     return (
       <InputItemsWrapper>
-        <Label required htmlFor="name">Nome:</Label>
-        <Input  {...args} />
-        <HintText>
-          This is an error message.
-        </HintText>
+        <Label required htmlFor="name">
+          Nome:
+        </Label>
+        <Input {...args} />
+        <HintText>This is an error message.</HintText>
       </InputItemsWrapper>
     )
   },
@@ -34,14 +34,14 @@ export const Playground: StoryObj<InputProps> = {
   argTypes: {
     type: {
       options: ['text', 'password', 'email', 'number', 'file'],
-      control: { type: 'select' }
+      control: { type: 'select' },
     },
   },
   render: (args) => {
     return (
       <InputItemsWrapper>
         <Label htmlFor="name">Playground:</Label>
-        <Input  {...args} />
+        <Input {...args} />
       </InputItemsWrapper>
     )
   },

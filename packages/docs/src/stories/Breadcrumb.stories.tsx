@@ -6,14 +6,13 @@ import {
   BreadcrumbList,
   BreadcrumbPage,
   BreadcrumbSeparator,
-} from "@inmediam/ui"
-
+} from '@inmediam/ui'
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
-  DropdownMenuTrigger
-} from "@inmediam/ui"
+  DropdownMenuTrigger,
+} from '@inmediam/ui'
 
 export default {
   title: 'Breadcrumb',
@@ -27,15 +26,11 @@ export const Primary = {
         <Breadcrumb>
           <BreadcrumbList>
             <BreadcrumbItem>
-              <BreadcrumbLink>
-                Home
-              </BreadcrumbLink>
+              <BreadcrumbLink>Home</BreadcrumbLink>
             </BreadcrumbItem>
             <BreadcrumbSeparator />
             <BreadcrumbItem>
-              <BreadcrumbLink>
-                Components
-              </BreadcrumbLink>
+              <BreadcrumbLink>Components</BreadcrumbLink>
             </BreadcrumbItem>
             <BreadcrumbSeparator />
             <BreadcrumbItem>
@@ -74,7 +69,9 @@ export const WithEllipsis = {
             </BreadcrumbItem>
             <BreadcrumbSeparator />
             <BreadcrumbItem>
-              <BreadcrumbLink href="/docs/components">Components</BreadcrumbLink>
+              <BreadcrumbLink href="/docs/components">
+                Components
+              </BreadcrumbLink>
             </BreadcrumbItem>
             <BreadcrumbSeparator />
             <BreadcrumbItem>
