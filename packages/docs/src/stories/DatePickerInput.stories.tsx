@@ -1,10 +1,8 @@
-import React from "react"
-import { Meta, StoryObj } from "@storybook/react-vite"
-
-import { DatePickerInput } from "@inmediam/ui"
+import { DatePickerInput } from '@inmediam/ui'
+import { Meta, StoryObj } from '@storybook/react-vite'
 
 export default {
-  title: "DatePickerInput",
+  title: 'DatePickerInput',
   component: DatePickerInput,
 } as Meta<typeof DatePickerInput>
 
@@ -30,7 +28,12 @@ export const ComCallback: Story = {
       label="Data de nascimento"
       onChange={(date, masked) => {
         if (date) {
-          console.log("Data válida:", date.toISOString(), "| Mascarada:", masked)
+          console.log(
+            'Data válida:',
+            date.toISOString(),
+            '| Mascarada:',
+            masked,
+          )
         }
       }}
     />

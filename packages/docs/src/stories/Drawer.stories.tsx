@@ -1,6 +1,4 @@
-import { Minus, Plus } from "lucide-react"
-
-import { Button } from "@inmediam/ui"
+import { Button } from '@inmediam/ui'
 import {
   Drawer,
   DrawerClose,
@@ -9,15 +7,14 @@ import {
   DrawerFooter,
   DrawerHeader,
   DrawerTitle,
-  DrawerTrigger
-} from "@inmediam/ui"
+  DrawerTrigger,
+} from '@inmediam/ui'
+import { Minus, Plus } from 'lucide-react'
 import { useState } from 'react'
 
 export default {
   title: 'Drawer',
 }
-
-
 
 function RenderComponent() {
   const [goal, setGoal] = useState(350)
@@ -68,9 +65,7 @@ function RenderComponent() {
                 <span className="sr-only">Increase</span>
               </Button>
             </div>
-            <div className="mt-3 h-[120px]">
-
-            </div>
+            <div className="mt-3 h-[120px]" />
           </div>
           <DrawerFooter>
             <Button>Submit</Button>
@@ -87,8 +82,6 @@ function RenderComponent() {
 export const Primary = {
   args: {},
   render: () => {
-    return (
-      <RenderComponent />
-    )
+    return <RenderComponent />
   },
 }

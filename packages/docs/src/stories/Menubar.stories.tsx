@@ -1,4 +1,3 @@
-
 import {
   Menubar,
   MenubarCheckboxItem,
@@ -13,7 +12,7 @@ import {
   MenubarSubContent,
   MenubarSubTrigger,
   MenubarTrigger,
-} from "@inmediam/ui"
+} from '@inmediam/ui'
 
 export default {
   title: 'Menu/Menubar',
@@ -79,7 +78,9 @@ export const Primary = {
           <MenubarMenu>
             <MenubarTrigger>View</MenubarTrigger>
             <MenubarContent>
-              <MenubarCheckboxItem>Always Show Bookmarks Bar</MenubarCheckboxItem>
+              <MenubarCheckboxItem>
+                Always Show Bookmarks Bar
+              </MenubarCheckboxItem>
               <MenubarCheckboxItem checked>
                 Always Show Full URLs
               </MenubarCheckboxItem>

@@ -1,24 +1,57 @@
-import { Meta, StoryObj } from "@storybook/react-vite"
-
-import { ScrollArea, ScrollBar } from "@inmediam/ui"
+import { ScrollArea, ScrollBar } from '@inmediam/ui'
+import { Meta, StoryObj } from '@storybook/react-vite'
 
 export default {
-  title: "ScrollArea",
+  title: 'ScrollArea',
   component: ScrollArea,
 } as Meta<typeof ScrollArea>
 
 type Story = StoryObj<typeof ScrollArea>
 
 const tags = [
-  "Accordions", "Alert Dialog", "Avatar", "Badge", "Breadcrumb",
-  "Button", "Calendar", "Card", "Carousel", "Checkbox",
-  "Collapsible", "Command", "Context Menu", "Dialog", "Drawer",
-  "Dropdown Menu", "Form", "Hover Card", "Input", "Input OTP",
-  "Label", "Menubar", "Navigation Menu", "Pagination", "Popover",
-  "Progress", "Radio Group", "Resizable", "Scroll Area", "Select",
-  "Separator", "Sheet", "Skeleton", "Slider", "Sonner",
-  "Switch", "Table", "Tabs", "Textarea", "Toast",
-  "Toggle", "Toggle Group", "Tooltip",
+  'Accordions',
+  'Alert Dialog',
+  'Avatar',
+  'Badge',
+  'Breadcrumb',
+  'Button',
+  'Calendar',
+  'Card',
+  'Carousel',
+  'Checkbox',
+  'Collapsible',
+  'Command',
+  'Context Menu',
+  'Dialog',
+  'Drawer',
+  'Dropdown Menu',
+  'Form',
+  'Hover Card',
+  'Input',
+  'Input OTP',
+  'Label',
+  'Menubar',
+  'Navigation Menu',
+  'Pagination',
+  'Popover',
+  'Progress',
+  'Radio Group',
+  'Resizable',
+  'Scroll Area',
+  'Select',
+  'Separator',
+  'Sheet',
+  'Skeleton',
+  'Slider',
+  'Sonner',
+  'Switch',
+  'Table',
+  'Tabs',
+  'Textarea',
+  'Toast',
+  'Toggle',
+  'Toggle Group',
+  'Tooltip',
 ]
 
 export const Vertical: Story = {
@@ -60,7 +93,8 @@ export const ComConteudoLongo: Story = {
       <div className="p-4 space-y-2">
         {Array.from({ length: 30 }, (_, i) => (
           <p key={i} className="text-sm text-muted-foreground">
-            Linha {i + 1} — conteúdo de exemplo para demonstrar o scroll vertical.
+            Linha {i + 1} — conteúdo de exemplo para demonstrar o scroll
+            vertical.
           </p>
         ))}
       </div>

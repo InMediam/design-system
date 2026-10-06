@@ -1,6 +1,6 @@
-import { Meta, StoryObj } from "@storybook/react-vite"
-import { Checkbox, CheckboxProps } from "@inmediam/ui"
-import { Label } from "@inmediam/ui"
+import { Checkbox, CheckboxProps } from '@inmediam/ui'
+import { Label } from '@inmediam/ui'
+import { Meta, StoryObj } from '@storybook/react-vite'
 
 export default {
   title: 'Form/Checkbox',
@@ -12,12 +12,8 @@ export const Primary: StoryObj<CheckboxProps> = {
   render: (args) => {
     return (
       <div className="flex items-center space-x-2">
-        <Checkbox id="terms"  {...args} />
-        <Label
-          htmlFor="terms"
-        >
-          Accept terms and conditions
-        </Label>
+        <Checkbox id="terms" {...args} />
+        <Label htmlFor="terms">Accept terms and conditions</Label>
       </div>
     )
   },

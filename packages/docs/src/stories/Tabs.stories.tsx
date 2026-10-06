@@ -1,19 +1,18 @@
-import { Meta, StoryObj } from '@storybook/react-vite'
 import {
   Tabs,
-  TabsList,
-  TabsTrigger,
   TabsContent,
+  TabsList,
   TabsProps,
-} from "@inmediam/ui"
+  TabsTrigger,
+} from '@inmediam/ui'
+import { Meta, StoryObj } from '@storybook/react-vite'
 
 export default {
   title: 'Tabs',
 } as Meta<TabsProps>
 
 export const Primary: StoryObj<TabsProps> = {
-  args: {
-  },
+  args: {},
   render: (args) => {
     return (
       <div>

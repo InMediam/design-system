@@ -1,12 +1,11 @@
-import { Meta, StoryObj } from "@storybook/react-vite"
-import { Progress, ProgressProps } from "@inmediam/ui"
-import { useEffect, useState } from "react"
+import { Progress, ProgressProps } from '@inmediam/ui'
+import { Meta, StoryObj } from '@storybook/react-vite'
+import { useEffect, useState } from 'react'
 
 export default {
   title: 'Progress',
   component: Progress,
 } as Meta<ProgressProps>
-
 
 function RenderComponent({ ...args }: ProgressProps) {
   const [progress, setProgress] = useState(13)
@@ -16,16 +15,12 @@ function RenderComponent({ ...args }: ProgressProps) {
     return () => clearTimeout(timer)
   }, [])
 
-  return (
-    <Progress {...args} value={progress} className="w-[30%]" />
-  )
+  return <Progress {...args} value={progress} className="w-[30%]" />
 }
 
 export const Primary: StoryObj<ProgressProps> = {
   args: {},
   render: (args) => {
-    return (
-      <RenderComponent {...args} />
-    )
+    return <RenderComponent {...args} />
   },
 }

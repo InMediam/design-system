@@ -34,7 +34,7 @@ The Storybook covers every component with live, interactive examples, including 
 npm install @inmediam/ui
 ```
 
-> **Peer dependencies:** React 17+ and React DOM 17+ must already be installed in your project.
+> **Peer dependencies:** React 19+ and React DOM 19+ must already be installed in your project.
 
 ---
 

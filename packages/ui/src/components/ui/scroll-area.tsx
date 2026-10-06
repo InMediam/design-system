@@ -1,11 +1,13 @@
 'use client'
 
-import { cn } from '../../lib/utils'
 import * as ScrollAreaPrimitive from '@radix-ui/react-scroll-area'
 import * as React from 'react'
 
-interface ScrollAreaProps
-  extends React.ComponentProps<typeof ScrollAreaPrimitive.Root> {
+import { cn } from '../../lib/utils'
+
+interface ScrollAreaProps extends React.ComponentProps<
+  typeof ScrollAreaPrimitive.Root
+> {
   onScrollChange?: (event: React.UIEvent<HTMLDivElement>) => void
 }
 
@@ -23,7 +25,11 @@ function ScrollArea({
     >
       <ScrollAreaPrimitive.Viewport
         data-slot="scroll-area-viewport"
-        className="size-full rounded-[inherit] outline-none transition-[color,box-shadow] focus-visible:outline-1 focus-visible:ring-[3px] focus-visible:ring-ring/50"
+        className={cn(
+          'size-full rounded-[inherit] outline-none',
+          'transition-[color,box-shadow] focus-visible:outline-1',
+          'focus-visible:ring-[3px] focus-visible:ring-ring/50',
+        )}
         onScroll={onScrollChange}
       >
         {children}

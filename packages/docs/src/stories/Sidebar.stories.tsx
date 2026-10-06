@@ -1,21 +1,3 @@
-
-import React, { useState } from "react";
-import {
-  ArrowLeftToLine,
-  Building2,
-  ChevronDown,
-  FileSearch2,
-  Flag,
-  Flame,
-  Gauge,
-  GalleryVerticalEnd,
-  Inbox,
-  MessageCircleMore,
-  ShieldCheck,
-  TrendingUp,
-  Users,
-} from "lucide-react";
-
 import {
   Badge,
   Breadcrumb,
@@ -48,105 +30,125 @@ import {
   SidebarTrigger,
   TooltipProvider,
   useSidebar,
-} from "@inmediam/ui";
+} from '@inmediam/ui'
+import {
+  ArrowLeftToLine,
+  Building2,
+  ChevronDown,
+  FileSearch2,
+  Flag,
+  Flame,
+  GalleryVerticalEnd,
+  Gauge,
+  Inbox,
+  MessageCircleMore,
+  ShieldCheck,
+  TrendingUp,
+  Users,
+} from 'lucide-react'
+import { useState } from 'react'
 
 export default {
-  title: "Sidebar",
-};
+  title: 'Sidebar',
+}
 
 const navMainItems = [
   {
-    id: "home",
-    title: "Início",
+    id: 'home',
+    title: 'Início',
     icon: <Gauge className="h-5 w-5" />,
-    url: "#",
+    url: '#',
   },
   {
-    id: "clientes",
-    title: "Clientes",
+    id: 'clientes',
+    title: 'Clientes',
     icon: <Users className="h-5 w-5" />,
     items: [
-      { id: "locatarios", title: "Locatários", url: "#" },
-      { id: "proprietarios", title: "Proprietários", url: "#" },
+      { id: 'locatarios', title: 'Locatários', url: '#' },
+      { id: 'proprietarios', title: 'Proprietários', url: '#' },
     ],
   },
   {
-    id: "imoveis",
-    title: "Imóveis",
+    id: 'imoveis',
+    title: 'Imóveis',
     icon: <Building2 className="h-5 w-5" />,
-    url: "#",
+    url: '#',
   },
   {
-    id: "locacoes",
-    title: "Locações",
+    id: 'locacoes',
+    title: 'Locações',
     icon: <Inbox className="h-5 w-5" />,
-    url: "#",
+    url: '#',
   },
-];
+]
 
 const navServiceItems = [
   {
-    id: "cobranca-automatizada-service",
-    title: "Cobrança automatizada",
+    id: 'cobranca-automatizada-service',
+    title: 'Cobrança automatizada',
     icon: <TrendingUp className="h-5 w-5" />,
     items: [
-      { id: "cobranca-automatizada-visao-geral", title: "Cobranças", url: "#" },
-      { id: "cobranca-automatizada-regua-cobrancas", title: "Régua de cobranças", url: "#" },
+      { id: 'cobranca-automatizada-visao-geral', title: 'Cobranças', url: '#' },
+      {
+        id: 'cobranca-automatizada-regua-cobrancas',
+        title: 'Régua de cobranças',
+        url: '#',
+      },
     ],
   },
   {
-    id: "garantia-locaticia-service",
-    title: "Garantia locatícia",
+    id: 'garantia-locaticia-service',
+    title: 'Garantia locatícia',
     icon: <ShieldCheck className="h-5 w-5" />,
-    url: "#",
+    url: '#',
   },
   {
-    id: "vistoria-service",
-    title: "Vistoria",
+    id: 'vistoria-service',
+    title: 'Vistoria',
     icon: <FileSearch2 className="h-5 w-5" />,
     items: [
-      { id: "vistoria-visao-geral", title: "Visão geral", url: "#" },
-      { id: "vistoria-aguardando-ativacao", title: "Ativação", url: "#" },
-      { id: "vistoria-solicitacao", title: "Solicitação", url: "#" },
-      { id: "vistoria-assinatura", title: "Assinatura", url: "#" },
-      { id: "vistoria-configuracoes", title: "Configurações", url: "#" },
+      { id: 'vistoria-visao-geral', title: 'Visão geral', url: '#' },
+      { id: 'vistoria-aguardando-ativacao', title: 'Ativação', url: '#' },
+      { id: 'vistoria-solicitacao', title: 'Solicitação', url: '#' },
+      { id: 'vistoria-assinatura', title: 'Assinatura', url: '#' },
+      { id: 'vistoria-configuracoes', title: 'Configurações', url: '#' },
     ],
   },
   {
-    id: "seguro-incendio-service",
-    title: "Seguro incêndio",
+    id: 'seguro-incendio-service',
+    title: 'Seguro incêndio',
     icon: <Flame className="h-5 w-5" />,
     items: [
-      { id: "seguro-incendio-cotacoes", title: "Cotações", url: "#" },
-      { id: "seguro-incendio-seguros", title: "Seguros", url: "#" },
-      { id: "seguro-incendio-configuracoes", title: "Configurações", url: "#" },
+      { id: 'seguro-incendio-cotacoes', title: 'Cotações', url: '#' },
+      { id: 'seguro-incendio-seguros', title: 'Seguros', url: '#' },
+      { id: 'seguro-incendio-configuracoes', title: 'Configurações', url: '#' },
     ],
   },
-];
+]
 
 const navFooterItems = [
   {
-    id: "gerenciar-equipe",
-    title: "Gerenciar equipe",
+    id: 'gerenciar-equipe',
+    title: 'Gerenciar equipe',
     icon: <Users className="h-5 w-5" />,
-    url: "#",
+    url: '#',
   },
   {
-    id: "central-usuario",
-    title: "Central do usuário",
+    id: 'central-usuario',
+    title: 'Central do usuário',
     icon: <Flag className="h-5 w-5" />,
-    url: "#",
+    url: '#',
   },
   {
-    id: "suporte",
-    title: "Suporte",
+    id: 'suporte',
+    title: 'Suporte',
     icon: <MessageCircleMore className="h-5 w-5" />,
-    url: "#",
+    url: '#',
   },
-];
+]
 
 function NavHeader() {
-  const { open } = useSidebar();
+  const { open } = useSidebar()
 
   return (
     <SidebarMenu>
@@ -170,18 +172,20 @@ function NavHeader() {
         </SidebarMenuButton>
       </SidebarMenuItem>
     </SidebarMenu>
-  );
+  )
 }
 
 function NavMain({
   activeId,
   onSelect,
 }: {
-  activeId: string;
-  onSelect: (id: string) => void;
+  activeId: string
+  onSelect: (id: string) => void
 }) {
-  const { open, setOpen } = useSidebar();
-  const [openCollapsible, setOpenCollapsible] = useState<string | null>("clientes");
+  const { open, setOpen } = useSidebar()
+  const [openCollapsible, setOpenCollapsible] = useState<string | null>(
+    'clientes',
+  )
 
   return (
     <SidebarGroup>
@@ -190,11 +194,12 @@ function NavMain({
         data-open={open}
       >
         {navMainItems.map((main) => {
-          const isActive = activeId === main.id ||
-            (main.items?.some((sub) => sub.id === activeId) ?? false);
+          const isActive =
+            activeId === main.id ||
+            (main.items?.some((sub) => sub.id === activeId) ?? false)
 
           if (main.items) {
-            const isOpen = openCollapsible === main.id;
+            const isOpen = openCollapsible === main.id
             return (
               <Collapsible
                 asChild
@@ -202,8 +207,12 @@ function NavMain({
                 key={main.id}
                 open={isOpen}
                 onOpenChange={(o) => {
-                  if (!open) { setOpen(true); setOpenCollapsible(main.id); return; }
-                  setOpenCollapsible(o ? main.id : null);
+                  if (!open) {
+                    setOpen(true)
+                    setOpenCollapsible(main.id)
+                    return
+                  }
+                  setOpenCollapsible(o ? main.id : null)
                 }}
               >
                 <SidebarMenuItem>
@@ -222,7 +231,7 @@ function NavMain({
                       />
                       <div
                         className="mr-1 data-[icon=false]:hidden text-fg-quaternary"
-                        data-icon={true}
+                        data-icon
                         data-active={isActive}
                       >
                         {main.icon}
@@ -243,7 +252,7 @@ function NavMain({
                   <CollapsibleContent>
                     <SidebarMenuSub className="mx-0 border-none px-0">
                       {main.items.map((subItem) => {
-                        const isItemActive = activeId === subItem.id;
+                        const isItemActive = activeId === subItem.id
                         return (
                           <SidebarMenuSubItem
                             className="h-10 data-[open=true]:w-[17.5rem]"
@@ -259,8 +268,8 @@ function NavMain({
                                 href={subItem.url}
                                 className="pl-0"
                                 onClick={(e) => {
-                                  e.preventDefault();
-                                  onSelect(subItem.id);
+                                  e.preventDefault()
+                                  onSelect(subItem.id)
                                 }}
                               >
                                 <Separator
@@ -279,13 +288,13 @@ function NavMain({
                               </a>
                             </SidebarMenuSubButton>
                           </SidebarMenuSubItem>
-                        );
+                        )
                       })}
                     </SidebarMenuSub>
                   </CollapsibleContent>
                 </SidebarMenuItem>
               </Collapsible>
-            );
+            )
           }
 
           return (
@@ -306,14 +315,11 @@ function NavMain({
                   href={main.url}
                   className="flex h-full w-full items-center gap-3"
                   onClick={(e) => {
-                    e.preventDefault();
-                    onSelect(main.id);
+                    e.preventDefault()
+                    onSelect(main.id)
                   }}
                 >
-                  <div
-                    className="text-fg-quaternary"
-                    data-active={isActive}
-                  >
+                  <div className="text-fg-quaternary" data-active={isActive}>
                     {main.icon}
                   </div>
                   <span
@@ -326,22 +332,22 @@ function NavMain({
                 </a>
               </SidebarMenuButton>
             </SidebarMenuItem>
-          );
+          )
         })}
       </SidebarMenu>
     </SidebarGroup>
-  );
+  )
 }
 
 function NavService({
   activeId,
   onSelect,
 }: {
-  activeId: string;
-  onSelect: (id: string) => void;
+  activeId: string
+  onSelect: (id: string) => void
 }) {
-  const { open, setOpen } = useSidebar();
-  const [openCollapsible, setOpenCollapsible] = useState<string | null>(null);
+  const { open, setOpen } = useSidebar()
+  const [openCollapsible, setOpenCollapsible] = useState<string | null>(null)
 
   return (
     <SidebarGroup>
@@ -355,7 +361,7 @@ function NavService({
         {navServiceItems.map((main) => {
           const isActive =
             activeId === main.id ||
-            (main.items?.some((sub) => sub.id === activeId) ?? false);
+            (main.items?.some((sub) => sub.id === activeId) ?? false)
 
           if (main.url) {
             return (
@@ -376,14 +382,11 @@ function NavService({
                     href={main.url}
                     className="flex h-full w-full items-center gap-3"
                     onClick={(e) => {
-                      e.preventDefault();
-                      onSelect(main.id);
+                      e.preventDefault()
+                      onSelect(main.id)
                     }}
                   >
-                    <div
-                      className="text-fg-quaternary"
-                      data-active={isActive}
-                    >
+                    <div className="text-fg-quaternary" data-active={isActive}>
                       {main.icon}
                     </div>
                     <span
@@ -396,10 +399,10 @@ function NavService({
                   </a>
                 </SidebarMenuButton>
               </SidebarMenuItem>
-            );
+            )
           }
 
-          const isOpen = openCollapsible === main.id;
+          const isOpen = openCollapsible === main.id
           return (
             <Collapsible
               asChild
@@ -407,8 +410,12 @@ function NavService({
               key={main.id}
               open={isOpen}
               onOpenChange={(o) => {
-                if (!open) { setOpen(true); setOpenCollapsible(main.id); return; }
-                setOpenCollapsible(o ? main.id : null);
+                if (!open) {
+                  setOpen(true)
+                  setOpenCollapsible(main.id)
+                  return
+                }
+                setOpenCollapsible(o ? main.id : null)
               }}
             >
               <SidebarMenuItem>
@@ -432,7 +439,7 @@ function NavService({
                       {main.icon}
                     </div>
                     <span
-                     className="text-sm font-medium text-secondary data-[open=false]:hidden data-[active=true]:font-semibold data-[active=true]:text-secondary-hover"
+                      className="text-sm font-medium text-secondary data-[open=false]:hidden data-[active=true]:font-semibold data-[active=true]:text-secondary-hover"
                       data-open={open}
                       data-active={isActive}
                     >
@@ -447,7 +454,7 @@ function NavService({
                 <CollapsibleContent>
                   <SidebarMenuSub className="mx-0 border-none px-0">
                     {main.items?.map((subItem) => {
-                      const isItemActive = activeId === subItem.id;
+                      const isItemActive = activeId === subItem.id
                       return (
                         <SidebarMenuSubItem
                           className="h-10 data-[open=true]:w-[17.5rem]"
@@ -463,8 +470,8 @@ function NavService({
                               href={subItem.url}
                               className="pl-0"
                               onClick={(e) => {
-                                e.preventDefault();
-                                onSelect(subItem.id);
+                                e.preventDefault()
+                                onSelect(subItem.id)
                               }}
                             >
                               <Separator
@@ -481,27 +488,27 @@ function NavService({
                             </a>
                           </SidebarMenuSubButton>
                         </SidebarMenuSubItem>
-                      );
+                      )
                     })}
                   </SidebarMenuSub>
                 </CollapsibleContent>
               </SidebarMenuItem>
             </Collapsible>
-          );
+          )
         })}
       </SidebarMenu>
     </SidebarGroup>
-  );
+  )
 }
 
 function NavFooter({
   activeId,
   onSelect,
 }: {
-  activeId: string;
-  onSelect: (id: string) => void;
+  activeId: string
+  onSelect: (id: string) => void
 }) {
-  const { open } = useSidebar();
+  const { open } = useSidebar()
 
   return (
     <SidebarGroup className="py-1">
@@ -510,7 +517,7 @@ function NavFooter({
         data-open={open}
       >
         {navFooterItems.map((main) => {
-          const isActive = activeId === main.id;
+          const isActive = activeId === main.id
           return (
             <SidebarMenuItem key={main.id}>
               <SidebarMenuButton
@@ -529,14 +536,11 @@ function NavFooter({
                   href={main.url}
                   className="flex h-full w-full items-center gap-3"
                   onClick={(e) => {
-                    e.preventDefault();
-                    onSelect(main.id);
+                    e.preventDefault()
+                    onSelect(main.id)
                   }}
                 >
-                  <div
-                    className="text-fg-quaternary"
-                    data-active={isActive}
-                  >
+                  <div className="text-fg-quaternary" data-active={isActive}>
                     {main.icon}
                   </div>
                   <span
@@ -550,28 +554,25 @@ function NavFooter({
                     <Badge
                       className="rounded-[0.375rem] data-[open=false]:hidden data-[suporte=false]:hidden"
                       variant="outline"
-                      data-suporte={main.title === "Suporte"}
+                      data-suporte={main.title === 'Suporte'}
                       data-open={open}
                     >
-                      <Dot
-                        className="bg-success dark:bg-success"
-                        data-ativo={true}
-                      />
+                      <Dot className="bg-success dark:bg-success" data-ativo />
                       <span className="font-semibold">online</span>
                     </Badge>
                   </span>
                 </a>
               </SidebarMenuButton>
             </SidebarMenuItem>
-          );
+          )
         })}
       </SidebarMenu>
     </SidebarGroup>
-  );
+  )
 }
 
 function SidebarButtonTrigger() {
-  const { open, setOpen } = useSidebar();
+  const { open, setOpen } = useSidebar()
 
   return (
     <Button
@@ -591,11 +592,11 @@ function SidebarButtonTrigger() {
         Recolher menu
       </span>
     </Button>
-  );
+  )
 }
 
 function AppSidebar() {
-  const [activeId, setActiveId] = useState("home");
+  const [activeId, setActiveId] = useState('home')
 
   return (
     <TooltipProvider delayDuration={200}>
@@ -618,7 +619,7 @@ function AppSidebar() {
         <SidebarRail />
       </Sidebar>
     </TooltipProvider>
-  );
+  )
 }
 
 export const Primary = {
@@ -655,6 +656,6 @@ export const Primary = {
           </div>
         </SidebarInset>
       </SidebarProvider>
-    );
+    )
   },
-};
+}

@@ -3,7 +3,7 @@ import {
   InputOTPGroup,
   InputOTPSeparator,
   InputOTPSlot,
-} from "@inmediam/ui"
+} from '@inmediam/ui'
 
 export default {
   title: 'Input OTP',

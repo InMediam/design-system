@@ -21,7 +21,7 @@ Full documentation with live examples, props, theming, and accessibility notes:
 npm install @inmediam/ui
 ```
 
-**Peer dependencies:** React 17+ and React DOM 17+ must be installed in your project.
+**Peer dependencies:** React 19+ and React DOM 19+ must be installed in your project.
 
 ---
 

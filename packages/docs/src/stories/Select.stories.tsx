@@ -6,7 +6,7 @@ import {
   SelectLabel,
   SelectTrigger,
   SelectValue,
-} from "@inmediam/ui"
+} from '@inmediam/ui'
 
 export default {
   title: 'Form/Select',
@@ -14,8 +14,7 @@ export default {
 }
 
 export const Primary = {
-  args: {
-  },
+  args: {},
   render: () => {
     return (
       <div className="flex w-full">

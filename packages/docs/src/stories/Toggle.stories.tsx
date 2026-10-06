@@ -1,7 +1,6 @@
-import { Bold } from "lucide-react"
-
-import { Toggle, ToggleProps } from "@inmediam/ui"
-import { Meta, StoryObj } from "@storybook/react-vite"
+import { Toggle, ToggleProps } from '@inmediam/ui'
+import { Meta, StoryObj } from '@storybook/react-vite'
+import { Bold } from 'lucide-react'
 
 export default {
   title: 'Toggle',

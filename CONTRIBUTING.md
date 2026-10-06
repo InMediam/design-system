@@ -45,7 +45,7 @@ The source for all components lives in `packages/ui/src/components/ui/`. The Sto
 
 ## Setting Up Locally
 
-**Requirements:** Node.js 18+ and npm 9+.
+**Requirements:** Node.js 24 LTS and npm 10+.
 
 1. Fork and clone the repository
 
@@ -108,8 +108,11 @@ All components live in `packages/ui/src/components/ui/`. When adding or modifyin
 - **Component file:** `packages/ui/src/components/ui/MyComponent.tsx`
 - **Story file:** `packages/docs/src/stories/MyComponent.stories.tsx`
 - **Exports:** make sure the component is exported from `packages/ui/src/index.tsx`
+- **Refs:** the library targets React 19, so `ref` is a regular prop. Don't use `React.forwardRef`; type props with `React.ComponentProps<'div'>` or `React.ComponentProps<typeof Primitive.Root>` and let `ref` flow through `...props`
 
 When writing stories, follow the existing patterns in `packages/docs/src/stories/`. Each story should demonstrate the main variants and states of the component.
+
+Before pushing, run `npm run format` (ESLint with the `@inmediam/lint` style and Prettier, applied with `--fix`) and `npm run lint` from the root. Both run in `ui` and `docs` through Turborepo.
 
 ---
 

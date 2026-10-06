@@ -1,36 +1,39 @@
-"use client"
+'use client'
 
-import * as React from "react"
-import { CalendarIcon } from "lucide-react"
+import { CalendarIcon } from 'lucide-react'
+import * as React from 'react'
 
 import {
   applyDateMask,
   formatMaskedDate,
   parseMaskedDate,
-} from "../../lib/date-mask"
-import { Calendar } from "./calendar"
-import { Field, FieldLabel } from "./field"
+} from '../../lib/date-mask'
+import { Calendar } from './calendar'
+import { Field, FieldLabel } from './field'
 import {
   InputGroup,
   InputGroupAddon,
   InputGroupButton,
   InputGroupInput,
-} from "./input-group"
-import { Popover, PopoverContent, PopoverTrigger } from "./popover"
+} from './input-group'
+import { Popover, PopoverContent, PopoverTrigger } from './popover'
 
 export interface DatePickerInputProps {
   label?: string
   placeholder?: string
   /** Valor inicial no formato dd/MM/yyyy */
   defaultValue?: string
-  /** Chamado sempre que o valor muda. `date` é undefined se a data for inválida */
+  /**
+   * Chamado sempre que o valor muda. `date` é undefined se a data for
+   * inválida
+   */
   onChange?: (date: Date | undefined, masked: string) => void
 }
 
 export function DatePickerInput({
-  label = "Data",
-  placeholder = "dd/mm/aaaa",
-  defaultValue = "",
+  label = 'Data',
+  placeholder = 'dd/mm/aaaa',
+  defaultValue = '',
   onChange,
 }: DatePickerInputProps) {
   const inputRef = React.useRef<HTMLInputElement>(null)
@@ -89,7 +92,7 @@ export function DatePickerInput({
           inputMode="numeric"
           onChange={handleChange}
           onKeyDown={(e) => {
-            if (e.key === "ArrowDown") {
+            if (e.key === 'ArrowDown') {
               e.preventDefault()
               setOpen(true)
             }
