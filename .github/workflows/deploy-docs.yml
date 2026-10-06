@@ -1,34 +1,51 @@
 name: Deploy docs
 
-permissions:
-  contents: write
-  issues: write
-  pull-requests: write
-
-on: 
+on:
   push:
     branches:
       - main
-jobs: 
-    build-and-deploy:
-      runs-on: ubuntu-latest
-      steps:
-        - name: Checkout
-          uses: actions/checkout@v6
-        
-        - name: Setup Node.js
-          uses: actions/setup-node@v6
-          with:
-            node-version: 24
-            cache: 'npm'
-            cache-dependency-path: '**/package-lock.json'
 
-        - run: npm ci
+permissions:
+  contents: read
 
-        - run: npm run build 
+# Um deploy por vez; o que estiver rodando termina antes do próximo começar.
+concurrency:
+  group: pages
+  cancel-in-progress: false
 
-        - name: Deploy storybook
-          working-directory: ./packages/docs
-          run: touch storybook-static/.nojekyll && npm run deploy-storybook -- --ci --existing-output-dir=storybook-static
-          env:
-            GH_TOKEN: ${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: 24
+          cache: 'npm'
+          cache-dependency-path: '**/package-lock.json'
+
+      - run: npm ci
+
+      - run: npm run build
+
+      - name: Upload Storybook
+        uses: actions/upload-pages-artifact@v5
+        with:
+          path: packages/docs/storybook-static
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v5

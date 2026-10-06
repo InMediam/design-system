@@ -22,5 +22,9 @@
     "@changesets/cli": "^3.0.3",
     "turbo": "^2.11.7"
   },
-  "packageManager": "npm@10.9.2"
+  "packageManager": "npm@10.9.2",
+  "allowScripts": {
+    "esbuild@0.28.2": true,
+    "esbuild@0.27.2": true
+  }
 }
