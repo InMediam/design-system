@@ -12,6 +12,13 @@
     "./postcss": "./postcss.config.js",
     "./styles": "./src/global.css"
   },
+  "files": [
+    "dist",
+    "src",
+    "tailwind.config.js",
+    "postcss.config.js",
+    "CHANGELOG.md"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/InMediam/design-system"
