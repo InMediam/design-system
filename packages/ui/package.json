@@ -1,7 +1,7 @@
 {
   "name": "@inmediam/ui",
   "author": "Douglas Duarte",
-  "version": "8.0.0",
+  "version": "8.0.1",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
@@ -12,6 +12,13 @@
     "./postcss": "./postcss.config.js",
     "./styles": "./src/global.css"
   },
+  "files": [
+    "dist",
+    "src",
+    "tailwind.config.js",
+    "postcss.config.js",
+    "CHANGELOG.md"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/InMediam/design-system"
