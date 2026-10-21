@@ -1,6 +1,6 @@
 import { act, fireEvent, render, screen } from '@testing-library/react'
 import * as React from 'react'
-import { afterEach, describe, expect, it, vi } from 'vitest'
+import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 
 import {
   Tooltip,
@@ -8,6 +8,7 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from '../components/ui/tooltip'
+import { CLICK_SUPPRESSION_WINDOW_MS } from '../components/ui/tooltip-touch-mode'
 import { touchDrag, touchHold, touchTap } from './touch'
 
 type RenderTipOptions = {
@@ -60,7 +61,23 @@ const waitDismissableLayer = () =>
 
 afterEach(() => {
   vi.useRealTimers()
+  vi.restoreAllMocks()
 })
+
+const mockPointer = (coarse: boolean) =>
+  vi.spyOn(window, 'matchMedia').mockImplementation(
+    (query) =>
+      ({
+        matches: coarse && query === '(pointer: coarse)',
+        media: query,
+        onchange: null,
+        addEventListener: vi.fn(),
+        removeEventListener: vi.fn(),
+        addListener: vi.fn(),
+        removeListener: vi.fn(),
+        dispatchEvent: vi.fn(),
+      }) as MediaQueryList,
+  )
 
 describe('toque simples', () => {
   it('abre com um toque e fecha com outro', () => {
@@ -257,5 +274,179 @@ describe('mouse e teclado inalterados', () => {
 
     expect(fireEvent.click(screen.getByText('?'))).toBe(true)
     expect(rowClick).toHaveBeenCalledTimes(1)
+  })
+})
+
+describe('segurar', () => {
+  const onClick = vi.fn()
+  const renderButton = () => renderTip(<button onClick={onClick}>Abrir</button>)
+
+  beforeEach(() => {
+    vi.useFakeTimers()
+    onClick.mockReset()
+  })
+
+  it('toque rápido executa a ação e não abre', () => {
+    renderButton()
+
+    expect(touchTap(screen.getByText('Abrir'))).toBe(true)
+    expect(onClick).toHaveBeenCalledTimes(1)
+    expect(screen.queryByRole('tooltip')).not.toBeInTheDocument()
+  })
+
+  it('segurar 500 ms abre e soltar não executa a ação', () => {
+    renderButton()
+
+    expect(touchHold(screen.getByText('Abrir'))).toBe(false)
+    expect(screen.getByRole('tooltip')).toBeInTheDocument()
+    expect(onClick).not.toHaveBeenCalled()
+  })
+
+  it('foco causado pelo toque não abre', () => {
+    renderButton()
+    const el = screen.getByText('Abrir')
+
+    fireEvent.pointerDown(el, { pointerType: 'touch' })
+    fireEvent.focus(el)
+    fireEvent.pointerUp(el, { pointerType: 'touch' })
+    fireEvent.click(el)
+    expect(screen.queryByRole('tooltip')).not.toBeInTheDocument()
+  })
+
+  it('segurar outro gatilho fecha a dica aberta', () => {
+    render(
+      withProvider(
+        <>
+          <Tooltip>
+            <TooltipTrigger asChild>
+              <button onClick={onClick}>Abrir</button>
+            </TooltipTrigger>
+            <TooltipContent>Dica</TooltipContent>
+          </Tooltip>
+          <Tooltip>
+            <TooltipTrigger asChild>
+              <button onClick={onClick}>Outro</button>
+            </TooltipTrigger>
+            <TooltipContent>Dica 2</TooltipContent>
+          </Tooltip>
+        </>,
+      ),
+    )
+
+    touchHold(screen.getByText('Abrir'))
+    touchHold(screen.getByText('Outro'))
+    expect(screen.queryByText('Dica')).not.toBeInTheDocument()
+    expect(screen.getByRole('tooltip')).toHaveTextContent('Dica 2')
+  })
+
+  it('soltar antes de 500 ms não abre', () => {
+    renderButton()
+    const el = screen.getByText('Abrir')
+
+    fireEvent.pointerDown(el, { pointerType: 'touch' })
+    act(() => {
+      vi.advanceTimersByTime(499)
+    })
+    fireEvent.pointerUp(el, { pointerType: 'touch' })
+    fireEvent.click(el)
+    expect(screen.queryByRole('tooltip')).not.toBeInTheDocument()
+    expect(onClick).toHaveBeenCalledTimes(1)
+  })
+
+  it('mover mais de 10 px cancela', () => {
+    renderButton()
+    const el = screen.getByText('Abrir')
+
+    fireEvent.pointerDown(el, { pointerType: 'touch', clientX: 0, clientY: 0 })
+    fireEvent.pointerMove(el, {
+      pointerType: 'touch',
+      clientX: 0,
+      clientY: 11,
+    })
+    act(() => {
+      vi.advanceTimersByTime(500)
+    })
+    expect(screen.queryByRole('tooltip')).not.toBeInTheDocument()
+  })
+
+  it('mover o dedo depois de a dica abrir não libera a ação', () => {
+    renderButton()
+    const el = screen.getByText('Abrir')
+
+    fireEvent.pointerDown(el, { pointerType: 'touch', clientX: 0, clientY: 0 })
+    act(() => {
+      vi.advanceTimersByTime(500)
+    })
+    fireEvent.pointerMove(el, {
+      pointerType: 'touch',
+      clientX: 0,
+      clientY: 30,
+    })
+    fireEvent.pointerUp(el, { pointerType: 'touch' })
+    expect(fireEvent.click(el)).toBe(false)
+    expect(onClick).not.toHaveBeenCalled()
+  })
+
+  it('toque rápido com a dica aberta executa a ação e fecha', () => {
+    renderButton()
+
+    touchHold(screen.getByText('Abrir'))
+    touchTap(screen.getByText('Abrir'))
+    expect(onClick).toHaveBeenCalledTimes(1)
+    expect(screen.queryByRole('tooltip')).not.toBeInTheDocument()
+  })
+
+  it('link ancestral não navega depois de segurar', () => {
+    const linkClick = vi.fn()
+    renderTip(<span>Endereço</span>, {
+      wrapper: (children) => (
+        <a href="/x" onClick={linkClick}>
+          {children}
+        </a>
+      ),
+    })
+
+    expect(touchHold(screen.getByText('Endereço'))).toBe(false)
+    expect(linkClick).not.toHaveBeenCalled()
+    expect(screen.getByText('Endereço')).toHaveAttribute(
+      'data-touch-mode',
+      'long-press',
+    )
+  })
+
+  it('cancela o menu de contexto do segurar', () => {
+    renderButton()
+    const el = screen.getByText('Abrir')
+
+    fireEvent.pointerDown(el, { pointerType: 'touch' })
+    act(() => {
+      vi.advanceTimersByTime(500)
+    })
+    expect(fireEvent.contextMenu(el)).toBe(false)
+  })
+
+  it('clique que nunca chega não engole o próximo', () => {
+    renderButton()
+
+    touchHold(screen.getByText('Abrir'), { emitClick: false })
+    act(() => {
+      vi.advanceTimersByTime(CLICK_SUPPRESSION_WINDOW_MS)
+    })
+    expect(fireEvent.click(screen.getByText('Abrir'))).toBe(true)
+    expect(onClick).toHaveBeenCalledTimes(1)
+  })
+
+  it('bloqueia seleção só com ponteiro grosso', () => {
+    mockPointer(true)
+    renderButton()
+
+    expect(screen.getByText('Abrir')).toHaveStyle({ userSelect: 'none' })
+  })
+
+  it('não muda o estilo com ponteiro fino', () => {
+    mockPointer(false)
+    renderButton()
+
+    expect(screen.getByText('Abrir').getAttribute('style')).toBeNull()
   })
 })

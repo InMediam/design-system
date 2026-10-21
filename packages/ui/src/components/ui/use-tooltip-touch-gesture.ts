@@ -66,12 +66,12 @@ export function useTooltipTouchGesture({
     [endGesture, disarmClickSuppression],
   )
 
-  const isTapTouch = (event: React.PointerEvent) =>
-    mode === 'tap' && event.pointerType === 'touch'
+  const isTouch = (event: React.PointerEvent) =>
+    mode !== null && event.pointerType === 'touch'
 
   return {
     onPointerDown: (event) => {
-      if (!isTapTouch(event)) return
+      if (!isTouch(event)) return
       disarmClickSuppression()
       endGesture()
       // O Radix fecha a dica no próprio pointerdown do gatilho, então o estado
@@ -83,12 +83,16 @@ export function useTooltipTouchGesture({
         held: false,
       }
       holdTimerRef.current = setTimeout(() => {
-        if (gestureRef.current) gestureRef.current.held = true
+        if (!gestureRef.current) return
+        gestureRef.current.held = true
+        if (mode === 'long-press') setOpen(true)
       }, LONG_PRESS_DELAY_MS)
     },
     onPointerMove: (event) => {
       const gesture = gestureRef.current
-      if (!isTapTouch(event) || !gesture) return
+      // Depois que a dica abriu, mexer o dedo não pode cancelar o gesto: o
+      // soltar seguinte ainda precisa ser absorvido.
+      if (!isTouch(event) || !gesture || gesture.held) return
       const distance = Math.hypot(
         event.clientX - gesture.startX,
         event.clientY - gesture.startY,
@@ -96,24 +100,34 @@ export function useTooltipTouchGesture({
       if (distance > TOUCH_MOVE_TOLERANCE_PX) endGesture()
     },
     onPointerCancel: (event) => {
-      if (isTapTouch(event)) endGesture()
+      if (isTouch(event)) endGesture()
     },
-    // O toggle fica no pointerup, e não no click, porque o click não dispara
-    // em botão desabilitado — justamente o caso em que a dica explica o motivo.
+    // No tap, o toggle fica no pointerup, e não no click, porque o click não
+    // dispara em botão desabilitado — justamente o caso em que a dica explica
+    // o motivo.
     onPointerUp: (event) => {
-      if (!isTapTouch(event)) return
+      if (!isTouch(event)) return
       const gesture = gestureRef.current
       endGesture()
+      if (!gesture) return
+
+      if (mode === 'long-press') {
+        // Toque rápido segue para a ação; só o soltar depois de segurar é
+        // absorvido.
+        if (gesture.held) armClickSuppression()
+        return
+      }
+
       // Segurar num gatilho passivo é seleção de texto nativa, não pedido de
       // dica.
-      if (!gesture || gesture.held) return
+      if (gesture.held) return
       setOpen(!gesture.wasOpen)
       armClickSuppression()
     },
     // O navegador dispara pointerleave logo depois de o dedo sair da tela, e
     // com `disableHoverableContent` o Radix fecharia a dica que acabou de abrir.
     onPointerLeave: (event) => {
-      if (isTapTouch(event)) event.preventDefault()
+      if (isTouch(event)) event.preventDefault()
     },
     // Captura porque o Slot do Radix executa o onClick do filho antes do
     // onClick do Trigger: na fase de bolha a ação já teria rodado.
@@ -123,6 +137,29 @@ export function useTooltipTouchGesture({
       event.preventDefault()
       event.stopPropagation()
     },
-    onContextMenu: () => {},
+    // O Android abre o menu de contexto ao segurar; no tap ele continua
+    // nativo para não atrapalhar a seleção de texto.
+    onContextMenu: (event) => {
+      if (mode !== 'long-press') return
+      if (gestureRef.current || isSuppressingClickRef.current) {
+        event.preventDefault()
+      }
+    },
   }
+}
+
+const COARSE_POINTER_QUERY = '(pointer: coarse)'
+
+const subscribeToCoarsePointer = (onChange: () => void) => {
+  const query = window.matchMedia(COARSE_POINTER_QUERY)
+  query.addEventListener('change', onChange)
+  return () => query.removeEventListener('change', onChange)
+}
+
+export function usePrefersCoarsePointer() {
+  return React.useSyncExternalStore(
+    subscribeToCoarsePointer,
+    () => window.matchMedia(COARSE_POINTER_QUERY).matches,
+    () => false,
+  )
 }
