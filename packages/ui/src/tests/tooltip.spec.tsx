@@ -118,6 +118,29 @@ describe('toque simples', () => {
     expect(screen.queryByRole('tooltip')).not.toBeInTheDocument()
   })
 
+  it('tocar na dica aberta não aciona o container e fecha a dica', () => {
+    const rowClick = vi.fn()
+    renderTip(<span>?</span>, {
+      wrapper: (children) => <div onClick={rowClick}>{children}</div>,
+    })
+
+    touchTap(screen.getByText('?'))
+    expect(touchTap(screen.getByRole('tooltip'))).toBe(false)
+    expect(rowClick).not.toHaveBeenCalled()
+    expect(screen.queryByRole('tooltip')).not.toBeInTheDocument()
+  })
+
+  it('clique com mouse na dica segue para o container', async () => {
+    const rowClick = vi.fn()
+    renderTip(<span>?</span>, {
+      wrapper: (children) => <div onClick={rowClick}>{children}</div>,
+    })
+
+    fireEvent.focus(screen.getByText('?'))
+    expect(fireEvent.click(await screen.findByRole('tooltip'))).toBe(true)
+    expect(rowClick).toHaveBeenCalledTimes(1)
+  })
+
   it('arrastar não abre', () => {
     renderTip(<span>?</span>)
 
@@ -131,8 +154,6 @@ describe('toque simples', () => {
     touchTap(screen.getByText('?'))
     expect(screen.getByRole('tooltip')).toBeInTheDocument()
     await waitDismissableLayer()
-    // No toque, o DismissableLayer do Radix só fecha no click que segue o
-    // pointerdown.
     touchTap(document.body)
     expect(screen.queryByRole('tooltip')).not.toBeInTheDocument()
   })
@@ -446,6 +467,21 @@ describe('segurar', () => {
       'data-touch-mode',
       'long-press',
     )
+  })
+
+  it('tocar na dica depois de segurar não aciona o link ancestral', () => {
+    const linkClick = vi.fn()
+    renderTip(<span>Endereço</span>, {
+      wrapper: (children) => (
+        <a href="/x" onClick={linkClick}>
+          {children}
+        </a>
+      ),
+    })
+
+    touchHold(screen.getByText('Endereço'))
+    expect(touchTap(screen.getByRole('tooltip'))).toBe(false)
+    expect(linkClick).not.toHaveBeenCalled()
   })
 
   it('cancela o menu de contexto do segurar', () => {

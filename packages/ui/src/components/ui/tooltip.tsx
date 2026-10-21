@@ -15,9 +15,8 @@ import {
 
 export type { TooltipTouchMode } from './tooltip-touch-mode'
 
-// No toque, o DismissableLayer do Radix só fecha a dica de fora no click, e o
-// click absorvido pelo gatilho não chega ao document. Este evento garante uma
-// dica aberta por vez quando a abertura vem do toque.
+// Garante uma dica aberta por vez quando a abertura vem do toque, sem depender
+// de como o DismissableLayer do Radix trata o pointerdown de fora no toque.
 const TOUCH_OPEN_EVENT = 'inmediam-ui:tooltip-touch-open'
 
 type TooltipTouchContextValue = {
@@ -230,9 +229,13 @@ const TooltipContent = ({
   className,
   sideOffset = 4,
   hidden,
+  onPointerDown,
+  onClickCapture,
   ...props
 }: React.ComponentProps<typeof TooltipPrimitive.Content>) => {
-  const setHasContent = React.useContext(TooltipTouchContext)?.setHasContent
+  const context = React.useContext(TooltipTouchContext)
+  const setHasContent = context?.setHasContent
+  const isTouchTapRef = React.useRef(false)
 
   React.useLayoutEffect(() => {
     if (!setHasContent) return
@@ -240,10 +243,29 @@ const TooltipContent = ({
     return () => setHasContent(false)
   }, [hidden, setHasContent])
 
+  const handlePointerDown = (event: React.PointerEvent<HTMLDivElement>) => {
+    onPointerDown?.(event)
+    isTouchTapRef.current = event.pointerType === 'touch'
+  }
+
+  // No toque a dica fica aberta e tocar nela é o jeito natural de dispensá-la;
+  // sem absorver, o click sobe pela árvore do React até o NavLink, o label ou
+  // a linha que contém o gatilho.
+  const handleClickCapture = (event: React.MouseEvent<HTMLDivElement>) => {
+    onClickCapture?.(event)
+    if (!isTouchTapRef.current) return
+    isTouchTapRef.current = false
+    event.preventDefault()
+    event.stopPropagation()
+    context?.setTouchOpen(false)
+  }
+
   return (
     <TooltipPrimitive.Content
       sideOffset={sideOffset}
       hidden={hidden}
+      onPointerDown={handlePointerDown}
+      onClickCapture={handleClickCapture}
       className={cn(
         'z-50 overflow-hidden rounded-md border-none text-background',
         'bg-foreground px-3 py-1.5 text-xs shadow-md animate-in fade-in-0',
