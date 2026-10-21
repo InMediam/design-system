@@ -4,6 +4,7 @@ import * as React from 'react'
 import { cn } from '../../lib/utils'
 import {
   hasInteractiveAncestor,
+  isEnabledInteractiveElement,
   resolveTouchMode,
   type TooltipTouchMode,
 } from './tooltip-touch-mode'
@@ -137,12 +138,18 @@ const TooltipTrigger = ({
   const prefersCoarsePointer = usePrefersCoarsePointer()
   const elementRef = React.useRef<HTMLButtonElement | null>(null)
   const [interactiveAncestor, setInteractiveAncestor] = React.useState(false)
+  const [interactiveSelf, setInteractiveSelf] = React.useState(false)
 
+  // O DOM é quem diz se o elemento renderizado e os ancestrais têm ação
+  // (Switch, submit, triggers aninhados do Radix não passam `onClick`), e isso
+  // muda junto com o filho e com `disabled`.
   React.useLayoutEffect(() => {
-    if (elementRef.current) {
-      setInteractiveAncestor(hasInteractiveAncestor(elementRef.current))
-    }
-  }, [])
+    const element = elementRef.current
+    if (!element) return
+    setInteractiveAncestor(hasInteractiveAncestor(element))
+    // Sem `asChild`, o elemento é o `<button>` gerado pelo próprio Trigger.
+    setInteractiveSelf(Boolean(asChild) && isEnabledInteractiveElement(element))
+  }, [asChild, children, props.disabled])
 
   const mergedRef = React.useCallback(
     (node: HTMLButtonElement | null) => {
@@ -159,14 +166,14 @@ const TooltipTrigger = ({
       : {}
   const disabled = Boolean(props.disabled ?? childProps.disabled)
   const hasOwnAction = Boolean(
-    props.onClick ?? childProps.onClick ?? childProps.href,
+    props.onClick ?? childProps.onClick ?? childProps.href ?? childProps.to,
   )
 
   const mode = context?.touchEnabled
     ? resolveTouchMode({
         override: context.touchModeOverride,
         disabled,
-        hasOwnAction,
+        hasOwnAction: hasOwnAction || interactiveSelf,
         hasInteractiveAncestor: interactiveAncestor,
       })
     : null

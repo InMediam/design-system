@@ -13,9 +13,12 @@ export const CLICK_SUPPRESSION_WINDOW_MS = 400
 // atrasado sem bloquear um foco por teclado logo em seguida.
 export const TOUCH_FOCUS_GUARD_MS = 1000
 
-const INTERACTIVE_ANCESTOR_SELECTOR = [
+const INTERACTIVE_SELECTOR = [
   'a[href]',
   'button',
+  'input:not([type="hidden"])',
+  'select',
+  'textarea',
   'summary',
   '[role="button"]',
   '[role="link"]',
@@ -47,10 +50,34 @@ export function hasInteractiveAncestor(element: HTMLElement) {
   const parent = element.parentElement
   if (!parent) return false
 
-  if (parent.closest(INTERACTIVE_ANCESTOR_SELECTOR)) return true
+  if (parent.closest(INTERACTIVE_SELECTOR)) return true
 
   const label = parent.closest('label')
   return label ? isSelectionLabel(label) : false
+}
+
+export function isEnabledInteractiveElement(element: Element) {
+  return (
+    element.matches(INTERACTIVE_SELECTOR) &&
+    !element.matches(':disabled') &&
+    element.getAttribute('aria-disabled') !== 'true'
+  )
+}
+
+// Gatilhos que embrulham outros elementos (link dentro do botão do sidebar,
+// campos do composer do chat) só revelam a ação no alvo do toque.
+export function hasInteractiveDescendantAt(
+  trigger: Element,
+  target: EventTarget | null,
+) {
+  if (!(target instanceof Element)) return false
+  const interactive = target.closest(INTERACTIVE_SELECTOR)
+  return (
+    interactive !== null &&
+    interactive !== trigger &&
+    trigger.contains(interactive) &&
+    isEnabledInteractiveElement(interactive)
+  )
 }
 
 export function resolveTouchMode({

@@ -2,6 +2,7 @@ import * as React from 'react'
 
 import {
   CLICK_SUPPRESSION_WINDOW_MS,
+  hasInteractiveDescendantAt,
   LONG_PRESS_DELAY_MS,
   type TooltipTouchMode,
   TOUCH_FOCUS_GUARD_MS,
@@ -20,6 +21,7 @@ export interface TooltipTouchGestureHandlers {
 }
 
 type Gesture = {
+  mode: TooltipTouchMode
   startX: number
   startY: number
   wasOpen: boolean
@@ -91,13 +93,19 @@ export function useTooltipTouchGesture({
 
   return {
     onPointerDown: (event) => {
-      if (!isTouch(event)) return
+      if (!isTouch(event) || !mode) return
       disarmClickSuppression()
       endGesture()
       guardFocus()
+      const gestureMode =
+        mode === 'tap' &&
+        hasInteractiveDescendantAt(event.currentTarget, event.target)
+          ? 'long-press'
+          : mode
       // O Radix fecha a dica no próprio pointerdown do gatilho, então o estado
       // que decide o toggle precisa ser lido antes dele.
       gestureRef.current = {
+        mode: gestureMode,
         startX: event.clientX,
         startY: event.clientY,
         wasOpen: open,
@@ -106,7 +114,7 @@ export function useTooltipTouchGesture({
       holdTimerRef.current = setTimeout(() => {
         if (!gestureRef.current) return
         gestureRef.current.held = true
-        if (mode === 'long-press') setOpen(true)
+        if (gestureRef.current.mode === 'long-press') setOpen(true)
       }, LONG_PRESS_DELAY_MS)
     },
     onPointerMove: (event) => {
@@ -132,7 +140,7 @@ export function useTooltipTouchGesture({
       endGesture()
       if (!gesture) return
 
-      if (mode === 'long-press') {
+      if (gesture.mode === 'long-press') {
         // Toque rápido segue para a ação; só o soltar depois de segurar é
         // absorvido.
         if (gesture.held) armClickSuppression()
@@ -162,10 +170,7 @@ export function useTooltipTouchGesture({
     // O Android abre o menu de contexto ao segurar; no tap ele continua
     // nativo para não atrapalhar a seleção de texto.
     onContextMenu: (event) => {
-      if (mode !== 'long-press') return
-      if (gestureRef.current || isSuppressingClickRef.current) {
-        event.preventDefault()
-      }
+      if (gestureRef.current?.mode === 'long-press') event.preventDefault()
     },
     // Sem isso, um toque rápido num botão com ação abre a dica pelo foco e o
     // click a fecha em seguida — ou ela fica aberta se a ação cancelar o click.

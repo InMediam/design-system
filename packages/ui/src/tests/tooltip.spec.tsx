@@ -2,6 +2,7 @@ import { act, fireEvent, render, screen } from '@testing-library/react'
 import * as React from 'react'
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 
+import { Switch } from '../components/ui/switch'
 import {
   Tooltip,
   TooltipContent,
@@ -481,5 +482,80 @@ describe('segurar', () => {
     renderButton()
 
     expect(screen.getByText('Abrir').getAttribute('style')).toBeNull()
+  })
+})
+
+describe('detecção de ação', () => {
+  it('Switch como gatilho troca de estado num toque', () => {
+    const onCheckedChange = vi.fn()
+    renderTip(<Switch onCheckedChange={onCheckedChange} />)
+
+    touchTap(screen.getByRole('switch'))
+    expect(onCheckedChange).toHaveBeenCalledWith(true)
+    expect(screen.queryByRole('tooltip')).not.toBeInTheDocument()
+  })
+
+  it('link dentro do gatilho executa no toque', () => {
+    const linkClick = vi.fn((event: React.MouseEvent) => event.preventDefault())
+    renderTip(
+      <div>
+        <a href="/x" onClick={linkClick}>
+          Docs
+        </a>
+      </div>,
+    )
+
+    touchTap(screen.getByText('Docs'))
+    expect(linkClick).toHaveBeenCalledTimes(1)
+    expect(screen.queryByRole('tooltip')).not.toBeInTheDocument()
+  })
+
+  it('botão de submit sem onClick conta como ação', () => {
+    renderTip(<button type="submit">Enviar</button>)
+
+    expect(screen.getByText('Enviar')).toHaveAttribute(
+      'data-touch-mode',
+      'long-press',
+    )
+  })
+
+  it('prop to de um Link conta como ação', () => {
+    const FakeLink = ({
+      to,
+      ...props
+    }: React.ComponentProps<'span'> & { to: string }) => (
+      <span data-to={to} {...props} />
+    )
+    renderTip(<FakeLink to="/x">Ir</FakeLink>)
+
+    expect(screen.getByText('Ir')).toHaveAttribute(
+      'data-touch-mode',
+      'long-press',
+    )
+  })
+
+  it('o botão gerado pelo Trigger sem asChild continua tap', () => {
+    render(
+      withProvider(
+        <Tooltip>
+          <TooltipTrigger>Status</TooltipTrigger>
+          <TooltipContent>Dica</TooltipContent>
+        </Tooltip>,
+      ),
+    )
+
+    expect(screen.getByText('Status')).toHaveAttribute('data-touch-mode', 'tap')
+  })
+
+  it('composer com campos desabilitados abre a dica num toque', () => {
+    renderTip(
+      <div>
+        <textarea aria-label="Mensagem" disabled />
+        <button disabled>Enviar</button>
+      </div>,
+    )
+
+    touchTap(screen.getByLabelText('Mensagem'))
+    expect(screen.getByRole('tooltip')).toBeInTheDocument()
   })
 })
