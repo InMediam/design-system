@@ -129,6 +129,7 @@ const TooltipTrigger = ({
   onPointerLeave,
   onClickCapture,
   onContextMenu,
+  onFocus,
   style,
   ...props
 }: React.ComponentProps<typeof TooltipPrimitive.Trigger>) => {
@@ -199,6 +200,7 @@ const TooltipTrigger = ({
       onPointerLeave={composeHandlers(onPointerLeave, gesture.onPointerLeave)}
       onClickCapture={composeHandlers(onClickCapture, gesture.onClickCapture)}
       onContextMenu={composeHandlers(onContextMenu, gesture.onContextMenu)}
+      onFocus={composeHandlers(onFocus, gesture.onFocus)}
     >
       {children}
     </TooltipPrimitive.Trigger>

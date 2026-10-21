@@ -5,13 +5,21 @@ import { LONG_PRESS_DELAY_MS } from '../components/ui/tooltip-touch-mode'
 
 const touch = { pointerType: 'touch', clientX: 0, clientY: 0 }
 
-// Mesma ordem de um toque real: o navegador dispara o pointerleave do dedo
-// logo depois do pointerup, e só então o click.
-export function touchTap(element: Element) {
-  fireEvent.pointerDown(element, touch)
+// Ordem do Chrome no Android: o pointerleave do dedo vem logo depois do
+// pointerup, e o foco só chega com os eventos de mouse de compatibilidade,
+// antes do click.
+const releaseFinger = (element: Element) => {
   fireEvent.pointerUp(element, touch)
   fireEvent.pointerLeave(element, touch)
+  fireEvent.mouseDown(element)
+  fireEvent.focus(element)
+  fireEvent.mouseUp(element)
   return fireEvent.click(element)
+}
+
+export function touchTap(element: Element) {
+  fireEvent.pointerDown(element, touch)
+  return releaseFinger(element)
 }
 
 export function touchHold(element: Element, { emitClick = true } = {}) {
@@ -19,9 +27,10 @@ export function touchHold(element: Element, { emitClick = true } = {}) {
   act(() => {
     vi.advanceTimersByTime(LONG_PRESS_DELAY_MS)
   })
+  if (emitClick) return releaseFinger(element)
   fireEvent.pointerUp(element, touch)
   fireEvent.pointerLeave(element, touch)
-  return emitClick ? fireEvent.click(element) : undefined
+  return undefined
 }
 
 export function touchDrag(element: Element) {

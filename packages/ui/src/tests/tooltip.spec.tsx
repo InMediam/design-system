@@ -8,7 +8,10 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from '../components/ui/tooltip'
-import { CLICK_SUPPRESSION_WINDOW_MS } from '../components/ui/tooltip-touch-mode'
+import {
+  CLICK_SUPPRESSION_WINDOW_MS,
+  TOUCH_FOCUS_GUARD_MS,
+} from '../components/ui/tooltip-touch-mode'
 import { touchDrag, touchHold, touchTap } from './touch'
 
 type RenderTipOptions = {
@@ -302,14 +305,44 @@ describe('segurar', () => {
     expect(onClick).not.toHaveBeenCalled()
   })
 
-  it('foco causado pelo toque não abre', () => {
+  it('foco causado pelo toque não abre a dica', () => {
+    const onOpenChange = vi.fn()
+    renderTip(<button onClick={onClick}>Abrir</button>, {
+      tooltip: { onOpenChange },
+    })
+
+    touchTap(screen.getByText('Abrir'))
+    expect(onClick).toHaveBeenCalledTimes(1)
+    expect(onOpenChange).not.toHaveBeenCalledWith(true)
+  })
+
+  it('foco por teclado depois de um toque volta a abrir a dica', () => {
     renderButton()
     const el = screen.getByText('Abrir')
 
     fireEvent.pointerDown(el, { pointerType: 'touch' })
-    fireEvent.focus(el)
     fireEvent.pointerUp(el, { pointerType: 'touch' })
-    fireEvent.click(el)
+    act(() => {
+      vi.advanceTimersByTime(TOUCH_FOCUS_GUARD_MS)
+    })
+    fireEvent.focus(el)
+    expect(screen.getByRole('tooltip')).toBeInTheDocument()
+  })
+
+  it('a dica não fica aberta quando a ação cancela o click', () => {
+    renderTip(
+      <button
+        onClick={(event) => {
+          event.preventDefault()
+          onClick()
+        }}
+      >
+        Abrir
+      </button>,
+    )
+
+    touchTap(screen.getByText('Abrir'))
+    expect(onClick).toHaveBeenCalledTimes(1)
     expect(screen.queryByRole('tooltip')).not.toBeInTheDocument()
   })
 

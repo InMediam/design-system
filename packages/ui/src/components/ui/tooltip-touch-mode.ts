@@ -8,6 +8,11 @@ export const TOUCH_MOVE_TOLERANCE_PX = 10
 // armada engoliria o próximo clique legítimo (ex.: Enter no teclado).
 export const CLICK_SUPPRESSION_WINDOW_MS = 400
 
+// No Android o foco do toque chega depois do pointerup, quando a trava do
+// Radix contra foco por ponteiro já foi liberada; este prazo cobre esse foco
+// atrasado sem bloquear um foco por teclado logo em seguida.
+export const TOUCH_FOCUS_GUARD_MS = 1000
+
 const INTERACTIVE_ANCESTOR_SELECTOR = [
   'a[href]',
   'button',

@@ -4,6 +4,7 @@ import {
   CLICK_SUPPRESSION_WINDOW_MS,
   LONG_PRESS_DELAY_MS,
   type TooltipTouchMode,
+  TOUCH_FOCUS_GUARD_MS,
   TOUCH_MOVE_TOLERANCE_PX,
 } from './tooltip-touch-mode'
 
@@ -15,6 +16,7 @@ export interface TooltipTouchGestureHandlers {
   onPointerLeave: React.PointerEventHandler
   onClickCapture: React.MouseEventHandler
   onContextMenu: React.MouseEventHandler
+  onFocus: React.FocusEventHandler
 }
 
 type Gesture = {
@@ -38,6 +40,9 @@ export function useTooltipTouchGesture({
   const suppressTimerRef =
     React.useRef<ReturnType<typeof setTimeout>>(undefined)
   const isSuppressingClickRef = React.useRef(false)
+  const focusGuardTimerRef =
+    React.useRef<ReturnType<typeof setTimeout>>(undefined)
+  const isGuardingFocusRef = React.useRef(false)
 
   const endGesture = React.useCallback(() => {
     clearTimeout(holdTimerRef.current)
@@ -58,12 +63,27 @@ export function useTooltipTouchGesture({
     )
   }, [disarmClickSuppression])
 
+  const releaseFocusGuard = React.useCallback(() => {
+    clearTimeout(focusGuardTimerRef.current)
+    isGuardingFocusRef.current = false
+  }, [])
+
+  const guardFocus = React.useCallback(() => {
+    releaseFocusGuard()
+    isGuardingFocusRef.current = true
+    focusGuardTimerRef.current = setTimeout(
+      releaseFocusGuard,
+      TOUCH_FOCUS_GUARD_MS,
+    )
+  }, [releaseFocusGuard])
+
   React.useEffect(
     () => () => {
       endGesture()
       disarmClickSuppression()
+      releaseFocusGuard()
     },
-    [endGesture, disarmClickSuppression],
+    [endGesture, disarmClickSuppression, releaseFocusGuard],
   )
 
   const isTouch = (event: React.PointerEvent) =>
@@ -74,6 +94,7 @@ export function useTooltipTouchGesture({
       if (!isTouch(event)) return
       disarmClickSuppression()
       endGesture()
+      guardFocus()
       // O Radix fecha a dica no próprio pointerdown do gatilho, então o estado
       // que decide o toggle precisa ser lido antes dele.
       gestureRef.current = {
@@ -132,6 +153,7 @@ export function useTooltipTouchGesture({
     // Captura porque o Slot do Radix executa o onClick do filho antes do
     // onClick do Trigger: na fase de bolha a ação já teria rodado.
     onClickCapture: (event) => {
+      releaseFocusGuard()
       if (!isSuppressingClickRef.current) return
       disarmClickSuppression()
       event.preventDefault()
@@ -144,6 +166,11 @@ export function useTooltipTouchGesture({
       if (gestureRef.current || isSuppressingClickRef.current) {
         event.preventDefault()
       }
+    },
+    // Sem isso, um toque rápido num botão com ação abre a dica pelo foco e o
+    // click a fecha em seguida — ou ela fica aberta se a ação cancelar o click.
+    onFocus: (event) => {
+      if (isGuardingFocusRef.current) event.preventDefault()
     },
   }
 }
