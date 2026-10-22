@@ -1,5 +1,11 @@
 # @inmediam/ui
 
+## 8.1.0
+
+### Minor Changes
+
+- 586a244: Open Tooltip on touch devices: tap on passive triggers, long-press on triggers with an action, and add a `touchMode` prop to override the detected mode
+
 ## 8.0.1
 
 ### Patch Changes
