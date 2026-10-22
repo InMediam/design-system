@@ -3,7 +3,7 @@ import { defineConfig } from "tsup";
 const useClientRegex = /['"]use client['"]\s?;/i;
 
 export default defineConfig({
-  entry: ["src/**/*.tsx"],
+  entry: ["src/**/*.tsx", "!src/tests/**"],
   format: ["cjs", "esm"],
   minify: true,
   bundle: false,
